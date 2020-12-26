@@ -107,6 +107,10 @@ nnoremap <leader>spl :set spell! spelllang=en_us<cr>
 nnoremap <leader>noh :noh<cr>
 " Toggle Wrapping
 nnoremap <leader>tw :set wrap!<cr>
+" Show registers
+nnoremap <leader>rg :reg<cr>
+" Manually source .vimrc
+nnoremap <leader>src :source ~/.vimrc<cr>
 " Fuzzy Finder Mappings
 nnoremap <leader>f :Files<cr>
 " NERDTree Mappings
