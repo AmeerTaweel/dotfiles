@@ -1,0 +1,5 @@
+# VSCode Workspace Config
+.vscode/
+
+# .swp Files
+*.swp

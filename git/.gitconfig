@@ -1,0 +1,7 @@
+[user]
+	name = Ameer Taweel
+	email = ameertaweel2002@gmail.com
+[core]
+	autocrlf = input
+	editor = code --wait
+	excludesFile = ~/.global-gitignore
