@@ -1,0 +1,92 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+colorscheme onehalfdark
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Other Settings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" Enable syntax highlighting
+syntax enable
+
+" Show line numbers (Hybrid Line Numbers)
+set number relativenumber
+augroup numbertoggle
+	" Make line numbers absolute when in insert mode and on buffer leaving
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+	autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" Select items found in search
+set incsearch
+
+" Highlight searches by default
+set hlsearch
+
+" Ignore case when searching
+set ignorecase
+
+" Unless you type a capital
+set smartcase
+
+" Enable Auto Indentation
+filetype indent on
+
+" Enable expanding commands with the tab key
+set wildmenu
+
+" Highlight cursor line and column
+set cursorline
+set cursorcolumn
+
+" Allow backspacing over indention, line breaks and insertion start
+set backspace=indent,eol,start
+
+" Set bigger history for executed commands
+set history=1000
+
+" Show incomplete commands at the bottom
+set showcmd
+
+" Automatically re-read files if modified outside Vim
+set autoread
+
+" Enable mouse support for scrolling and resizing
+set mouse=a
+
+" Set the window’s title, reflecting the file currently being edited
+set title
+
+" Save backup, swap, and undo files in the /tmp directory.
+" This is cleaner than saving them in the current working directory.
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
+
+" Wrap lines at convenient points, avoid wrapping in the middle of a word
+set linebreak
+
+" Ignore file’s mode lines; use vimrc configurations instead
+set nomodeline
+
+" Enable Presistent Undo
+set undofile
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALE Global Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ALE message format
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+

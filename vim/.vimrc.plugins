@@ -1,0 +1,76 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Plug Package Manager Config
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Themes
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" OneHalf: Theme
+Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+" Dracula: Theme
+" Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Gruvbox: Theme
+" Plug 'morhetz/gruvbox'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Vim Airline: Vim statusbar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Fugitive: Git for Vim
+Plug 'tpope/vim-fugitive'
+
+" NERDTree: Tree explorer plugin for Vim
+Plug 'scrooloose/nerdtree'
+
+" Fuzzy Finder: File finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" AG: Silver Searcher for Vim
+Plug 'rking/ag.vim'
+
+" Vim Multiple Cursors: Multiple Cursors
+Plug 'terryma/vim-multiple-cursors'
+
+" Vim Eunuch: Unix Shell commands in Vim
+Plug 'tpope/vim-eunuch'
+
+" Vim Surround: Auto Complete Surrounding
+Plug 'tpope/vim-surround'
+
+" Editor Config: Global Configuration For All Editors
+Plug 'editorconfig/editorconfig-vim'
+
+" Emmet: Emmet for Vim
+Plug 'mattn/emmet-vim'
+
+" Vim Gitgutter: Git diff in sign column
+Plug 'airblade/vim-gitgutter'
+
+" ALE: Check Syntax in Vim Async
+Plug 'dense-analysis/ale'
+
+" Vim Commentary: Comments for Vim
+Plug 'tpope/vim-commentary'
+
+" Window Swap: Swap split windows with ease
+Plug 'wesQ3/vim-windowswap'
+
+" You Complete Me: Auto Completion Suggestions
+Plug 'ycm-core/YouCompleteMe'
+
+" Simpyl Fold: Simple Python Code Folding
+Plug 'tmhedberg/SimpylFold'
+
+" Initialize plugin system
+call plug#end()

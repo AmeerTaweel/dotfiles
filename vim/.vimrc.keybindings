@@ -1,0 +1,83 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Keybindings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Leader Key
+let mapleader = ","
+
+" Terminal Normal Mode
+tnoremap <esc> <c-w>N
+
+" Saving and Quitting
+nnoremap <leader>s :w<cr>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>x :x<cr>
+nnoremap <leader>aq :qa<cr>
+nnoremap <leader>as :wa<cr>
+nnoremap <leader>ax :xa<cr>
+nnoremap <leader><leader>q :q!<cr>
+nnoremap <leader><leader>aq :qa!<cr>
+
+" Window Navigation
+nnoremap <leader>wk <c-w>k
+nnoremap <leader>wl <c-w>l
+nnoremap <leader>wj <c-w>j
+nnoremap <leader>wh <c-w>h
+
+" Semi-colon instead of colon for commands
+nnoremap ; :
+vnoremap ; :
+
+" Open .vimrc
+nnoremap <leader>rc :e $MYVIMRC<cr>
+nnoremap <leader>hrc :split $MYVIMRC<cr>
+nnoremap <leader>vrc :vsplit $MYVIMRC<cr>
+
+" Enter creates a new line in normal mode
+nnoremap <cr> o<esc>
+
+" Enable folding with the space bar
+nnoremap <space> za
+
+" Enable spell checking, English in US style
+nnoremap <leader>spl :set spell! spelllang=en_us<cr>
+
+" Remove highlighed search results
+nnoremap <leader>noh :noh<cr>
+
+" Toggle Wrapping
+nnoremap <leader>tw :set wrap!<cr>
+
+" Show registers
+nnoremap <leader>rg :reg<cr>
+
+" Manually source .vimrc
+nnoremap <leader>src :source ~/.vimrc<cr>
+
+" Fuzzy Finder Mappings
+nnoremap <leader>f :Files<cr>
+
+" NERDTree Mappings
+nnoremap <leader>b :NERDTreeToggle<cr>
+
+" Vim Gitgutter Mappings
+nnoremap <leader>ggh :GitGutterLineHighlightsToggle<cr>
+
+" Fugitive Mappings
+nnoremap <leader>gac :Git add %<cr>
+nnoremap <leader>gaa :Git add .<cr>
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gps :Git push<cr>
+nnoremap <leader>gpl :Git pull<cr>
+nnoremap <leader>glg :Git log<cr>
+nnoremap <leader>gst :Git status<cr>
+
+" ALE Mappings
+nnoremap <silent> <leader>k :ALEPrevious<cr>
+nnoremap <silent> <leader>j :ALENext<cr>
+
+" YouCompleteMe Mappings
+nnoremap <leader>to :YcmCompleter GoTo<cr>
+nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
+nnoremap <leader>doc :YcmCompleter GetDoc<cr>
+nnoremap <leader>rf :YcmCompleter RefactorRename<space>
