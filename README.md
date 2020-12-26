@@ -1,4 +1,4 @@
-# Dotfiles
+# dotfiles
 
 My dotfiles for Bash, Git, Vim, Tmux, and more.
 
