@@ -1,5 +1,12 @@
 #!/bin/bash
 
+: '
+This script creates symbolic links in the home directory
+for the dotfiles in the supplied path.
+
+If no path is supplied, uses the current working directory.
+'
+
 SCRIPT_PATH=$(pwd)
 
 # Use the supplied path as the working directory
