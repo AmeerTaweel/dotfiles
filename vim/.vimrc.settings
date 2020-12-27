@@ -89,6 +89,9 @@ set undofile
 " Automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
+" Make . to work with visually selected lines
+vnoremap . :normal.<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
