@@ -92,6 +92,14 @@ autocmd VimResized * :wincmd =
 " Make . to work with visually selected lines
 vnoremap . :normal.<cr>
 
+" Move line under cursor
+nnoremap K ddkP
+nnoremap J ddp
+
+" Move visual selection
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
