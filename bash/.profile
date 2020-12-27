@@ -80,3 +80,28 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+##################################################
+# Custom Key Mappings
+##################################################
+
+# Set Caps-Lock to be Ctrl
+setxkbmap -option ctrl:nocaps
