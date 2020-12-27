@@ -86,6 +86,9 @@ set nomodeline
 " Enable Presistent Undo
 set undofile
 
+" Automatically rebalance windows on vim resize
+autocmd VimResized * :wincmd =
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
