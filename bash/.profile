@@ -37,9 +37,9 @@ export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
 # Enable Homebrew
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# Tis line is spam
+# The next two lines are spam
 # test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+# echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 ##################################################
