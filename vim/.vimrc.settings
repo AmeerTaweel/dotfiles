@@ -65,6 +65,9 @@ set autoread
 " Enable mouse support for scrolling and resizing
 set mouse=a
 
+" Make mouse work inside Tmux properly
+set ttymouse=xterm2
+
 " Set the window’s title, reflecting the file currently being edited
 set title
 
