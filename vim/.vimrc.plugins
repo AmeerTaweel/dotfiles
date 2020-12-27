@@ -72,5 +72,8 @@ Plug 'ycm-core/YouCompleteMe'
 " Simpyl Fold: Simple Python Code Folding
 Plug 'tmhedberg/SimpylFold'
 
+" Vim Octave: Syntax Highlighting for Octave
+Plug 'jvirtanen/vim-octave'
+
 " Initialize plugin system
 call plug#end()
