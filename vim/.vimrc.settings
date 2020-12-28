@@ -100,6 +100,12 @@ nnoremap J ddp
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
+" Make folds persistent
+augroup auto_save_folds
+	autocmd!
+	autocmd BufWinLeave * mkview
+	autocmd BufWinEnter * silent loadview
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
