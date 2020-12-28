@@ -5,9 +5,6 @@
 " Leader Key
 let mapleader = ","
 
-" Terminal Normal Mode
-tnoremap <esc> <c-w>N
-
 " Saving and Quitting
 nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
