@@ -90,10 +90,15 @@ set undofile
 autocmd VimResized * :wincmd =
 
 " Make folds persistent
-augroup auto_save_folds
+augroup AutoSaveFolds
 	autocmd!
-	autocmd BufWinLeave * mkview
-	autocmd BufWinEnter * silent loadview
+	" View files are about 500 bytes
+	" Bufleave but not BufWinLeave captures closing 2nd tab
+	" Nested is needed by BufWrite* (if triggered via other autocmd)
+	autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview!
+	autocmd BufWinEnter ?* silent! loadview
+augroup end
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
