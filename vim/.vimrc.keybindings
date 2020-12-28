@@ -81,3 +81,19 @@ nnoremap <leader>to :YcmCompleter GoTo<cr>
 nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
 nnoremap <leader>doc :YcmCompleter GetDoc<cr>
 nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+
+" Zoom in a window
+nnoremap <leader>zi :wincmd _<cr>:wincmd \|<cr>
+" Zoom out (Re-balance windows)
+nnoremap <leader>zo :wincmd =<cr>
+
+" Make . to work with visually selected lines
+vnoremap . :normal.<cr>
+
+" Move line under cursor
+nnoremap K ddkP
+nnoremap J ddp
+
+" Move visual selection
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
