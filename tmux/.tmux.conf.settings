@@ -1,0 +1,35 @@
+##################################################
+# Settings
+##################################################
+
+# Make tmux read bash colors
+set -g default-terminal "screen-256color"
+
+# Enable mouse support
+set -g mouse on
+
+# Start window numbering at 1
+set-option -g base-index 1
+
+# Keep the window numbers consistent
+set-option -g renumber-windows on
+
+##################################################
+# Status Bar
+##################################################
+
+##################################################
+## Left Status Bar
+##################################################
+
+# Max length for left status line
+set -g status-left-length 50
+
+##################################################
+## Right Status Bar
+##################################################
+
+# Max length for right status line
+set -g status-right-length 100
+# Customize right status line
+set -g status-right " 💻 #H 📅 #(date +'%a, %d %b %Y') 🕜 #(date +'%H:%M') "

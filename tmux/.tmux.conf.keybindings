@@ -1,0 +1,16 @@
+##################################################
+# Keybindings
+##################################################
+
+# Reload .tmux.conf on prefix r
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
+
+# Bindings to move between panes in a vim like way
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# Bindings to split screen
+bind-key - split-window -v
+bind-key / split-window -h
