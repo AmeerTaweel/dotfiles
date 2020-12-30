@@ -99,6 +99,8 @@ augroup AutoSaveFolds
 	autocmd BufWinEnter ?* silent! loadview
 augroup end
 
+" Syntax highlighting for Tmux configuration files
+autocmd BufRead,BufNewFile *.tmux.conf.* set filetype=tmux
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
