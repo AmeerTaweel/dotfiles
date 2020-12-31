@@ -9,10 +9,10 @@ set -g default-terminal "screen-256color"
 set -g mouse on
 
 # Start window numbering at 1
-set-option -g base-index 1
+set -g base-index 1
 
 # Keep the window numbers consistent
-set-option -g renumber-windows on
+set -g renumber-windows on
 
 ##################################################
 # Panes
