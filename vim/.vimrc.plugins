@@ -81,6 +81,9 @@ Plug 'tmhedberg/SimpylFold'
 " Vim Octave: Syntax Highlighting for Octave
 Plug 'jvirtanen/vim-octave'
 
+" Vim Targets: More text objects to operate on
+Plug 'wellle/targets.vim'
+
 " Initialize plugin system
 call plug#end()
 
