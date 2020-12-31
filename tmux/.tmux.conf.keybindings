@@ -11,6 +11,8 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
-# Bindings to split screen
+# Intuitive bindings to split screen
 bind-key - split-window -v
 bind-key / split-window -h
+unbind '"'
+unbind %
