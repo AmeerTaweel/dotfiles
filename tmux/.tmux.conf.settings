@@ -15,21 +15,88 @@ set-option -g base-index 1
 set-option -g renumber-windows on
 
 ##################################################
+# Panes
+##################################################
+
+# Pane border styles
+set -g pane-border-style $PANE_BORDER_STYLE
+set -g pane-active-border-style $PANE_ACTIVE_BORDER_STYLE
+
+##################################################
 # Status Bar
 ##################################################
 
+# The number of status bars
+set -g status 2
+
+# Update status bar every x seconds
+set -g status-interval 1
+
+# Global status bar and message styles
+set -g message-style $MSG_STYLE
+set -g status-style $STATUS_STYLE
+
 ##################################################
-## Left Status Bar
+## Top Left Status Bar
 ##################################################
 
-# Max length for left status line
-set -g status-left-length 50
+# Display session name
+set -g status-format[0] "#[align=left]$LEFT_STATUS_FORMAT #S "
 
 ##################################################
-## Right Status Bar
+## Top Center Status Bar
 ##################################################
 
-# Max length for right status line
-set -g status-right-length 100
-# Customize right status line
-set -g status-right " 💻 #H 📅 #(date +'%a, %d %b %Y') 🕜 #(date +'%H:%M') "
+# Set the formatting for active and inactive windows
+set -g window-status-current-format "$WINDOW_STATUS_CURRENT_FORMAT #I #W "
+set -g window-status-format "$WINDOW_STATUS_FORMAT #I #W "
+
+# Display windows in the top center
+set -ag status-format[0] "#[align=centre]#{W:#{E:window-status-format},#{E:window-status-current-format}}"
+
+##################################################
+## Top Right Status Bar
+##################################################
+
+# Customize top right status bar
+set -ag status-format[0] "#[align=right]$HOSTNAME_FORMAT 💻 #H "
+set -ag status-format[0] "$DATE_FORMAT 📅 %a, %d %b %Y "
+set -ag status-format[0] "$TIME_FORMAT 🕜 %H:%M "
+
+##################################################
+## Bottom Left Status Bar
+##################################################
+set -g status-left "#{prefix_highlight}"
+# Show mode (currently only rich and zen modes)
+set -g status-format[1] "#{?window_zoomed_flag,$MODE_FORMAT 🔎 ZEN MODE , RICH MODE }#{E:status-left}"
+set -g @prefix_highlight_fg "#{E:PREFIX_HIGHLIGHT_FG}"
+set -g @prefix_highlight_bg "#{E:PREFIX_HIGHLIGHT_BG}"
+##################################################
+## Bottom Center Status Bar
+##################################################
+
+# Not implemented yet
+
+##################################################
+## Bottom Right Status Bar
+##################################################
+
+# CPU Usage
+# Plugin: Tmux CPU
+set -g status-right "#{cpu_bg_color} CPU: #{cpu_percentage} "
+
+# RAM Usage
+set -ag status-right "#{ram_bg_color} RAM: #{ram_percentage} "
+
+# Battery Status
+# Plugin: Tmux Battery
+set -ag status-right "#{battery_color_bg}#{battery_color_fg} Battery 🔋: #{battery_percentage}     "
+
+# Connectivity Status
+# Plugin: Tmux Online Status
+set -g @online_icon "$CONNECTIVITY_STATUS_ON_STYLE  Online  "
+set -g @offline_icon "$CONNECTIVITY_STATUS_OFF_STYLE  Offline "
+set -ag status-right "#{online_status}"
+
+# Put the content of status right in bottom right status bar
+set -ag status-format[1] "#[align=right]#{E:status-right}"
