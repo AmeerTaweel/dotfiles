@@ -86,7 +86,7 @@ set -g @prefix_highlight_bg "#{E:PREFIX_HIGHLIGHT_BG}"
 set -g status-right "#{cpu_bg_color} CPU: #{cpu_percentage} "
 
 # RAM Usage
-set -ag status-right "#{ram_bg_color} RAM: #{ram_percentage} "
+set -ag status-right "#{ram_bg_color} RAM: #{ram_percentage}        "
 
 # Battery Status
 # Plugin: Tmux Battery
