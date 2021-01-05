@@ -4,6 +4,8 @@
 
 # Setting the prefix from CTRL-b to CTRL-a
 set -g prefix C-a
+# Ensure that we can send CTRL-a to other apps
+bind C-a send-prefix
 # Free the original CTRL-b keybinding
 unbind C-b
 
