@@ -20,7 +20,7 @@ set -g @plugin 'tmux-plugins/tmux-online-status'
 set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 
 # Vim Tmux Navigator: Better vim and tmux navigation
-# Also installed in Vim with Plug
+# Also installed in Vim with Vim Plug
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
 # Initialize TMUX Plugin Manager
