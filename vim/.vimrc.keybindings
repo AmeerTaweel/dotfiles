@@ -31,13 +31,17 @@ nnoremap gs :call FollowSymlink('<cfile>:p')<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"" Quick access dotfiles
+"" Dotfiles
 """"""""""""""""""""""""""""""""""""""""""""""""""
+" Quick access dotfiles
 let $VIMRC = "~/.vimrc"
 nnoremap <leader>vrc :call FollowSymlink($VIMRC)<cr>
 
 let $TMXRC = "~/.tmux.conf"
 nnoremap <leader>trc :call FollowSymlink($TMXRC)<cr>
+
+" Manually source .vimrc
+nnoremap <leader><leader>r :source ~/.vimrc<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enter creates a new line in normal mode
@@ -57,9 +61,6 @@ nnoremap <leader>tw :set wrap!<cr>
 
 " Show registers
 nnoremap <leader>rg :reg<cr>
-
-" Manually source .vimrc
-nnoremap <leader><leader>r :source ~/.vimrc<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "" Zooming
