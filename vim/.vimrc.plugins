@@ -84,6 +84,10 @@ Plug 'jvirtanen/vim-octave'
 " Vim Targets: More text objects to operate on
 Plug 'wellle/targets.vim'
 
+" Vim Tmux Navigator: Better vim and tmux navigation
+" Also installed in Tmux with TPM
+Plug 'christoomey/vim-tmux-navigator'
+
 " Initialize plugin system
 call plug#end()
 

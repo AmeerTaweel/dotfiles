@@ -15,12 +15,6 @@ nnoremap <leader>ax :xa<cr>
 nnoremap <leader><leader>q :q!<cr>
 nnoremap <leader><leader>aq :qa!<cr>
 
-" Window Navigation
-nnoremap <leader>wk <c-w>k
-nnoremap <leader>wl <c-w>l
-nnoremap <leader>wj <c-w>j
-nnoremap <leader>wh <c-w>h
-
 " Semi-colon instead of colon for commands
 nnoremap ; :
 vnoremap ; :
@@ -51,10 +45,13 @@ nnoremap <leader>rg :reg<cr>
 " Manually source .vimrc
 nnoremap <leader>src :source ~/.vimrc<cr>
 
-" Zoom in a window
-nnoremap <leader>zi :wincmd _<cr>:wincmd \|<cr>
-" Zoom out (Re-balance windows)
-nnoremap <leader>zo :wincmd =<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Zooming
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" "Zoom" a split window into a new tab
+nmap <leader>zi :tabnew %<CR>
+" Close the zoomed tab
+nmap <leader>zo :tabclose<CR>
 
 " Make . to work with visually selected lines
 vnoremap . :normal.<cr>

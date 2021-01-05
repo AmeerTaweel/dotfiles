@@ -17,7 +17,11 @@ set -g @plugin 'tmux-plugins/tmux-cpu'
 set -g @plugin 'tmux-plugins/tmux-online-status'
 
 # Tmux Prefrix Highlight: Indicate when the prefix is clicked
- set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+
+# Vim Tmux Navigator: Better vim and tmux navigation
+# Also installed in Vim with Plug
+set -g @plugin 'christoomey/vim-tmux-navigator'
 
 # Initialize TMUX Plugin Manager
 run '~/.tmux/plugins/tpm/tpm'

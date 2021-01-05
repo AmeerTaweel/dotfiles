@@ -102,6 +102,10 @@ augroup end
 " Syntax highlighting for Tmux configuration files
 autocmd BufRead,BufNewFile *.tmux.conf.* set filetype=tmux
 
+" Disable tmux navigator when zooming the Vim pane
+let g:tmux_navigator_disable_when_zoomed = 1
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Global Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
