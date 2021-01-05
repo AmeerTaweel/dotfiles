@@ -2,6 +2,11 @@
 # Keybindings
 ##################################################
 
+# Setting the prefix from CTRL-b to CTRL-a
+set -g prefix C-a
+# Free the original CTRL-b keybinding
+unbind C-b
+
 # Reload .tmux.conf on prefix r
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 
