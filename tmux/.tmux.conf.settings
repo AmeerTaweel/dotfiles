@@ -24,6 +24,10 @@ set -g renumber-windows on
 set -g pane-border-style $PANE_BORDER_STYLE
 set -g pane-active-border-style $PANE_ACTIVE_BORDER_STYLE
 
+# Display pane numbers colors
+set -g display-panes-colour $DISPLAY_PANES_COLOR
+set -g display-panes-active-colour $DISPLAY_PANES_ACTIVE_COLOR
+
 ##################################################
 # Status Bar
 ##################################################

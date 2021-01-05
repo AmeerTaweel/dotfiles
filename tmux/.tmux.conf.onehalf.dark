@@ -20,8 +20,12 @@ light_grey="#D8DEE9"
 ##################################################
 
 # Panes
+# Borders
 PANE_BORDER_STYLE="fg=$light_grey"
 PANE_ACTIVE_BORDER_STYLE="fg=$yellow"
+# Display Pane Numbers
+DISPLAY_PANES_COLOR="$blue"
+DISPLAY_PANES_ACTIVE_COLOR="$yellow"
 
 # Status Bar
 MSG_STYLE="bg=$white fg=$black bold"
