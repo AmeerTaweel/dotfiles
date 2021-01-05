@@ -62,11 +62,6 @@ fu! ToggleZoom()
 		let g:isZoomed = 1
 		execute "tabnew %"
 	endif
-
-	" If in Tmux, zoom the vim pane as well
-	if exists("$TMUX")
-		silent execute "!tmux resize-pane -Z"
-	endif
 endfunction
 
 " Toggle zoom
