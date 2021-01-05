@@ -44,14 +44,21 @@ nnoremap <leader>trc :call FollowSymlink($TMXRC)<cr>
 nnoremap <leader><leader>r :source ~/.vimrc<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Splitting windows
+""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>- :split<cr>
+nnoremap <leader>/ :vsplit<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Enter creates a new line in normal mode
 nnoremap <cr> o<esc>
 
 " Enable folding with the space bar
 nnoremap <space> za
 
-" Enable spell checking, English in US style
-nnoremap <leader>spl :set spell! spelllang=en_us<cr>
+" Toggle spell checking, English in US style
+nnoremap <leader>ts :set spell! spelllang=en_us<cr>
 
 " Remove highlighed search results
 nnoremap <leader>noh :noh<cr>
