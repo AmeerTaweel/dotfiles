@@ -48,10 +48,30 @@ nnoremap <leader>src :source ~/.vimrc<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Zooming
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" "Zoom" a split window into a new tab
-nmap <leader>zi :tabnew %<CR>
-" Close the zoomed tab
-nmap <leader>zo :tabclose<CR>
+fu! ToggleZoom()
+	" Initialize the zoom state
+	if !exists("g:isZoomed")
+		let g:isZoomed = 0
+	endif
+
+	" Toggle zoom via a new tab
+	if g:isZoomed
+		let g:isZoomed = 0
+		execute "tabclose"
+	else
+		let g:isZoomed = 1
+		execute "tabnew %"
+	endif
+
+	" If in Tmux, zoom the vim pane as well
+	if exists("$TMUX")
+		silent execute "!tmux resize-pane -Z"
+	endif
+endfunction
+
+" Toggle zoom
+nnoremap <leader>tz :call ToggleZoom()<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Make . to work with visually selected lines
 vnoremap . :normal.<cr>
