@@ -20,7 +20,7 @@ nnoremap ; :
 vnoremap ; :
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Follow Symlinks
+"" Follow Symlinks
 """"""""""""""""""""""""""""""""""""""""""""""""""
 fu! FollowSymlink(symlinkPath)
 	let fullPath = resolve(expand(a:symlinkPath))
@@ -31,7 +31,7 @@ nnoremap gs :call FollowSymlink('<cfile>:p')<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Quick access dotfiles
+"" Quick access dotfiles
 """"""""""""""""""""""""""""""""""""""""""""""""""
 let $VIMRC = "~/.vimrc"
 nnoremap <leader>vrc :call FollowSymlink($VIMRC)<cr>
@@ -59,10 +59,10 @@ nnoremap <leader>tw :set wrap!<cr>
 nnoremap <leader>rg :reg<cr>
 
 " Manually source .vimrc
-nnoremap <leader>src :source ~/.vimrc<cr>
+nnoremap <leader><leader>r :source ~/.vimrc<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Zooming
+"" Zooming
 """"""""""""""""""""""""""""""""""""""""""""""""""
 fu! ToggleZoom()
 	" Initialize the zoom state
