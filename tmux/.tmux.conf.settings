@@ -8,8 +8,10 @@ set -g default-terminal "screen-256color"
 # Enable mouse support
 set -g mouse on
 
-# Start window numbering at 1
+# Start window indexing at 1
 set -g base-index 1
+# Start pane indexing at 1
+setw -g pane-base-index 1
 
 # Keep the window numbers consistent
 set -g renumber-windows on
