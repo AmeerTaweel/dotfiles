@@ -19,10 +19,26 @@ nnoremap <leader><leader>aq :qa!<cr>
 nnoremap ; :
 vnoremap ; :
 
-" Open .vimrc
-nnoremap <leader>rc :e $MYVIMRC<cr>
-nnoremap <leader>hrc :split $MYVIMRC<cr>
-nnoremap <leader>vrc :vsplit $MYVIMRC<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Follow Symlinks
+""""""""""""""""""""""""""""""""""""""""""""""""""
+fu! FollowSymlink(symlinkPath)
+	let fullPath = resolve(expand(a:symlinkPath))
+	execute "edit " . fullPath
+endfunction
+
+nnoremap gs :call FollowSymlink('<cfile>:p')<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quick access dotfiles
+""""""""""""""""""""""""""""""""""""""""""""""""""
+let $VIMRC = "~/.vimrc"
+nnoremap <leader>vrc :call FollowSymlink($VIMRC)<cr>
+
+let $TMXRC = "~/.tmux.conf"
+nnoremap <leader>trc :call FollowSymlink($TMXRC)<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enter creates a new line in normal mode
 nnoremap <cr> o<esc>
