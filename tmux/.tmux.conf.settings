@@ -29,6 +29,13 @@ set -g display-panes-colour $DISPLAY_PANES_COLOR
 set -g display-panes-active-colour $DISPLAY_PANES_ACTIVE_COLOR
 
 ##################################################
+# Windows
+##################################################
+
+# Enable activity alerts
+set -g visual-activity on
+
+##################################################
 # Status Bar
 ##################################################
 
