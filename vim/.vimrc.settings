@@ -112,13 +112,3 @@ let g:tmux_navigator_disable_when_zoomed = 1
 
 " ALE message format
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Tmux Runner Global Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Better Python Support
-let g:VtrStripLeadingWhitespace = 0
-let g:VtrClearEmptyLines = 0
-let g:VtrAppendNewline = 1
