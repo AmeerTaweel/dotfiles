@@ -29,6 +29,19 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'christoomey/vim-tmux-runner'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Code Formatting, Linting, and Completion
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Commentary: Comments for Vim
+Plug 'tpope/vim-commentary'
+
+" ALE: Check Syntax in Vim Async
+Plug 'dense-analysis/ale'
+
+" You Complete Me: Auto Completion Suggestions
+Plug 'ycm-core/YouCompleteMe'
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Vim Airline: Vim statusbar
 Plug 'vim-airline/vim-airline'
 
@@ -63,23 +76,11 @@ Plug 'mattn/emmet-vim'
 " Vim Gitgutter: Git diff in sign column
 Plug 'airblade/vim-gitgutter'
 
-" ALE: Check Syntax in Vim Async
-Plug 'dense-analysis/ale'
-
-" Vim Commentary: Comments for Vim
-Plug 'tpope/vim-commentary'
-
 " Window Swap: Swap split windows with ease
 Plug 'wesQ3/vim-windowswap'
 
-" You Complete Me: Auto Completion Suggestions
-Plug 'ycm-core/YouCompleteMe'
-
 " Simpyl Fold: Simple Python Code Folding
 Plug 'tmhedberg/SimpylFold'
-
-" Vim Octave: Syntax Highlighting for Octave
-Plug 'jvirtanen/vim-octave'
 
 " Vim Targets: More text objects to operate on
 Plug 'wellle/targets.vim'
