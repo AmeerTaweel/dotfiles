@@ -107,8 +107,24 @@ let g:tmux_navigator_disable_when_zoomed = 1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" ALE Global Configuration
+" ALE Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " ALE message format
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = "[%linter%] %s [%severity%]"
+
+" Define fixers for different languages
+
+" Python:
+"	1. AutoImport: Fix import issues
+"	2. Isort: Sort imports
+"	3. Black: Format Code
+let b:ale_fixers = {"python": ["autoimport", "isort", "black"]}
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Tmux Runner Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:VtrStripLeadingWhitespace = 0
+let g:VtrClearEmptyLines = 0
+let g:VtrAppendNewline = 1
