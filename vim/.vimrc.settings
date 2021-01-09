@@ -19,6 +19,9 @@ set foldlevel=99
 " Enable syntax highlighting
 syntax enable
 
+" Enable spell checking
+set spell spelllang=en_us
+
 " Show line numbers (Hybrid Line Numbers)
 set number relativenumber
 augroup numbertoggle
