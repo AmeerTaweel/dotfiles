@@ -11,12 +11,26 @@ endif
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
-" OneHalf: Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Theme
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" OneHalf: Current theme
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Integration with Tmux
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Tmux Navigator: Better vim and tmux navigation
+" Also installed in Tmux with TPM
+Plug 'christoomey/vim-tmux-navigator'
+
+" Vim Tmux Runner: Command runner for sending commands from vim to tmux
+Plug 'christoomey/vim-tmux-runner'
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Vim Airline: Vim statusbar
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Fugitive: Git for Vim
 Plug 'tpope/vim-fugitive'
@@ -69,17 +83,6 @@ Plug 'jvirtanen/vim-octave'
 
 " Vim Targets: More text objects to operate on
 Plug 'wellle/targets.vim'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Integration with Tmux
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Tmux Navigator: Better vim and tmux navigation
-" Also installed in Tmux with TPM
-Plug 'christoomey/vim-tmux-navigator'
-
-" Vim Tmux Runner: Command runner for sending commands from vim to tmux
-Plug 'christoomey/vim-tmux-runner'
-""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Initialize plugin system
 call plug#end()
