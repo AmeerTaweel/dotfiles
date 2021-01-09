@@ -113,6 +113,9 @@ let g:tmux_navigator_disable_when_zoomed = 1
 " ALE message format
 let g:ale_echo_msg_format = "[%linter%] %s [%severity%]"
 
+" Automatically fix files on save
+let g:ale_fix_on_save = 1
+
 " Define fixers for different languages
 
 " Python:
