@@ -1,11 +1,13 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keybindings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Leader Key
 let mapleader = ","
 
-" Saving and Quitting
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Saving and Quitting
+""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>s :w<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>x :x<cr>
@@ -14,10 +16,19 @@ nnoremap <leader>as :wa<cr>
 nnoremap <leader>ax :xa<cr>
 nnoremap <leader><leader>q :q!<cr>
 nnoremap <leader><leader>aq :qa!<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Semi-colon instead of colon for commands
-nnoremap ; :
-vnoremap ; :
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Move Line/Selection Up/Down
+"""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move Line
+nnoremap K ddkP
+nnoremap J ddp
+
+" Move Visual Selection
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "" Follow Symlinks
@@ -51,24 +62,6 @@ nnoremap <leader>- :split<cr>
 nnoremap <leader>/ :vsplit<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Enter creates a new line in normal mode
-nnoremap <cr> o<esc>
-
-" Enable folding with the space bar
-nnoremap <space> za
-
-" Toggle spell checking, English in US style
-nnoremap <leader>ts :set spell! spelllang=en_us<cr>
-
-" Remove highlighed search results
-nnoremap <leader>noh :noh<cr>
-
-" Toggle Wrapping
-nnoremap <leader>tw :set wrap!<cr>
-
-" Show registers
-nnoremap <leader>rg :reg<cr>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "" Zooming
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,37 +85,35 @@ endfunction
 nnoremap <leader>tz :call ToggleZoom()<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Make . to work with visually selected lines
-vnoremap . :normal.<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Code Formatting and Navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALE Mappings
+"" Format file with ALE
+nnoremap <leader>ff :ALEFix<cr>
+"" Move to next and previous error with ALE
+nnoremap <silent> <leader>ep :ALEPrevious<cr>
+nnoremap <silent> <leader>en :ALENext<cr>
 
-" Move line under cursor
-nnoremap K ddkP
-nnoremap J ddp
+" YouCompleteMe Mappings
+nnoremap <leader>to :YcmCompleter GoTo<cr>
+nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
+nnoremap <leader>doc :YcmCompleter GetDoc<cr>
+nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Move visual selection
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Quickfix list navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move to next location
+nnoremap <leader>cn :cn<cr>
+" Move to previous location
+nnoremap <leader>cp :cp<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Make working with system clipboard easier
-nnoremap <leader>y "+y
-nnoremap <leader>d "+d
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>d "+d
-vnoremap <leader>y "+y
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-
-" Fuzzy Finder Mappings
-nnoremap <leader>f :Files<cr>
-
-" NERDTree Mappings
-nnoremap <leader>b :NERDTreeToggle<cr>
-
-" Vim Gitgutter Mappings
-nnoremap <leader>ggh :GitGutterLineHighlightsToggle<cr>
-
-" Fugitive Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Fugitive (Git) Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>gac :Git add %<cr>
 nnoremap <leader>gaa :Git add .<cr>
 nnoremap <leader>gc :Git commit<cr>
@@ -130,13 +121,57 @@ nnoremap <leader>gps :Git push<cr>
 nnoremap <leader>gpl :Git pull<cr>
 nnoremap <leader>glg :Git log<cr>
 nnoremap <leader>gst :Git status<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ALE Mappings
-nnoremap <silent> <leader>k :ALEPrevious<cr>
-nnoremap <silent> <leader>j :ALENext<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" System Clipboard
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Normal Mode
+nnoremap <leader>y "+y
+nnoremap <leader>d "+d
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+" Visual Mode
+vnoremap <leader>d "+d
+vnoremap <leader>y "+y
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" YouCompleteMe Mappings
-nnoremap <leader>to :YcmCompleter GoTo<cr>
-nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
-nnoremap <leader>doc :YcmCompleter GetDoc<cr>
-nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Other Mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Semi-colon instead of colon for commands
+nnoremap ; :
+vnoremap ; :
+
+" Enter creates a new line in normal mode
+nnoremap <cr> o<esc>
+
+" Enable folding with the space bar
+nnoremap <space> za
+
+" Remove highlighted search results
+nnoremap <leader>noh :noh<cr>
+
+" Show registers
+nnoremap <leader>rg :reg<cr>
+
+" Make . to work with visually selected lines
+vnoremap . :normal.<cr>
+
+" Toggle spell checking, English in US style
+nnoremap <leader>ts :set spell! spelllang=en_us<cr>
+
+" Toggle Wrapping
+nnoremap <leader>tw :set wrap!<cr>
+
+" Fuzzy Finder Mappings
+nnoremap <leader>f :Files<cr>
+
+" Toggle NERDTree
+nnoremap <leader>b :NERDTreeToggle<cr>
+
+" Window Swap: Swap Window
+nnoremap <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""
