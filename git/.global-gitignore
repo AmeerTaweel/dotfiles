@@ -3,3 +3,6 @@
 
 # .swp Files
 *.swp
+
+# Python caches
+__pycache__/
