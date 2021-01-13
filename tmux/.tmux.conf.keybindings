@@ -22,3 +22,6 @@ bind-key - split-window -v
 bind-key / split-window -h
 unbind '"'
 unbind %
+
+# Break a pane out to a new window
+bind-key b break-pane -d
