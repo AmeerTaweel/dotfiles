@@ -2,13 +2,47 @@
 # Keybindings
 ##################################################
 
+##################################################
+## Prefix
+##################################################
 # Setting the prefix from CTRL-b to CTRL-a
 set -g prefix C-a
 # Ensure that we can send CTRL-a to other apps
 bind C-a send-prefix
 # Free the original CTRL-b keybinding
 unbind C-b
+##################################################
 
+##################################################
+## Splitting Windows
+##################################################
+# Intuitive bindings to split screen
+bind-key - split-window -v
+bind-key / split-window -h
+unbind '"'
+unbind %
+##################################################
+
+##################################################
+## Copy Mode
+##################################################
+# Use Vim keybindings in copy mode
+setw -g mode-keys vi
+
+# Pressing v to begin selection as in Vim
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+
+# Pressing CTRL+v to make box selection
+bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-selection
+
+# Pressing y to copy selection to system clipboard
+# Must have xclip installed for this to work
+bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+##################################################
+
+##################################################
+## Others
+##################################################
 # Restoring Clear Screen
 # CTRL-l is now used for navigation
 # Hitting the key after the prefix will restore the old function
@@ -17,11 +51,6 @@ bind C-l send-keys C-l
 # Reload .tmux.conf on prefix r
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 
-# Intuitive bindings to split screen
-bind-key - split-window -v
-bind-key / split-window -h
-unbind '"'
-unbind %
-
 # Break a pane out to a new window
 bind-key b break-pane -d
+##################################################
