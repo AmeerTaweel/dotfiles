@@ -23,8 +23,5 @@ set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 # Also installed in Vim with Vim Plug
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
-# Tmux Resurrect: Persists tmux environment across system restarts
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-
 # Initialize TMUX Plugin Manager
 run '~/.tmux/plugins/tpm/tpm'
