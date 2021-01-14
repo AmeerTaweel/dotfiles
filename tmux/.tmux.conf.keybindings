@@ -26,6 +26,9 @@ unbind %
 ##################################################
 ## Copy Mode
 ##################################################
+# Enter copy mode by <Prefix> v
+bind v copy-mode
+
 # Use Vim keybindings in copy mode
 setw -g mode-keys vi
 
