@@ -72,9 +72,13 @@ set -ag status-format[0] "#[align=centre]#{W:#{E:window-status-format},#{E:windo
 ##################################################
 
 # Customize top right status bar
-set -ag status-format[0] "#[align=right]$HOSTNAME_FORMAT 💻 #H "
-set -ag status-format[0] "$DATE_FORMAT 📅 %a, %d %b %Y "
-set -ag status-format[0] "$TIME_FORMAT 🕜 %H:%M "
+# Padding username and hostname awk for alignment
+set -g @status-top-right "$HOSTNAME_FORMAT 💻 #(echo "$(whoami)"@"$(hostname)" | awk '{ printf \"%-28s\", $0 }')"
+# set -ag status-format[0] "#[align=right]$HOSTNAME_FORMAT 💻 #U@#H "
+set -ag @status-top-right "$DATE_FORMAT 📅 #(date +'%a, %d %b %Y') "
+set -ag @status-top-right "$TIME_FORMAT 🕜 #(date +'%H:%M') "
+
+set -ag status-format[0] "#[align=right]#{E:@status-top-right}"
 
 ##################################################
 ## Bottom Left Status Bar
@@ -96,14 +100,23 @@ set -g @prefix_highlight_bg "#{E:PREFIX_HIGHLIGHT_BG}"
 
 # CPU Usage
 # Plugin: Tmux CPU
-set -g status-right "#{cpu_bg_color} CPU: #{cpu_percentage} "
+# Padding #{cpu_percentage} to with awk for alignment
+set -g status-right "#{cpu_bg_color} \
+CPU: #(~/.tmux/plugins/tmux-cpu/scripts/cpu_percentage.sh \
+| awk '{ printf \"%-10s\", $0 }')"
 
 # RAM Usage
-set -ag status-right "#{ram_bg_color} RAM: #{ram_percentage}        "
+# Padding #{ram_percentage} to with awk for alignment
+set -ag status-right "#{ram_bg_color} \
+RAM: #(~/.tmux/plugins/tmux-cpu/scripts/ram_percentage.sh \
+| awk '{ printf \"%-10s\", $0 }')"
 
 # Battery Status
 # Plugin: Tmux Battery
-set -ag status-right "#{battery_color_bg}#{battery_color_fg} Battery 🔋: #{battery_percentage}     "
+# Padding #{battery_percentage} with awk for alignment
+set -ag status-right "#{battery_color_bg}#{battery_color_fg} \
+Battery 🔋: #(~/.tmux/plugins/tmux-battery/scripts/battery_percentage.sh \
+| awk '{ printf \"%-8s\", $0 }')"
 
 # Connectivity Status
 # Plugin: Tmux Online Status
