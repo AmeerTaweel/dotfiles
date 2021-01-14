@@ -17,8 +17,8 @@ unbind C-b
 ## Splitting Windows
 ##################################################
 # Intuitive bindings to split screen
-bind-key - split-window -v
-bind-key / split-window -h
+bind - split-window -v
+bind / split-window -h
 unbind '"'
 unbind %
 ##################################################
@@ -33,14 +33,14 @@ bind v copy-mode
 setw -g mode-keys vi
 
 # Pressing v to begin selection as in Vim
-bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind -T copy-mode-vi v send-keys -X begin-selection
 
 # Pressing CTRL+v to make box selection
-bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-selection
+bind -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-selection
 
 # Pressing y to copy selection to system clipboard
 # Must have xclip installed for this to work
-bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
 
 # Pressing P (Capital Letter) will paste the contents of the last buffer
 bind P paste-buffer
@@ -53,10 +53,10 @@ bind C-p choose-buffer
 ## Pane Operations
 ##################################################
 # Break a pane out to a new window
-bind-key b break-pane -d
+bind b break-pane -d
 
 # Easily swap a pane (targeted by pane number) with the current pane
-bind-key C-s display-panes\; command-prompt -p "Pane #: " "swap-pane -t '%%'"
+bind C-s display-panes\; command-prompt -p "Pane #: " "swap-pane -t '%%'"
 ##################################################
 
 ##################################################
@@ -68,7 +68,7 @@ bind-key C-s display-panes\; command-prompt -p "Pane #: " "swap-pane -t '%%'"
 bind C-l send-keys C-l
 
 # Reload .tmux.conf on prefix r
-bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
+bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 
 # Fuzzy navigate to session
 bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
