@@ -38,6 +38,12 @@ bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-sele
 # Pressing y to copy selection to system clipboard
 # Must have xclip installed for this to work
 bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+
+# Pressing P (Capital Letter) will paste the contents of the last buffer
+bind P paste-buffer
+
+# Press B (Capital Letter) to choose buffer
+bind B choose-buffer
 ##################################################
 
 ##################################################
