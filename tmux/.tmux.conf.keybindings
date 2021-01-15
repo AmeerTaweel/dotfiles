@@ -60,10 +60,13 @@ bind -n C-v run "tmux set-buffer \"$( xclip -o -sel clipboard )\"; tmux paste-bu
 bind b break-pane -d
 
 # Join a pane from another window to this window
-bind j command-prompt -p "Join from window #: " "join-pane -s :'%%'"
+# Input format: window_index[.pane_index]
+# pane_index is optional
+bind j command-prompt -p "Join pane: " "join-pane -s :'%%'"
 
 # Easily swap a pane (targeted by pane number) with the current pane
-bind C-s display-panes\; command-prompt -p "Swap with pane #: " "swap-pane -t '%%'"
+# Input format: pane_index
+bind C-s display-panes\; command-prompt -p "Swap with pane: " "swap-pane -t '%%'"
 ##################################################
 
 ##################################################
