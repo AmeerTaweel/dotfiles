@@ -2,6 +2,9 @@
 # Keybindings
 ##################################################
 
+# Reload .tmux.conf on prefix r
+bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
+
 ##################################################
 ## Prefix
 ##################################################
@@ -14,13 +17,16 @@ unbind C-b
 ##################################################
 
 ##################################################
-## Splitting Windows
+## Splitting
 ##################################################
 # Intuitive bindings to split screen
 bind - split-window -v
 bind / split-window -h
 unbind '"'
 unbind %
+# Split screen but with the current path
+bind _ split-window -v -c "#{pane_current_path}"
+bind | split-window -h -c "#{pane_current_path}"
 ##################################################
 
 ##################################################
@@ -54,8 +60,27 @@ bind -n C-v run "tmux set-buffer \"$( xclip -o -sel clipboard )\"; tmux paste-bu
 ##################################################
 
 ##################################################
-## Pane Operations
+## Sessions
 ##################################################
+# Fuzzy navigate to session
+bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+##################################################
+
+##################################################
+## Windows
+##################################################
+# Create a new window in the current path
+bind C-c new-window -c "#{pane_current_path}"
+##################################################
+
+##################################################
+## Panes
+##################################################
+# Restoring Clear Screen
+# CTRL-l is now used for navigation
+# Hitting the key after the prefix will restore the old function
+bind C-l send-keys C-l
+
 # Break a pane out to a new window
 bind b break-pane -d
 
@@ -67,19 +92,4 @@ bind j command-prompt -p "Join pane: " "join-pane -s :'%%'"
 # Easily swap a pane (targeted by pane number) with the current pane
 # Input format: pane_index
 bind C-s display-panes\; command-prompt -p "Swap with pane: " "swap-pane -t '%%'"
-##################################################
-
-##################################################
-## Others
-##################################################
-# Restoring Clear Screen
-# CTRL-l is now used for navigation
-# Hitting the key after the prefix will restore the old function
-bind C-l send-keys C-l
-
-# Reload .tmux.conf on prefix r
-bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
-
-# Fuzzy navigate to session
-bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 ##################################################
