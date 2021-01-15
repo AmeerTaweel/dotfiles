@@ -92,4 +92,7 @@ bind j command-prompt -p "Join pane: " "join-pane -s :'%%'"
 # Easily swap a pane (targeted by pane number) with the current pane
 # Input format: pane_index
 bind C-s display-panes\; command-prompt -p "Swap with pane: " "swap-pane -t '%%'"
+
+# Synchronize panes in the session toggle
+bind S set-window-option synchronize-panes
 ##################################################
