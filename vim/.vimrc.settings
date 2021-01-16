@@ -130,8 +130,9 @@ let g:ale_fix_on_save = 1
 " Python:
 "	1. AutoImport: Fix import issues
 "	2. Isort: Sort imports
-"	3. Black: Format Code
-let b:ale_fixers = {"python": ["autoimport", "isort", "black"]}
+"	3. AutoPep8: Format Code
+"	4. Black: Format Code
+let b:ale_fixers = {"python": ["autoimport", "isort", "autopep8", "black"]}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Tmux Runner Configuration
