@@ -53,10 +53,6 @@ bind P paste-buffer
 
 # Press <Prefix> CTRL+p to choose buffer
 bind C-p choose-buffer
-
-# Paste from system clipboard by creating a new buffer with content of system clipboard then pasting that buffer
-# Does not need <Prefix> first
-bind -n C-v run "tmux set-buffer \"$( xclip -o -sel clipboard )\"; tmux paste-buffer"
 ##################################################
 
 ##################################################
