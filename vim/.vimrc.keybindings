@@ -103,12 +103,12 @@ nnoremap <leader>rf :YcmCompleter RefactorRename<space>
 
 " VimTmuxRunner Mappings
 "" Normal Mode
-nnoremap <leader>vap  VtrAttachToPane<cr>
-nnoremap <leader>vsc  VtrSendCommandToRunner<cr>
-nnoremap <leader>vsf  VtrSendFile<cr>
-nnoremap <leader>vsl  VtrSendLinesToRunner<cr>
+nnoremap <leader>vap :VtrAttachToPane<cr>
+nnoremap <leader>vsc :VtrSendCommandToRunner<cr>
+nnoremap <leader>vsf :VtrSendFile<cr>
+nnoremap <leader>vsl :VtrSendLinesToRunner<cr>
 "" Visual Mode
-vnoremap <leader>vsl VtrSendLinesToRunner<cr>
+vnoremap <leader>vsl :VtrSendLinesToRunner<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
