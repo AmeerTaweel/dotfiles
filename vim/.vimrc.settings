@@ -138,9 +138,9 @@ let b:ale_fixers = {"python": ["autoimport", "isort", "autopep8", "black"]}
 " Vim Tmux Runner Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:VtrStripLeadingWhitespace = 0
-let g:VtrClearEmptyLines = 0
-let g:VtrAppendNewline = 1
+let g:vtr_filetype_runner_overrides = {
+	"cpp": "g++ {file}"
+}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Window Swap Configuration
