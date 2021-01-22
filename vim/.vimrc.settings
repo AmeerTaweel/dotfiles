@@ -126,13 +126,10 @@ let g:ale_echo_msg_format = "[%linter%] %s [%severity%]"
 let g:ale_fix_on_save = 1
 
 " Define fixers for different languages
-
-" Python:
-"	1. AutoImport: Fix import issues
-"	2. Isort: Sort imports
-"	3. AutoPep8: Format Code
-"	4. Black: Format Code
-let b:ale_fixers = {"python": ["autoimport", "isort", "autopep8", "black"]}
+let b:ale_fixers = {
+	\ "python": ["autoimport", "isort", "autopep8", "black"],
+	\ "cpp": ["astyle", "clangtidy", "uncrustify", "clang-format"]
+	\}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Tmux Runner Configuration
