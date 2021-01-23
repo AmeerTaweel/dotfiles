@@ -24,9 +24,6 @@ Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Vim Tmux Navigator: Better vim and tmux navigation
 " Also installed in Tmux with TPM
 Plug 'christoomey/vim-tmux-navigator'
-
-" Vim Tmux Runner: Command runner for sending commands from vim to tmux
-Plug 'christoomey/vim-tmux-runner'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
