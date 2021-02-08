@@ -12,10 +12,13 @@ endif
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"" Theme
+"" Theme, Appearance, and Info
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " OneHalf: Current theme
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
+
+" Vim Airline: Vim statusbar
+Plug 'vim-airline/vim-airline'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -39,11 +42,15 @@ Plug 'dense-analysis/ale'
 Plug 'ycm-core/YouCompleteMe'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vim Airline: Vim statusbar
-Plug 'vim-airline/vim-airline'
-
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Git and Version Control
+""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fugitive: Git for Vim
 Plug 'tpope/vim-fugitive'
+
+" Vim Gitgutter: Git diff in sign column
+Plug 'airblade/vim-gitgutter'
+""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " NERDTree: Tree explorer plugin for Vim
 Plug 'scrooloose/nerdtree'
@@ -69,9 +76,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Emmet: Emmet for Vim
 Plug 'mattn/emmet-vim'
-
-" Vim Gitgutter: Git diff in sign column
-Plug 'airblade/vim-gitgutter'
 
 " Window Swap: Swap split windows with ease
 Plug 'wesQ3/vim-windowswap'
