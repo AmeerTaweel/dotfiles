@@ -2,7 +2,7 @@
 set nocompatible
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Plug Package Manager Config
+" Vim Plug Package Manager Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 source ~/.vimrc.plugins
