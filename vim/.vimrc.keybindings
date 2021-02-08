@@ -89,8 +89,8 @@ nnoremap <leader>tz :call ToggleZoom()<cr>
 "" Code Formatting and Navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Mappings
-"" Format file with ALE
-nnoremap <leader>ff :ALEFix<cr>
+"" Fix code with ALE
+nnoremap <leader>fc :ALEFix<cr>
 "" Move to next and previous error with ALE
 nnoremap <silent> <leader>ep :ALEPrevious<cr>
 nnoremap <silent> <leader>en :ALENext<cr>
@@ -175,7 +175,7 @@ nnoremap <leader>ts :set spell! spelllang=en_us<cr>
 nnoremap <leader>tw :set wrap!<cr>
 
 " Fuzzy Finder Mappings
-nnoremap <leader>f :Files<cr>
+nnoremap <leader>ff :Files<cr>
 
 " Toggle NERDTree
 nnoremap <leader>b :NERDTreeToggle<cr>
