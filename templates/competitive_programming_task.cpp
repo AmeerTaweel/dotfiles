@@ -1,8 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <algorithm>
-#include <regex>
+#include <bits/stdc++.h>
 
 using namespace std;
 
