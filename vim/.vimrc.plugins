@@ -27,6 +27,9 @@ Plug 'vim-airline/vim-airline'
 " Vim Tmux Navigator: Better vim and tmux navigation
 " Also installed in Tmux with TPM
 Plug 'christoomey/vim-tmux-navigator'
+
+"Vim Tmux Runner
+Plug 'christoomey/vim-tmux-runner'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

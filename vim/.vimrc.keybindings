@@ -100,6 +100,16 @@ nnoremap <leader>to :YcmCompleter GoTo<cr>
 nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
 nnoremap <leader>doc :YcmCompleter GetDoc<cr>
 nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+
+" Vim Tmux Runner Mappings
+nnoremap <leader>va :VtrAttachToPane<cr>
+nnoremap <leader>vs :VtrSendCommandToRunner<cr>
+nnoremap <leader>vo :VtrOpenRunner<cr>
+nnoremap <leader>vk :VtrKillRunner<cr>
+nnoremap <leader>vf :VtrFocusRunner<cr>
+nnoremap <leader>vd :VtrDetachRunner<cr>
+nnoremap <leader>vc :VtrClearRunner<cr>
+nnoremap <leader>vf :VtrFlushCommand<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
