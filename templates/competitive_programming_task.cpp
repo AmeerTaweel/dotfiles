@@ -1,5 +1,5 @@
 /* Compile and run with:
-g++ file.cpp -std=c++17 -O2 -Wall -o out
+g++ file.cpp -std=c++17 -O2 -Wall -o out && ./out < in
 */
 #include <bits/stdc++.h>
 
