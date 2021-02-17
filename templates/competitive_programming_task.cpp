@@ -10,7 +10,7 @@ using namespace std;
 #define intf int_fast32_t
 #define intfl int_fast64_t
 
-#define FAST_IO \
+#define FAST_IO; \
 ios::sync_with_stdio(0);\
 cin.tie(0);\
 cout.tie(0);
