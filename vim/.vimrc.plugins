@@ -43,6 +43,9 @@ Plug 'dense-analysis/ale'
 
 " You Complete Me: Auto Completion Suggestions
 Plug 'ycm-core/YouCompleteMe'
+
+" Eclim: Java Code Completion
+Plug 'ervandew/eclim'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
