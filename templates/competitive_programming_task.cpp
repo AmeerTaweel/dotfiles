@@ -9,6 +9,7 @@ using namespace std;
 #define intfs int_fast16_t
 #define intf int_fast32_t
 #define intfl int_fast64_t
+#define ll long long
 
 #define FAST_IO \
 ios::sync_with_stdio(0);\
