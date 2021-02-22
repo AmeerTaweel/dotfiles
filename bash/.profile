@@ -50,3 +50,7 @@ eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Set Caps-Lock to be Ctrl
 setxkbmap -option ctrl:nocaps
+
+# Show CopyQ icon in system tray
+copyq exit
+copyq &
