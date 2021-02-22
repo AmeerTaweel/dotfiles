@@ -53,4 +53,4 @@ setxkbmap -option ctrl:nocaps
 
 # Show CopyQ icon in system tray
 copyq exit
-copyq &
+nohup copyq &
