@@ -7,12 +7,33 @@ set -U fish_user_paths $fish_user_paths $HOME/bin
 # Turn off the greeting message
 set fish_greeting
 
+# Colors One Half Dark Theme
+#	background: '#282c34'
+#	foreground: '#dcdfe4'
+#	black: '#282c34'
+#	red: '#e06c75'
+#	green: '#98c379'
+#	yellow: '#e5c07b'
+#	blue: '#61afef'
+#	magenta: '#c678dd'
+#	cyan: '#56b6c2'
+#	white: '#dcdfe4'
+
 # Autocomplete and Highlight Colors
-set fish_color_normal brcyan
+set fish_color_normal blue
 set fish_color_autosuggestion '#7d7d7d'
-set fish_color_command brcyan
-set fish_color_error '#ff6c6b'
-set fish_color_param brcyan
+set fish_color_command blue --bold
+set fish_color_error red --bold
+set fish_color_param cyan
+set fish_color_quote yellow
+set fish_color_redirection white --bold
+set fish_color_end white --bold
+set fish_color_operator white --bold
+set fish_color_comment yellow
+set fish_pager_color_prefix white
+set fish_pager_color_completion white
+set fish_pager_color_description yellow
+set fish_pager_color_background --background=background
 
 # Set editor to VIM
 set EDITOR "vim"
