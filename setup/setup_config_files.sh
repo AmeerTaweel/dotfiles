@@ -103,7 +103,7 @@ for entry in $src_entries; do
 
 					# Find all files/directories matching the selector and select_type.
 					# More about this type of loop at: https://stackoverflow.com/a/9612114/6835329
-					find $src_dir/$entry -type $select_type -name "$selector" -not -name ".setup" -print0 | while read -d $'\0' sub_entry_path
+					find $src_dir/$entry -type $select_type -wholename "$selector" -not -name ".setup" -print0 | while read -d $'\0' sub_entry_path
 					do
 						# Now we need to link each file/directory to the dist_directory
 						sub_entry_name=$(basename $sub_entry_path)
