@@ -136,3 +136,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Enable VI mode by default
+set -o vi
