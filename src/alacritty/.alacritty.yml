@@ -11,7 +11,7 @@
 import:
 #import:
 #  - /path/to/alacritty.yml
-  - nord.yml
+  - .alacritty/themes/nord.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
