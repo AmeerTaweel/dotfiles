@@ -9,7 +9,7 @@ Will change the theme of the following at the same time:
 	3. Alacritty
 '
 
-## ANSI color code variables
+# ANSI color code variables
 red="\e[0;31m"
 green="\e[0;32m"
 bold="\e[1m"
