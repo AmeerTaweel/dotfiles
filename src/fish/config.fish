@@ -40,20 +40,42 @@ set EDITOR "vim"
 # Set visual editor to VSCode
 set VISUAL "code"
 
+################################################################################
 # Aliases
+################################################################################
 
-## Open Tmux with UTF8 support
+# Open Tmux with UTF8 support
 alias tmux='tmux -u'
 
-## List entries with long format, display the sizes in human readable format, and show hidden entries.
+# List entries with long format, display the sizes in human readable format, and show hidden entries.
 alias ll='ls -Alh'
 
-## Colorize grep output (good for log files)
+# Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-## Confirm before overwriting something
+# Confirm before overwriting something
 alias cp="cp -i"
 alias mv='mv -i'
 alias rm='rm -i'
+
+################################################################################
+
+################################################################################
+# Bindings
+################################################################################
+
+# Scroll through suggestions
+bind \t complete
+bind -M insert \t complete
+
+# Accept the next word with tab + n
+bind \tn forward-word
+bind -M insert \tn forward-word
+
+# Accept the whole suggestion with tab + l
+bind \tl accept-autosuggestion
+bind -M insert \tl accept-autosuggestion
+
+################################################################################
