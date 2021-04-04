@@ -31,6 +31,7 @@ fi
 neovim_theme=~/.config/nvim/nvim.theme.vim
 vim_theme=~/.vimrc.theme
 alacritty_theme=~/.alacritty/themes/theme.yml
+alacritty_config=~/.alacritty.yml
 
 if [[ $1 == "gruvbox-dark" ]]; then
 	# Change NeoVim
@@ -44,6 +45,7 @@ if [[ $1 == "gruvbox-dark" ]]; then
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
 	echo "  - .alacritty/themes/gruvbox-dark.yml" >> "$alacritty_theme"
+	touch "$alacritty_config"
 elif [[ $1 == "gruvbox-light" ]]; then
 	# Change NeoVim
 	echo "colorscheme gruvbox" > "$neovim_theme"
@@ -56,6 +58,7 @@ elif [[ $1 == "gruvbox-light" ]]; then
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
 	echo "  - .alacritty/themes/gruvbox-light.yml" >> "$alacritty_theme"
+	touch "$alacritty_config"
 elif [[ $1 == "onehalf-dark" ]]; then
 	# Change NeoVim
 	echo "colorscheme onehalfdark" > "$neovim_theme"
@@ -66,6 +69,7 @@ elif [[ $1 == "onehalf-dark" ]]; then
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
 	echo "  - .alacritty/themes/onehalf-dark.yml" >> "$alacritty_theme"
+	touch "$alacritty_config"
 elif [[ $1 == "onehalf-light" ]]; then
 	# Change NeoVim
 	echo "colorscheme onehalflight" > "$neovim_theme"
@@ -76,6 +80,7 @@ elif [[ $1 == "onehalf-light" ]]; then
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
 	echo "  - .alacritty/themes/onehalf-light.yml" >> "$alacritty_theme"
+	touch "$alacritty_config"
 elif [[ $1 == "dracula" ]]; then
 	# Change NeoVim
 	echo "colorscheme dracula" > "$neovim_theme"
@@ -86,6 +91,7 @@ elif [[ $1 == "dracula" ]]; then
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
 	echo "  - .alacritty/themes/dracula.yml" >> "$alacritty_theme"
+	touch "$alacritty_config"
 elif [[ $1 == "nord" ]]; then
 	# Change NeoVim
 	echo "colorscheme nord" > "$neovim_theme"
@@ -96,6 +102,7 @@ elif [[ $1 == "nord" ]]; then
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
 	echo "  - .alacritty/themes/nord.yml" >> "$alacritty_theme"
+	touch "$alacritty_config"
 fi
 
 echo -e "${green}${bold}Theme changed to $1 successfully.${reset}"
