@@ -11,7 +11,7 @@
 import:
 #import:
 #  - /path/to/alacritty.yml
-  - .alacritty/themes/onehalf-dark.yml
+  - .alacritty/themes/theme.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
