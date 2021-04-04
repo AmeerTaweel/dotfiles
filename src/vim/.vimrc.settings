@@ -70,8 +70,8 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
-" Wrap lines at convenient points, avoid wrapping in the middle of a word
-set linebreak
+" Do not wrap lines
+set nowrap
 
 " Ignore file’s mode lines; use vimrc configurations instead
 set nomodeline
