@@ -2,6 +2,8 @@
 " Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+set colorcolumn=80
+set textwidth=80
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
