@@ -1,6 +1,6 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim Plug Package Manager Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim-Plug Package Manager Configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Install Vim-Plug if not found
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -12,13 +12,17 @@ endif
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"" Theme, Appearance, and Info
+" ## Theme
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" OneHalf: Current theme
+
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 
-" Vim Airline: Vim statusbar
-Plug 'vim-airline/vim-airline'
+Plug 'gruvbox-community/gruvbox'
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'arcticicestudio/nord-vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -58,6 +62,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Vim Airline: Vim statusbar
+Plug 'vim-airline/vim-airline'
 " NERDTree: Tree explorer plugin for Vim
 Plug 'scrooloose/nerdtree'
 
