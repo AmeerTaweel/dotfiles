@@ -1,1 +1,4 @@
+# Ignore theme files
 /src/alacritty/themes/theme.yml
+/src/neovim/nvim.theme.vim
+/src/vim/.vimrc.theme
