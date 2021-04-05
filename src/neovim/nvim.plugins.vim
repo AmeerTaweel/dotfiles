@@ -59,7 +59,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Window Swap: Swap split windows with ease
 Plug 'wesQ3/vim-windowswap'
-source ~/.config/nvim/plugin-config/tmux-navigator.vim
+source ~/.config/nvim/plugin-config/window-swap.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
