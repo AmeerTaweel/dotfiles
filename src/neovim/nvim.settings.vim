@@ -136,6 +136,9 @@ set undofile
 " Always show sign column
 set signcolumn=yes
 
+" Use a block cursor in insert mode
+set guicursor=i:block
+
 " Automatically re-balance windows on resize
 autocmd VimResized * :wincmd =
 
@@ -168,7 +171,7 @@ autocmd BufWritePost * GitGutter
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""
 " Tmux Navigator Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
