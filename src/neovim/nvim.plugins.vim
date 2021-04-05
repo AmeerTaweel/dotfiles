@@ -52,6 +52,9 @@ Plug 'vim-airline/vim-airline'
 " Also installed in Tmux with TPM
 Plug 'christoomey/vim-tmux-navigator'
 
+" Source Vim Tmux Navigator settings
+source ~/.config/nvim/plugin-config/tmux-navigator.vim
+
 " Telescope: Fuzzy Finder
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
