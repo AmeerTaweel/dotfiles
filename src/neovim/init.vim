@@ -13,6 +13,3 @@ source ~/.config/nvim/nvim.settings.vim
 
 " Theme
 source ~/.config/nvim/nvim.theme.vim
-
-" Source init.lua
-luafile ~/.config/nvim/init.lua
