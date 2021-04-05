@@ -137,6 +137,7 @@ nnoremap <leader>gst :Git status<cr>
 " [c -> Previous Hunk
 " <leader>hs -> Stage Hunk
 " <leader>hu -> Undo Hunk
+" <leader>hp -> Preview Hunk
 " ic -> In Hunk
 " ac -> Around Hunk
 
