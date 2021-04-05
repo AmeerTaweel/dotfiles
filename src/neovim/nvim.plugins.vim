@@ -36,6 +36,7 @@ Plug 'tpope/vim-fugitive'
 " Vim Gitgutter: Git diff in sign column
 Plug 'airblade/vim-gitgutter'
 
+" Source Vim Gitgutter settings
 source ~/.config/nvim/plugin-config/vim-gitgutter.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
