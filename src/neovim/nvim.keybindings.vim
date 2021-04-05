@@ -120,6 +120,29 @@ vnoremap <leader>P "+P
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Git
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Fugitive
+nnoremap <leader>gac :Git add %<cr>
+nnoremap <leader>gaa :Git add .<cr>
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gps :Git push<cr>
+nnoremap <leader>gpl :Git pull<cr>
+nnoremap <leader>glg :Git log<cr>
+nnoremap <leader>gst :Git status<cr>
+
+" GitGutter
+" ]c -> Next Hunk
+" [c -> Previous Hunk
+" <leader>hs -> Stage Hunk
+" <leader>hu -> Undo Hunk
+" ic -> In Hunk
+" ac -> Around Hunk
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Code Formatting and Navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE Mappings
@@ -145,19 +168,6 @@ nnoremap <leader>cn :cn<cr>
 " Move to previous location
 nnoremap <leader>cp :cp<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Fugitive (Git) Mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <leader>gac :Git add %<cr>
-nnoremap <leader>gaa :Git add .<cr>
-nnoremap <leader>gc :Git commit<cr>
-nnoremap <leader>gps :Git push<cr>
-nnoremap <leader>gpl :Git pull<cr>
-nnoremap <leader>glg :Git log<cr>
-nnoremap <leader>gst :Git status<cr>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Tabs
