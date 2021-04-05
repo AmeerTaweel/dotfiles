@@ -126,7 +126,7 @@ set history=10000
 " Show incomplete commands at the bottom
 set showcmd
 
-" Save backup, swap, and undo files in the /tmp directory.
+" Save backup, swap, and undo files in the /tmp/nvim directory.
 " This is cleaner than saving them in the current working directory.
 set backupdir=/tmp/nvim//
 set directory=/tmp/nvim//
