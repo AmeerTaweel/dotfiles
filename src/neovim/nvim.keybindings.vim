@@ -202,9 +202,6 @@ vnoremap . :normal.<cr>
 " Toggle spell checking
 nnoremap <leader>ts :set spell! spelllang=en_us<cr>
 
-" Fuzzy Finder Mappings
-nnoremap <leader>ff :Files<cr>
-
 " Window Swap: Swap Window
 nnoremap <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
 
