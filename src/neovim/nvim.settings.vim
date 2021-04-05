@@ -128,9 +128,9 @@ set showcmd
 
 " Save backup, swap, and undo files in the /tmp directory.
 " This is cleaner than saving them in the current working directory.
-set backupdir=/tmp//
-set directory=/tmp//
-set undodir=/tmp//
+set backupdir=/tmp/nvim//
+set directory=/tmp/nvim//
+set undodir=/tmp/nvim//
 
 " Ignore file’s mode lines
 set nomodeline

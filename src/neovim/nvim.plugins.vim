@@ -70,16 +70,13 @@ source ~/.config/nvim/plugin-config/window-swap.vim
 " Vim Commentary: Comments for Vim
 Plug 'tpope/vim-commentary'
 
-" ALE: Check Syntax in Vim Async
-Plug 'dense-analysis/ale'
+" Nvim LSP
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
 
-" You Complete Me: Auto Completion Suggestions
-" Plug 'ycm-core/YouCompleteMe'
-
-" Eclim: Java Code Completion
-Plug 'ervandew/eclim'
-
+" Nvim Treesitter: Syntax Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Vim Multiple Cursors: Multiple Cursors
