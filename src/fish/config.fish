@@ -61,7 +61,7 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 # Open nvim nightly by default
-alias nvim='~/nvim-nightly.appimage'
+ alias nvim='~/nvim-nightly.appimage'
 
 ################################################################################
 
