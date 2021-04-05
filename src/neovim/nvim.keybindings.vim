@@ -127,7 +127,7 @@ vnoremap <leader>P "+P
 nnoremap <leader>gac :Git add %<cr>
 nnoremap <leader>gaa :Git add .<cr>
 nnoremap <leader>gc :Git commit<cr>
-nnoremap <leader>gps :Git push<cr>
+nnoremap <silent> <leader>gps :Git push<cr>
 nnoremap <leader>gpl :Git pull<cr>
 nnoremap <leader>glg :Git log<cr>
 nnoremap <leader>gst :Git status<cr>
