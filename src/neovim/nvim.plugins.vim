@@ -36,6 +36,8 @@ Plug 'tpope/vim-fugitive'
 " Vim Gitgutter: Git diff in sign column
 Plug 'airblade/vim-gitgutter'
 
+source ~/.config/nvim/plugin-config/vim-gitgutter.vim
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -53,6 +55,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -72,6 +75,7 @@ Plug 'dense-analysis/ale'
 " Eclim: Java Code Completion
 Plug 'ervandew/eclim'
 
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Vim Multiple Cursors: Multiple Cursors

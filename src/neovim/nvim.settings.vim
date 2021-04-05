@@ -112,8 +112,13 @@ set title
 " Enable expanding commands with the tab key
 set wildmenu
 
-" Enable folding
-set foldmethod=syntax
+" Enable folding using vim treesitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
+" Split to the right and down
+set splitright
+set splitbelow
 
 " Set the number of saved commands in history
 set history=10000
@@ -157,19 +162,6 @@ autocmd BufRead,BufNewFile *.tmux.conf.* set filetype=tmux
 
 " Expand tabs to spaces in Python code
 autocmd FileType python setlocal expandtab
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ## Vim GitGutter
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Turn line number highlighting on by default
-let g:gitgutter_highlight_linenrs=1
-
-" Check changes on file save
-autocmd BufWritePost * GitGutter
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Tmux Navigator Configuration
