@@ -35,8 +35,6 @@ Plug 'tpope/vim-fugitive'
 
 " Vim Gitgutter: Git diff in sign column
 Plug 'airblade/vim-gitgutter'
-
-" Source Vim Gitgutter settings
 source ~/.config/nvim/plugin-config/vim-gitgutter.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -51,8 +49,6 @@ Plug 'vim-airline/vim-airline'
 " Vim Tmux Navigator: Better vim and tmux navigation
 " Also installed in Tmux with TPM
 Plug 'christoomey/vim-tmux-navigator'
-
-" Source Vim Tmux Navigator settings
 source ~/.config/nvim/plugin-config/tmux-navigator.vim
 
 " Telescope: Fuzzy Finder
@@ -60,6 +56,10 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+" Window Swap: Swap split windows with ease
+Plug 'wesQ3/vim-windowswap'
+source ~/.config/nvim/plugin-config/tmux-navigator.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -93,9 +93,6 @@ Plug 'tpope/vim-surround'
 
 " Emmet: Emmet for Vim
 Plug 'mattn/emmet-vim'
-
-" Window Swap: Swap split windows with ease
-Plug 'wesQ3/vim-windowswap'
 
 " Simpyl Fold: Simple Python Code Folding
 Plug 'tmhedberg/SimpylFold'
