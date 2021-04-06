@@ -12,7 +12,7 @@ let g:ale_fix_on_save = 1
 let b:ale_fixers = {
 	\ "*": ["remove_trailing_lines", "trim_whitespace"],
 	\ "python": ["autoimport", "isort", "autopep8", "black"],
-	\ "cpp": ["astyle", "clangtidy", "uncrustify", "clang-format"]
+	\ "cpp": ["astyle", "clangtidy", "uncrustify", "clang-format"],
 	\ "javascript": ["prettier"],
 	\ "css": ["prettier"],
 	\}
