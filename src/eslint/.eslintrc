@@ -1,0 +1,6 @@
+{
+	// Install eslint-config-prettier
+	"extends": [
+		"prettier"
+	]
+}
