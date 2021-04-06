@@ -180,7 +180,7 @@ nnoremap <leader>ff :Files<cr>
 " Grep content
 nnoremap <leader>fg :Rg<cr>
 " Search files tracked by git
-nnoremap <leader>fg :GitFiles<cr>
+nnoremap <leader>gf :GitFiles<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
