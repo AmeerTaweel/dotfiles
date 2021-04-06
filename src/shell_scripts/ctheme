@@ -29,7 +29,7 @@ fi
 
 # Important directory references
 neovim_theme=~/.config/nvim/nvim.theme.vim
-vim_theme=~/.vimrc.theme
+vim_theme=~/.config/vim/theme.vim
 alacritty_theme=~/.alacritty/themes/theme.yml
 alacritty_config=~/.alacritty.yml
 
