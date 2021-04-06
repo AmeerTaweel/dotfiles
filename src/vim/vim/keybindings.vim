@@ -146,7 +146,7 @@ nnoremap <leader>gst :Git status<cr>
 
 " ALE Mappings
 "" Fix code with ALE
-nnoremap <leader>fc :ALEFix<cr>
+nnoremap <leader>F :ALEFix<cr>
 "" Move to next and previous error with ALE
 nnoremap <silent> <leader>ep :ALEPrevious<cr>
 nnoremap <silent> <leader>en :ALENext<cr>
