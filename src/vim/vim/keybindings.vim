@@ -154,6 +154,7 @@ nnoremap <silent> <leader>en :ALENext<cr>
 " YouCompleteMe Mappings
 nnoremap <leader>to :YcmCompleter GoTo<cr>
 nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
+nmap <c-k> <plug>(YCMHover)
 nnoremap <leader>doc :YcmCompleter GetDoc<cr>
 nnoremap <leader>rf :YcmCompleter RefactorRename<space>
 
