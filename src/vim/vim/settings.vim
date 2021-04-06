@@ -168,6 +168,9 @@ set completeopt=menuone,noinsert,noselect,preview
 " Use diff mode vertical split
 set diffopt+=vertical
 
+" Remove the Netrw banner
+let g:netrw_banner = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Language-Specific Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
