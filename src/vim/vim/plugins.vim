@@ -26,6 +26,19 @@ Plug 'arcticicestudio/nord-vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Git and Version Control
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Fugitive: Git for Vim
+Plug 'tpope/vim-fugitive'
+
+" Vim Gitgutter: Git diff in sign column
+Plug 'airblade/vim-gitgutter'
+source ~/.config/vim/plugins-config/vim-gitgutter.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Others
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -58,16 +71,6 @@ Plug 'ycm-core/YouCompleteMe'
 
 " Eclim: Java Code Completion
 Plug 'ervandew/eclim'
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Git and Version Control
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fugitive: Git for Vim
-Plug 'tpope/vim-fugitive'
-
-" Vim Gitgutter: Git diff in sign column
-Plug 'airblade/vim-gitgutter'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Fuzzy Finder: File finder
