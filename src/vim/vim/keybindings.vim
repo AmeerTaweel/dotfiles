@@ -117,6 +117,30 @@ inoremap <silent><leader>z <c-o>:MaximizerToggle<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Git and Version Control
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Vim Fugitive
+nnoremap <leader>gac :Git add %<cr>
+nnoremap <leader>gaa :Git add .<cr>
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gps :Git push<cr>
+nnoremap <leader>gpl :Git pull<cr>
+nnoremap <leader>glg :Git log<cr>
+nnoremap <leader>gst :Git status<cr>
+
+" Vim GitGutter
+" ]c -> Next Hunk
+" [c -> Previous Hunk
+" <leader>hs -> Stage Hunk
+" <leader>hu -> Undo Hunk
+" <leader>hp -> Preview Hunk
+" ic -> In Hunk
+" ac -> Around Hunk
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Code Formatting and Navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -143,30 +167,6 @@ nnoremap <leader>rf :YcmCompleter RefactorRename<space>
 nnoremap <leader>cn :cn<cr>
 " Move to previous location
 nnoremap <leader>cp :cp<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ## Git and Version Control
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vim Fugitive
-nnoremap <leader>gac :Git add %<cr>
-nnoremap <leader>gaa :Git add .<cr>
-nnoremap <leader>gc :Git commit<cr>
-nnoremap <leader>gps :Git push<cr>
-nnoremap <leader>gpl :Git pull<cr>
-nnoremap <leader>glg :Git log<cr>
-nnoremap <leader>gst :Git status<cr>
-
-" Vim GitGutter
-" ]c -> Next Hunk
-" [c -> Previous Hunk
-" <leader>hs -> Stage Hunk
-" <leader>hu -> Undo Hunk
-" <leader>hp -> Preview Hunk
-" ic -> In Hunk
-" ac -> Around Hunk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
