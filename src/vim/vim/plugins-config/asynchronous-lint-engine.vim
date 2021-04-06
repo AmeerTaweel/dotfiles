@@ -14,5 +14,10 @@ let b:ale_fixers = {
 	\ "python": ["autoimport", "isort", "autopep8", "black"],
 	\ "cpp": ["astyle", "clangtidy", "uncrustify", "clang-format"],
 	\ "javascript": ["prettier"],
-	\ "css": ["prettier"],
+	\ "css": ["prettier"]
+	\}
+
+" Define linters for different languages
+let g:ale_linters = {
+	\   "javascript": ["eslint"]
 	\}
