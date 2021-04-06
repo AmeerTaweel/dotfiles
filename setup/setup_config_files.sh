@@ -109,10 +109,11 @@ for entry in $src_entries; do
 						sub_entry_name=$(basename $sub_entry_path)
 						if [[ -d $sub_entry_path ]]; then
 							echo -e "${tab}Linking ${yellow}${bold}$sub_entry_name${reset} to ${yellow}${bold}$dist_dir${reset}"
+							ln -sf "$sub_entry_path" "$dist_dir"
 						else
 							echo -e "${tab}Linking ${cyan}${bold}$sub_entry_name${reset} to ${yellow}${bold}$dist_dir${reset}"
+							ln -sf "$sub_entry_path" "$dist_dir/$sub_entry_name"
 						fi
-						ln -sf "$sub_entry_path" "$dist_dir/$sub_entry_name"
 					done
 				else
 					echo -e "${tab}${red}${bold}ERROR: Invalid '.setup' file, terminating setup...${reset}"
