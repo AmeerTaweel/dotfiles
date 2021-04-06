@@ -25,17 +25,23 @@ Plug 'arcticicestudio/nord-vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Integration with Tmux
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Others
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Vim Tmux Navigator: Better vim and tmux navigation
 " Also installed in Tmux with TPM
 Plug 'christoomey/vim-tmux-navigator'
 source ~/.config/vim/plugins-config/vim-tmux-navigator.vim
 
-"Vim Tmux Runner
-Plug 'christoomey/vim-tmux-runner'
-""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Airline: Vim statusbar
+Plug 'vim-airline/vim-airline'
+
+" Window Swap: Swap split windows with ease
+Plug 'wesQ3/vim-windowswap'
+source ~/.config/vim/plugins-config/window-swap.vim
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "" Code Formatting, Linting, and Completion
@@ -64,11 +70,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vim Airline: Vim statusbar
-Plug 'vim-airline/vim-airline'
-" NERDTree: Tree explorer plugin for Vim
-Plug 'scrooloose/nerdtree'
-
 " Fuzzy Finder: File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -90,10 +91,6 @@ Plug 'editorconfig/editorconfig-vim'
 
 " Emmet: Emmet for Vim
 Plug 'mattn/emmet-vim'
-
-" Window Swap: Swap split windows with ease
-Plug 'wesQ3/vim-windowswap'
-source ~/.config/vim/plugins-config/window-swap.vim
 
 " Simpyl Fold: Simple Python Code Folding
 Plug 'tmhedberg/SimpylFold'
