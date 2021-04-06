@@ -60,7 +60,6 @@ nnoremap <leader><leader>r :source ~/.config/nvim/init.vim<cr>
 " ## File Explorer
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Manually source init.vim
 nnoremap <leader>ex :Ex<cr>
 nnoremap <leader>sex :Sex<cr>
 nnoremap <leader>vex :Vex<cr>
@@ -154,10 +153,18 @@ nnoremap <silent> <leader>ep :ALEPrevious<cr>
 nnoremap <silent> <leader>en :ALENext<cr>
 
 " YouCompleteMe Mappings
-nnoremap <leader>to :YcmCompleter GoTo<cr>
-nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
-nnoremap <leader>doc :YcmCompleter GetDoc<cr>
-nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+" nnoremap <leader>to :YcmCompleter GoTo<cr>
+" nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
+" nnoremap <leader>doc :YcmCompleter GetDoc<cr>
+" nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+nnoremap <silent> <leader>gd <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <leader>gD <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> <leader>gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> <leader>gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <leader>doc <cmd>lua vim.lsp.buf.hover()<cr>
+nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
