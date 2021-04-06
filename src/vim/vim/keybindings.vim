@@ -181,6 +181,10 @@ nnoremap <leader>ff :Files<cr>
 nnoremap <leader>fg :Rg<cr>
 " Search files tracked by git
 nnoremap <leader>gf :GitFiles<cr>
+" Search buffers
+nnoremap <leader>fb :Buffers<cr>
+" Search buffers content
+nnoremap <leader>fl :Lines<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
