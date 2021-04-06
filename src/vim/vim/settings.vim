@@ -165,6 +165,9 @@ augroup end
 " Auto-completion options
 set completeopt=menuone,noinsert,noselect,preview
 
+" Use diff mode vertical split
+set diffopt+=vertical
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Language-Specific Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
