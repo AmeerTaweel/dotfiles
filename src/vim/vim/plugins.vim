@@ -56,9 +56,10 @@ source ~/.config/vim/plugins-config/window-swap.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-"" Code Formatting, Linting, and Completion
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Code Formatting, Linting, and Completion
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Vim Commentary: Comments for Vim
 Plug 'tpope/vim-commentary'
 
@@ -69,9 +70,7 @@ source ~/.config/vim/plugins-config/asynchronous-lint-engine.vim
 " You Complete Me: Auto Completion Suggestions
 Plug 'ycm-core/YouCompleteMe'
 
-" Eclim: Java Code Completion
-Plug 'ervandew/eclim'
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Fuzzy Finder: File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
