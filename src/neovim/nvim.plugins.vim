@@ -56,6 +56,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+luafile ~/.config/nvim/lua/plugin-telescope.lua
 
 " Window Swap: Swap split windows with ease
 Plug 'wesQ3/vim-windowswap'
@@ -71,8 +72,8 @@ source ~/.config/nvim/plugin-config/window-swap.vim
 Plug 'tpope/vim-commentary'
 
 " Nvim LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'hrsh7th/nvim-compe'
 
 " Nvim Treesitter: Syntax Highlighting
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

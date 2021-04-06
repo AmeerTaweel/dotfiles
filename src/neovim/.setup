@@ -4,3 +4,4 @@
 '*nvim.plugins.vim' : 'f' : '~/.config/nvim/'
 '*nvim.keybindings.vim' : 'f' : '~/.config/nvim/'
 '*plugin-config/*' : 'f' : '~/.config/nvim/plugin-config'
+'*lua/*' : 'f' : '~/.config/nvim/lua'
