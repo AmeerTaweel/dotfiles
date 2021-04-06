@@ -110,24 +110,9 @@ nnoremap <leader>tc  :tabclose<cr>
 " ## Zooming
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-fu! ToggleZoom()
-	" Initialize the zoom state
-	if !exists("g:isZoomed")
-		let g:isZoomed = 0
-	endif
-
-	" Toggle zoom via a new tab
-	if g:isZoomed
-		let g:isZoomed = 0
-		execute "tabclose"
-	else
-		let g:isZoomed = 1
-		execute "tabnew %"
-	endif
-endfunction
-
-" Toggle zoom
-nnoremap <leader>tz :call ToggleZoom()<cr>
+nnoremap <silent><leader>z :MaximizerToggle<cr>
+vnoremap <silent><leader>z :MaximizerToggle<cr>gv
+inoremap <silent><leader>z <c-o>:MaximizerToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 

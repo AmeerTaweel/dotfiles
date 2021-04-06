@@ -54,6 +54,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'wesQ3/vim-windowswap'
 source ~/.config/vim/plugins-config/window-swap.vim
 
+" Vim Maximizer: Zooming window
+Plug 'szw/vim-maximizer'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
