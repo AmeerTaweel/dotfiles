@@ -162,6 +162,9 @@ augroup AutoSaveFolds
 	autocmd BufWinEnter ?* silent! loadview
 augroup end
 
+" Auto-completion options
+set completeopt=menuone,noinsert,noselect,preview
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Language-Specific Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
