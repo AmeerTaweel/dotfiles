@@ -77,6 +77,9 @@ Plug 'szw/vim-maximizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" AG: Silver Searcher for Vim
+Plug 'rking/ag.vim'
+
 " Vim Eunuch: Unix Shell commands in Vim
 Plug 'tpope/vim-eunuch'
 
@@ -92,9 +95,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tmhedberg/SimpylFold'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" AG: Silver Searcher for Vim
-Plug 'rking/ag.vim'
 
 " Vim Multiple Cursors: Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
