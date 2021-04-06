@@ -39,6 +39,22 @@ source ~/.config/vim/plugins-config/vim-gitgutter.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Code Formatting, Linting, and Completion
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Vim Commentary: Comments for Vim
+Plug 'tpope/vim-commentary'
+
+" ALE: Check Syntax in Vim Async
+Plug 'dense-analysis/ale'
+source ~/.config/vim/plugins-config/asynchronous-lint-engine.vim
+
+" You Complete Me: Auto Completion Suggestions
+Plug 'ycm-core/YouCompleteMe'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Others
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -57,27 +73,25 @@ source ~/.config/vim/plugins-config/window-swap.vim
 " Vim Maximizer: Zooming window
 Plug 'szw/vim-maximizer'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ## Code Formatting, Linting, and Completion
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vim Commentary: Comments for Vim
-Plug 'tpope/vim-commentary'
-
-" ALE: Check Syntax in Vim Async
-Plug 'dense-analysis/ale'
-source ~/.config/vim/plugins-config/asynchronous-lint-engine.vim
-
-" You Complete Me: Auto Completion Suggestions
-Plug 'ycm-core/YouCompleteMe'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Fuzzy Finder: File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" Vim Eunuch: Unix Shell commands in Vim
+Plug 'tpope/vim-eunuch'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Language-Specific
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ### Python
+
+" Simpyl Fold: Simple Python Code Folding
+Plug 'tmhedberg/SimpylFold'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " AG: Silver Searcher for Vim
 Plug 'rking/ag.vim'
@@ -85,20 +99,11 @@ Plug 'rking/ag.vim'
 " Vim Multiple Cursors: Multiple Cursors
 Plug 'terryma/vim-multiple-cursors'
 
-" Vim Eunuch: Unix Shell commands in Vim
-Plug 'tpope/vim-eunuch'
-
 " Vim Surround: Auto Complete Surrounding
 Plug 'tpope/vim-surround'
 
-" Editor Config: Global Configuration For All Editors
-Plug 'editorconfig/editorconfig-vim'
-
 " Emmet: Emmet for Vim
 Plug 'mattn/emmet-vim'
-
-" Simpyl Fold: Simple Python Code Folding
-Plug 'tmhedberg/SimpylFold'
 
 " Vim Targets: More text objects to operate on
 Plug 'wellle/targets.vim'
