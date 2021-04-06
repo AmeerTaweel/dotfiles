@@ -172,6 +172,19 @@ nnoremap <leader>cp :cp<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Fuzzy Find
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Find files by name
+nnoremap <leader>ff :Files<cr>
+" Grep content
+nnoremap <leader>fg :Rg<cr>
+" Search files tracked by git
+nnoremap <leader>fg :GitFiles<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" Other Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Semi-colon instead of colon for commands
@@ -195,9 +208,6 @@ vnoremap . :normal.<cr>
 
 " Toggle spell checking
 nnoremap <leader>ts :set spell! spelllang=en_us<cr>
-
-" Fuzzy Finder Mappings
-nnoremap <leader>ff :Files<cr>
 
 " Window Swap: Swap Window
 nnoremap <leader>ww :call WindowSwap#EasyWindowSwap()<cr>

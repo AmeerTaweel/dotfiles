@@ -77,9 +77,6 @@ Plug 'szw/vim-maximizer'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" AG: Silver Searcher for Vim
-Plug 'rking/ag.vim'
-
 " Vim Eunuch: Unix Shell commands in Vim
 Plug 'tpope/vim-eunuch'
 
