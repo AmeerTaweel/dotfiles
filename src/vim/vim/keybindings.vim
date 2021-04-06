@@ -128,6 +128,7 @@ nnoremap <leader>gps :Git push<cr>
 nnoremap <leader>gpl :Git pull<cr>
 nnoremap <leader>glg :Git log<cr>
 nnoremap <leader>gst :Git status<cr>
+nnoremap <leader>gm :G<cr>
 
 " Vim GitGutter
 " ]c -> Next Hunk
