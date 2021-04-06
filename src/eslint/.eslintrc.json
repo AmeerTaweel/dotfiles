@@ -1,6 +1,22 @@
 {
-	// Install eslint-config-prettier
+	"root": true,
+
+	"parserOptions": {
+		"ecmaVersion": 12
+	},
+
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
+	},
+
 	"extends": [
+		// Install eslint-config-prettier
+		"eslint:recommended",
 		"prettier"
-	]
+	],
+
+	"rules": {
+	}
 }
