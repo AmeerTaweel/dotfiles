@@ -13,3 +13,9 @@ source ~/.config/nvim/nvim.settings.vim
 
 " Theme
 source ~/.config/nvim/nvim.theme.vim
+
+" # TODO:
+" 1. lsp
+" 2. treesitter
+" 3. telescope
+" 4. terminal
