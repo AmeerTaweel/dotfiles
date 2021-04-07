@@ -80,6 +80,9 @@ Plug 'junegunn/fzf.vim'
 " Vim Eunuch: Unix Shell commands in Vim
 Plug 'tpope/vim-eunuch'
 
+" Vim Visual Multi: Multiple Cursors
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -92,9 +95,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tmhedberg/SimpylFold'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vim Multiple Cursors: Multiple Cursors
-Plug 'terryma/vim-multiple-cursors'
 
 " Vim Surround: Auto Complete Surrounding
 Plug 'tpope/vim-surround'
