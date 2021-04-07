@@ -83,6 +83,12 @@ Plug 'tpope/vim-eunuch'
 " Vim Visual Multi: Multiple Cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
+" Vim Surround: Auto Complete Surrounding
+Plug 'tpope/vim-surround'
+
+" Vim Targets: More text objects to operate on
+Plug 'wellle/targets.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,15 +101,6 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tmhedberg/SimpylFold'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Vim Surround: Auto Complete Surrounding
-Plug 'tpope/vim-surround'
-
-" Emmet: Emmet for Vim
-Plug 'mattn/emmet-vim'
-
-" Vim Targets: More text objects to operate on
-Plug 'wellle/targets.vim'
 
 " Initialize plugin system
 call plug#end()
