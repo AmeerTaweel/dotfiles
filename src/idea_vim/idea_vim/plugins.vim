@@ -4,3 +4,6 @@
 
 " Emulate vim-commentary
 set commentary
+
+" Emulate vim-surround
+set surround
