@@ -88,6 +88,8 @@ Plug 'tpope/vim-surround'
 
 " Vim Targets: More text objects to operate on
 Plug 'wellle/targets.vim'
+" Cheatsheet
+" https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
