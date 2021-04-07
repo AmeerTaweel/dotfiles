@@ -18,7 +18,7 @@ set colorcolumn=80
 set spell spelllang=en_us
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"" ## Hybrid Line Numbers
+" ## Hybrid Line Numbers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Relative line numbers
