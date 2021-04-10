@@ -1,6 +1,6 @@
-;-------------------------------------------------------------------------------
-; # Emacs Settings
-;-------------------------------------------------------------------------------
+;;-------------------------------------------------------------------------------
+;; # Emacs Settings
+;;-------------------------------------------------------------------------------
 
 ;; Turn off splash screen
 ;; The scratch buffer will show on startup
@@ -33,6 +33,12 @@
 
 ;; Disable line wrapping
 (setq truncate-lines t)
+
+;; Change the directory where emacs saves backup files
 (setq backup-directory-alist `(("." . "/tmp/emacs")))
+
+;; Change backup strategy to not ruin symlinks
 (setq backup-by-copying-when-linked t)
+
+;; Set the auth sources file location
 (setq auth-sources '("~/.authinfo"))
