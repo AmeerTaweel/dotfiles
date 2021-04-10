@@ -1,1 +1,2 @@
-'*' : 'f' : '~/.emacs.d/'
+'*init.el' : 'f' : '~/.emacs.d/'
+'*lisp' : 'd' : '~/.emacs.d/'
