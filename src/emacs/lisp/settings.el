@@ -33,3 +33,6 @@
 
 ;; Disable line wrapping
 (setq truncate-lines t)
+(setq backup-directory-alist `(("." . "/tmp/emacs")))
+(setq backup-by-copying-when-linked t)
+(setq auth-sources '("~/.authinfo"))

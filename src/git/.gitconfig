@@ -5,3 +5,5 @@
 	autocrlf = input
 	editor = code --wait
 	excludesFile = ~/.global-gitignore
+[github]
+	user = ameertaweel2002@gmail.com
