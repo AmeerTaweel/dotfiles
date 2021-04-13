@@ -42,3 +42,7 @@
 
 ;; Set the auth sources file location
 (setq auth-sources '("~/.authinfo"))
+
+;; Automatically reload files was modified by external program
+(global-auto-revert-mode 1)
+(diminish auto-revert-mode)

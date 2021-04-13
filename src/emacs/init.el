@@ -2,15 +2,6 @@
 ;; # Emacs Configuration
 ;;-------------------------------------------------------------------------------
 
-;; Load settings
-(load "~/.emacs.d/lisp/settings")
-
-;; Load packages
-(load "~/.emacs.d/lisp/packages")
-
-;; Load theme
-(load "~/.emacs.d/lisp/theme")
-
 ;;-------------------------------------------------------------------------------
 ;; ## Auto-created Block - Do not edit by hand
 ;;-------------------------------------------------------------------------------
@@ -33,3 +24,16 @@
  )
 
 ;;-------------------------------------------------------------------------------
+
+;; Load settings
+(load "~/.emacs.d/lisp/settings")
+
+;; Load packages
+(load "~/.emacs.d/lisp/packages")
+
+;; Load keybindings
+(load "~/.emacs.d/lisp/keybindings")
+
+;; Load theme
+(load "~/.emacs.d/lisp/theme")
+

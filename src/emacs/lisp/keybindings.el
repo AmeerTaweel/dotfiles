@@ -32,6 +32,14 @@
   (save-all)
   (evil-quit-all))
 
+;; Org mode
+(leader-def
+  :states '(normal visual)
+  "o"  '(:ignore o :which-key "org mode")
+  "oa" '(org-agenda :which-key "agenda")
+  "ol" '(org-agenda-list :which-key "agenda list")
+  "oc" '(org-capture :which-key "capture"))
+
 ;; Saving and Quitting
 (leader-def
   :states '(normal visual)
