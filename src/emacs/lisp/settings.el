@@ -32,7 +32,7 @@
 (setq visible-bell t)
 
 ;; Disable line wrapping
-(setq truncate-lines t)
+(setq-default truncate-lines t)
 
 ;; Change the directory where emacs saves backup files
 (setq backup-directory-alist `(("." . "/tmp/emacs")))
