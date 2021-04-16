@@ -19,6 +19,12 @@ set -g renumber-windows on
 # Address Vim window switching delay
 set -s escape-time 0
 
+# Increase scroll-back buffer size
+set -g history-limit 50000
+
+# Messages are displayed for x seconds
+set -g display-time 4000
+
 ##################################################
 # Panes
 ##################################################
