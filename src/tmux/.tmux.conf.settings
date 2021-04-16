@@ -26,6 +26,9 @@ set -g history-limit 50000
 # Messages are displayed for x seconds
 set -g display-time 4000
 
+# Focus events enabled for terminals that support them
+set -g focus-events on
+
 ##################################################
 # Panes
 ##################################################
