@@ -2,6 +2,10 @@
 ; # Emacs Packages
 ;-------------------------------------------------------------------------------
 
+;-------------------------------------------------------------------------------
+; ## Initialize
+;-------------------------------------------------------------------------------
+
 (require 'package)
 
 ;; Initialize package sources
@@ -24,10 +28,13 @@
 ;; Ensure that all packages are installed
 (setq use-package-always-ensure t)
 
+;; Do not load packages on startup unless explicitly stated
 (setq use-package-always-defer t)
 
 ;; Diminishes minor modes (hides them from status bar)
 (use-package diminish)
+
+;-------------------------------------------------------------------------------
 
 (use-package doom-themes)
 
