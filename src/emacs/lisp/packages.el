@@ -62,6 +62,7 @@
   (setq which-key-idle-delay 0.5)
   (setq which-key-idle-secondary-delay 0.001))
 
+;; Rainbow Delimiters: Highlight delimiters according to their depth
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
