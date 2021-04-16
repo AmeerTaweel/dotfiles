@@ -50,6 +50,7 @@
 
 ;; Better key bindings
 (use-package general
+  :demand t
   :config (general-evil-setup t))
 
 ;; Key binding live list
