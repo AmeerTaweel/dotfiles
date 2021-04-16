@@ -34,6 +34,9 @@
 ;; Diminishes minor modes (hides them from status bar)
 (use-package diminish)
 
+;; Enable to debug packages
+;; (setq use-package-verbose t)
+
 ;-------------------------------------------------------------------------------
 
 ;-------------------------------------------------------------------------------
