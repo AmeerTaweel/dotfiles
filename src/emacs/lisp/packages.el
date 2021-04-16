@@ -48,7 +48,7 @@
 
 ;-------------------------------------------------------------------------------
 
-;; Better key bindings
+;; General: More convenient key definitions in Emacs
 (use-package general
   :demand t
   :config (general-evil-setup t))
