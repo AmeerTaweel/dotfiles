@@ -1,5 +1,5 @@
 ;-------------------------------------------------------------------------------
-; # Emacs Plugin
+; # Emacs Packages
 ;-------------------------------------------------------------------------------
 
 (require 'package)
@@ -23,6 +23,8 @@
 
 ;; Ensure that all packages are installed
 (setq use-package-always-ensure t)
+
+(setq use-package-always-defer t)
 
 ;; Diminishes minor modes (hides them from status bar)
 (use-package diminish)
@@ -121,8 +123,6 @@
 (use-package magit
   :commands (magit-status magit-get-current-branch))
 
-(use-package forge)
-
 (use-package org)
 
 (custom-set-variables
@@ -192,7 +192,21 @@
 (add-to-list 'org-modules 'org-habit)
 (setq org-habit-graph-column 60)
 
-(add-hook 'term-exec-hook
-	  (function
-	   (lambda ()
-	     (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
+(use-package dired
+  :ensure nil
+  :config
+  (setq dired-listing-switches "-agho --group-directories-first")
+  (with-eval-after-load 'evil-collection
+  (evil-collection-define-key 'normal 'dired-mode-map
+    "h" 'dired-up-directory
+    "l" 'dired-find-file)))
+
+(use-package auto-package-update
+  :custom
+  (auto-package-update-interval 1)
+  (auto-package-update-prompt-before-update t)
+  (auto-package-update-hide-results t)
+  :config
+  (auto-package-update-maybe)
+  (auto-package-update-at-time "09:00"))
+
