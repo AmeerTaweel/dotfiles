@@ -67,6 +67,10 @@ bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(
 ##################################################
 # Create a new window in the current path
 bind C-c new-window -c "#{pane_current_path}"
+
+# Easier and faster switching between next/prev window
+bind C-p previous-window
+bind C-n next-window
 ##################################################
 
 ##################################################
