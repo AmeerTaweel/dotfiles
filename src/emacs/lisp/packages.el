@@ -44,6 +44,7 @@
 ;-------------------------------------------------------------------------------
 
 (use-package auto-package-update
+  :demand t
   :custom
   (auto-package-update-interval 1)
   (auto-package-update-prompt-before-update t)
