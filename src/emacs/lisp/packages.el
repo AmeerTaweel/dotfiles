@@ -53,12 +53,12 @@
   :demand t
   :config (general-evil-setup t))
 
-;; Key binding live list
+;; Which Key: Display available keybindings in pop up.
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
   :config
-  (setq which-key-idle-delay 0.25)
+  (setq which-key-idle-delay 0.5)
   (setq which-key-idle-secondary-delay 0.001))
 
 (use-package rainbow-delimiters
