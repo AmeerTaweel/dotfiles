@@ -53,8 +53,9 @@
   :demand t
   :config (general-evil-setup t))
 
-;; Which Key: Display available keybindings in pop up.
+;; Which Key: Display available keybindings in pop up
 (use-package which-key
+  :demand t
   :init (which-key-mode)
   :diminish which-key-mode
   :config
