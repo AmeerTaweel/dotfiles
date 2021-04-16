@@ -2,6 +2,11 @@
 ;; # Emacs Configuration
 ;;-------------------------------------------------------------------------------
 
+;; Increase the garbage collector threshold to make startup faster
+;; The default is 800 kilobytes
+;; Current value is 50 megabytes (measured in bytes)
+(setq gc-cons-threshold (* 50 1000 1000))
+
 ;;-------------------------------------------------------------------------------
 ;; ## Auto-Created Block - Do not edit by hand
 ;;-------------------------------------------------------------------------------
@@ -35,3 +40,7 @@
 
 ;; Load theme
 (load "~/.emacs.d/lisp/theme")
+
+;; Run garbage collector more frequently by decreasing the threshold
+;; Current value is 5 megabytes (measured in bytes)
+(setq gc-cons-threshold (* 5 1000 1000))
