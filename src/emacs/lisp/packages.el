@@ -121,6 +121,7 @@
 
 ;-------------------------------------------------------------------------------
 
+;; Helpful: A better Emacs *help* buffer.
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
