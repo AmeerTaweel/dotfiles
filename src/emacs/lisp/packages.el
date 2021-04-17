@@ -105,14 +105,18 @@
 ;; Choose regex builder of ivy
 (push '(t . ivy--regex-ignore-order) ivy-re-builders-alist)
 
+;; Counsel: A collection of Ivy-enhanced versions of common Emacs commands.
 (use-package counsel
+  :demand t
   :bind (("M-x" . counsel-M-x)
 	 ("C-x b" . counsel-switch-buffer)
 	 ("C-x C-f" . counsel-find-file))
   :config
   (setq ivy-initial-inputs-alist nil)) ;; Remove the ^ from search prompts
 
+;; Ivy-Rich: A more friendly interface for ivy.
 (use-package ivy-rich
+  :demand t
   :init (ivy-rich-mode 1))
 
 ;-------------------------------------------------------------------------------
