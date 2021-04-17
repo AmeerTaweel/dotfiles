@@ -35,7 +35,7 @@
 (use-package diminish)
 
 ;; Enable to debug packages
-(setq use-package-verbose t)
+;; (setq use-package-verbose t)
 
 ;-------------------------------------------------------------------------------
 
