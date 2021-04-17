@@ -179,15 +179,9 @@
  '(org-agenda-files (list org-directory))
  '(org-agenda-window-setup 'other-tab))
 
-;; If you only want to see the agenda for today
-;; (setq org-agenda-span 'day)
-
 (setq org-agenda-start-with-log-mode t)
 (setq org-log-done 'time)
 (setq org-log-into-drawer t)
-
-;; Set custom org mode keywords
-(setq org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d)")))
 
 ;; https://github.com/alphapapa/org-ql
 ;; Configure custom agenda views
@@ -210,26 +204,8 @@
 ;; https://github.com/akhramov/org-wild-notifier.el
 ;; https://github.com/progfolio/doct
 (setq org-capture-templates
-      `(("t" "Tasks / Projects")
-	("tt" "Task" entry (file+olp "tasks.org" "Inbox")
-	 "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
-	("ts" "Clocked Entry Subtask" entry (clock)
-	 "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
-
-	("j" "Journal Entries")
-	("jj" "Journal" entry
-	(file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
-	 "\n* %<%I:%M %p> - Journal :journal:\n\n%?\n\n"
-	 :clock-in :clock-resume
-	 :empty-lines 1)
-	("jm" "Meeting" entry
-	(file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
-	 "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
-	 :clock-in :clock-resume
-	 :empty-lines 1)
-
-	("m" "Metrics Capture")
-	("mw" "Weight" table-line (file+headline "metrics.org" "Weight")
+      `(("m" "Metrics Capture")
+		("mw" "Weight" table-line (file+headline "metrics.org" "Weight")
 	 "| %U | %^{Weight} | %^{Notes} |" :kill-buffer t)))
 
 
