@@ -35,7 +35,7 @@
 (use-package diminish)
 
 ;; Enable to debug packages
-;; (setq use-package-verbose t)
+(setq use-package-verbose t)
 
 ;-------------------------------------------------------------------------------
 
@@ -82,7 +82,13 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+;-------------------------------------------------------------------------------
+; ## Completion Front-End
+;-------------------------------------------------------------------------------
+
+;; Ivy: a generic completion front-end for Emacs
 (use-package ivy
+  :demand t
   :diminish
   :bind (:map ivy-minibuffer-map
 	      ("TAB" . ivy-alt-done)
@@ -108,6 +114,8 @@
 
 (use-package ivy-rich
   :init (ivy-rich-mode 1))
+
+;-------------------------------------------------------------------------------
 
 (use-package helpful
   :custom
@@ -205,12 +213,12 @@
 
 	("j" "Journal Entries")
 	("jj" "Journal" entry
-	 (file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
+	(file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
 	 "\n* %<%I:%M %p> - Journal :journal:\n\n%?\n\n"
 	 :clock-in :clock-resume
 	 :empty-lines 1)
 	("jm" "Meeting" entry
-	 (file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
+	(file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
 	 "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
 	 :clock-in :clock-resume
 	 :empty-lines 1)
@@ -237,4 +245,6 @@
     "h" 'dired-up-directory
     "l" 'dired-find-file)))
 
-
+(use-package whitespace
+  :demand t
+  :init (global-whitespace-mode))
