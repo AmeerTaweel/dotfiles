@@ -115,3 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# Custom Edits
+
+# Enable vi mode by default
+set -o vi
