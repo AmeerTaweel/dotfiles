@@ -16,112 +16,133 @@ bold="\e[1m"
 reset="\e[0m"
 
 # Make sure user provides the theme name
-if [ ! $1 ]; then
+if [[ ! $1 ]]; then
 	echo -e "${red}${bold}ERROR: Theme name not provided.${reset}"
 	exit 1
 fi
 
 # Make sure we take only one argument
-if [ $# -gt 1 ]; then
+if [[ $# -gt 1 ]]; then
 	echo -e "${red}${bold}ERROR: Too many arguments.${reset}"
 	exit 1
 fi
 
+# List of all the valid theme names
+valid_themes=(
+	"gruvbox-dark"
+	"gruvbox-light"
+	"onehalf-dark"
+	"onehalf-light"
+	"dracula"
+	"nord"
+)
+
+# Make sure the theme name is valid
+is_valid_theme_name=0
+
+for theme in "${valid_themes[@]}"; do
+	if [[ "$1" == "$theme" ]]; then
+		is_valid_theme_name=1
+	fi
+done
+
+if [[ ! $is_valid_theme_name ]]; then
+	echo -e "${red}${bold}ERROR: Invalid theme name.${reset}"
+	exit 1
+fi
+
 # Important directory references
-neovim_theme=~/.config/nvim/nvim.theme.vim
 vim_theme=~/.config/vim/theme.vim
-alacritty_theme=~/.alacritty/themes/theme.yml
-alacritty_config=~/.alacritty.yml
+neovim_theme=~/.config/nvim/nvim.theme.vim
 emacs_theme=~/.emacs.d/lisp/theme.el
+alacritty_theme_dir=~/.config/.alacritty/themes
+alacritty_theme=~/.config/.alacritty/themes/theme.yml
+alacritty_config=~/.alacritty.yml
 
 if [[ $1 == "gruvbox-dark" ]]; then
-	# Change NeoVim
-	echo "colorscheme gruvbox" > "$neovim_theme"
-	echo "set background=dark" >> "$neovim_theme"
-
 	# Change Vim
 	echo "colorscheme gruvbox" > "$vim_theme"
 	echo "set background=dark" >> "$vim_theme"
 
-	# Change Alacritty
-	echo "import:" > "$alacritty_theme"
-	echo "  - .alacritty/themes/gruvbox-dark.yml" >> "$alacritty_theme"
-	touch "$alacritty_config"
+	# Change NeoVim
+	echo "colorscheme gruvbox" > "$neovim_theme"
+	echo "set background=dark" >> "$neovim_theme"
 
 	# Change Emacs
 	echo "(load-theme 'doom-gruvbox t)" > "$emacs_theme"
-elif [[ $1 == "gruvbox-light" ]]; then
-	# Change NeoVim
-	echo "colorscheme gruvbox" > "$neovim_theme"
-	echo "set background=light" >> "$neovim_theme"
 
+	# Change Alacritty
+	echo "import:" > "$alacritty_theme"
+	echo "  - $alacritty_theme_dir/gruvbox-dark.yml" >> "$alacritty_theme"
+elif [[ $1 == "gruvbox-light" ]]; then
 	# Change Vim
 	echo "colorscheme gruvbox" > "$vim_theme"
 	echo "set background=light" >> "$vim_theme"
 
-	# Change Alacritty
-	echo "import:" > "$alacritty_theme"
-	echo "  - .alacritty/themes/gruvbox-light.yml" >> "$alacritty_theme"
-	touch "$alacritty_config"
+	# Change NeoVim
+	echo "colorscheme gruvbox" > "$neovim_theme"
+	echo "set background=light" >> "$neovim_theme"
 
 	# Change Emacs
 	echo "(load-theme 'doom-gruvbox-light t)" > "$emacs_theme"
-elif [[ $1 == "onehalf-dark" ]]; then
-	# Change NeoVim
-	echo "colorscheme onehalfdark" > "$neovim_theme"
 
+	# Change Alacritty
+	echo "import:" > "$alacritty_theme"
+	echo "  - $alacritty_theme_dir/gruvbox-light.yml" >> "$alacritty_theme"
+elif [[ $1 == "onehalf-dark" ]]; then
 	# Change Vim
 	echo "colorscheme onehalfdark" > "$vim_theme"
 
-	# Change Alacritty
-	echo "import:" > "$alacritty_theme"
-	echo "  - .alacritty/themes/onehalf-dark.yml" >> "$alacritty_theme"
-	touch "$alacritty_config"
+	# Change NeoVim
+	echo "colorscheme onehalfdark" > "$neovim_theme"
 
 	# Change Emacs
 	echo "(load-theme 'doom-one t)" > "$emacs_theme"
-elif [[ $1 == "onehalf-light" ]]; then
-	# Change NeoVim
-	echo "colorscheme onehalflight" > "$neovim_theme"
 
+	# Change Alacritty
+	echo "import:" > "$alacritty_theme"
+	echo "  - $alacritty_theme_dir/onehalf-dark.yml" >> "$alacritty_theme"
+elif [[ $1 == "onehalf-light" ]]; then
 	# Change Vim
 	echo "colorscheme onehalflight" > "$vim_theme"
 
-	# Change Alacritty
-	echo "import:" > "$alacritty_theme"
-	echo "  - .alacritty/themes/onehalf-light.yml" >> "$alacritty_theme"
-	touch "$alacritty_config"
+	# Change NeoVim
+	echo "colorscheme onehalflight" > "$neovim_theme"
 
 	# Change Emacs
 	echo "(load-theme 'doom-one-light t)" > "$emacs_theme"
-elif [[ $1 == "dracula" ]]; then
-	# Change NeoVim
-	echo "colorscheme dracula" > "$neovim_theme"
 
+	# Change Alacritty
+	echo "import:" > "$alacritty_theme"
+	echo "  - $alacritty_theme_dir/onehalf-light.yml" >> "$alacritty_theme"
+elif [[ $1 == "dracula" ]]; then
 	# Change Vim
 	echo "colorscheme dracula" > "$vim_theme"
 
-	# Change Alacritty
-	echo "import:" > "$alacritty_theme"
-	echo "  - .alacritty/themes/dracula.yml" >> "$alacritty_theme"
-	touch "$alacritty_config"
+	# Change NeoVim
+	echo "colorscheme dracula" > "$neovim_theme"
 
 	# Change Emacs
 	echo "(load-theme 'doom-dracula t)" > "$emacs_theme"
-elif [[ $1 == "nord" ]]; then
-	# Change NeoVim
-	echo "colorscheme nord" > "$neovim_theme"
-
-	# Change Vim
-	echo "colorscheme nord" > "$vim_theme"
 
 	# Change Alacritty
 	echo "import:" > "$alacritty_theme"
-	echo "  - .alacritty/themes/nord.yml" >> "$alacritty_theme"
-	touch "$alacritty_config"
+	echo "  - ~/.config/.alacritty/themes/dracula.yml" >> "$alacritty_theme"
+elif [[ $1 == "nord" ]]; then
+	# Change Vim
+	echo "colorscheme nord" > "$vim_theme"
+
+	# Change NeoVim
+	echo "colorscheme nord" > "$neovim_theme"
 
 	# Change Emacs
 	echo "(load-theme 'doom-nord t)" > "$emacs_theme"
+
+	# Change Alacritty
+	echo "import:" > "$alacritty_theme"
+	echo "  - $alacritty_theme_dir/nord.yml" >> "$alacritty_theme"
 fi
+
+touch "$alacritty_config" # Reload alacritty open windows
 
 echo -e "${green}${bold}Theme changed to $1 successfully.${reset}"
