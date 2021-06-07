@@ -8,7 +8,6 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-setxkbmap -option ctrl:nocaps
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -26,21 +25,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-# Ubuntu make installation of Ubuntu Make binary symlink
-PATH=/home/ameer_taweel/.local/share/umake/bin:$PATH
 
-eval export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
-export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
-export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
-export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
-export MANPATH="/home/linuxbrew/.linuxbrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
 # Set Vim as the default editor
 export EDITOR=vim
-# Enable Homebrew
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# The next two lines are spam
-# test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-# echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
