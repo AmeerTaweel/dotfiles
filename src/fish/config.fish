@@ -48,7 +48,9 @@ set VISUAL "code"
 alias tmux='tmux -u'
 
 # List entries with long format, display the sizes in human readable format, and show hidden entries.
-alias ll='ls -Alh'
+alias ll='ls -AlhF'
+
+alias la='ls -A'
 
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
@@ -56,12 +58,9 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 # Confirm before overwriting something
-alias cp="cp -i"
+alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-
-# Open nvim nightly by default
- alias nvim='~/nvim-nightly.appimage'
 
 ################################################################################
 
