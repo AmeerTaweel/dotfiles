@@ -3,7 +3,7 @@
 	email = ameertaweel2002@gmail.com
 [core]
 	autocrlf = input
-	editor = code --wait
+	editor = vim
 	excludesFile = ~/.global-gitignore
 [github]
 	user = ameertaweel2002@gmail.com
