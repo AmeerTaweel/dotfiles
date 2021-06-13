@@ -52,22 +52,25 @@ set -g visual-activity on
 # Status Bar
 ##################################################
 
-# The number of status bars
-set -g status 2
-
 # Update status bar every x seconds
-set -g status-interval 1
+set -g status-interval 2
+
+# The status bar spans two lines
+set -g status 2
 
 # Global status bar and message styles
 set -g message-style $MSG_STYLE
 set -g status-style $STATUS_STYLE
 
+
 ##################################################
 ## Top Left Status Bar
 ##################################################
 
-# Display session name
-set -g status-format[0] "#[align=left]$LEFT_STATUS_FORMAT #S "
+set -g status-format[0] "#[align=left]"
+
+# Display padded session name
+set -ag status-format[0] "$SESSION_NAME_FORMAT#(tmux-session-name-padding #S)"
 
 ##################################################
 ## Top Center Status Bar
@@ -84,58 +87,63 @@ set -ag status-format[0] "#[align=centre]#{W:#{E:window-status-format},#{E:windo
 ## Top Right Status Bar
 ##################################################
 
-# Customize top right status bar
-# Padding username and hostname awk for alignment
-set -g @status-top-right "$HOSTNAME_FORMAT 💻 #(echo "$(whoami)"@"$(hostname)" | awk '{ printf \"%-28s\", $0 }')"
-# set -ag status-format[0] "#[align=right]$HOSTNAME_FORMAT 💻 #U@#H "
-set -ag @status-top-right "$DATE_FORMAT 📅 #(date +'%a, %d %b %Y') "
-set -ag @status-top-right "$TIME_FORMAT 🕜 #(date +'%H:%M') "
+set -ag status-format[0] "#[align=right]"
 
-set -ag status-format[0] "#[align=right]#{E:@status-top-right}"
+# Display CPU usage percentage
+set -ag status-format[0] "#(tmux-cpu-load-percentage)"
+
+# Separator
+set -ag status-format[0] " "
+
+# Display date
+set -ag status-format[0] "$DATE_FORMAT 📅 #(date +'%a, %d %b %Y') #[default]"
+
+# Separator
+set -ag status-format[0] " "
+
+# Display time
+set -ag status-format[0] "#(tmux-clock)"
 
 ##################################################
 ## Bottom Left Status Bar
 ##################################################
-set -g status-left "#{prefix_highlight}"
-# Show mode (currently only rich and zen modes)
-set -g status-format[1] "#{?window_zoomed_flag,$MODE_FORMAT 🔎 ZEN MODE , RICH MODE }#{E:status-left}"
-set -g @prefix_highlight_fg "#{E:PREFIX_HIGHLIGHT_FG}"
-set -g @prefix_highlight_bg "#{E:PREFIX_HIGHLIGHT_BG}"
+
+set -g status-format[1] "#[align=left]"
+
+# Show zoom state
+set -ag status-format[1] "#{?window_zoomed_flag,$ZOOMED_MODE_FORMAT 🔎 ZOOMED ,\
+$NORMAL_MODE_FORMAT 🔥 NORMAL }#[default]"
+
+# Separator
+set -ag status-format[1] " "
+
+# Show hint on prefix key press
+set -ag status-format[1] "#{?client_prefix,$PREFIX_HIGHLIGHT_FORMAT ^A ,\
+    }#[default]"
+
 ##################################################
 ## Bottom Center Status Bar
 ##################################################
 
-# Not implemented yet
+# Empty Currently
 
 ##################################################
 ## Bottom Right Status Bar
 ##################################################
 
-# CPU Usage
-# Plugin: Tmux CPU
-# Padding #{cpu_percentage} to with awk for alignment
-set -g status-right "#{cpu_bg_color} \
-CPU: #(~/.tmux/plugins/tmux-cpu/scripts/cpu_percentage.sh \
-| awk '{ printf \"%-10s\", $0 }')"
+set -ag status-format[1] "#[align=right]"
 
-# RAM Usage
-# Padding #{ram_percentage} to with awk for alignment
-set -ag status-right "#{ram_bg_color} \
-RAM: #(~/.tmux/plugins/tmux-cpu/scripts/ram_percentage.sh \
-| awk '{ printf \"%-10s\", $0 }')"
+# Display RAM usage
+set -ag status-format[1] "#(tmux-used-ram-percentage)"
 
-# Battery Status
-# Plugin: Tmux Battery
-# Padding #{battery_percentage} with awk for alignment
-set -ag status-right "#{battery_color_bg}#{battery_color_fg} \
-Battery 🔋: #(~/.tmux/plugins/tmux-battery/scripts/battery_percentage.sh \
-| awk '{ printf \"%-8s\", $0 }')"
+# Separator
+set -ag status-format[1] " "
 
-# Connectivity Status
-# Plugin: Tmux Online Status
-set -g @online_icon "$CONNECTIVITY_STATUS_ON_STYLE  Online  "
-set -g @offline_icon "$CONNECTIVITY_STATUS_OFF_STYLE  Offline "
-set -ag status-right "#{online_status}"
+# Display battery percentage and status
+set -ag status-format[1] "#(tmux-battery-percentage-and-status)"
 
-# Put the content of status right in bottom right status bar
-set -ag status-format[1] "#[align=right]#{E:status-right}"
+# Separator
+set -ag status-format[1] " "
+
+# Display Internet connectivity status
+set -ag status-format[1] "#(tmux-connectivity-status)"

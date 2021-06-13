@@ -1,0 +1,35 @@
+#!/bin/bash
+
+: '
+tmux-cpu-load-percentage - Monitor CPU usage in TMUX
+'
+
+# Colors
+bold="#[bold]"
+white_fg="#[fg=white]"
+black_fg="#[fg=black]"
+green_bg="#[bg=green]"
+yellow_bg="#[bg=yellow]"
+red_bg="#[bg=red]"
+reset="#[default]"
+
+# Usage Levels
+low=50
+medium=75
+
+# Actual current value
+cpu_load_percentage=$(mpstat 1 2 | awk 'END{ printf("%.2f\n",100-$NF) }')
+
+# Default state is high state
+color="$red_bg$white_fg$bold"
+
+# Change state as needed
+if (( $(bc <<< "$cpu_load_percentage <= $low") )); then
+	color="$green_bg$black_fg"
+elif (( $(bc <<< "$cpu_load_percentage <= $medium") )); then
+	color="$yellow_bg$black_fg"
+fi
+
+printf "%s" "$color"
+printf "%-14s" " CPU: $cpu_load_percentage% "
+printf "%s" "$reset"

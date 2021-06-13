@@ -1,0 +1,46 @@
+#!/bin/bash
+
+: '
+tmux-battery-percentage-and-status - Monitor battery percentage and state in TMUX
+'
+
+# Colors
+bold="#[bold]"
+white_fg="#[fg=white]"
+black_fg="#[fg=black]"
+green_bg="#[bg=green]"
+yellow_bg="#[bg=yellow]"
+blue_bg="#[bg=blue]"
+cyan_bg="#[bg=cyan]"
+red_bg="#[bg=red]"
+reset="#[default]"
+
+# Usage Levels
+low=50
+medium=75
+
+# Actual current values
+battery_percentage=$(cat /sys/class/power_supply/BAT1/capacity)
+battery_status=$(cat /sys/class/power_supply/BAT1/status)
+
+# Default state is high state
+color="$green_bg$black_fg"
+# Default is discharging sign
+state_emoji="⚡️"
+
+# Change state as needed
+if [[ "$battery_status" == "Charging" ]]; then
+	color="$cyan_bg$black_fg"
+	state_emoji="🔌"
+elif [[ "$battery_status" == "Full" ]]; then
+	color="$green_bg$black_fg"
+	state_emoji="🌟"
+elif (( $(bc <<< "$battery_percentage <= $low") )); then
+	color="$red_bg$white_fg$bold"
+elif (( $(bc <<< "$battery_percentage <= $medium") )); then
+	color="$yellow_bg$black_fg"
+fi
+
+printf "%s" "$color"
+printf "%-23s" " Battery: $battery_percentage% $state_emoji "
+printf "%s" "$reset"

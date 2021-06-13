@@ -8,16 +8,16 @@ if "test ! -d ~/.tmux/plugins/tpm" "run 'git clone https://github.com/tmux-plugi
 set -g @plugin 'tmux-plugins/tpm'
 
 # Tmux Battery: Get Battery Status
-set -g @plugin 'tmux-plugins/tmux-battery'
+# set -g @plugin 'tmux-plugins/tmux-battery'
 
 # Tmux CPU: Get CPU, RAM, and GPU Status
-set -g @plugin 'tmux-plugins/tmux-cpu'
+# set -g @plugin 'tmux-plugins/tmux-cpu'
 
 # Tmux Online Status
-set -g @plugin 'tmux-plugins/tmux-online-status'
+# set -g @plugin 'tmux-plugins/tmux-online-status'
 
 # Tmux Prefrix Highlight: Indicate when the prefix is clicked
-set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+# set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
 
 # Vim Tmux Navigator: Better vim and tmux navigation
 # Also installed in Vim with Vim Plug
