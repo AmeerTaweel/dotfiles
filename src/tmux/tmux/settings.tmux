@@ -23,7 +23,7 @@ set -s escape-time 0
 # Increase scroll-back buffer size
 set -g history-limit 50000
 
-# Messages are displayed for x seconds
+# Messages are displayed for x milliseconds
 set -g display-time 4000
 
 # Focus events enabled for terminals that support them

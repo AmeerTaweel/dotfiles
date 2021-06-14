@@ -19,14 +19,15 @@ unbind C-b
 ##################################################
 ## Splitting
 ##################################################
-# Intuitive bindings to split screen
-bind - split-window -v
-bind / split-window -h
+# Unbind original screen splitting bindings
 unbind '"'
 unbind %
 # Split screen but with the current path
-bind _ split-window -v -c "#{pane_current_path}"
-bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind / split-window -h -c "#{pane_current_path}"
+# Split screen with default path
+bind _ split-window -v
+bind | split-window -h
 ##################################################
 
 ##################################################
@@ -59,7 +60,7 @@ bind C-p choose-buffer
 ## Sessions
 ##################################################
 # Fuzzy navigate to session
-bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
+bind C-j new-window -n fuzzy-switch-session "tmux-fzf-switch-session"
 ##################################################
 
 ##################################################
@@ -67,10 +68,6 @@ bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(
 ##################################################
 # Create a new window in the current path
 bind C-c new-window -c "#{pane_current_path}"
-
-# Easier and faster switching between next/prev window
-bind C-p previous-window
-bind C-n next-window
 ##################################################
 
 ##################################################
