@@ -26,7 +26,7 @@ battery_status=$(cat /sys/class/power_supply/BAT1/status)
 # Default state is high state
 color="$green_bg$black_fg"
 # Default is discharging sign
-state_emoji="⚡️"
+state_emoji="🔋"
 
 # Change state as needed
 if [[ "$battery_status" == "Charging" ]]; then
@@ -42,5 +42,5 @@ elif (( $(bc <<< "$battery_percentage <= $medium") )); then
 fi
 
 printf "%s" "$color"
-printf "%-23s" " Battery: $battery_percentage% $state_emoji "
+printf "%-23s" " $state_emoji Battery: $battery_percentage% "
 printf "%s" "$reset"
