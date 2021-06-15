@@ -7,18 +7,6 @@ set -U fish_user_paths $fish_user_paths $HOME/bin
 # Turn off the greeting message
 set fish_greeting
 
-# Colors One Half Dark Theme
-#	background: '#282c34'
-#	foreground: '#dcdfe4'
-#	black: '#282c34'
-#	red: '#e06c75'
-#	green: '#98c379'
-#	yellow: '#e5c07b'
-#	blue: '#61afef'
-#	magenta: '#c678dd'
-#	cyan: '#56b6c2'
-#	white: '#dcdfe4'
-
 # Autocomplete and Highlight Colors
 set fish_color_normal blue
 set fish_color_autosuggestion '#7d7d7d'
@@ -61,6 +49,8 @@ alias fgrep='fgrep --color=auto'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+alias mux='tmuxinator'
 
 ################################################################################
 

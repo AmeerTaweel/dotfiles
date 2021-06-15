@@ -120,3 +120,6 @@ fi
 
 # Enable vi mode by default
 set -o vi
+
+# Set vim to be the default editor
+export EDITOR=vim
