@@ -3,10 +3,16 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Install Vim-Plug if not found
+" The "curl" and "git" commands must be installed on the system for this to work
 if empty(glob('~/.vim/autoload/plug.vim'))
-	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-	\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
@@ -63,6 +69,9 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'christoomey/vim-tmux-navigator'
 source ~/.config/vim/plugins-config/vim-tmux-navigator.vim
 
+" Tmux.vim: Plugin for vim to enhance dealing with tmux config files
+Plug 'tmux-plugins/vim-tmux'
+
 " Vim Airline: Vim statusbar
 Plug 'vim-airline/vim-airline'
 
@@ -107,7 +116,6 @@ Plug 'tmhedberg/SimpylFold'
 " Initialize plugin system
 call plug#end()
 
-" Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 	\| PlugInstall --sync | source $MYVIMRC
 	\| endif
