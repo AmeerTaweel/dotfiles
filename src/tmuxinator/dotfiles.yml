@@ -57,6 +57,9 @@ root: ~/Documents/dotfiles
 #   - logs: tail -f log/development.log
 
 windows:
-  - TMUX:
+  - tmux:
       root: ~/Documents/dotfiles/src/tmux
       panes: vim -O tmux/settings.tmux tmux/keybindings.tmux tmux/plugins.tmux
+  - tmuxinator:
+      root: ~/Documents/dotfiles/src/tmuxinator
+      panes: vim -O dotfiles.yml
