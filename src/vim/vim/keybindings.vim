@@ -112,7 +112,6 @@ nnoremap <leader>tc  :tabclose<cr>
 
 nnoremap <silent><leader>z :MaximizerToggle<cr>
 vnoremap <silent><leader>z :MaximizerToggle<cr>gv
-inoremap <silent><leader>z <c-o>:MaximizerToggle<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -160,7 +159,7 @@ nnoremap <silent> <leader>en :ALENext<cr>
 " YouCompleteMe Mappings
 nnoremap <leader>to :YcmCompleter GoTo<cr>
 nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
-nmap <c-k> <plug>(YCMHover)
+" nmap <c-k> <plug>(YCMHover)
 nnoremap <leader>doc :YcmCompleter GetDoc<cr>
 nnoremap <leader>rf :YcmCompleter RefactorRename<space>
 
@@ -183,13 +182,11 @@ nnoremap <leader>cp :cp<cr>
 
 " Find files by name
 nnoremap <leader>ff :Files<cr>
-" Grep content
-nnoremap <leader>fg :Rg<cr>
-" Search files tracked by git
-nnoremap <leader>gf :GitFiles<cr>
-" Search buffers
+" Search current buffer content
+nnoremap <leader>fc :BLines<cr>
+" Search buffers by name
 nnoremap <leader>fb :Buffers<cr>
-" Search buffers content
+" Search content of open buffers
 nnoremap <leader>fl :Lines<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -198,15 +195,14 @@ nnoremap <leader>fl :Lines<cr>
 " ## Other Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Semi-colon instead of colon for commands
-nnoremap ; :
-vnoremap ; :
-
 " Enter creates a new line in normal mode
 nnoremap <cr> o<esc>
 
+" Go back in the last t, f, T, and F using space
+nnoremap <space> ,
+
 " Enable folding with the space bar
-nnoremap <space> za
+" nnoremap <space> za
 
 " Remove highlighted search results
 nnoremap <leader>noh :noh<cr>
