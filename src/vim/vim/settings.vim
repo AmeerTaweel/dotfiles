@@ -77,6 +77,9 @@ set shiftwidth=4 tabstop=4 softtabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Allow leaving buffers without saving, leaving buffer in background
+set hidden
+
 " Highlight cursor line and column
 set cursorline
 set cursorcolumn
