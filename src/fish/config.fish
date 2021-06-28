@@ -2,7 +2,7 @@
 fish_vi_key_bindings
 
 # Let Fish look at the bin folder at the home directory to find scripts
-set -U fish_user_paths $fish_user_paths $HOME/bin
+set -U fish_user_paths $fish_user_paths $HOME/bin $HOME/.local/bin
 
 # Turn off the greeting message
 set fish_greeting
