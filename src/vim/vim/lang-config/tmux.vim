@@ -6,4 +6,8 @@
 set ttymouse=xterm2
 
 " Syntax highlighting for Tmux configuration files
-autocmd BufRead,BufNewFile *.tmux.conf.* set filetype=tmux
+augroup TmuxFixFileType
+	autocmd!
+	autocmd BufRead,BufNewFile .tmux.conf set filetype=tmux
+	autocmd BufRead,BufNewFile *.tmux set filetype=tmux
+augroup end
