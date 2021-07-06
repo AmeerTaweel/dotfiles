@@ -104,7 +104,6 @@ Plug '~/.vim/plugged-manual/ZoomWin'
 " Simpyl Fold: Simple Python Code Folding
 Plug 'tmhedberg/SimpylFold'
 
-
 " ### JSON-C
 
 " JSON-C Support for VIM
