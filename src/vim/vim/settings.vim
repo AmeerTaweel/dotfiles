@@ -2,21 +2,6 @@
 " # Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Use UTF-8 Encoding
-set encoding=UTF-8
-
-" Enable syntax highlighting
-syntax enable
-
-" Set characters-per-line-limit
-set textwidth=80
-
-" Show column indicating the characters-per-line-recommended-limit
-set colorcolumn=80
-
-" Enable spell checking
-set spell spelllang=en_us
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Hybrid Line Numbers
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -76,6 +61,39 @@ set noexpandtab
 set shiftwidth=4 tabstop=4 softtabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Temporary Files
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Make sure the directory /tmp/vim exists
+if !isdirectory("/tmp/vim")
+	silent !mkdir -p /tmp/vim
+	echo "Directory /tmp/vim created."
+endif
+" Save backup, swap, and undo files in the /tmp/vim directory.
+" This is cleaner than saving them in the current working directory.
+set backupdir=/tmp/vim//
+set directory=/tmp/vim//
+set undodir=/tmp/vim//
+
+
+" Enable Persistent Undo
+set undofile
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use UTF-8 Encoding
+set encoding=UTF-8
+
+" Enable syntax highlighting
+syntax enable
+
+" Set characters-per-line-limit
+set textwidth=80
+
+" Show column indicating the characters-per-line-recommended-limit
+set colorcolumn=80
 
 " Allow leaving buffers without saving, leaving buffer in background
 set hidden
@@ -139,22 +157,8 @@ set history=10000
 " Show incomplete commands at the bottom
 set showcmd
 
-" Make sure the directory /tmp/vim exists
-if !isdirectory("/tmp/vim")
-	silent !mkdir -p /tmp/vim
-	echo "Directory /tmp/vim created."
-endif
-" Save backup, swap, and undo files in the /tmp/vim directory.
-" This is cleaner than saving them in the current working directory.
-set backupdir=/tmp/vim//
-set directory=/tmp/vim//
-set undodir=/tmp/vim//
-
 " Ignore file’s mode lines
 set nomodeline
-
-" Enable Persistent Undo
-set undofile
 
 " Always show sign column
 set signcolumn=yes
@@ -184,6 +188,29 @@ set diffopt+=vertical
 " Remove the Netrw banner
 let g:netrw_banner = 0
 
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=100
+
+" Don't pass messages to |insertion-completion-menu|.
+set shortmess+=c
+
+" Use bash as the default shell
+" This solves speed issue when using fish shell
+set shell=/bin/bash
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Custom Commands
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Find TODO's and FIXME's in the project in a quickfix list
+command TodoList noautocmd vimgrep /TODO\|FIXME/j ** | cw
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Language-Specific Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -193,5 +220,8 @@ source ~/.config/vim/lang-config/tmux.vim
 
 " Python
 source ~/.config/vim/lang-config/python.vim
+
+" Man Pages
+source ~/.config/vim/lang-config/man-pages.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

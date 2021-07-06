@@ -82,11 +82,14 @@ nnoremap <leader>/ :vsplit<cr>
 " ## System Clipboard
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" NOTE: Vim needs to be compiled with the +clipboard flag for this to work.
+
 " Normal Mode
 nnoremap <leader>y "+y
 nnoremap <leader>d "+d
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
+
 
 " Visual Mode
 vnoremap <leader>d "+d
@@ -101,7 +104,6 @@ vnoremap <leader>P "+P
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <leader>tn  :tabnew<cr>
-nnoremap <leader>tl  :tablast<cr>
 nnoremap <leader>tc  :tabclose<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -110,8 +112,28 @@ nnoremap <leader>tc  :tabclose<cr>
 " ## Zooming
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nnoremap <silent><leader>z :MaximizerToggle<cr>
-vnoremap <silent><leader>z :MaximizerToggle<cr>gv
+nnoremap <silent><leader>z :ZoomWin<cr>
+" The <c-u> in the command prevents the range error
+" More info in this thread:
+" https://vi.stackexchange.com/questions/7149/mapping-a-command-in-visual-mode-results-in-error-e481-no-range-alllowed
+vnoremap <silent><leader>z :<c-u>ZoomWin<cr>gv
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ## Fuzzy Find
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Find files by name
+nnoremap <leader>ff :Files<cr>
+" Search current buffer content
+nnoremap <leader>fc :BLines<cr>
+" Search buffers by name
+nnoremap <leader>fb :Buffers<cr>
+" Search content of open buffers
+nnoremap <leader>fl :Lines<cr>
+" Search in project files content
+nnoremap <leader>fp :Rg<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -151,17 +173,17 @@ nnoremap <leader>gm :G<cr>
 
 " ALE Mappings
 "" Fix code with ALE
-nnoremap <leader>F :ALEFix<cr>
+" nnoremap <leader>F :ALEFix<cr>
 "" Move to next and previous error with ALE
-nnoremap <silent> <leader>ep :ALEPrevious<cr>
-nnoremap <silent> <leader>en :ALENext<cr>
+" nnoremap <silent> <leader>ep :ALEPrevious<cr>
+" nnoremap <silent> <leader>en :ALENext<cr>
 
 " YouCompleteMe Mappings
-nnoremap <leader>to :YcmCompleter GoTo<cr>
-nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
+" nnoremap <leader>to :YcmCompleter GoTo<cr>
+" nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
 " nmap <c-k> <plug>(YCMHover)
-nnoremap <leader>doc :YcmCompleter GetDoc<cr>
-nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+" nnoremap <leader>doc :YcmCompleter GetDoc<cr>
+" nnoremap <leader>rf :YcmCompleter RefactorRename<space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -177,21 +199,6 @@ nnoremap <leader>cp :cp<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ## Fuzzy Find
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Find files by name
-nnoremap <leader>ff :Files<cr>
-" Search current buffer content
-nnoremap <leader>fc :BLines<cr>
-" Search buffers by name
-nnoremap <leader>fb :Buffers<cr>
-" Search content of open buffers
-nnoremap <leader>fl :Lines<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ## Other Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -201,9 +208,6 @@ nnoremap <cr> o<esc>
 " Go back in the last t, f, T, and F using space
 nnoremap <space> ,
 
-" Enable folding with the space bar
-" nnoremap <space> za
-
 " Remove highlighted search results
 nnoremap <leader>noh :noh<cr>
 
@@ -212,9 +216,6 @@ nnoremap <leader>rg :reg<cr>
 
 " Make . to work with visually selected lines
 vnoremap . :normal.<cr>
-
-" Toggle spell checking
-nnoremap <leader>ts :set spell! spelllang=en_us<cr>
 
 " Window Swap: Swap Window
 nnoremap <leader>ww :call WindowSwap#EasyWindowSwap()<cr>
