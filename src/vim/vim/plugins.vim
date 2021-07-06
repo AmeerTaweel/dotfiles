@@ -71,6 +71,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'wesQ3/vim-windowswap'
 source ~/.config/vim/plugins-config/window-swap.vim
 
+" ZoomWin: Zoom windows
+Plug '~/.vim/plugged-manual/ZoomWin'
+
 " Fuzzy Finder: File finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -81,16 +84,16 @@ Plug 'tpope/vim-eunuch'
 " Vim Visual Multi: Multiple Cursors
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
-" Vim Surround: Auto Complete Surrounding
-Plug 'tpope/vim-surround'
-
 " Vim Targets: More text objects to operate on
 Plug 'wellle/targets.vim'
 " Cheatsheet
 " https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 
-" ZoomWin: Zoom windows
-Plug '~/.vim/plugged-manual/ZoomWin'
+" Vim Surround: Quoting and parenthesizing made simple
+Plug 'tpope/vim-surround'
+
+" Vim Repeat: Enable repeating supported plugin maps with "."
+Plug 'tpope/vim-repeat'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
