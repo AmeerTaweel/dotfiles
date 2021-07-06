@@ -1,0 +1,15 @@
+{
+  "snippets.userSnippetsDirectory": "~/.config/ulti-snippets",
+  "clangd.path": "/home/ameer-taweel/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd",
+  "xml.java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+  "java.home": "/usr/lib/jvm/java-11-openjdk-amd64",
+  "diagnostic-languageserver.filetypes": {
+	  "vim": "vint",
+	  "markdown": "write-good",
+	  "sh": "shellcheck"
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+	  "python": ["black", "isort"],
+	  "sh": "shfmt"
+  }
+}
