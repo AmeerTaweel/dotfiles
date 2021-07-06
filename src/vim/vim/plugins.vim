@@ -64,7 +64,6 @@ Plug 'tpope/vim-commentary'
 Plug 'christoomey/vim-tmux-navigator'
 source ~/.config/vim/plugins-config/vim-tmux-navigator.vim
 
-
 " Vim Airline: Vim statusbar
 Plug 'vim-airline/vim-airline'
 
