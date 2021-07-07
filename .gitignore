@@ -3,3 +3,6 @@
 /src/neovim/nvim.theme.vim
 /src/vim/vim/theme.vim
 /src/emacs/lisp/theme.el
+
+# Ignore SSH Config
+/src/ssh
