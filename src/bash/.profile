@@ -28,3 +28,6 @@ fi
 
 # Set Vim as the default editor
 export EDITOR=vim
+
+# Run SXHKD Hotkey Daemon on startup
+sxhkd&
