@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+	echo "What manual page do you want?"
+	echo "For example, try 'vman man'."
+	exit 1
+elif [ $# -ne 1 ]; then
+	echo "vman accepts only one argument."
+	exit 1
+elif ! man -w "$@" > /dev/null; then
+	# Check that manpage exists to prevent visual noise.
+	exit 1
+fi
+
+if [[ $EDITOR == "vim" || $EDITOR == "nvim" ]]; then
+	$EDITOR -c "Man $1" -c "silent only"
+else
+	vim -c "Man $1" -c "silent only"
+fi
