@@ -64,8 +64,8 @@ nnoremap <leader><leader>r :source $MYVIMRC<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <leader>ex :Ex<cr>
-nnoremap <leader>sex :Sex<cr>
-nnoremap <leader>vex :Vex<cr>
+nnoremap <leader>sx :Sex<cr>
+nnoremap <leader>vx :Vex<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -141,7 +141,8 @@ nnoremap <leader>fp :Rg<cr>
 " ## Git and Version Control
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Vim Fugitive
+" ### Vim Fugitive
+
 nnoremap <leader>gac :Git add %<cr>
 nnoremap <leader>gaa :Git add .<cr>
 nnoremap <leader>gc :Git commit<cr>
@@ -149,21 +150,25 @@ nnoremap <leader>gps :Git push<cr>
 nnoremap <leader>gpl :Git pull<cr>
 nnoremap <leader>glg :Git log<cr>
 nnoremap <leader>gst :Git status<cr>
-"" Opens git status with the ability to stage and unstage commits
-""	s -> stage
-""	u -> unstage
-""	= -> see diff
-""	cc -> commit
+" Opens git status with the ability to stage and unstage commits
+"	s -> stage
+"	u -> unstage
+"	= -> see diff
+"	cc -> commit
 nnoremap <leader>gm :G<cr>
 
-" Vim GitGutter
-" ]c -> Next Hunk
-" [c -> Previous Hunk
-" <leader>hs -> Stage Hunk
-" <leader>hu -> Undo Hunk
-" <leader>hp -> Preview Hunk
-" ic -> In Hunk
-" ac -> Around Hunk
+" ### CoC Git
+
+" Next Hunk
+nmap <leader>hn <plug>(coc-git-nextchunk)
+" Previous Hunk
+nmap <leader>hp <plug>(coc-git-prevchunk)
+" Preview Hunk Info
+nnoremap <silent> <leader>hi :CocCommand git.chunkInfo<cr>
+" Stage Hunk
+nnoremap <silent> <leader>hs :CocCommand git.chunkStage<cr>
+" Undo Hunk
+nnoremap <silent> <leader>hu :CocCommand git.chunkUndo<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -171,19 +176,87 @@ nnoremap <leader>gm :G<cr>
 " ## Code Formatting and Navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ALE Mappings
-"" Fix code with ALE
-" nnoremap <leader>F :ALEFix<cr>
-"" Move to next and previous error with ALE
-" nnoremap <silent> <leader>ep :ALEPrevious<cr>
-" nnoremap <silent> <leader>en :ALENext<cr>
+" ### Navigation
 
-" YouCompleteMe Mappings
-" nnoremap <leader>to :YcmCompleter GoTo<cr>
-" nnoremap <leader>tf :YcmCompleter GoToReferences<cr>
-" nmap <c-k> <plug>(YCMHover)
-" nnoremap <leader>doc :YcmCompleter GetDoc<cr>
-" nnoremap <leader>rf :YcmCompleter RefactorRename<space>
+nmap <silent> <leader>dp <plug>(coc-diagnostic-prev)
+nmap <silent> <leader>dn <plug>(coc-diagnostic-next)
+
+" GoTo code navigation
+nmap <silent> gd <plug>(coc-definition)
+nmap <silent> gy <plug>(coc-type-definition)
+nmap <silent> gi <plug>(coc-implementation)
+nmap <silent> gr <plug>(coc-references)
+
+" ### Actions
+
+" Symbol renaming
+nmap <leader>rn <plug>(coc-rename)
+
+" Format all code in the buffer
+nnoremap <leader>fa :call CocAction("format")<cr>
+" Formatting selected code
+xmap <leader>fs <plug>(coc-format-selected)
+nmap <leader>fs <plug>(coc-format-selected)
+
+" Organize imports of the current buffer
+nnoremap <leader>oi :CocCommand editor.action.organizeImport<cr>
+
+" Show available code actions
+nmap <leader>ac <plug>(coc-codeaction)
+" Apply auto fix in the current line
+nmap <leader>fx <plug>(coc-fix-current)
+
+" Show documentation in a preview window
+nnoremap <silent> <leader>ds :call <sid>showDocumentation()<cr>
+
+function! s:showDocumentation()
+	if (index(["vim","help"], &filetype) >= 0)
+		execute "h ".expand("<cword>")
+	elseif (coc#rpc#ready())
+		call CocActionAsync("doHover")
+	else
+		execute "!" . &keywordprg . " " . expand("<cword>")
+	endif
+endfunction
+
+" Remap <c-f> and <c-b> to scroll long float windows/popups
+if has("nvim-0.4.0") || has("patch-8.2.0750")
+	" Remap <c-f>
+	nnoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"
+	inoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<right>"
+	vnoremap <silent><nowait><expr> <c-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<c-f>"
+	" Remap <c-b>
+	nnoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"
+	inoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<left>"
+	vnoremap <silent><nowait><expr> <c-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<c-b>"
+endif
+
+" ### CoCList
+
+" Show all diagnostics
+nnoremap <silent><nowait> <leader>da  :<C-u>CocList diagnostics<cr>
+" Find symbol of current document
+nnoremap <silent><nowait> <leader>bs  :<C-u>CocList outline<cr>
+" Search project symbols
+nnoremap <silent><nowait> <leader>ps  :<C-u>CocList -I symbols<cr>
+" Resume latest coc list
+nnoremap <silent><nowait> <leader>rl  :<C-u>CocListResume<CR>
+
+" ### Math
+
+" Replace result on current expression
+nmap <leader>mr <plug>(coc-calc-result-replace)
+
+" ### Snippets
+
+" Use <c-j> for both expand and jump (make expand higher priority.)
+imap <c-j> <plug>(coc-snippets-expand-jump)
+" Use <c-j> for select text for visual placeholder of snippet.
+vmap <c-j> <plug>(coc-snippets-select)
+" Use <c-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = "<c-j>"
+" Use <c-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = "<c-k>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
