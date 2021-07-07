@@ -1,0 +1,9 @@
+# ~/.config/tmuxinator/system.yml
+
+name: system
+root: ~/Documents/system
+
+windows:
+  - ubuntu-packages:
+      root: ~/Documents/system
+      panes: vim -O ubuntu-essential-packages-and-programs.md

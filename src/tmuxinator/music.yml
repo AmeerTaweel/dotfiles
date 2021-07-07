@@ -1,0 +1,9 @@
+# ~/.config/tmuxinator/music.yml
+
+name: music
+root: ~/Music
+
+windows:
+  - music-server:
+      root: ~/Music
+      panes: mpg123 --shuffle --loop -1 */*
