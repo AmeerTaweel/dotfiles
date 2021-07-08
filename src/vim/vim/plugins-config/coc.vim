@@ -34,7 +34,8 @@ let g:coc_global_extensions = [
 			\"coc-vimlsp",
 			\"coc-xml",
 			\"coc-toml",
-			\"coc-java"
+			\"coc-java",
+			\"coc-kotlin"
 			\]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
