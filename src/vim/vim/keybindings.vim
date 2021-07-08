@@ -251,8 +251,6 @@ nmap <leader>mr <plug>(coc-calc-result-replace)
 
 " ### Snippets
 
-" Use <c-j> for both expand and jump (make expand higher priority.)
-imap <c-j> <plug>(coc-snippets-expand-jump)
 " Use <c-j> for select text for visual placeholder of snippet.
 vmap <c-j> <plug>(coc-snippets-select)
 " Use <c-j> for jump to next placeholder, it's default of coc.nvim
