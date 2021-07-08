@@ -1,0 +1,30 @@
+################################################################################
+# JavaScript Snippets
+################################################################################
+
+snippet tmpcp "Node.js Competitive Programming Template" b
+"use strict"
+
+process.stdin.resume()
+process.stdin.setEncoding("utf-8")
+
+let inputString = ""
+let currentLine = 0
+
+process.stdin.on("data", inputStdin => {
+	inputString += inputStdin
+})
+
+process.stdin.on("end", _ => {
+	inputString = inputString.trim().split("\n").map(string => string.trim())
+	main()
+})
+
+const readLine = () => inputString[currentLine++]
+
+const print = (data) => console.log(data)
+
+function main() {
+$0
+}
+endsnippet
