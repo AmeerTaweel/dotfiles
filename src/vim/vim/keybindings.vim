@@ -234,13 +234,15 @@ endif
 " ### CoCList
 
 " Show all diagnostics
-nnoremap <silent><nowait> <leader>da  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>da  :<c-u>CocList diagnostics<cr>
 " Find symbol of current document
-nnoremap <silent><nowait> <leader>bs  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>bs  :<c-u>CocList outline<cr>
 " Search project symbols
-nnoremap <silent><nowait> <leader>ps  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader>ps  :<c-u>CocList -I symbols<cr>
+" Yanked Text List
+nnoremap <silent><nowait> <leader>yl  :<c-u>CocList yank<cr>
 " Resume latest coc list
-nnoremap <silent><nowait> <leader>rl  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader>rl  :<c-u>CocListResume<cr>
 
 " ### Math
 
