@@ -63,6 +63,9 @@ augroup end
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+" Enable CTRL+j to confirm selection
+inoremap <expr> <c-j> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
