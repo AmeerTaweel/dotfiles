@@ -31,3 +31,6 @@ export EDITOR=vim
 
 # Set the Caps-Lock key to CTRL
 setxkbmap -layout us -option ctrl:nocaps
+
+# Run the g-music-player
+gmp start&
