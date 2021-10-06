@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+username=$(whoami)
+
+sudo pkill -u "$username"
