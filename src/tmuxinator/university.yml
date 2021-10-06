@@ -1,0 +1,34 @@
+# ~/.config/tmuxinator/system.yml
+
+name: university
+root: ~/ubuntu-secondary/koç_university
+
+windows:
+  - HUMS136:
+      root: ~/ubuntu-secondary/koç_university/HUMS136/Notes
+      panes:
+        - vim -p *.md
+  - MATH204:
+      root: ~/ubuntu-secondary/koç_university/MATH204/Notes
+      panes:
+        - vim -p *.md
+  - "DE Course - PL":
+      root: "~/ubuntu-secondary/koç_university/MATH204/Differential Equations Course - Professor Leonard"
+      panes:
+        - vim -p *.md
+  - COMP201:
+      root: ~/ubuntu-secondary/koç_university/COMP201/Notes
+      panes:
+        - vim -p *.md
+  - ECON100:
+      root: ~/ubuntu-secondary/koç_university/ECON100/Notes
+      panes:
+        - vim -p *.md
+  - COMP341:
+      root: ~/ubuntu-secondary/koç_university/COMP201/Notes
+      panes:
+        - vim -p *.md
+  - MATH404:
+      root: ~/ubuntu-secondary/koç_university/MATH404/Notes
+      panes:
+        - vim -p *.md
