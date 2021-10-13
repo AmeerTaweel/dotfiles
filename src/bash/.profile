@@ -34,3 +34,6 @@ setxkbmap -layout us -option ctrl:nocaps
 
 # Run the g-music-player
 gmp start&
+
+# Turn on numlock by default
+numlockx on
