@@ -12,20 +12,16 @@ windows:
       root: ~/ubuntu-secondary/koç_university/MATH204/Notes
       panes:
         - vim -p *.md
-  - "DE Course - PL":
-      root: "~/ubuntu-secondary/koç_university/MATH204/Differential Equations Course - Professor Leonard"
-      panes:
-        - vim -p *.md
   - COMP201:
       root: ~/ubuntu-secondary/koç_university/COMP201/Notes
       panes:
         - vim -p *.md
   - ECON100:
-      root: ~/ubuntu-secondary/koç_university/ECON100/Notes
+      root: ~/ubuntu-secondary/koç_university/ECON100
       panes:
-        - vim -p *.md
+        - vim notes.md
   - COMP341:
-      root: ~/ubuntu-secondary/koç_university/COMP201/Notes
+      root: ~/ubuntu-secondary/koç_university/COMP341/Notes
       panes:
         - vim -p *.md
   - MATH404:
