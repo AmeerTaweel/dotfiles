@@ -20,10 +20,6 @@ windows:
       root: ~/ubuntu-secondary/koç_university/ECON100
       panes:
         - vim notes.md
-  - COMP341:
-      root: ~/ubuntu-secondary/koç_university/COMP341/Notes
-      panes:
-        - vim -p *.md
   - MATH404:
       root: ~/ubuntu-secondary/koç_university/MATH404/Notes
       panes:
