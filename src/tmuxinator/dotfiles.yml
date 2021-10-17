@@ -65,4 +65,4 @@ windows:
       panes: vim -O settings.tmux keybindings.tmux plugins.tmux
   - tmuxinator:
       root: ~/Documents/dotfiles/src/tmuxinator
-      panes: vim -O dotfiles.yml system.yml music.yml
+      panes: vim -O dotfiles.yml system.yml university.yml
