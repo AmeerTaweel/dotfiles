@@ -4,6 +4,10 @@ fish_vi_key_bindings
 # Let Fish look at the bin folder at the home directory to find scripts
 set -U fish_user_paths $fish_user_paths $HOME/bin $HOME/.local/bin
 
+# Configure Deno
+set DENO_INSTALL $HOME/.deno
+set -U fish_user_paths $fish_user_paths $DENO_INSTALL/bin
+
 # Turn off the greeting message
 set fish_greeting
 
@@ -27,6 +31,7 @@ set fish_pager_color_background --background=background
 set EDITOR "vim"
 # Set visual editor to VSCode
 set VISUAL "code"
+
 
 ################################################################################
 # Aliases
@@ -54,6 +59,9 @@ alias mux='tmuxinator'
 
 alias nnn='nnn -e'
 
+alias vim="vim"
+alias nvim='~/applications/nvim.appimage'
+
 ################################################################################
 
 ################################################################################
@@ -62,7 +70,7 @@ alias nnn='nnn -e'
 
 # Scroll through suggestions
 bind \t complete
-bind -M insert \t complete
+bind -m insert \t complete
 
 # Accept the next word with tab + n
 bind \tn forward-word

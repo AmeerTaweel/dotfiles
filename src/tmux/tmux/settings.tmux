@@ -55,16 +55,12 @@ set -g visual-activity on
 # Update status bar every x seconds
 set -g status-interval 2
 
-# The status bar spans two lines
-set -g status 2
-
 # Global status bar and message styles
 set -g message-style $MSG_STYLE
 set -g status-style $STATUS_STYLE
 
-
 ##################################################
-## Top Left Status Bar
+## Left Status Bar
 ##################################################
 
 set -g status-format[0] "#[align=left]"
@@ -84,66 +80,20 @@ set -g window-status-format "$WINDOW_STATUS_FORMAT #I #W "
 set -ag status-format[0] "#[align=centre]#{W:#{E:window-status-format},#{E:window-status-current-format}}"
 
 ##################################################
-## Top Right Status Bar
+## Right Status Bar
 ##################################################
 
 set -ag status-format[0] "#[align=right]"
 
-# Display CPU usage percentage
-set -ag status-format[0] "#(tmux-cpu-load-percentage)"
-
-# Separator
-set -ag status-format[0] " "
-
-# Display date
-set -ag status-format[0] "$DATE_FORMAT 📅 #(date +'%a, %d %b %Y') #[default]"
-
-# Separator
-set -ag status-format[0] " "
-
-# Display time
-set -ag status-format[0] "#(tmux-clock)"
-
-##################################################
-## Bottom Left Status Bar
-##################################################
-
-set -g status-format[1] "#[align=left]"
-
-# Show zoom state
-set -ag status-format[1] "#{?window_zoomed_flag,$ZOOMED_MODE_FORMAT 🔎 ZOOMED ,\
-$NORMAL_MODE_FORMAT 🔥 NORMAL }#[default]"
-
-# Separator
-set -ag status-format[1] " "
+set -ag status-format[0] "#[default]#(tmux-session-name-complement-padding #S)"
 
 # Show hint on prefix key press
-set -ag status-format[1] "#{?client_prefix,$PREFIX_HIGHLIGHT_FORMAT ^A ,\
+set -ag status-format[0] "#{?client_prefix,$PREFIX_HIGHLIGHT_FORMAT ^A ,\
     }#[default]"
 
-##################################################
-## Bottom Center Status Bar
-##################################################
-
-# Empty Currently
-
-##################################################
-## Bottom Right Status Bar
-##################################################
-
-set -ag status-format[1] "#[align=right]"
-
-# Display RAM usage
-set -ag status-format[1] "#(tmux-used-ram-percentage)"
-
 # Separator
-set -ag status-format[1] " "
+set -ag status-format[0] " "
 
-# Display battery percentage and status
-set -ag status-format[1] "#(tmux-battery-percentage-and-status)"
-
-# Separator
-set -ag status-format[1] " "
-
-# Display Internet connectivity status
-set -ag status-format[1] "#(tmux-connectivity-status)"
+# Show zoom state
+set -ag status-format[0] "#{?window_zoomed_flag,$ZOOMED_MODE_FORMAT 🔎 ZOOMED ,\
+$NORMAL_MODE_FORMAT 🔥 NORMAL }#[default]"

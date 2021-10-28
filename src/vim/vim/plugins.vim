@@ -16,6 +16,9 @@ call plug#begin("~/.vim/plugged")
 " ## Themes
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Ayu
+Plug 'Luxed/ayu-vim'
+
 " OneHalf
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 

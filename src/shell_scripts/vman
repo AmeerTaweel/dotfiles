@@ -13,7 +13,7 @@ elif ! man -w "$@" > /dev/null; then
 fi
 
 if [[ $EDITOR == "vim" || $EDITOR == "nvim" ]]; then
-	$EDITOR -c "Man $1" -c "silent only"
+	$EDITOR -c "Man $1" -c "silent only" -c "set nospell"
 else
-	vim -c "Man $1" -c "silent only"
+	vim -c "Man $1" -c "silent only" -c "set nospell"
 fi

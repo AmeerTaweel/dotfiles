@@ -9,8 +9,6 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-#import:
-#  - /path/to/alacritty.yml
   - ~/.config/.alacritty/themes/theme.yml
 
 # Any items in the `env` entry below will be added as
@@ -25,7 +23,8 @@ import:
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-#window:
+window:
+  # opacity: 1
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -77,17 +76,17 @@ import:
   #startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: terminal
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
 
   # Window class (Linux/BSD only):
-  #class:
+  class:
     # Application instance name
-    #instance: Alacritty
+    instance: alacritty
     # General application class
-    #general: Alacritty
+    general: terminal
 
   # GTK theme variant (Linux/BSD only)
   #
@@ -96,62 +95,33 @@ import:
   #gtk_theme_variant: None
 
 scrolling:
-#scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
   history: 100000
 
   # Scrolling distance multiplier.
   #multiplier: 3
 
 # Font configuration
-#font:
-  # Normal (roman) font face
-  #normal:
-    # Font family
-    #
-    # Default:
-    #   - (macOS) Menlo
-    #   - (Linux/BSD) monospace
-    #   - (Windows) Consolas
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Regular
-
-  # Bold font face
-  #bold:
-    # Font family
-    #
+font:
+  normal:
+    family: "Hack Nerd Font"
+    style: Regular
+  bold:
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold
-
-  # Italic font face
-  #italic:
-    # Font family
-    #
+    family: "Hack Nerd Font"
+    style: Bold
+  italic:
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Italic
-
-  # Bold italic font face
-  #bold_italic:
-    # Font family
-    #
+    family: "Hack Nerd Font"
+    style: Italic
+  bold_italic:
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: monospace
-
-    # The `style` can be specified to pick a specific face.
-    #style: Bold Italic
+    family: "Hack Nerd Font"
+    style: Bold Italic
 
   # Point size
   #size: 11.0
@@ -177,8 +147,7 @@ scrolling:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-# draw_bold_text_with_bright_colors: false
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
 #colors:

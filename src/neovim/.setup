@@ -1,7 +1,0 @@
-'*init.vim' : 'f' : '~/.config/nvim/'
-'*init.lua' : 'f' : '~/.config/nvim/'
-'*nvim.settings.vim' : 'f' : '~/.config/nvim/'
-'*nvim.plugins.vim' : 'f' : '~/.config/nvim/'
-'*nvim.keybindings.vim' : 'f' : '~/.config/nvim/'
-'*plugin-config/*' : 'f' : '~/.config/nvim/plugin-config'
-'*lua/*' : 'f' : '~/.config/nvim/lua'

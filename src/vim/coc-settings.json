@@ -21,5 +21,31 @@
 			// Turn off line-length checks for code blocks to allow long commands
 			"code_blocks": false
 		}
-	}
+  },
+  "cSpell.userWords": [
+    "Autosomal",
+    "Berker",
+    "Bootcamp",
+    "DE's",
+    "Denormalized",
+    "Extermal",
+    "Frameshift",
+    "Igen",
+    "MBGE",
+    "Missense",
+    "Noncovalent",
+    "Nonesense",
+    "OMP's",
+    "Penrose",
+    "Slurm",
+    "Supertask",
+    "Truba",
+    "Wsign",
+    "eulerian",
+    "eurobeat",
+    "inttypes",
+    "loopless",
+    "sbatch",
+    "squeue"
+  ]
 }

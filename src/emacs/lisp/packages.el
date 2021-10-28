@@ -46,12 +46,9 @@
 (use-package auto-package-update
   :demand t
   :custom
-  (auto-package-update-interval 1)
+  (auto-package-update-interval 7)
   (auto-package-update-prompt-before-update t)
-  (auto-package-update-hide-results t)
-  :config
-  (auto-package-update-maybe)
-  (auto-package-update-at-time "09:00"))
+  (auto-package-update-hide-results t))
 
 ;-------------------------------------------------------------------------------
 
@@ -204,8 +201,12 @@
 ;; https://github.com/akhramov/org-wild-notifier.el
 ;; https://github.com/progfolio/doct
 (setq org-capture-templates
-      `(("m" "Metrics Capture")
-		("mw" "Weight" table-line (file+headline "metrics.org" "Weight")
+      `(("t" "Tasks")
+	("tt" "Task" entry (file+olp "tasks.org" "Inbox")
+	 "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
+
+	("m" "Metrics")
+	("mw" "Weight" table-line (file+headline "metrics.org" "Weight")
 	 "| %U | %^{Weight} | %^{Notes} |" :kill-buffer t)))
 
 
@@ -229,3 +230,43 @@
 (use-package whitespace
   :demand t
   :init (global-whitespace-mode))
+
+;; LSP Mode
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+  :hook (lsp-mode . efs/lsp-mode-setup)
+  :config
+  (lsp-enable-which-key-integration t))
+
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :config
+  (setq typescript-indent-level 2))
+
+(use-package company
+  :after lsp-mode
+  :hook (prog-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
+(defun efs/lsp-mode-setup ()
+  (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+  (lsp-headerline-breadcrumb-mode))
+
+(use-package lsp-ui
+  :hook (lsp-mode . lsp-ui-mode))
+
+(use-package lsp-ivy)
+
+(use-package evil-nerd-commenter
+  :bind ("M-/" . evilnc-comment-or-uncomment-lines))

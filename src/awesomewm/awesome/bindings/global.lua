@@ -149,9 +149,27 @@ local M = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
     awful.key({ vars.mod_key }, "r", function() awful.util.spawn('rofi -show run') end,
               {description = "show the menubar", group = "launcher"}),
-	awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%+", false) end),
-	awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -D pulse sset Master 5%-", false) end),
-	awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse sset Master toggle", false) end)
+	awful.key({}, "XF86AudioRaiseVolume", function ()
+		local vol = require("ui.status_bar.widgets.volume")
+		local v = require("ui.status_bar.vicious")
+		awful.spawn.easy_async("amixer -D pulse sset Master 5%+", function()
+			v.force({ vol })
+		end)
+	end),
+	awful.key({}, "XF86AudioLowerVolume", function ()
+		local vol = require("ui.status_bar.widgets.volume")
+		local v = require("ui.status_bar.vicious")
+		awful.spawn.easy_async("amixer -D pulse sset Master 5%-", function()
+			v.force({ vol })
+		end)
+	end),
+	awful.key({}, "XF86AudioMute", function ()
+		local vol = require("ui.status_bar.widgets.volume")
+		local v = require("ui.status_bar.vicious")
+		awful.spawn.easy_async("amixer -D pulse sset Master toggle", function()
+			v.force({ vol })
+		end)
+	end)
 )
 
 -- Bind all key numbers to tags.

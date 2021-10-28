@@ -1,0 +1,26 @@
+# Colors of the Ayu Light Theme
+
+colors:
+  primary:
+    background: '0xFCFCFC'
+    foreground: '0x5C6166'
+
+  normal:
+    black: '0x000000'
+    red: '0xE65050'
+    green: '0x86B300'
+    yellow: '0xF2AE49'
+    blue: '0x399EE6'
+    magenta: '0xA37ACC'
+    cyan: '0x55B4D4'
+    white: '0xFCFCFC'
+
+  bright:
+    black: '0x000000'
+    red: '0xE65050'
+    green: '0x86B300'
+    yellow: '0xF2AE49'
+    blue: '0x399EE6'
+    magenta: '0xA37ACC'
+    cyan: '0x55B4D4'
+    white: '0xFCFCFC'

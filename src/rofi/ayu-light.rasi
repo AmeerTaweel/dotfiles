@@ -1,0 +1,6 @@
+configuration {
+	color-normal: "#FCFCFC, #5C6166, #FCFCFC, #5C6166, #FCFCFC";
+	color-urgent: "#FCFCFC, #E65050, #FCFCFC, #E65050, #FCFCFC";
+	color-active: "#FCFCFC, #FFAA33, #FCFCFC, #FFAA33, #FCFCFC";
+	color-window: "#FCFCFC, #5C6166, #5C6166";
+}

@@ -1,0 +1,26 @@
+# Colors of the Ayu Dark Theme
+
+colors:
+  primary:
+    background: '0x0D1017'
+    foreground: '0xBFBDB6'
+
+  normal:
+    black: '0x0D1017'
+    red: '0xD95757'
+    green: '0xAAD94C'
+    yellow: '0xE6B450'
+    blue: '0x59C2FF'
+    magenta: '0xD2A6FF'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'
+
+  bright:
+    black: '0x0D1017'
+    red: '0xD95757'
+    green: '0xAAD94C'
+    yellow: '0xE6B450'
+    blue: '0x59C2FF'
+    magenta: '0xD2A6FF'
+    cyan: '0x95E6CB'
+    white: '0xFFFFFF'

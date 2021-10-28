@@ -94,4 +94,7 @@
 (global-auto-revert-mode 1)
 (diminish auto-revert-mode)
 
+;; Enable spell checking
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
 ;;-------------------------------------------------------------------------------

@@ -35,7 +35,8 @@ let g:coc_global_extensions = [
 			\"coc-xml",
 			\"coc-toml",
 			\"coc-java",
-			\"coc-kotlin"
+			\"coc-kotlin",
+			\"coc-sumneko-lua"
 			\]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

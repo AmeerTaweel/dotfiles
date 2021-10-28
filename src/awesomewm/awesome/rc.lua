@@ -21,6 +21,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 
 require("main.error-handling")
+beautiful.init(require("ui.theme"))
 local vars = require("main.user-variables")
 local layouts = require("main.layouts")
 local tags = require("main.tags")
@@ -29,7 +30,6 @@ local system_bar = require("main.system-bar")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(require("ui.themes.material-yellow"))
 
 -- Table of layouts to cover with awful.layout.inc
 -- Order matters.

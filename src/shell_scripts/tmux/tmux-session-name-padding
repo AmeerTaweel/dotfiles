@@ -4,15 +4,6 @@
 tmux-session-name-padding - Pad TMUX session name to balance status bar
 '
 
-# Colors
-bold="#[bold]"
-white_fg="#[fg=white]"
-black_fg="#[fg=black]"
-green_bg="#[bg=green]"
-yellow_bg="#[bg=yellow]"
-blue_bg="#[bg=blue]"
-red_bg="#[bg=red]"
 reset="#[default]"
 
-printf "%s" "$yellow_bg$black_fg"
-printf "%-63s" " $1 $reset"
+printf "%-15s" " $1 $reset"

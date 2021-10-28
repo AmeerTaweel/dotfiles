@@ -7,3 +7,5 @@
 	excludesFile = ~/.global-gitignore
 [github]
 	user = ameertaweel2002@gmail.com
+[init]
+	defaultBranch = master

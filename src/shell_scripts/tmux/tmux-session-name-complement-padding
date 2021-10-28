@@ -1,0 +1,16 @@
+#!/bin/bash
+
+: '
+tmux-session-name-complement-padding - Pad TMUX status bar right side to balance
+status bar.
+'
+
+name_len=${#1}
+padding=$((name_len-15))
+
+reset="#[default]"
+
+if [[ $name_len -gt 15 ]]; then
+	printf "%${padding}s" " " | tr " " " "
+fi
+printf "%s" "$reset"
