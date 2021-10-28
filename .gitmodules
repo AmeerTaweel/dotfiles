@@ -1,0 +1,3 @@
+[submodule "src/awesomewm/awesome/ui/status_bar/vicious"]
+	path = src/awesomewm/awesome/ui/status_bar/vicious
+	url = https://github.com/vicious-widgets/vicious
