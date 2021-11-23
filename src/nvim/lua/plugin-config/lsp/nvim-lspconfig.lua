@@ -156,9 +156,9 @@ local setupServers = function(server)
 	-- for _, server in pairs(servers) do
 		local config = getDefaultServerConfig()
 
-		if customSettings[server] ~= nil then
+		if customSettings[server.name] ~= nil then
 			-- Apply custom settings, if found
-			for key, value in pairs(customSettings[server]) do
+			for key, value in pairs(customSettings[server.name]) do
 				config[key] = value
 			end
 		end

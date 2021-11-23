@@ -149,6 +149,21 @@ local M = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
     awful.key({ vars.mod_key }, "r", function() awful.util.spawn('rofi -show run') end,
               {description = "show the menubar", group = "launcher"}),
+    awful.key({ vars.mod_key, "Control" }, "p", function() 
+		local power_options = {
+			["lock\n"] = "light-locker-command -l",
+			["suspend\n"] = "systemctl suspend",
+			["hibernate\n"] = "systemctl hibernate",
+			["power off\n"] = "systemctl poweroff",
+			["reboot\n"] = "systemctl reboot",
+			["logout\n"] = "awesome restart --replace"
+		}
+		local command = [[bash -c 'echo -e "lock\nsuspend\nhibernate\npower off\nreboot\nlogout" | rofi -dmenu -p "power options" -l 6 -width 20']]
+		awful.spawn.easy_async(command, function(stdout)
+			awful.spawn(power_options[stdout])
+		end)
+	end,
+              {description = "show the power options", group = "power"}),
 	awful.key({}, "XF86AudioRaiseVolume", function ()
 		local vol = require("ui.status_bar.widgets.volume")
 		local v = require("ui.status_bar.vicious")

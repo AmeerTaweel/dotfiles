@@ -27,7 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # Set Vim as the default editor
-export EDITOR=vim
+export EDITOR=nvim
 
 # Set the Caps-Lock key to CTRL
 setxkbmap -layout us -option ctrl:nocaps

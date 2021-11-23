@@ -28,7 +28,7 @@ set fish_pager_color_description yellow
 set fish_pager_color_background --background=background
 
 # Set editor to VIM
-set EDITOR "vim"
+set EDITOR "nvim"
 # Set visual editor to VSCode
 set VISUAL "code"
 
@@ -69,15 +69,15 @@ alias nvim='~/applications/nvim.appimage'
 ################################################################################
 
 # Scroll through suggestions
-bind \t complete
-bind -m insert \t complete
+# bind \t complete
+# bind -m insert \t complete
 
 # Accept the next word with tab + n
-bind \tn forward-word
-bind -M insert \tn forward-word
+# bind \tn forward-word
+# bind -M insert \tn forward-word
 
 # Accept the whole suggestion with tab + l
-bind \tl accept-autosuggestion
-bind -M insert \tl accept-autosuggestion
+# bind \tl accept-autosuggestion
+# bind -M insert \tl accept-autosuggestion
 
 ################################################################################

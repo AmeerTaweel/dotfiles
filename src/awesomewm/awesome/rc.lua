@@ -4,11 +4,7 @@ pcall(require, "luarocks.loader")
 
 -- TODO: command to edit config files
 -- TODO: command to open manual pages
--- TODO: when changing sound when in mute, unmute automagically
 -- TODO: Fix touchpad double click middle
--- TODO: Auto window title
--- TODO: Transparency with compton
--- TODO: Fix ctheme - work with rofi
 -- TODO: Fix lock timeout
 
 -- Standard awesome library

@@ -3,3 +3,5 @@ alias tmux="tmux -u"
 
 # Make the move command interactive (ask before doing an override for example)
 alias mv="mv -i"
+
+alias nvim="~/applications/nvim.appimage"

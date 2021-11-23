@@ -87,6 +87,9 @@ theme.widgets.cpu = levels_widget
 theme.widgets.ram = levels_widget
 theme.widgets.battery = levels_widget
 theme.widgets.disk = levels_widget
-theme.widgets.net = levels_widget
+theme.widgets.net = {
+	connected = { bg = colors.green, fg = colors.black },
+	disconnected = { bg = colors.red, fg = colors.black }
+}
 
 return theme_manager.create(theme)

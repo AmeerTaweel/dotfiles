@@ -5,22 +5,14 @@ root: ~/ubuntu-secondary/koç_university
 
 windows:
   - HUMS136:
-      root: ~/ubuntu-secondary/koç_university/HUMS136/Notes
+      root: ~/ubuntu-secondary/koç_university/HUMS136
       panes:
-        - vim -p *.md
-  - MATH204:
-      root: ~/ubuntu-secondary/koç_university/MATH204/Notes
-      panes:
-        - vim -p *.md
+        - nvim notes.md
   - COMP201:
-      root: ~/ubuntu-secondary/koç_university/COMP201/Notes
+      root: ~/ubuntu-secondary/koç_university/COMP201
       panes:
-        - vim -p *.md
-  - ECON100:
-      root: ~/ubuntu-secondary/koç_university/ECON100
-      panes:
-        - vim notes.md
+        - nvim notes.md
   - MATH404:
-      root: ~/ubuntu-secondary/koç_university/MATH404/Notes
+      root: ~/ubuntu-secondary/koç_university/MATH404
       panes:
-        - vim -p *.md
+        - nvim notes.md

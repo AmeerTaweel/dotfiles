@@ -2,7 +2,6 @@
 
 local awful = require("awful")
 local wibox = require("wibox")
-local beautiful = require("beautiful")
 local gears = require("gears")
 local vars = require("main.user-variables")
 
@@ -10,13 +9,13 @@ local widgets = {}
 widgets.line_separator = require("ui.status_bar.widgets.line_separator")
 widgets.time = require("ui.status_bar.widgets.time")
 widgets.date = require("ui.status_bar.widgets.date")
+widgets.volume = require("ui.status_bar.widgets.volume")
 widgets.cpu = require("ui.status_bar.widgets.cpu")
 widgets.ram = require("ui.status_bar.widgets.ram")
 widgets.battery = require("ui.status_bar.widgets.battery")
 widgets.empty_spacer = require("ui.status_bar.widgets.empty_spacer")
 widgets.disk = require("ui.status_bar.widgets.disk")
 widgets.net = require("ui.status_bar.widgets.net")
-widgets.volume = require("ui.status_bar.widgets.volume")
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
