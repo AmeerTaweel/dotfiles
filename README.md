@@ -1,3 +1,16 @@
-# Source
+# dotfiles
 
-This directory contains all the configuration files in sub-directories. These sub-directories contain the `.setup` files that determine where each configuration file should be linked.
+This is my personal dotfiles configuration for:
+
++ GNU Guix
++ CopyQ
+
+## Dependencies
+
+### GNU Guix
+
++ The Guix package manager
+
+### CopyQ
+
++ CopyQ clipboard manager
