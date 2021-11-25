@@ -1,7 +1,0 @@
-@theme "theme"
-
-configuration {
-	matching: "fuzzy";
-	modi: "window,windowcd,run,drun,ssh";
-	kb-cancel: "Escape";
-}
