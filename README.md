@@ -20,3 +20,9 @@ This is my personal dotfiles configuration for:
 ### Dependencies
 
 + CopyQ clipboard manager
+
+## xmodmap
+
+### Dependencies
+
++ xmodmap
