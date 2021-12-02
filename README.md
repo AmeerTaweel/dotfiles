@@ -26,3 +26,17 @@ This is my personal dotfiles configuration for:
 ### Dependencies
 
 + xmodmap
+
+## Awersome Window Manager
+
+### Dependencies
+
++ Awesome Window Manager
++ CopyQ clipboard manager
++ xmodmap
++ xrandr
++ numlockx
++ Qutebrowser
++ Kitty terminal emulator
++ Vim
++ Vicious (Submodule)
