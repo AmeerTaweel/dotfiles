@@ -2,11 +2,11 @@
 
 local awful = require("awful")
 local beautiful = require("beautiful")
-local tags = require("main.tags")
+local tags = require("tags")
 local client_bindings = require("bindings.client")
 
 local M =  {
-    {
+	{
 		-- All Clients
 		rule = { },
 		properties = {
@@ -62,7 +62,7 @@ local M =  {
 		-- Do not add titlebars to normal clients and dialogs
 		rule_any = { type = { "normal", "dialog" } },
 		properties = { titlebars_enabled = false }
-    }
+	}
 }
 
 return M

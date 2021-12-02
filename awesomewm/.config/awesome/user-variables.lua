@@ -1,7 +1,10 @@
 -- { User Variables }
 
 -- Default terminal
-local terminal = "alacritty"
+local browser = "qutebrowser"
+
+-- Default terminal
+local terminal = "kitty"
 
 -- Default text editor
 local system_editor = os.getenv("EDITOR")
@@ -16,6 +19,7 @@ local mod_key = "Mod4"
 
 local M = {
 	terminal = terminal,
+	browser = browser,
 	editor = editor,
 	editor_cmd = editor_cmd,
 	mod_key = mod_key

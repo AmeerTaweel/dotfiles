@@ -3,7 +3,7 @@
 local awful = require("awful")
 local wibox = require("wibox")
 local gears = require("gears")
-local vars = require("main.user-variables")
+local vars = require("user-variables")
 
 local widgets = {}
 widgets.line_separator = require("ui.status_bar.widgets.line_separator")
