@@ -4,7 +4,7 @@
 local browser = "qutebrowser"
 
 -- Default terminal
-local terminal = "kitty"
+local terminal = "alacritty"
 
 -- Default text editor
 local system_editor = os.getenv("EDITOR")
