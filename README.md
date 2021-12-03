@@ -59,3 +59,18 @@ This is my personal dotfiles configuration for:
 ### Dependencies
 
 + Bash shell
+
+## Vim
+
+### Dependencies
+
+These dependencies are needed for auto-installation of the VimPlug package
+manager.
+
++ curl
++ git
+
+### Notes
+
+For the keybindings that deal with system clipboard to work, Vim should be
+compiled with the +clipboard flag.
