@@ -1,0 +1,13 @@
+" # VIM Configuration
+
+" Use Vim settings rather than Vi settings
+set nocompatible
+
+" Settings
+source ~/.vim/settings.vim
+
+" Keybindings
+source ~/.vim/keybindings.vim
+
+" Plugins
+source ~/.vim/plugins.vim
