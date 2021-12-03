@@ -1,3 +1,0 @@
-'*.vimrc' : 'f' : '~'
-'*coc-settings.json' : 'f' : '~/.vim'
-'*vim' : 'd' : '~/.config'
