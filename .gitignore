@@ -1,8 +1,2 @@
-# Ignore theme files
-/alacritty/themes/theme.yml
-/neovim/nvim.theme.vim
-/vim/vim/theme.vim
-/emacs/lisp/theme.el
-
 # Ignore SSH Config
 /ssh
