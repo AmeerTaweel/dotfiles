@@ -53,3 +53,9 @@ This is my personal dotfiles configuration for:
 ### Dependencies
 
 + Git version control system
+
+## Bash
+
+### Dependencies
+
++ Bash shell
