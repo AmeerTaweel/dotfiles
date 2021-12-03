@@ -37,7 +37,7 @@ This is my personal dotfiles configuration for:
 + xrandr
 + numlockx
 + Qutebrowser
-+ Kitty terminal emulator
++ Alacritty terminal emulator
 + Vim
 + Vicious (Submodule)
 
