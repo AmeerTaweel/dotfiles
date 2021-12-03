@@ -1,4 +1,0 @@
-'*.alacritty.yml' : 'f' : '~'
-# Update .alacritty.yml on change
-# Update the ctheme shell script on change
-'*themes/*' : 'f' : '~/.config/.alacritty/themes/'

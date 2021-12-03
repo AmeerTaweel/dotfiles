@@ -1,0 +1,33 @@
+# Alacritty Config
+
+# Import additional configuration files
+
+# Imports are loaded in order
+# Missing files will be skipped
+import:
+  - ~/.config/alacritty/themes/theme.yml
+
+# Set environment variables
+env:
+  # Default Value: alacritty
+  # Changed to xterm-256color to avoid issues with ssh
+  TERM: xterm-256color
+
+window:
+  # Window title
+  title: terminal
+
+  # Window class (Linux/BSD only)
+  class:
+    # Application instance name
+    instance: alacritty
+    # General application class
+    general: terminal
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer
+  # Set to 0 to disable scrolling
+  history: 100000
+
+# Draw bold text using bright color variants
+draw_bold_text_with_bright_colors: true
