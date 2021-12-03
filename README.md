@@ -47,3 +47,9 @@ This is my personal dotfiles configuration for:
 
 + Alacritty terminal emulator
 + xdg-util (for the xdg-open utility)
+
+## Git
+
+### Dependencies
+
++ Git version control system
