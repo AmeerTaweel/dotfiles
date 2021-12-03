@@ -40,3 +40,10 @@ This is my personal dotfiles configuration for:
 + Kitty terminal emulator
 + Vim
 + Vicious (Submodule)
+
+## Alacritty
+
+### Dependencies
+
++ Alacritty terminal emulator
++ xdg-util (for the xdg-open utility)
