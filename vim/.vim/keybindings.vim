@@ -45,9 +45,7 @@ vnoremap <leader>P "+P
 nnoremap <leader>tn  :tabnew<cr>
 nnoremap <leader>tc  :tabclose<cr>
 
-" ## Git and Version Control
-
-" ### Vim Fugitive
+" ## Git and Version Control (Vim Fugitive)
 
 " Opens git status with the ability to stage and unstage commits
 nnoremap <leader>gm :G<cr>
