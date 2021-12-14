@@ -27,19 +27,26 @@ This is my personal dotfiles configuration for:
 
 + xmodmap
 
-## Awersome Window Manager
+## Awesome Window Manager
 
 ### Dependencies
 
 + Awesome Window Manager
 + CopyQ clipboard manager
-+ xmodmap
-+ xrandr
-+ numlockx
++ xmodmap (to remap caps-lock as control)
++ xrandr (for setting screen resolution)
++ numlockx (to enable numlock by default)
 + Qutebrowser
 + Alacritty terminal emulator
 + Vim
 + Vicious (Submodule)
++ Another submodule
++ maim (to take screenshots)
++ xclip (to store screenshots in clipboard)
++ xdotool (to take screenshot of active window)
++ alsa-utils
++ pamixer
++ xinput (only for laptops: to enable touchpad tapping)
 
 ## Alacritty
 
