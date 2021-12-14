@@ -5,18 +5,6 @@ local wibox = require("wibox")
 local gears = require("gears")
 local vars = require("user-variables")
 
-local widgets = {}
-widgets.line_separator = require("ui.status_bar.widgets.line_separator")
-widgets.time = require("ui.status_bar.widgets.time")
-widgets.date = require("ui.status_bar.widgets.date")
-widgets.volume = require("ui.status_bar.widgets.volume")
-widgets.cpu = require("ui.status_bar.widgets.cpu")
-widgets.ram = require("ui.status_bar.widgets.ram")
-widgets.battery = require("ui.status_bar.widgets.battery")
-widgets.empty_spacer = require("ui.status_bar.widgets.empty_spacer")
-widgets.disk = require("ui.status_bar.widgets.disk")
-widgets.net = require("ui.status_bar.widgets.net")
-
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
@@ -92,28 +80,11 @@ local setup_system_bar = function(s)
 
     -- Create the bottom status bar
     s.bottom_status_bar = awful.wibar({ position = "bottom", screen = s })
+    local bottom_status_bar = require("ui.status_bar.bottom")
     s.bottom_status_bar:setup {
-        {
-			widgets.time,
-			widgets.empty_spacer,
-			widgets.date,
-			widgets.empty_spacer,
-			widgets.volume,
-            layout = wibox.layout.fixed.horizontal
-        },
-		{ layout = wibox.layout.fixed.horizontal },
-        {
-			widgets.cpu,
-			widgets.empty_spacer,
-			widgets.ram,
-			widgets.empty_spacer,
-			widgets.battery,
-			widgets.empty_spacer,
-			widgets.disk,
-			widgets.empty_spacer,
-			widgets.net,
-            layout = wibox.layout.fixed.horizontal
-        },
+        bottom_status_bar.left,
+        bottom_status_bar.center,
+        bottom_status_bar.right,
         layout = wibox.layout.align.horizontal
     }
 

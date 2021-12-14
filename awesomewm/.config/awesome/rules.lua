@@ -3,7 +3,6 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 local tags = require("tags")
-local client_bindings = require("bindings.client")
 
 local M =  {
 	{
@@ -14,8 +13,8 @@ local M =  {
 			border_color = beautiful.border_normal,
 			focus = awful.client.focus.filter,
 			raise = true,
-			keys = client_bindings,
-			buttons = clientbuttons,
+			keys = require("bindings.client.keys"),
+			buttons = require("bindings.client.buttons"),
 			screen = awful.screen.preferred,
 			placement = awful.placement.no_overlap+awful.placement.no_offscreen
 		}

@@ -4,6 +4,14 @@ local awful = require("awful")
 local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local vars = require("user-variables")
+local modalbind = require("modalbind")
+
+modalbind.init()
+modalbind.set_location("centered")
+
+modalbind.default_keys = {
+	{"x", modalbind.close_box, "abort"}
+}
 
 local M = gears.table.join(
 	-- General
@@ -154,13 +162,28 @@ local M = gears.table.join(
 	),
 	awful.key(
 		{ vars.mod_key }, "p",
-		function() awful.util.spawn('rofi -show drun -display-drun "launch"') end,
+		function() awful.util.spawn("rofi -show drun -display-drun 'launch'") end,
 		{ group = "launch", description = "launch a program" }
 	),
 	awful.key(
 		{ vars.mod_key }, "r",
-		function() awful.util.spawn('rofi -show run') end,
+		function() awful.util.spawn("rofi -show run") end,
 		{ group = "launch", description = "run a command" }
+	),
+	awful.key(
+		{ vars.mod_key }, "w",
+		function() awful.util.spawn("rofi -show windowcd -display-windowcd 'window'") end,
+		{ group = "launch", description = "switch window within current tag" }
+	),
+	awful.key(
+		{ vars.mod_key, "Shift" }, "w",
+		function() awful.util.spawn("rofi -show window") end,
+		{ group = "launch", description = "switch window" }
+	),
+	awful.key(
+		{ vars.mod_key }, "s",
+		function() awful.util.spawn("rofi -show ssh -no-parse-known-hosts -disable-history") end,
+		{ group = "launch", description = "start ssh connection" }
 	),
 	awful.key(
 		{ vars.mod_key, "Control" }, "p",
@@ -185,18 +208,25 @@ local M = gears.table.join(
 	awful.key({}, "XF86AudioRaiseVolume", function ()
 		local vol = require("ui.status_bar.widgets.volume")
 		local v = require("vicious")
-		awful.spawn.easy_async("amixer -D pulse sset Master 5%+", function() v.force({ vol }) end)
+		awful.spawn.easy_async("pamixer --increase 5 --allow-boost", function() v.force({ vol }) end)
 	end),
 	awful.key({}, "XF86AudioLowerVolume", function ()
 		local vol = require("ui.status_bar.widgets.volume")
 		local v = require("vicious")
-		awful.spawn.easy_async("amixer -D pulse sset Master 5%-", function() v.force({ vol }) end)
+		awful.spawn.easy_async("pamixer --decrease 5 --allow-boost", function() v.force({ vol }) end)
 	end),
 	awful.key({}, "XF86AudioMute", function ()
 		local vol = require("ui.status_bar.widgets.volume")
 		local v = require("vicious")
-		awful.spawn.easy_async("amixer -D pulse sset Master toggle", function() v.force({ vol }) end)
-	end)
+		awful.spawn.easy_async("pamixer --toggle-mute --allow-boost", function() v.force({ vol }) end)
+	end),
+	awful.key({ vars.mod_key }, "x", function() modalbind.grab{
+		name = "screenshot",
+		keymap = require("bindings.global.screenshot"),
+		stay_in_mode = false
+	} end,
+	{ group = "launch", description = "take a screenshot" }
+	)
 )
 
 -- Bind all key numbers to tags.
