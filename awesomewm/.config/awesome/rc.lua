@@ -8,7 +8,6 @@ TODO: Fix the following files:
 	+ layouts.lua
 	+ startup.lua
 	+ tags.lua
-	+ ui/*.lua
 --]]
 
 --[[

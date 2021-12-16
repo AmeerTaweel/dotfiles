@@ -11,5 +11,6 @@ M.battery = require("ui.status_bar.widgets.battery")
 M.empty_spacer = require("ui.status_bar.widgets.empty_spacer")
 M.disk = require("ui.status_bar.widgets.disk")
 M.net = require("ui.status_bar.widgets.net")
+M.tag_list = require("ui.status_bar.widgets.tag_list")
 
 return M

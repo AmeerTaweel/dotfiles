@@ -1,3 +1,5 @@
+-- { Vicious Widget Creator }
+
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local vicious = require("vicious")

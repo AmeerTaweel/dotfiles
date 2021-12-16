@@ -1,3 +1,5 @@
+-- { CPU Usage Widget }
+
 local beautiful = require("beautiful")
 local vicious_widget = require("ui.status_bar.widgets.vicious_widget")
 local vicious = require("vicious")

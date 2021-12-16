@@ -1,3 +1,4 @@
+-- { Internet Connectivity Widget }
 local awful = require("awful")
 local beautiful = require("beautiful")
 
