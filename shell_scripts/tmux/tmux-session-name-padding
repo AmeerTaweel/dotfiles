@@ -1,9 +1,0 @@
-#!/bin/bash
-
-: '
-tmux-session-name-padding - Pad TMUX session name to balance status bar
-'
-
-reset="#[default]"
-
-printf "%-15s" " $1 $reset"
