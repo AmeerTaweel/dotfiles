@@ -81,3 +81,12 @@ manager.
 
 For the keybindings that deal with system clipboard to work, Vim should be
 compiled with the +clipboard flag.
+
+## Tmux
+
+### Dependencies
+
++ xclip
++ xargs
++ rofi
++ bash
