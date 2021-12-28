@@ -9,12 +9,6 @@ This is my personal dotfiles configuration for:
 + Rofi v1.7.0 or newer<br>
   Config breaks on older versions
 
-## GNU Guix
-
-### Dependencies
-
-+ The Guix package manager
-
 ## CopyQ
 
 ### Dependencies
@@ -32,6 +26,7 @@ This is my personal dotfiles configuration for:
 ### Dependencies
 
 + Awesome Window Manager
++ rofi
 + CopyQ clipboard manager
 + xmodmap (to remap caps-lock as control)
 + xrandr (for setting screen resolution)
