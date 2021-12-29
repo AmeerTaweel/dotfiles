@@ -1,68 +1,78 @@
 # dotfiles
 
-This is my personal dotfiles configuration for:
+This is my personal dotfiles configuration for NixOS.
 
-## Rofi
-
-### Dependencies
-
-+ Rofi v1.7.0 or newer<br>
-  Config breaks on older versions
-
-## CopyQ
-
-### Dependencies
-
-+ CopyQ clipboard manager
-
-## xmodmap
-
-### Dependencies
-
-+ xmodmap
-
-## Awesome Window Manager
-
-### Dependencies
-
-+ Awesome Window Manager
-+ rofi
-+ CopyQ clipboard manager
-+ xmodmap (to remap caps-lock as control)
-+ xrandr (for setting screen resolution)
-+ numlockx (to enable numlock by default)
-+ Qutebrowser
-+ Alacritty terminal emulator
-+ Vim
-+ Vicious (Submodule)
-+ Another submodule
-+ maim (to take screenshots)
-+ xclip (to store screenshots in clipboard)
-+ xdotool (to take screenshot of active window)
-+ alsa-utils
-+ pamixer
-+ xinput (only for laptops: to enable touchpad tapping)
+Clone this repository by: `git clone --recurse-submodules -j8 REMOTE_URL`.
+This way all the submodules will be cloned as well.
 
 ## Alacritty
 
-### Dependencies
-
-+ Alacritty terminal emulator
-+ xdg-util (for the xdg-open utility)
-
-## Git
+Alacritty is my default terminal emulator.
 
 ### Dependencies
 
-+ Git version control system
++ xdg-utils (for the xdg-open utility)
+
+## Awesome Window Manager
+
+AwesomeWM is my default window manager.
+
+### Dependencies
+
++ rofi
++ copyq (clipboard manager)
++ xmodmap (remap caps-lock as control)
++ numlockx (enable numlock by default)
++ qutebrowser (default browser)
++ alacritty (default terminal emulator)
++ vim (default editor)
++ maim (screenshot utility)
++ xclip (store screenshots in clipboard)
++ xdotool (take screenshot of active window)
+
++ alsa-utils
++ pamixer
+
+### Submodules
+
++ vicious (statusbar widgets)
++ modalbind (mode-specific bindings)
 
 ## Bash
 
+Bash is my default shell. It has no dependencies.
+
+## CopyQ
+
+Bash is my default clipboard manager. It has no dependencies.
+
+## Git
+
+Git has no dependencies.
+
+## Rofi
+
+Rofi is my default run launcher.
+
+**NOTE**: This config needs Rofi v1.7.0 or newer.
+
+## Tmux
+
+Tmux is my terminal multiplexer.
+
 ### Dependencies
 
-+ Bash shell
++ xclip
++ xe (improvement over xargs)
++ rofi
++ bash
 
 ## Vim
+
+Vim is my default editor.
+
+**Note**: For the keybindings that deal with system clipboard to work, Vim
+should be compiled with the +clipboard flag.
 
 ### Dependencies
 
@@ -72,16 +82,7 @@ manager.
 + curl
 + git
 
-### Notes
+## xmodmap
 
-For the keybindings that deal with system clipboard to work, Vim should be
-compiled with the +clipboard flag.
-
-## Tmux
-
-### Dependencies
-
-+ xclip
-+ xargs
-+ rofi
-+ bash
+I use xmodmap to remap caps-lock key as control.
+It has no dependencies.

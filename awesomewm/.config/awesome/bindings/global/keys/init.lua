@@ -222,7 +222,7 @@ local M = gears.table.join(
 	end),
 	awful.key({ vars.mod_key }, "x", function() modalbind.grab{
 		name = "screenshot",
-		keymap = require("bindings.global.screenshot"),
+		keymap = require("bindings.global.keys.screenshot"),
 		stay_in_mode = false
 	} end,
 	{ group = "launch", description = "take a screenshot" }

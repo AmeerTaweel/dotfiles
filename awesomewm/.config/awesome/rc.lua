@@ -6,7 +6,6 @@ pcall(require, "luarocks.loader")
 TODO: Fix the following files:
 	+ bindings/*/keys.lua -> global and client key bindings
 	+ layouts.lua
-	+ startup.lua
 	+ tags.lua
 --]]
 
