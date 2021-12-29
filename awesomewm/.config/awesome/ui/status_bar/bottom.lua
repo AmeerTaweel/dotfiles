@@ -38,7 +38,7 @@ M.right_laptop = function(s)
 		widgets.empty_spacer,
 		widgets.disk,
 		widgets.empty_spacer,
-		widgets.net,
+		-- widgets.net,
 		layout = wibox.layout.fixed.horizontal
 	}
 end
@@ -54,7 +54,7 @@ M.right = function(s)
 		widgets.empty_spacer,
 		widgets.disk,
 		widgets.empty_spacer,
-		widgets.net,
+		-- widgets.net,
 		layout = wibox.layout.fixed.horizontal
 	}
 end
