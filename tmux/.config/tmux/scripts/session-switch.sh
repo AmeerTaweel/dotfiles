@@ -24,4 +24,4 @@ if [ $? -ne 0 ]; then
 fi
 
 # Switch to the target session
-echo "$target" | xargs tmux switch-client -t
+echo "$target" | xe tmux switch-client -t
