@@ -1,12 +1,7 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " # IdeaVim Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Settings
 source ~/.config/idea_vim/settings.vim
 
-" Keybindings
 source ~/.config/idea_vim/keybindings.vim
 
-" Plugins
 source ~/.config/idea_vim/plugins.vim
