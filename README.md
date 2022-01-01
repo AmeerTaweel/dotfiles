@@ -50,11 +50,20 @@ Bash is my default clipboard manager. It has no dependencies.
 
 Git has no dependencies.
 
+## IDEA Vim
+
+Vim emulation plugin for IDEs based on the IntelliJ Platform.
+It has no dependencies.
+
 ## Rofi
 
 Rofi is my default run launcher.
 
 **NOTE**: This config needs Rofi v1.7.0 or newer.
+
+## SSH
+
+This repo contains my ssh config as a submodule.
 
 ## Tmux
 
