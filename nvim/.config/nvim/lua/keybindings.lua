@@ -1,14 +1,13 @@
--- { Keybindings }
-
 require "globals"
-local lsp_utils = require "utils.lsp"
+
 local which_key = require "which-key"
+local lsp_utils = require "utils.lsp"
 local telescope = require "telescope.builtin"
 
 -- Leader Key
 variables.global.mapleader = ","
 
--- {{ System Clipboard }}
+-- { System Clipboard }
 
 local clipboard_mappings = {
 	d = { [["+d]], "delete to clipboard" },
@@ -20,14 +19,14 @@ local clipboard_mappings = {
 which_key.register(clipboard_mappings, { prefix = "<leader>", mode = "n" })
 which_key.register(clipboard_mappings, { prefix = "<leader>", mode = "x" })
 
--- {{ Split Windows }}
+-- { Split Windows }
 
 which_key.register({
 	["-"] = { "<cmd>split<cr>", "split window horizontally" },
 	["/"] = { "<cmd>vsplit<cr>", "split window vertically" },
 }, { prefix = "<leader>" })
 
--- {{ WinShift }}
+-- { WinShift }
 
 which_key.register({
 	w = {
@@ -37,7 +36,7 @@ which_key.register({
 	}
 }, { prefix = "<leader>" })
 
--- {{ Tabs }}
+-- { Tabs }
 
 which_key.register({
 	t = {
@@ -47,7 +46,7 @@ which_key.register({
 }, { prefix = "<leader>" })
 
 
--- {{ Telescope }}
+-- { Telescope }
 
 which_key.register({
 	f = {
@@ -66,7 +65,7 @@ which_key.register({
 	}
 }, { prefix = "<leader>" })
 
--- {{ Git }}
+-- { Git }
 
 which_key.register({
 	g = {
@@ -78,7 +77,7 @@ which_key.register({
 	}
 }, { prefix = "<leader>" })
 
--- {{ Toggle }}
+-- { Toggle }
 
 which_key.register({
 	t = {
@@ -87,7 +86,7 @@ which_key.register({
 }, { prefix = "<leader>" })
 
 
--- {{ Next / Previous }}
+-- { Next / Previous }
 
 which_key.register({
 	["["] = {
@@ -104,7 +103,7 @@ which_key.register({
 	}
 })
 
--- {{ Open / Close }}
+-- { Open / Close }
 
 which_key.register({
 	o = {
@@ -119,7 +118,7 @@ which_key.register({
 	}
 }, { prefix = "<leader>" })
 
--- {{ List }}
+-- { List }
 
 which_key.register({
 	l = {
@@ -129,7 +128,7 @@ which_key.register({
 	}
 }, { prefix = "<leader>" })
 
--- {{ Go To }}
+-- { Go To }
 
 which_key.register({
 	g = {
@@ -141,7 +140,7 @@ which_key.register({
 	}
 }, { prefix = "<leader>" })
 
--- {{ Action }}
+-- { Action }
 
 which_key.register({
 	a = {
@@ -164,14 +163,9 @@ which_key.register({
 }, { prefix = "<leader>", mode = "x" })
 
 
--- {{ Others }}
+-- { Others }
 
 which_key.register({
 	["<cr>"] = { "o<esc>", "insert new line" },
 	["<space>"] = { ",", "repeat last f/t/F/T in opposite direction" }
 })
-
---[[
-" Organize imports of the current buffer
-nnoremap <leader>oi :CocCommand editor.action.organizeImport<cr>
---]]
