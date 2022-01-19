@@ -3,16 +3,6 @@
 " Leader Key
 let mapleader = ","
 
-" ## Move Line/Selection Up/Down
-
-" Move Line
-nnoremap K ddkP
-nnoremap J ddp
-
-" Move Visual Selection
-vnoremap J :m '>+1<cr>gv=gv
-vnoremap K :m '<-2<cr>gv=gv
-
 " ## Dotfiles
 
 " Manually source .vimrc
@@ -63,7 +53,7 @@ nnoremap <cr> o<esc>
 nnoremap <space> ,
 
 " Remove highlighted search results
-nnoremap <leader>nh :noh<cr>
+nnoremap <leader>th :noh<cr>
 
 " Show registers
 nnoremap <leader>rg :reg<cr>
