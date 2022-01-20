@@ -1,15 +1,7 @@
---[[
-+------------+
-| # Settings |
-+------------+
---]]
-
 require "globals"
-local utils = require "utils"
+local vim_utils = require "utils.vim"
 
--- +------------------------+
--- | ## Hybrid Line Numbers |
--- +------------------------+
+-- { Hybrid Line Numbers }
 
 -- Relative line numbers
 options.window.relativenumber = true
@@ -18,14 +10,12 @@ options.window.relativenumber = true
 options.window.number = true
 
 -- Make line numbers absolute when in insert mode and on buffer leaving
-utils.createAutoGroup("LineNumberDisplayToggle", {
+vim_utils.create_auto_group("LineNumberDisplayToggle", {
 	"BufEnter,FocusGained,InsertLeave * setlocal relativenumber",
 	"BufLeave,FocusLost,InsertEnter * setlocal norelativenumber"
 })
 
--- +-----------+
--- | ## Search |
--- +-----------+
+-- { Search }
 
 -- Select items found in search
 options.global.incsearch = true
@@ -39,9 +29,7 @@ options.global.ignorecase = true
 -- Unless you type a capital
 options.global.smartcase = true
 
--- +----------------+
--- | ## Indentation |
--- +----------------+
+-- { Indentation }
 
 local tabWidth = 4
 
@@ -64,9 +52,7 @@ options.object.shiftwidth = tabWidth
 options.object.tabstop = tabWidth
 options.object.softtabstop = tabWidth
 
--- +--------------------+
--- | ## Temporary Files |
--- +--------------------+
+-- { Temporary Files }
 
 local temporaryFilesDirectory = "/tmp/nvim"
 -- Make sure the directory /tmp/nvim exists
@@ -86,29 +72,21 @@ options.global.undodir = temporaryFilesDirectory
 -- Enable Persistent Undo
 options.buffer.undofile = true
 
--- +-----------------------+
--- | ## Filetype Detection |
--- +-----------------------+
+-- { Filetype Detection }
 
 -- TMUX
-utils.createAutoGroup("TmuxFiletypeDetection", {
+vim_utils.create_auto_group("TmuxFiletypeDetection", {
 	"BufRead,BufNewFile .tmux.conf setlocal filetype=tmux",
 	"BufRead,BufNewFile *.tmux setlocal filetype=tmux"
 })
 
--- +-----------+
--- | ## Others |
--- +-----------+
+-- { Others }
 
 -- Set characters-per-line-limit
 options.buffer.textwidth = 80
 
 -- Show column indicating the characters-per-line-recommended-limit
 options.window.colorcolumn = "80"
-
--- Enable spell checking
--- options.window.spell = true
--- options.buffer.spelllang = "en_us"
 
 -- Highlight cursor line and column
 options.window.cursorline = true
@@ -187,7 +165,6 @@ options.global.timeoutlen = 500
 -- Don't pass messages to |insertion-completion-menu|.
 options.global.shortmess = options.global.shortmess .. "c"
 
-
 exec.command "set list"
 local defaultListChars = {
   eol = "↲",
@@ -196,7 +173,7 @@ local defaultListChars = {
   tab = "-->"
 }
 options.object.listchars = defaultListChars
-utils.createAutoCommand("FileType netrw setlocal nolist")
+vim_utils.create_auto_command("FileType netrw setlocal nolist")
 
 --[[
 Use bash as the default shell.
@@ -205,7 +182,7 @@ This solves speed issue when using fish shell as the default shell.
 -- options.global.shell = "/bin/bash"
 
 -- Automatically re-balance windows on resize
-utils.createAutoCommand("VimResized * :wincmd =")
+vim_utils.create_auto_command("VimResized * :wincmd =")
 
 options.object.viewoptions = {
 	"folds",
@@ -213,7 +190,7 @@ options.object.viewoptions = {
 }
 
 -- Make folds persistent
-utils.createAutoGroup("AutoSaveFolds", {
+vim_utils.create_auto_group("AutoSaveFolds", {
 	-- View files are about 500 bytes
 	-- Bufleave but not BufWinLeave captures closing 2nd tab
 	-- Nested is needed by BufWrite* (if triggered via other auto-command)
@@ -222,10 +199,4 @@ utils.createAutoGroup("AutoSaveFolds", {
 })
 
 -- Disable auto-commenting
-utils.createAutoCommand("FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
-
---[[
-" ## Custom Commands
-" Find TODO's and FIXME's in the project in a quickfix list
-command TodoList noautocmd vimgrep /TODO\|FIXME/j ** | cw
---]]
+vim_utils.create_auto_command("FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
