@@ -2,7 +2,8 @@ require "globals"
 
 local which_key = require "which-key"
 local lsp_utils = require "utils.lsp"
-local telescope = require "telescope.builtin"
+local telescope = require "telescope"
+telescope.builtin = require "telescope.builtin"
 
 -- Leader Key
 variables.global.mapleader = ","
@@ -51,17 +52,20 @@ which_key.register({
 which_key.register({
 	f = {
 		name = "find",
-		b = { telescope.buffers, "find buffer" },
-		c = { telescope.command_history, "find command" },
-		f = { telescope.find_files, "find file" },
+		b = { telescope.builtin.buffers, "find buffer" },
+		c = { telescope.builtin.command_history, "find command" },
+		f = { telescope.builtin.find_files, "find file" },
+		j = { telescope.extensions.asynctasks.all, "find job" },
 		l = {
 			name = "find line",
-			b = { telescope.current_buffer_fuzzy_find, "find line in buffer" },
-			d = { telescope.live_grep, "find line in cwd" }
+			b = { telescope.builtin.current_buffer_fuzzy_find, "find line in buffer" },
+			d = { telescope.builtin.live_grep, "find line in cwd" }
 		},
-		m = { telescope.marks, "find mark" },
-		r = { telescope.registers, "find register" },
-		s = { telescope.search_history, "find search" }
+		m = { telescope.builtin.marks, "find mark" },
+		r = { telescope.builtin.registers, "find register" },
+		s = { telescope.builtin.search_history, "find search" },
+		t = { "<cmd>TodoTelescope<cr>", "find todo" },
+		u = { "<cmd>Telescope ultisnips<cr>", "find ultisnippet" }
 	}
 }, { prefix = "<leader>" })
 
@@ -123,8 +127,9 @@ which_key.register({
 which_key.register({
 	l = {
 		name = "list",
+		d = { vim.diagnostic.setloclist, "list diagnostics <location list>" },
 		r = { vim.lsp.buf.references, "list references <quickfix list>" },
-		d = { vim.diagnostic.setloclist, "list diagnostics <location list>" }
+		t = { "<cmd>TodoQuickFix<cr>", "list todos <quickfix list>" }
 	}
 }, { prefix = "<leader>" })
 
@@ -162,10 +167,25 @@ which_key.register({
 	}
 }, { prefix = "<leader>", mode = "x" })
 
+-- { Job }
+
+which_key.register({
+	j = {
+		name = "start job",
+		f = {
+			name = "file jobs",
+			b = { "<cmd>AsyncTask file-build<cr>", "file build" },
+			r = { "<cmd>AsyncTask file-run<cr>", "file run" }
+		}
+	}
+}, { prefix = "<leader>" })
 
 -- { Others }
 
 which_key.register({
-	["<cr>"] = { "o<esc>", "insert new line" },
-	["<space>"] = { ",", "repeat last f/t/F/T in opposite direction" }
+	["<cr>"] = { "o<esc>", "insert new line" }
 })
+
+which_key.register({
+	["<space>"] = { "<plug>Lightspeed_,_ft", "repeat last f/t/F/T in opposite direction" }
+}, { noremap = false })
