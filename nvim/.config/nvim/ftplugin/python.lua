@@ -1,9 +1,3 @@
---[[
-+------------------------+
-| # Python Configuration |
-+------------------------+
---]]
-
 require "globals"
 
 -- Expand tabs to spaces
