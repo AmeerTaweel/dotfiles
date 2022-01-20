@@ -48,3 +48,7 @@ font:
   bold_italic:
     family: "Hack Nerd Font"
     style: Bold Italic
+
+key_bindings:
+  # Delete word on ctrl-backspace
+  - { key: Back, mods: Control, chars: "\x17" }
