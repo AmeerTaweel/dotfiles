@@ -1,5 +1,4 @@
 local auto_pairs = require "nvim-autopairs"
-local nvim_compe_integration = require "nvim-autopairs.completion.compe"
 local treesitter = require "nvim-treesitter.configs"
 
 auto_pairs.setup{
@@ -11,10 +10,6 @@ auto_pairs.setup{
 		check_ts = true
     }
 }
-
-nvim_compe_integration.setup({
-	map_cr = true -- Map <cr> on insert mode
-})
 
 treesitter.setup {
 	autopairs = {
