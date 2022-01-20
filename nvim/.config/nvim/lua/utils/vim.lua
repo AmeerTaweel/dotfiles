@@ -1,12 +1,12 @@
 require "globals"
 
-local module = {}
+local M = {}
 
-module.createAutoCommand = function(autoCommand)
+M.create_auto_command = function(autoCommand)
 	exec.vimscript ("autocmd " .. autoCommand)
 end
 
-module.createAutoGroup = function(name, autoCommands, isLocalToBuffer)
+M.create_auto_group = function(name, autoCommands, isLocalToBuffer)
 	isLocalToBuffer = isLocalToBuffer or false
 	exec.vimscript ("augroup " .. name)
 
@@ -18,13 +18,9 @@ module.createAutoGroup = function(name, autoCommands, isLocalToBuffer)
 	end
 
 	for _, autoCommand in ipairs(autoCommands) do
-		module.createAutoCommand(autoCommand)
+		M.create_auto_command(autoCommand)
 	end
 	exec.vimscript "augroup end"
 end
 
-module.replaceTermCodes = function(keys)
-	return replaceTermCodes(keys, true, true, true)
-end
-
-return module
+return M
