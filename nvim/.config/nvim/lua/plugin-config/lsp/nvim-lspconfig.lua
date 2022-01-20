@@ -1,6 +1,7 @@
 require "globals"
 local lsp_config = require "lspconfig"
-local utils = require "utils"
+local vim_utils = require "utils.vim"
+local cmp = require "cmp_nvim_lsp" -- auto completion capabilities
 
 -- NOTE: Both Java and Kotlin language servers do not support single files.
 local servers = {
@@ -40,11 +41,11 @@ local on_attach = function(client, buffer_num)
 	-- Diagnostics custom configuration
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = get_diagnostics_options()
 
-	utils.createAutoCommand "CursorHold,CursorHoldI * lua vim.diagnostic.open_float({ focusable = false })"
+	vim_utils.create_auto_command "CursorHold,CursorHoldI * lua vim.diagnostic.open_float({ focusable = false })"
 
 	-- Set highlighting autocommand if server supports that
 	if client.resolved_capabilities.document_highlight then
-		utils.createAutoGroup("LSPDocumentHighlight", {
+		vim_utils.create_auto_group("LSPDocumentHighlight", {
 			"CursorHold <buffer> lua vim.lsp.buf.document_highlight()",
 			"CursorMoved <buffer> lua vim.lsp.buf.clear_references()"
 		})
@@ -55,6 +56,9 @@ local get_default_server_config = function()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	-- Enable snippet support
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+	-- nvim-cmp supports more LSP capabilities
+	capabilities = cmp.update_capabilities(capabilities)
 
 	return {
 		capabilities = capabilities,
