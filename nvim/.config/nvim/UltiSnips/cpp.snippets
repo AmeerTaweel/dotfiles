@@ -24,8 +24,13 @@ snippet incc "include custom file" b
 #include "${1:file}.h"
 endsnippet
 
+# Standard Output
+snippet cout "print to standard output" b
+cout << ${1:"log"} << endl;
+endsnippet
+
 # Competitive Programming Template
-snippet cptemp "competitive programming template" b
+snippet tempcp "competitive programming template" b
 /* Compile and run with:
 g++ file.cpp -std=c++17 -O2 -Wall -o out && ./out < in
 */
@@ -40,7 +45,10 @@ using namespace std;
 #define intfl int_fast64_t
 #define ll long long
 
+www.google.com
+
 int main(){
+	// fast io
 	ios::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
