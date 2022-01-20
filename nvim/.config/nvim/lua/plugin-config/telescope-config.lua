@@ -6,7 +6,10 @@ telescope.setup {
 	defaults = {
 		mappings = {
 			i = {
-				["<esc>"] = actions.close
+				["<esc>"] = actions.close,
+				["<tab>"] = actions.move_selection_next,
+				["<s-tab>"] = actions.move_selection_previous,
+				["<c-s>"] = actions.toggle_selection
 			}
 		}
 	}
@@ -14,3 +17,6 @@ telescope.setup {
 
 -- Use the native fuzzy finder as it is faster
 telescope.load_extension("fzf")
+
+-- Load the ultisnips integration
+telescope.load_extension("ultisnips")

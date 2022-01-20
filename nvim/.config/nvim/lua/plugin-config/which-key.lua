@@ -1,9 +1,3 @@
---[[
-+---------------------------+
-| # Which Key Configuration |
-+---------------------------+
---]]
-
 local whichKey = require "which-key"
 
 whichKey.setup {
