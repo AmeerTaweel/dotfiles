@@ -12,6 +12,7 @@ Alacritty is my default terminal emulator.
 ### Dependencies
 
 + xdg-utils (for the xdg-open utility)
++ hack nerd fonts
 
 ## Awesome Window Manager
 
@@ -90,6 +91,18 @@ manager.
 
 + curl
 + git
+
+## Neovim
+
+Dependencies:
+
++ git
++ texlive
++ glibc
++ gcc
++ gnumake
++ fd
++ rg
 
 ## xmodmap
 
