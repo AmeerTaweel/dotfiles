@@ -1,0 +1,27 @@
+snippet temparticle "article template" b
+\documentclass[${1:12pt}]{article}
+
+% Document Encoding
+\usepackage[utf8]{inputenc}
+% Figures
+\usepackage{float}
+\usepackage{caption}
+% Hyperlinks
+\usepackage{hyperref}
+
+\author{${2:Ameer Taweel}}
+\date{\today}
+\title{${3:Article}}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+\tableofcontents
+\newpage
+
+${0}
+
+\end{document}
+endsnippet

@@ -23,3 +23,4 @@ _G.options.object = vim.opt
 
 _G.variables = {}
 _G.variables.global = vim.g
+_G.variables.environment = vim.env

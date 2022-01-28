@@ -33,30 +33,6 @@ bind / split-window -h -c "#{pane_current_path}"
 bind _ split-window -v
 bind ? split-window -h
 
-# [[ Copy Mode ]]
-
-# Enter copy mode
-bind v copy-mode
-
-# Use Vim keybindings in copy mode
-setw -g mode-keys vi
-
-# Pressing v to begin selection as in Vim
-bind -T copy-mode-vi v send-keys -X begin-selection
-
-# Pressing CTRL-v to make box selection
-bind -T copy-mode-vi C-v send-keys -X rectangle-toggle \; send -X begin-selection
-
-# Pressing y to copy selection to system clipboard
-# Must have xclip installed for this to work
-bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -f -selection primary | xclip -i -selection clipboard"
-
-# Pressing <prefix> P (Capital Letter) will paste the contents of the last buffer
-bind P paste-buffer
-
-# Press <prefix> CTRL-p to choose buffer
-bind C-p choose-buffer
-
 # [[ Sessions ]]
 
 # Fuzzy switch session
@@ -64,8 +40,11 @@ bind C-j run-shell "bash ~/.config/tmux/scripts/session-switch.sh"
 
 # [[ Windows ]]
 
-# Create a new window in the current path
-bind C-c new-window -c "#{pane_current_path}"
+# Create a new window with the current path
+bind c new-window -c "#{pane_current_path}"
+
+# Create a new window with the default path
+bind C new-window
 
 # [[ Panes ]]
 

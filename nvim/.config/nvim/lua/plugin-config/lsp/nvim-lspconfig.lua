@@ -17,6 +17,7 @@ local servers = {
 	"sumneko_lua", -- Lua
 	"texlab", -- LaTex
 	"diagnosticls", -- Diagnostics
+	"rust_analyzer" -- Rust
 }
 
 local customize_server_options = {

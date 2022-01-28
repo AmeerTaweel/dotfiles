@@ -14,6 +14,9 @@ awful.spawn.with_shell("xmodmap .Xmodmap")
 -- numlockx - enable numlock by default
 awful.spawn.with_shell("numlockx on")
 
+-- bluetooth applet
+-- awful.spawn.with_shell("blueman-applet")
+
 -- {{ Applications }}
 
 awful.spawn ("telegram-desktop")

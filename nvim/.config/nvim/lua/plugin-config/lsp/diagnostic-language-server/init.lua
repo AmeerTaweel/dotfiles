@@ -11,7 +11,7 @@ local customize_server_options = function(config)
 		-- "python",
 		"sh",
 		"vim",
-		"lua"
+		"lua",
 	}
 
 	config.init_options = {

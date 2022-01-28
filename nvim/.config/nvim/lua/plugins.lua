@@ -148,6 +148,21 @@ local packages = function(use)
 		config = function()
 			-- Disable Vim-Tmux navigator when zooming the Vim pane in Tmux
 			variables.global.tmux_navigator_disable_when_zoomed = 1
+		end,
+		cond = function()
+			-- Do not load this plugin in kitty
+			return variables.environment.TERM ~= "xterm-kitty"
+		end
+	}
+
+	-- Better Vim and Kitty navigation
+	-- Should also installed in Kitty
+	use {
+		"knubie/vim-kitty-navigator",
+		run = "cp ./*.py ~/.config/kitty/",
+		cond = function()
+			-- Load this plugin only in kitty
+			return variables.environment.TERM == "xterm-kitty"
 		end
 	}
 
@@ -259,7 +274,7 @@ local packages = function(use)
 		"lervag/vimtex",
 		ft = { "tex" },
 		config = function()
-			variables.global.vimtex_view_method = "zathura"
+			require "plugin-config.vimtex"
 		end
 	}
 

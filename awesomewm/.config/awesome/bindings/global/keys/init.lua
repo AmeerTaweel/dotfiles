@@ -220,6 +220,12 @@ local M = gears.table.join(
 		local v = require("vicious")
 		awful.spawn.easy_async("pamixer --toggle-mute --allow-boost", function() v.force({ vol }) end)
 	end),
+	awful.key({}, "XF86MonBrightnessDown", function ()
+		awful.spawn.easy_async("brightnessctl s 40%-")
+	end),
+	awful.key({}, "XF86MonBrightnessUp", function ()
+		awful.spawn.easy_async("brightnessctl s 40%+")
+	end),
 	awful.key({ vars.mod_key }, "x", function() modalbind.grab{
 		name = "screenshot",
 		keymap = require("bindings.global.keys.screenshot"),
