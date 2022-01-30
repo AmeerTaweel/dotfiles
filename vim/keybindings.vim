@@ -35,6 +35,8 @@ nnoremap <leader>gm :G<cr>
 nnoremap <leader>ga :Git add %<cr>
 " Commit
 nnoremap <leader>gc :Git commit<cr>
+" Push
+nnoremap <leader>gp :Git push<cr>
 
 " # Other Mappings
 
