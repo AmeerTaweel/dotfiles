@@ -63,7 +63,9 @@ in {
 
 	home.packages = with pkgs; [
 		# Editors
-		/* vim */
+		# vim
+		google-chrome
+		alacritty
 		/* unstable.neovim */
 		/* emacs */
 		/* vscode */

@@ -1,19 +1,12 @@
-" # Keybindings
-
 " Leader Key
 let mapleader = ","
 
-" ## Dotfiles
-
-" Manually source .vimrc
-nnoremap <leader><leader>r :source $MYVIMRC<cr>
-
-" ## Splitting windows
+" # Splitting windows
 
 nnoremap <leader>- :split<cr>
 nnoremap <leader>/ :vsplit<cr>
 
-" ## System Clipboard
+" # System Clipboard
 
 " NOTE: Vim needs to be compiled with the +clipboard flag for this to work.
 
@@ -23,19 +16,18 @@ nnoremap <leader>d "+d
 nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 
-
 " Visual Mode
 vnoremap <leader>d "+d
 vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" ## Tabs
+" # Tabs
 
 nnoremap <leader>tn  :tabnew<cr>
 nnoremap <leader>tc  :tabclose<cr>
 
-" ## Git and Version Control (Vim Fugitive)
+" # Git and Version Control
 
 " Opens git status with the ability to stage and unstage commits
 nnoremap <leader>gm :G<cr>
@@ -44,7 +36,7 @@ nnoremap <leader>ga :Git add %<cr>
 " Commit
 nnoremap <leader>gc :Git commit<cr>
 
-" ## Other Mappings
+" # Other Mappings
 
 " Enter creates a new line in normal mode
 nnoremap <cr> o<esc>
@@ -61,5 +53,5 @@ nnoremap <leader>rg :reg<cr>
 " Make . to work with visually selected lines
 vnoremap . :normal.<cr>
 
-" Window Swap: Swap Window
+" Swap Window
 nnoremap <leader>ww :call WindowSwap#EasyWindowSwap()<cr>

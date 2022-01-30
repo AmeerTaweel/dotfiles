@@ -1,5 +1,3 @@
-" # Vim Lightline Configuration
-
 let g:lightline = {
 	\	"active": {
 	\		"left": [

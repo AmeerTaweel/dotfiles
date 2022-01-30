@@ -1,7 +1,7 @@
 { nixpkgs, home-manager, ... }:
 with builtins;
 {
-	mkUser = user@{ username, fullName, ... }: {
+	mkUser = user@{ username, fullName, email, ... }: {
 		inherit username fullName;
 		systemModule = { ... }: {
 			users.users.${username} = {
@@ -28,8 +28,8 @@ with builtins;
 	mkHost = host@{ hostName, system, users, nics, timezone, ... }:
 	nixpkgs.lib.nixosSystem {
 		inherit system;
-		specialArgs = { inherit host; };
 		modules = [
+			{ _module.args = { inherit host; }; }
 			../host/common
 			../host/${hostName}
 			home-manager.nixosModules.home-manager

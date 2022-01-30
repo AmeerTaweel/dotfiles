@@ -33,6 +33,7 @@
 			labmem001 = util.mkUser {
 				username = "labmem001";
 				fullName = "Ameer Taweel";
+				email = "ameertaweel2002@gmail.com";
 			};
 		};
 	in {

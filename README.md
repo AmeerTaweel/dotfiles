@@ -5,6 +5,9 @@ This is my personal dotfiles configuration for NixOS.
 Clone this repository by: `git clone --recurse-submodules -j8 REMOTE_URL`.
 This way all the submodules will be cloned as well.
 
++ Git
++ Vim
+
 ## Alacritty
 
 Alacritty is my default terminal emulator.
@@ -47,10 +50,6 @@ Bash is my default shell. It has no dependencies.
 
 Bash is my default clipboard manager. It has no dependencies.
 
-## Git
-
-Git has no dependencies.
-
 ## IDEA Vim
 
 Vim emulation plugin for IDEs based on the IntelliJ Platform.
@@ -76,21 +75,6 @@ Tmux is my terminal multiplexer.
 + xe (improvement over xargs)
 + rofi
 + bash
-
-## Vim
-
-Vim is my default editor.
-
-**Note**: For the keybindings that deal with system clipboard to work, Vim
-should be compiled with the +clipboard flag.
-
-### Dependencies
-
-These dependencies are needed for auto-installation of the VimPlug package
-manager.
-
-+ curl
-+ git
 
 ## Neovim
 
