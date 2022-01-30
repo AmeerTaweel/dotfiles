@@ -84,8 +84,3 @@ Dependencies:
 + gnumake
 + fd
 + rg
-
-## xmodmap
-
-I use xmodmap to remap caps-lock key as control.
-It has no dependencies.

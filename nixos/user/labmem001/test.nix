@@ -22,6 +22,8 @@ in {
 	# Automount removable media
 	services.udiskie.enable = true;
 
+	home.keyboard.options = [ "ctrl:swapcaps" ];
+
 
 	# Enable the X11 windowing system.
 	xsession.enable = true;
