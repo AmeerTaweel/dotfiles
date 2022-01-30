@@ -108,7 +108,7 @@ set autoindent
 set smartindent
 
 " Use tabs not spaces
-set expandtab
+set noexpandtab
 
 " Set tab width equal to 4 spaces
 set tabstop=4
