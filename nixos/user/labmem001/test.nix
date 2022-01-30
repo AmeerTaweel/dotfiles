@@ -22,7 +22,7 @@ in {
 	# Automount removable media
 	services.udiskie.enable = true;
 
-	home.keyboard.options = [ "ctrl:swapcaps" ];
+	home.keyboard.options = [ "ctrl:nocaps" ];
 
 
 	# Enable the X11 windowing system.
