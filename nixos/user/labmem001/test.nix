@@ -47,20 +47,6 @@ in {
 		MANPAGER = editor.manpager;
 	};
 
-	# TODO: Comment me
-	# TODO: Enable exa [ HomeManager ]
-	programs.bash.initExtra = "set -o vi";
-	programs.bash.shellAliases = {
-		# ls aliases
-		ls = "exa";
-		ll = "exa --long --header --all --git";
-		la = "exa --all";
-		# grep aliases
-		grep = "grep --color=auto";
-		# Open Tmux with UTF8 support
-		tmux = "tmux -u";
-	};
-
 	home.packages = with pkgs; [
 		# Editors
 		# vim

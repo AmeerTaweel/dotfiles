@@ -6,5 +6,6 @@
 		./test.nix
 		./vim.nix
 		./git.nix
+        ./shell.nix
 	];
 }

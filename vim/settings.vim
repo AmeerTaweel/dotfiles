@@ -6,7 +6,7 @@ syntax enable
 " Enable filetype detection for plugins and indentation
 filetype plugin indent on
 
-" Use UTF-8 Encoding
+" Use UTF8 Encoding
 set encoding=UTF-8
 
 " Set characters-per-line-limit
@@ -163,6 +163,9 @@ autocmd VimResized * :wincmd =
 
 " Disable auto-commenting
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Set tab width equal to 4 spaces
+autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
 " TMUX filetype detection
 augroup TmuxFixFileType

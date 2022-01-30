@@ -5,6 +5,7 @@ This is my personal dotfiles configuration for NixOS.
 Clone this repository by: `git clone --recurse-submodules -j8 REMOTE_URL`.
 This way all the submodules will be cloned as well.
 
++ Bash
 + Git
 + Vim
 
@@ -41,10 +42,6 @@ AwesomeWM is my default window manager.
 
 + vicious (statusbar widgets)
 + modalbind (mode-specific bindings)
-
-## Bash
-
-Bash is my default shell. It has no dependencies.
 
 ## CopyQ
 
