@@ -13,7 +13,6 @@
 	# TODO: Configure screen lock [ HomeManager ]
 	# TODO: Configure hotkey daemon [ HomeManager ]
 	# TODO: Convert to Wayland
-	# TODO: Convert to PipeWire [ Wiki ]
 
 	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
 	# NOTE: Home-Manager Tutorial: https://youtu.be/CDzgNxoAlnA
