@@ -38,7 +38,7 @@
 	system.autoUpgrade.allowReboot = false;
 
 	# System fonts
-	# fonts.fonts = with pkgs; [
-	# 	(nerdfonts.override { fonts = [ "Hack" ]; })
-	# ];
+	fonts.fonts = with pkgs; [
+		(nerdfonts.override { fonts = [ "Hack" ]; })
+	];
 }

@@ -7,5 +7,7 @@
 		./vim.nix
 		./git.nix
         ./shell.nix
+		./terminal.nix
+		./xdg.nix
 	];
 }

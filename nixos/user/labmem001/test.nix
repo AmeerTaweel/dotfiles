@@ -11,7 +11,7 @@ let
 			manpager = "${editors.neovim.package} +MAN!";
 		};
 	};
-	editor = editors.neovim;
+	editor = editors.${user.editor};
 in {
 	programs.home-manager.enable = true;
 	# Use Bluetooth headset buttons to control media player
@@ -51,16 +51,14 @@ in {
 
 	home.packages = with pkgs; [
 		# Editors
-		# vim
 		google-chrome
-		alacritty
+		firefox
 		/* unstable.neovim */
 		/* emacs */
 		/* vscode */
 		# android-studio
 		/* jetbrains.idea-ultimate */
 		# Terminal Emulators
-		/* alacritty */
 		/* kitty */
 		# Version Control
 		/* git */
@@ -106,7 +104,6 @@ in {
 		# steam
 		/* libreoffice */
 		# Browser
-		/* google-chrome */
 		/* firefox */
 		/* opera */
 		/* bat */

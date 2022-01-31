@@ -34,6 +34,8 @@
 				username = "labmem001";
 				fullName = "Ameer Taweel";
 				email = "ameertaweel2002@gmail.com";
+				editor = "neovim";
+				theme = "ayu-dark";
 			};
 		};
 	in {

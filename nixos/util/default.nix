@@ -1,7 +1,7 @@
 { nixpkgs, home-manager, ... }:
 with builtins;
 {
-	mkUser = user@{ username, fullName, email, ... }: {
+	mkUser = user@{ username, fullName, email, editor, theme, ... }: {
 		inherit username fullName;
 		systemModule = { ... }: {
 			users.users.${username} = {

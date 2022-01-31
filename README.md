@@ -5,18 +5,10 @@ This is my personal dotfiles configuration for NixOS.
 Clone this repository by: `git clone --recurse-submodules -j8 REMOTE_URL`.
 This way all the submodules will be cloned as well.
 
++ Alacritty
 + Bash
 + Git
 + Vim
-
-## Alacritty
-
-Alacritty is my default terminal emulator.
-
-### Dependencies
-
-+ xdg-utils (for the xdg-open utility)
-+ hack nerd fonts
 
 ## Awesome Window Manager
 
