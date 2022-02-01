@@ -76,8 +76,12 @@ in {
 		tealdeer # TLDR
 		cht-sh
 
-		# Media Players
+		# Media
 		vlc
+		zathura
+
+		# Other
+		copyq
 
 		/* emacs */
 		/* vscode */
@@ -99,11 +103,6 @@ in {
 		/* ripgrep */
 		# Others
 		/* postman */
-		/* gnupg */
-		/* pinentry */
-		/* pass */
-		/* stow */
-		/* copyq */
 		/* maim */
 		/* rofi */
 		/* tmux */
@@ -112,7 +111,6 @@ in {
 		/* nnn */
 		/* vifm */
 		/* entr */
-		/* zathura */
 		/* termpdfpy */
 		/* gimp */
 		/* octaveFull # Gnu octave */

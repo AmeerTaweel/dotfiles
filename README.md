@@ -7,6 +7,7 @@ This way all the submodules will be cloned as well.
 
 + Alacritty
 + Bash
++ CopyQ
 + Git
 + Rofi
 + Vim
@@ -46,10 +47,6 @@ AwesomeWM is my default window manager.
 
 + vicious (statusbar widgets)
 + modalbind (mode-specific bindings)
-
-## CopyQ
-
-Bash is my default clipboard manager. It has no dependencies.
 
 ## IDEA Vim
 

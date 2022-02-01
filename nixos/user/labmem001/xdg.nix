@@ -13,5 +13,6 @@ in {
 		"x-scheme-handler/about" = browserList;
 		"x-scheme-handler/unknown" = browserList;
 		"video/mp4" = videoPlayerList;
+		"application/pdf" = "zathura.desktop";
 	};
 }

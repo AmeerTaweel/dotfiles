@@ -14,7 +14,7 @@
 			"{F2,F3}" = "${pkgs.brightnessctl}/bin/brightnessctl set {10%-,10%+}";
 			# Reload hotkey daemon
 			"super + shift + r ; h" = "pkill -usr1 -x sxhkd";
-			"super + y" = "rofi -show drun -display-drun 'launch'";
+			"super + y" = "copyq show";
 		};
 	};
 }
