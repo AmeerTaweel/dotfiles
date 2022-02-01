@@ -12,6 +12,13 @@ This way all the submodules will be cloned as well.
 + Rofi
 + Vim
 
+## Usage Instructions
+
+1. Clone this repository to your home directory.
+2. `cd` into the repository's directory.
+3. Run `sudo nixos-rebuild switch --flake .`.
+4. Setup SSH configuration.
+
 ## Long Term TODOs
 
 | TODO                                  | Waiting For           |
@@ -52,10 +59,6 @@ AwesomeWM is my default window manager.
 
 Vim emulation plugin for IDEs based on the IntelliJ Platform.
 It has no dependencies.
-
-## SSH
-
-This repo contains my ssh config as a submodule.
 
 ## Tmux
 

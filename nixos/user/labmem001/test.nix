@@ -12,8 +12,6 @@ let
 		};
 	};
 	editor = editors.${user.editor};
-
-	sshConfigPath = ../../../ssh;
 in {
 	programs.home-manager.enable = true;
 	# Use Bluetooth headset buttons to control media player???
@@ -25,13 +23,6 @@ in {
 	services.udiskie.enable = true;
 
 	home.keyboard.options = [ "ctrl:nocaps" ];
-
-	home.file.sshConfig = {
-		source = sshConfigPath;
-		target = ".ssh";
-		recursive = true;
-	};
-
 
 	# Enable the X11 windowing system.
 	xsession.enable = true;
