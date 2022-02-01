@@ -30,6 +30,13 @@ contains configuration for:
 | Wine Configuration                    | Better GPU Support            |
 | Fix Discord screensharing sound issue | Proper Discord Solution [[1]] |
 
+## Useful Resources
+
++ [NixOS Option Search](https://search.nixos.org/options).
++ [NixOS Manual - Options Appendix](https://nixos.org/manual/nixos/stable/options.html).
++ [NixOS Package Search](https://search.nixos.org/packages).
++ [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html).
+
 ## Awesome Window Manager
 
 AwesomeWM is my default window manager.
