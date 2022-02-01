@@ -11,7 +11,7 @@ This way all the submodules will be cloned as well.
 + Rofi
 + Vim
 
-## Long Term TODO
+## Long Term TODOs
 
 | TODO                                  | Waiting For           |
 |---------------------------------------|-----------------------|
