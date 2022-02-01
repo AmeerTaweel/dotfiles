@@ -4,17 +4,13 @@
 	# TODO: Verify accelerated video playback [ Wiki ]
 	# TODO: Setup printers and scanners [ Wiki ]
 	# TODO: Bootloader + Dual-Boot with Windows [ Wiki ]
-	# TODO: Offload Steam games with Nvidia GPU [ Wiki ]
-	# TODO: Wine support [ Wiki ]
 	# TODO: Configure RedShift [ HomeManager ]
 	# TODO: Configure notification service [ HomeManager ]
 	# TODO: Configure password-store and password-store sync [ HomeManager ]
 	# TODO: Configure hotkey daemon [ HomeManager ]
-	# TODO: Convert to Wayland
 
 	# TODO: Configure screen lock [ HomeManager ]
 	# TODO: Fix Discord sound sharing problem
-	# TODO: Enable connecting to external monitors [ Wiki ]
 
 	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
 	# NOTE: Home-Manager Tutorial: https://youtu.be/CDzgNxoAlnA

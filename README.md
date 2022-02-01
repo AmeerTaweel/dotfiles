@@ -11,6 +11,17 @@ This way all the submodules will be cloned as well.
 + Rofi
 + Vim
 
+## Long Term TODO
+
+| TODO                                  | Waiting For           |
+|---------------------------------------|-----------------------|
+| Convert to Wayland                    | NixOS Wayland Support |
+| External Monitor Support              | NixOS Wayland Support |
+| Game Emulator Support                 | Better GPU Support    |
+| Steam Game Configuration              | Better GPU Support    |
+| Legendary Game Launcher Configuration | Better GPU Support    |
+| Wine Configuration                    | Better GPU Support    |
+
 ## Awesome Window Manager
 
 AwesomeWM is my default window manager.
