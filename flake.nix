@@ -10,7 +10,6 @@
 	# TODO: Configure hotkey daemon [ HomeManager ]
 
 	# TODO: Configure screen lock [ HomeManager ]
-	# TODO: Fix Discord sound sharing problem
 
 	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
 	# NOTE: Home-Manager Tutorial: https://youtu.be/CDzgNxoAlnA
