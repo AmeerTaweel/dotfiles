@@ -1,4 +1,4 @@
-{ host, pkgs, config, lib, ... }:
+{ host, pkgs, config, ... }:
 
 let
 	nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -38,10 +38,6 @@ in {
 	# Useful for when NixOS has issues finding the primary display
 	hardware.nvidia.modesetting.enable = true;
 
-	# Automatically detect external monitors and change profile
-	# Profiles configured per user
-	services.autorandr.enable = true;
-
 	# OpenGL and accelerated video playback
 	nixpkgs.config.packageOverrides = pkgs: {
 		vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
@@ -66,48 +62,4 @@ in {
 			nvidia_gl_32
 		];
 	};
-
-	# Failed tries to enable external monitors
-
-	# Blacklist the open source driver
-	# boot.blacklistedKernelModules = [ "nouveau" ];
-
-	# boot.blacklistedKernelModules = [
-	# 	"nouveau"
-	# 	"rivafb"
-	# 	"nvidiafb"
-	# 	"rivatv"
-	# 	"nv"
-	# 	"uvcvideo"
-	# ];
-
-	# boot.extraModprobeConfig = ''
-	# 	options bbswitch load_state=-1 unload_state=1 nvidia-drm
-	# '';
-	# boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-
-	# Fix screen tearing
-	# services.xserver.screenSection = ''
-	# 	Option "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-	# 	Option "AllowIndirectGLXProtocol" "off"
-	# 	Option "TripleBuffer" "on"
-	# '';
-
-	# Configure XDG compliance
-	# environment.variables = {
-	# 	__GL_SHADER_DISK_CACHE_PATH = "$XDG_CACHE_HOME/nv";
-	# 	CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv";
-	# };
-
-	# Configure external displays
-	# specialisation = {
-	# 	external-display.configuration = {
-	# 		system.nixos.tags = [ "external-display" ];
-	# 		hardware.nvidia.prime.offload.enable = lib.mkForce false;
-	# 		hardware.nvidia.powerManagement.enable = lib.mkForce false;
-	# 	};
-	# };
-
-	# Fix graphical corruption on suspend
-	# hardware.nvidia.powerManagement.enable = true;
 }
