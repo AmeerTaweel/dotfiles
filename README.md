@@ -20,15 +20,15 @@ contains configuration for:
 
 ## Long Term TODOs
 
-| TODO                                  | Waiting For                 |
-|---------------------------------------|-----------------------------|
-| Convert to Wayland                    | NixOS Wayland Support       |
-| External Monitor Support              | NixOS Wayland Support       |
-| Game Emulator Support                 | Better GPU Support          |
-| Steam Game Configuration              | Better GPU Support          |
-| Legendary Game Launcher Configuration | Better GPU Support          |
-| Wine Configuration                    | Better GPU Support          |
-| Discord screensharing sound issue     | Proper Discord Solution [1] |
+| TODO                                  | Waiting For                   |
+|---------------------------------------|-------------------------------|
+| Convert to Wayland                    | NixOS Wayland Support         |
+| External Monitor Support              | NixOS Wayland Support         |
+| Game Emulator Support                 | Better GPU Support            |
+| Steam Game Configuration              | Better GPU Support            |
+| Legendary Game Launcher Configuration | Better GPU Support            |
+| Wine Configuration                    | Better GPU Support            |
+| Discord screensharing sound issue     | Proper Discord Solution [[1]] |
 
 ## Awesome Window Manager
 
