@@ -1,9 +1,7 @@
 # dotfiles
 
-This is my personal dotfiles configuration for NixOS.
-
-Clone this repository by: `git clone --recurse-submodules -j8 REMOTE_URL`.
-This way all the submodules will be cloned as well.
+This is my personal dotfiles configuration for NixOS. It also contains
+configuration for:
 
 + Alacritty
 + Bash
