@@ -1,12 +1,12 @@
 { user, ... }:
 
 let
-	alacrittyConfigurationPath = ../../../alacritty;
+	alacrittyConfigPath = ../../../alacritty;
 in {
 	programs.alacritty.enable = true;
 
-	xdg.configFile.alacrittyConfiguration = {
-		source = alacrittyConfigurationPath;
+	xdg.configFile.alacrittyConfig = {
+		source = alacrittyConfigPath;
 		target = "alacritty";
 		recursive = true;
 	};

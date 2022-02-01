@@ -12,5 +12,6 @@
 		./xdg.nix
 		./rofi.nix
 		./sxhkd.nix
+		./copyq.nix
 	];
 }
