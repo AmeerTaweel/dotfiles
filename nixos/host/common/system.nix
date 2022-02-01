@@ -37,6 +37,15 @@
 	system.autoUpgrade.enable = true;
 	system.autoUpgrade.allowReboot = false;
 
+	# Essential system packages
+	environment.systemPackages = with pkgs; [
+		file
+		tree
+		curl
+		wget
+		wget2
+	];
+
 	# System fonts
 	fonts.fonts = with pkgs; [
 		(nerdfonts.override { fonts = [ "Hack" ]; })

@@ -4,22 +4,22 @@ let
 	editors = {
 		vim = {
 			package = "${pkgs.vim}/bin/vim";
-			manpager = "${editors.vim.package} -M +MANPAGER -";
+			manpager = "vim -M +MANPAGER -";
 		};
-		neovim = {
+		nvim = {
 			package = "${pkgs.neovim}/bin/nvim";
-			manpager = "${editors.neovim.package} +MAN!";
+			manpager = "nvim +Man!";
 		};
 	};
 	editor = editors.${user.editor};
 in {
 	programs.home-manager.enable = true;
-	# Use Bluetooth headset buttons to control media player
+	# Use Bluetooth headset buttons to control media player???
 	services.mpris-proxy.enable = true;
 	/* home.stateVersion = "21.11"; */
 	services.blueman-applet.enable = true;
 	services.network-manager-applet.enable = true;
-	# Automount removable media
+	# Automount removable media ????
 	services.udiskie.enable = true;
 
 	home.keyboard.options = [ "ctrl:nocaps" ];
@@ -49,11 +49,36 @@ in {
 		MANPAGER = editor.manpager;
 	};
 
+	programs.mpv = {
+		enable = true;
+		defaultProfiles = [ "gpu-hq" ];
+		config = {
+			no-keepaspect-window = "";
+			cache = "yes";
+			video-sync = "display-resample";
+			vo = "gpu";
+			hwdec = "auto";
+		};
+	};
+
 	home.packages = with pkgs; [
-		# Editors
+		# Browsers
 		google-chrome
 		firefox
-		/* unstable.neovim */
+
+		# Communication
+		discord
+		slack
+		tdesktop
+		zoom-us
+
+		# Help
+		tealdeer # TLDR
+		cht-sh
+
+		# Media Players
+		vlc
+
 		/* emacs */
 		/* vscode */
 		# android-studio
@@ -81,13 +106,8 @@ in {
 		/* copyq */
 		/* maim */
 		/* rofi */
-		/* tealdeer */
 		/* tmux */
-		/* tdesktop */
-		/* slack */
-		/* discord */
 		/* exa */
-		/* tree */
 		/* htop */
 		/* nnn */
 		/* vifm */
@@ -96,22 +116,13 @@ in {
 		/* termpdfpy */
 		/* gimp */
 		/* octaveFull # Gnu octave */
-		/* vlc */
-		/* libvdpau # dependency of vlc */
-		/* mpv */
-		/* zoom-us */
-		/* cht-sh */
 		# steam
 		/* libreoffice */
 		# Browser
 		/* firefox */
 		/* opera */
 		/* bat */
-		# Essentials
-		/* file */
 		/* fd */
-		/* curl */
-/* wget2 */
 		/* texlive.combined.scheme-full */
 		# neovim stuff
 		/* unstable.pyright */

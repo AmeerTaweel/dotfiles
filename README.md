@@ -8,6 +8,7 @@ This way all the submodules will be cloned as well.
 + Alacritty
 + Bash
 + Git
++ Rofi
 + Vim
 
 ## Awesome Window Manager
@@ -43,12 +44,6 @@ Bash is my default clipboard manager. It has no dependencies.
 
 Vim emulation plugin for IDEs based on the IntelliJ Platform.
 It has no dependencies.
-
-## Rofi
-
-Rofi is my default run launcher.
-
-**NOTE**: This config needs Rofi v1.7.0 or newer.
 
 ## SSH
 

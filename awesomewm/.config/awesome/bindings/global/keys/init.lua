@@ -160,31 +160,31 @@ local M = gears.table.join(
 		function () awful.spawn(vars.browser) end,
 		{ group = "launch", description = "open a browser" }
 	),
-	awful.key(
-		{ vars.mod_key }, "p",
-		function() awful.util.spawn("rofi -show drun -display-drun 'launch'") end,
-		{ group = "launch", description = "launch a program" }
-	),
-	awful.key(
-		{ vars.mod_key }, "r",
-		function() awful.util.spawn("rofi -show run") end,
-		{ group = "launch", description = "run a command" }
-	),
-	awful.key(
-		{ vars.mod_key }, "w",
-		function() awful.util.spawn("rofi -show windowcd -display-windowcd 'window'") end,
-		{ group = "launch", description = "switch window within current tag" }
-	),
-	awful.key(
-		{ vars.mod_key, "Shift" }, "w",
-		function() awful.util.spawn("rofi -show window") end,
-		{ group = "launch", description = "switch window" }
-	),
-	awful.key(
-		{ vars.mod_key }, "s",
-		function() awful.util.spawn("rofi -show ssh -no-parse-known-hosts -disable-history") end,
-		{ group = "launch", description = "start ssh connection" }
-	),
+	-- awful.key(
+	-- 	{ vars.mod_key }, "p",
+	-- 	function() awful.util.spawn("rofi -show drun -display-drun 'launch'") end,
+	-- 	{ group = "launch", description = "launch a program" }
+	-- ),
+	-- awful.key(
+	-- 	{ vars.mod_key }, "r",
+	-- 	function() awful.util.spawn("rofi -show run") end,
+	-- 	{ group = "launch", description = "run a command" }
+	-- ),
+	-- awful.key(
+	-- 	{ vars.mod_key }, "w",
+	-- 	function() awful.util.spawn("rofi -show windowcd -display-windowcd 'window'") end,
+	-- 	{ group = "launch", description = "switch window within current tag" }
+	-- ),
+	-- awful.key(
+	-- 	{ vars.mod_key, "Shift" }, "w",
+	-- 	function() awful.util.spawn("rofi -show window") end,
+	-- 	{ group = "launch", description = "switch window" }
+	-- ),
+	-- awful.key(
+	-- 	{ vars.mod_key }, "s",
+	-- 	function() awful.util.spawn("rofi -show ssh -no-parse-known-hosts -disable-history") end,
+	-- 	{ group = "launch", description = "start ssh connection" }
+	-- ),
 	awful.key(
 		{ vars.mod_key, "Control" }, "p",
 		function() 
@@ -205,27 +205,27 @@ local M = gears.table.join(
 	),
 
 	-- Volume Controls
-	awful.key({}, "XF86AudioRaiseVolume", function ()
-		local vol = require("ui.status_bar.widgets.volume")
-		local v = require("vicious")
-		awful.spawn.easy_async("pamixer --increase 5 --allow-boost", function() v.force({ vol }) end)
-	end),
-	awful.key({}, "XF86AudioLowerVolume", function ()
-		local vol = require("ui.status_bar.widgets.volume")
-		local v = require("vicious")
-		awful.spawn.easy_async("pamixer --decrease 5 --allow-boost", function() v.force({ vol }) end)
-	end),
-	awful.key({}, "XF86AudioMute", function ()
-		local vol = require("ui.status_bar.widgets.volume")
-		local v = require("vicious")
-		awful.spawn.easy_async("pamixer --toggle-mute --allow-boost", function() v.force({ vol }) end)
-	end),
-	awful.key({}, "XF86MonBrightnessDown", function ()
-		awful.spawn.easy_async("brightnessctl s 40%-")
-	end),
-	awful.key({}, "XF86MonBrightnessUp", function ()
-		awful.spawn.easy_async("brightnessctl s 40%+")
-	end),
+	-- awful.key({}, "XF86AudioRaiseVolume", function ()
+	-- 	local vol = require("ui.status_bar.widgets.volume")
+	-- 	local v = require("vicious")
+	-- 	awful.spawn.easy_async("pamixer --increase 5 --allow-boost", function() v.force({ vol }) end)
+	-- end),
+	-- awful.key({}, "XF86AudioLowerVolume", function ()
+	-- 	local vol = require("ui.status_bar.widgets.volume")
+	-- 	local v = require("vicious")
+	-- 	awful.spawn.easy_async("pamixer --decrease 5 --allow-boost", function() v.force({ vol }) end)
+	-- end),
+	-- awful.key({}, "XF86AudioMute", function ()
+	-- 	local vol = require("ui.status_bar.widgets.volume")
+	-- 	local v = require("vicious")
+	-- 	awful.spawn.easy_async("pamixer --toggle-mute --allow-boost", function() v.force({ vol }) end)
+	-- end),
+	-- awful.key({}, "XF86MonBrightnessDown", function ()
+	-- 	awful.spawn.easy_async("brightnessctl s 40%-")
+	-- end),
+	-- awful.key({}, "XF86MonBrightnessUp", function ()
+	-- 	awful.spawn.easy_async("brightnessctl s 40%+")
+	-- end),
 	awful.key({ vars.mod_key }, "x", function() modalbind.grab{
 		name = "screenshot",
 		keymap = require("bindings.global.keys.screenshot"),

@@ -13,5 +13,4 @@
 	services.xserver.windowManager.awesome.enable = true;
 	# Enable touchpad support (enabled default in most desktopManager).
 	services.xserver.libinput.enable = true;
-	# hardware.nvidia.modesetting.enable = true;
 }
