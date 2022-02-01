@@ -1,7 +1,7 @@
 # dotfiles
 
-This is my personal dotfiles configuration for NixOS. It also contains
-configuration for:
+This is my personal dotfiles configuration for NixOS using flakes. It also
+contains configuration for:
 
 + Alacritty
 + Bash
