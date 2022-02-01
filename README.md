@@ -28,7 +28,7 @@ contains configuration for:
 | Steam Game Configuration              | Better GPU Support            |
 | Legendary Game Launcher Configuration | Better GPU Support            |
 | Wine Configuration                    | Better GPU Support            |
-| Discord screensharing sound issue     | Proper Discord Solution [[1]] |
+| Fix Discord screensharing sound issue | Proper Discord Solution [[1]] |
 
 ## Awesome Window Manager
 
