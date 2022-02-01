@@ -8,6 +8,7 @@ contains configuration for:
 + CopyQ
 + Git
 + Rofi
++ SXHKD
 + Vim
 
 ## Usage Instructions
