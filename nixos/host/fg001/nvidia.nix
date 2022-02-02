@@ -12,10 +12,6 @@ let
 
 	intelBusId = "PCI:0:2:0";
 	nvidiaBusId = "PCI:1:0:0";
-
-	nvidia_x11 = config.boot.kernelPackages.nvidia_x11;
-	nvidia_gl = nvidia_x11.out;
-	nvidia_gl_32 = nvidia_x11.lib32;
 in {
 	environment.systemPackages = with pkgs; [
 		nvidia-offload # Wrapper around programs
@@ -50,7 +46,6 @@ in {
 			vaapiIntel
 			vaapiVdpau
 			libvdpau-va-gl
-			nvidia_gl
 		];
 		driSupport32Bit = true;
 		extraPackages32 = with pkgs.pkgsi686Linux; [
@@ -59,7 +54,6 @@ in {
 			vaapiVdpau
 			libvdpau-va-gl
 			libva
-			nvidia_gl_32
 		];
 	};
 }
