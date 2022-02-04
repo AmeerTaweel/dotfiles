@@ -31,6 +31,7 @@ contains configuration for:
 | Legendary Game Launcher Configuration | Better GPU Support            |
 | Wine Configuration                    | Better GPU Support            |
 | Fix Discord screensharing sound issue | Proper Discord Solution [[1]] |
+| Setup Virt-Manager [[2]][[3]][[4]]    | Needing Virtual Machines      |
 
 ## Useful Resources
 
@@ -92,3 +93,6 @@ Dependencies:
 + rg
 
 [1]: https://support.discord.com/hc/en-us/community/posts/360050971374-Linux-Screen-Share-Sound-Support
+[2]: https://nixos.wiki/wiki/Virt-manager
+[3]: https://youtu.be/p1d_b_91YlU
+[4]: https://youtu.be/9FBhcOnCxM8
