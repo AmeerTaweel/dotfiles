@@ -30,6 +30,7 @@ with builtins;
 				isNormalUser = true;
 				shell = pkgs.${shell};
 			};
+			programs.${shell}.enable = true;
 		};
 		homeManagerModule = {
 			name = username;
