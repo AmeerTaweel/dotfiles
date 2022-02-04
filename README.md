@@ -31,7 +31,7 @@ contains configuration for:
 | Legendary Game Launcher Configuration | Better GPU Support            |
 | Wine Configuration                    | Better GPU Support            |
 | Fix Discord screensharing sound issue | Proper Discord Solution [[1]] |
-| Setup Virt-Manager [[2]][[3]][[4]]    | Needing Virtual Machines      |
+| Setup Virt-Manager [[2]] [[3]] [[4]]  | Needing Virtual Machines      |
 
 ## Useful Resources
 
