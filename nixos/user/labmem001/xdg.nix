@@ -1,7 +1,7 @@
 { ... }:
 
 let
-	browserList = [ "nani.desktop" "google-chrome.desktop" "firefox.desktop" ];
+	browserList = [ "google-chrome.desktop" "firefox.desktop" ];
 	videoPlayerList = [ "mpv.desktop" "vlc.desktop" ];
 in {
 	xdg.mime.enable = true;
@@ -13,6 +13,5 @@ in {
 		"x-scheme-handler/about" = browserList;
 		"x-scheme-handler/unknown" = browserList;
 		"video/mp4" = videoPlayerList;
-		"application/pdf" = "zathura.desktop";
 	};
 }
