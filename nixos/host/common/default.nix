@@ -6,6 +6,7 @@
 		./networking.nix
 		./bluetooth.nix
 		./audio.nix
+		./power-options.nix
 	];
 	services.xserver.enable = true;
 	services.xserver.displayManager.gdm.enable = true;
