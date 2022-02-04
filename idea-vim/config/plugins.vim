@@ -1,5 +1,3 @@
-" # Plugins
-
 " Emulates vim-commentary
 set commentary
 

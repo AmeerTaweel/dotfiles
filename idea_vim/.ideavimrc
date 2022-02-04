@@ -1,7 +1,0 @@
-" # IdeaVim Configuration
-
-source ~/.config/idea_vim/settings.vim
-
-source ~/.config/idea_vim/keybindings.vim
-
-source ~/.config/idea_vim/plugins.vim

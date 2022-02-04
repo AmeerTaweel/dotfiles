@@ -8,6 +8,7 @@ contains configuration for:
 + CopyQ
 + Fish
 + Git
++ IDEA Vim (JetBrains IDEs plugin)
 + Rofi
 + SXHKD
 + Vim
@@ -66,11 +67,6 @@ AwesomeWM is my default window manager.
 
 + vicious (statusbar widgets)
 + modalbind (mode-specific bindings)
-
-## IDEA Vim
-
-Vim emulation plugin for IDEs based on the IntelliJ Platform.
-It has no dependencies.
 
 ## Tmux
 

@@ -1,34 +1,22 @@
-" # Keybindings
-
 " Leader Key
 let mapleader = ","
 
-" ## Moving between windows
+" # Moving between windows
 
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
-" ## Move Line/Selection Up/Down
-
-" Move Line
-nnoremap K ddkP
-nnoremap J ddp
-
-" Move Visual Selection
-vnoremap J :m '>+1<cr>gv=gv
-vnoremap K :m '<-2<cr>gv=gv
-
-" ## Windows
+" # Windows
 
 " Splitting
 nnoremap <leader>- :split<cr>
 nnoremap <leader>/ :vsplit<cr>
 
 " Moving
-map <leader>wn <Action>(NextTab)
-map <leader>wp <Action>(PreviousTab)
+map gt <Action>(NextTab)
+map gT <Action>(PreviousTab)
 
 " Normal Mode
 nnoremap <leader>y "+y
@@ -42,16 +30,19 @@ vnoremap <leader>y "+y
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
-" ## Code Formatting and Navigation
+" # Code Formatting and Navigation
 
-map <leader>F <Action>(ReformatCode)
-map <leader>ep <Action>(GotoPreviousError)
-map <leader>en <Action>(GotoNextError)
-map <leader>to <Action>(GotoDeclaration)
-map <leader>tf <Action>(FindUsages)
-map <leader>rf <Action>(RenameElement)
+map <leader>ar <Action>(RenameElement)
+map <leader>af <Action>(ReformatCode)
+" Fuzzy find files by name
+map <leader>ff <Action>(GotoFile)
+map <leader>gd <Action>(GotoDeclaration)
+" List References
+map <leader>lr <Action>(FindUsages)
+map [d <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
 
-" ## Other Mappings
+" # Other Mappings
 
 " Enter creates a new line in normal mode
 nnoremap <cr> o<esc>
@@ -60,13 +51,10 @@ nnoremap <cr> o<esc>
 map <space> <Action>(CollapseBlock)
 
 " Remove highlighted search results
-nnoremap <leader>noh :noh<cr>
+nnoremap <leader>th :noh<cr>
 
 " Show registers
 nnoremap <leader>rg :reg<cr>
 
 " Make . to work with visually selected lines
 vnoremap . :normal.<cr>
-
-" Fuzzy find files by name
-map <leader>ff <Action>(GotoFile)

@@ -12,6 +12,8 @@ let
 		};
 	};
 	editor = editors.${user.editor};
+	ideaVimRCPath = ../../../idea-vim/ideavimrc;
+	ideaVimConfigPath = ../../../idea-vim/config;
 in {
 	programs.home-manager.enable = true;
 	# Use Bluetooth headset buttons to control media player???
@@ -77,7 +79,7 @@ in {
 		# IDE's
 		# vscode
 		# android-studio
-		# jetbrains.idea-ultimate
+		jetbrains.idea-ultimate
 
 		# Other
 		bat
@@ -153,4 +155,15 @@ in {
 		# pulse secure vpn for university
 		# unity 3d
 	];
+
+
+	home.file.ideaVimRC = {
+		source = ideaVimRCPath;
+		target = ".ideavimrc";
+	};
+	xdg.configFile.ideaVimConfig = {
+		source = ideaVimConfigPath;
+		target = "idea-vim";
+		recursive = true;
+	};
 }

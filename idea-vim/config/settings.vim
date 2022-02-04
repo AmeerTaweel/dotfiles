@@ -1,12 +1,10 @@
-" # Settings
-
 " Set the number of saved commands in history
 set history=10000
 
 " Show incomplete commands at the bottom
 set showcmd
 
-" ## Hybrid Line Numbers
+" # Hybrid Line Numbers
 
 " Relative line numbers
 set relativenumber
@@ -14,7 +12,7 @@ set relativenumber
 " Show current line number
 set number
 
-" ## Search
+" # Search
 
 " Select items found in search
 set incsearch
