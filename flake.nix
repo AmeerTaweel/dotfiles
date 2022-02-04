@@ -1,15 +1,8 @@
 {
-	# TODO: Use GRUB instead of systemd-boot [ Wiki ]
-	# TODO: Enable system fonts
-	# TODO: Verify accelerated video playback [ Wiki ]
 	# TODO: Setup printers and scanners [ Wiki ]
-	# TODO: Bootloader + Dual-Boot with Windows [ Wiki ]
 	# TODO: Configure RedShift [ HomeManager ]
 	# TODO: Configure notification service [ HomeManager ]
-	# TODO: Configure password-store and password-store sync [ HomeManager ]
 	# TODO: Configure hotkey daemon [ HomeManager ]
-
-	# TODO: Configure screen lock [ HomeManager ]
 
 	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
 	# NOTE: Home-Manager Tutorial: https://youtu.be/CDzgNxoAlnA
