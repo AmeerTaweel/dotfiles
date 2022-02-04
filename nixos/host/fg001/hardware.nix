@@ -18,6 +18,16 @@
 		fsType = "vfat";
 	};
 
+	fileSystems."/extra" = {
+		device = "/dev/disk/by-label/NIXOS_EXTRA";
+		fsType = "ext4";
+	};
+
+	fileSystems."/shared" = {
+		device = "/dev/disk/by-label/SHARED";
+		fsType = "ntfs";
+	};
+
 	swapDevices = [{
 		device = "/dev/disk/by-label/NIXOS_SWAP";
 	}];
