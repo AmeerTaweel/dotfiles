@@ -56,6 +56,8 @@ in {
 		# Browsers
 		google-chrome
 		firefox
+		opera
+		qutebrowser
 
 		# Communication
 		discord
@@ -72,49 +74,40 @@ in {
 		vlc
 		zathura
 
+		# IDE's
+		# vscode
+		# android-studio
+		# jetbrains.idea-ultimate
+
 		# Other
+		bat
+		fd 
+		ripgrep
+		htop
 		copyq
 		rar
 		obsidian
+		gimp
+		octaveFull # Gnu Octave
+		libreoffice
+		postman
 
 		/* emacs */
-		/* vscode */
-		# android-studio
-		/* jetbrains.idea-ultimate */
 		# Terminal Emulators
 		/* kitty */
-		# Version Control
-		/* git */
-		# Browsers
-		/* qutebrowser */
 		# X Server
-		/* numlockx */
 		/* xorg.xmodmap */
 		/* xdotool */
 		/* xclip */
-		/* xdg-utils */
 		/* xe */
-		/* ripgrep */
 		# Others
-		/* postman */
 		/* maim */
-		/* rofi */
 		/* tmux */
 		/* exa */
-		/* htop */
 		/* nnn */
 		/* vifm */
 		/* entr */
 		/* termpdfpy */
-		/* gimp */
-		/* octaveFull # Gnu octave */
-		# steam
-		/* libreoffice */
-		# Browser
-		/* firefox */
-		/* opera */
-		/* bat */
-		/* fd */
 		/* texlive.combined.scheme-full */
 		# neovim stuff
 		/* unstable.pyright */
@@ -151,7 +144,6 @@ in {
 		# hplip-gui
 		# failed
 		# teamviewer
-		# steam
 		# not found
 		# lookatme
 		# to:
@@ -159,9 +151,6 @@ in {
 		# patched font
 		# ffmpeg
 		# pulse secure vpn for university
-		# hibernate issue
-		# time issue with windows
 		# unity 3d
-		/* legendary-gl */
 	];
 }
