@@ -1,5 +1,4 @@
 {
-	# TODO: Setup printers and scanners [ Wiki ]
 	# TODO: Configure RedShift [ HomeManager ]
 	# TODO: Configure notification service [ HomeManager ]
 	# TODO: Configure hotkey daemon [ HomeManager ]
