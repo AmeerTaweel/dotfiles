@@ -11,6 +11,7 @@ contains configuration for:
 + IDEA Vim (JetBrains IDEs plugin)
 + Rofi
 + SXHKD
++ Tmux
 + Vim
 
 ## Usage Instructions
@@ -69,17 +70,6 @@ AwesomeWM is my default window manager.
 
 + vicious (statusbar widgets)
 + modalbind (mode-specific bindings)
-
-## Tmux
-
-Tmux is my terminal multiplexer.
-
-### Dependencies
-
-+ xclip
-+ xe (improvement over xargs)
-+ rofi
-+ bash
 
 ## Neovim
 

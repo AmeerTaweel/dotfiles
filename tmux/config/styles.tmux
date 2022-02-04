@@ -1,6 +1,4 @@
-# [ Styles ]
-
-# [[ Panes ]]
+# [ Panes ]
 
 # Borders
 PANE_BORDER_STYLE="fg=default"
@@ -10,7 +8,7 @@ PANE_ACTIVE_BORDER_STYLE="fg=yellow"
 DISPLAY_PANES_COLOR="blue"
 DISPLAY_PANES_ACTIVE_COLOR="yellow"
 
-# [[ Status Bar ]]
+# [ Status Bar ]
 
 STATUS_STYLE="bg=black fg=white"
 

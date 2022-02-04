@@ -1,5 +1,3 @@
-# [ Settings ]
-
 # Make tmux read bash colors
 set -g default-terminal "screen-256color"
 set -g terminal-overrides ",xterm-256color:Tc"
@@ -28,7 +26,7 @@ set -g display-time 4000
 # Focus events enabled for terminals that support them
 set -g focus-events on
 
-# [[ Panes ]]
+# [ Panes ]
 
 # Pane border styles
 set -g pane-border-style $PANE_BORDER_STYLE
@@ -38,12 +36,12 @@ set -g pane-active-border-style $PANE_ACTIVE_BORDER_STYLE
 set -g display-panes-colour $DISPLAY_PANES_COLOR
 set -g display-panes-active-colour $DISPLAY_PANES_ACTIVE_COLOR
 
-# [[ Windows ]]
+# [ Windows ]
 
 # Enable activity alerts
 set -g visual-activity on
 
-# [[ Status Bar ]]
+# [ Status Bar ]
 
 # Update status bar every x seconds
 set -g status-interval 2
@@ -52,12 +50,12 @@ set -g status-interval 2
 set -g message-style $MSG_STYLE
 set -g status-style $STATUS_STYLE
 
-# [[[ Left Status Bar ]]]
+# [[ Left Status Bar ]]
 
 # Display padded session name
 set -g status-left "$SESSION_NAME_FORMAT #S "
 
-# [[[ Center Status Bar ]]]
+# [[ Center Status Bar ]]
 
 # Center the window names
 set-option -g status-justify absolute-centre
@@ -66,7 +64,7 @@ set-option -g status-justify absolute-centre
 set -g window-status-current-format "$WINDOW_STATUS_CURRENT_FORMAT #I #W "
 set -g window-status-format "$WINDOW_STATUS_FORMAT #I #W "
 
-# [[[ Right Status Bar ]]]
+# [[ Right Status Bar ]]
 
 # Show hint on prefix key press
 set -g status-right "#{?client_prefix,$PREFIX_HIGHLIGHT_FORMAT ^A ,\

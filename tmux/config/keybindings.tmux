@@ -1,5 +1,3 @@
-# [ Keybindings ]
-
 # Reload .tmux.conf
 bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 
@@ -8,7 +6,7 @@ bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 # Hitting the key after the prefix will restore the old function
 bind C-l send-keys C-l
 
-# [[ Prefix ]]
+# [ Prefix ]
 
 # Setting the prefix from CTRL-b to CTRL-a
 set -g prefix C-a
@@ -19,7 +17,7 @@ bind C-a send-prefix
 # Free the original CTRL-b keybinding
 unbind C-b
 
-# [[ Splitting ]]
+# [ Splitting ]
 
 # Unbind original screen splitting bindings
 unbind '"'
@@ -33,12 +31,7 @@ bind / split-window -h -c "#{pane_current_path}"
 bind _ split-window -v
 bind ? split-window -h
 
-# [[ Sessions ]]
-
-# Fuzzy switch session
-bind C-j run-shell "bash ~/.config/tmux/scripts/session-switch.sh"
-
-# [[ Windows ]]
+# [ Windows ]
 
 # Create a new window with the current path
 bind c new-window -c "#{pane_current_path}"
@@ -46,13 +39,10 @@ bind c new-window -c "#{pane_current_path}"
 # Create a new window with the default path
 bind C new-window
 
-# [[ Panes ]]
+# [ Panes ]
 
 # Break a pane out to a new window
 bind b break-pane -d
 
 # Swap a pane (targeted by pane number) with the current pane
-bind C-s display-panes\; command-prompt -p "Swap with pane: " "swap-pane -t '%%'"
-
-# Synchronize panes in the session toggle
-bind S set-window-option synchronize-panes
+bind S display-panes\; command-prompt -p "Swap with pane: " "swap-pane -t '%%'"

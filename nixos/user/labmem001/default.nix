@@ -13,5 +13,6 @@
 		./rofi.nix
 		./sxhkd.nix
 		./copyq.nix
+		./tmux.nix
 	];
 }
