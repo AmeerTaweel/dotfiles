@@ -35,14 +35,6 @@ in {
 	# xsession.layout = "us";
 	# xsession.xkbOptions = "eurosign:e";
 
-	# Some programs need SUID wrappers, can be configured further or are
-	# started in user sessions.
-	# programs.mtr.enable = true;
-	programs.gpg = {
-	  enable = true;
-	  # enableSSHSupport = true;
-	};
-
 	home.sessionVariables = {
 		EDITOR = editor.package;
 		MANPAGER = editor.manpager;
