@@ -59,6 +59,7 @@ in {
 
 		# Communication
 		discord
+		element-desktop
 		slack
 		tdesktop
 		zoom-us
@@ -73,6 +74,8 @@ in {
 
 		# Other
 		copyq
+		rar
+		obsidian
 
 		/* emacs */
 		/* vscode */
@@ -145,7 +148,6 @@ in {
 		/* glibc */
 		/* gnumake */
 
-		/* brightnessctl */
 		# hplip-gui
 		# failed
 		# teamviewer
