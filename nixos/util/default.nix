@@ -1,7 +1,20 @@
 { nixpkgs, home-manager, ... }:
 with builtins;
 {
-	mkUser = user@{ username, fullName, email, editor, terminal, theme, ... }: {
+	mkUser = user@{
+		username,
+		fullName,
+		email,
+		editor,
+		terminal,
+		theme,
+		system,
+		shell,
+		...
+	}:
+	let
+		pkgs = import nixpkgs { inherit system; }; 
+	in {
 		inherit username fullName;
 		systemModule = { ... }: {
 			users.users.${username} = {
@@ -15,6 +28,7 @@ with builtins;
 				# Don't forget to change the password with "passwd".
 				initialPassword = "";
 				isNormalUser = true;
+				shell = pkgs.${shell};
 			};
 		};
 		homeManagerModule = {

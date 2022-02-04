@@ -6,6 +6,7 @@ contains configuration for:
 + Alacritty
 + Bash
 + CopyQ
++ Fish
 + Git
 + Rofi
 + SXHKD

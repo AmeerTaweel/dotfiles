@@ -33,6 +33,8 @@
 				editor = "nvim";
 				terminal = "alacritty";
 				theme = "ayu-dark";
+				system = "x86_64-linux";
+				shell = "fish";
 			};
 		};
 	in {
