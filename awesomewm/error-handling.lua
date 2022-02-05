@@ -1,8 +1,6 @@
--- { Error handling }
-
 local naughty = require("naughty") -- Notification library
 
--- {{ Startup Errors }}
+-- { Startup Errors }
 -- Check if awesome encountered an error during startup.
 -- Fall back to default config in the case of a startup error.
 if awesome.startup_errors then
@@ -13,7 +11,7 @@ if awesome.startup_errors then
 	})
 end
 
--- {{ Runtime Errors }}
+-- { Runtime Errors }
 -- Handle runtime errors after startup.
 do
 	local in_error = false

@@ -1,5 +1,3 @@
--- { Hardware }
-
 local metatables = require("lua.metatables")
 
 local M = {}

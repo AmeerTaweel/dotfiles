@@ -1,4 +1,4 @@
--- { Client Key Bindings }
+-- { Client Keyboard Bindings }
 
 local awful = require("awful")
 local gears = require("gears")
@@ -11,10 +11,7 @@ local M = gears.table.join(
 			c.fullscreen = not c.fullscreen
 			c:raise()
 		end,
-		{
-			description = "toggle fullscreen",
-			group = "client"
-		}
+		{ description = "toggle fullscreen", group = "client" }
 	),
 	awful.key(
 		{ vars.mod_key, "Shift" }, "c",

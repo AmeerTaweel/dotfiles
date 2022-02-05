@@ -1,3 +1,5 @@
+-- { Global Keyboard Bindings }
+
 local awful = require("awful")
 local gears = require("gears")
 local hotkeys_popup = require("awful.hotkeys_popup")
@@ -137,18 +139,6 @@ local M = gears.table.join(
 		{ vars.mod_key, "Shift" }, "space",
 		function () awful.layout.inc(-1) end,
 		{ group = "layout", description = "select previous layout" }
-	),
-
-	-- Launch
-	awful.key(
-		{ vars.mod_key }, "Return",
-		function () awful.spawn(vars.terminal) end,
-		{ group = "launch", description = "open a terminal" }
-	),
-	awful.key(
-		{ vars.mod_key }, "b",
-		function () awful.spawn(vars.browser) end,
-		{ group = "launch", description = "open a browser" }
 	)
 )
 

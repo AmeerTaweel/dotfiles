@@ -52,9 +52,6 @@ AwesomeWM is my default window manager.
 
 ### Dependencies
 
-+ qutebrowser (default browser)
-+ alacritty (default terminal emulator)
-+ vim (default editor)
 + alsa-utils
 
 ### Submodules

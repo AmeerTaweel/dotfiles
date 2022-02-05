@@ -1,5 +1,3 @@
--- { Layouts }
-
 local awful = require("awful")
 
 local all_layouts = {

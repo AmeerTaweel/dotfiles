@@ -1,10 +1,8 @@
--- { Signals }
-
 local awful = require("awful")
 local beautiful = require("beautiful")
 local wallpaper = require("ui.wallpaper")
 
--- {{ New Client }}
+-- { New Client }
 -- Executes when a new client appears.
 
 client.connect_signal("manage", function(c)
@@ -16,14 +14,14 @@ client.connect_signal("manage", function(c)
 	c.border_width = beautiful.border_width
 end)
 
--- {{ Sloppy Focus }}
+-- { Sloppy Focus }
 -- When Sloppy Focus is enabled, focus follows the mouse.
 
 client.connect_signal("mouse::enter", function(c)
 	c:emit_signal("request::activate", "mouse_enter", { raise = false })
 end)
 
--- {{ Focus Change Events }}
+-- { Focus Change Events }
 
 client.connect_signal("focus", function(c)
 	c.border_color = beautiful.border_focus
@@ -33,7 +31,7 @@ client.connect_signal("unfocus", function(c)
 	c.border_color = beautiful.border_normal
 end)
 
--- {{ Screen Geometry Change }}
+-- { Screen Geometry Change }
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 
 screen.connect_signal("property::geometry", wallpaper.set)
