@@ -48,6 +48,11 @@ in {
 		target = "awesome/ui/theme.lua";
 	};
 
+	programs.nnn = {
+		enable = true;
+		package = pkgs.nnn.override ({ withNerdIcons = true; });
+	};
+
 	home.sessionVariables = {
 		EDITOR = editor.package;
 		MANPAGER = editor.manpager;
@@ -88,6 +93,7 @@ in {
 		zathura
 		yt-dlp
 		tartube-yt-dlp
+		nuclear
 
 		# IDE's
 		# vscode
@@ -107,13 +113,12 @@ in {
 		octaveFull # Gnu Octave
 		libreoffice
 		postman
+		devour
 
 		/* emacs */
 		/* kitty */
 		/* termpdfpy */
-		/* tmux */
 		/* exa */
-		/* nnn */
 		/* vifm */
 		/* entr */
 		/* texlive.combined.scheme-full */
@@ -150,8 +155,6 @@ in {
 		/* gnumake */
 
 		# hplip-gui
-		# failed
-		# teamviewer
 		# not found
 		# lookatme
 		# to:

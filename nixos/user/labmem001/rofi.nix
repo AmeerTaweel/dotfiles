@@ -11,9 +11,10 @@ in {
 		plugins = with pkgs; [
 			rofi-calc
 			rofi-emoji
+			rofi-file-browser
 		];
 		extraConfig = {
-			modi = "window,windowcd,run,drun,ssh,filebrowser,calc,emoji";
+			modi = "window,windowcd,run,drun,ssh,filebrowser,file-browser-extended,calc,emoji";
 			matching = "fuzzy";
 			kb-cancel= "Escape";
 		};

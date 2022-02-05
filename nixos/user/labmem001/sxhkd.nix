@@ -20,6 +20,7 @@
 			"super + x ; w" = "${pkgs.xdotool}/bin/xdotool getactivewindow | ${pkgs.xe}/bin/xe ${pkgs.maim}/bin/maim --window | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
 			"super + x ; f"  = "${pkgs.maim}/bin/maim | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
 			"super + Return" = user.terminal;
+			"super + o ; {h,e,s}" = "rofi -show file-browser-extended -file-browser-depth 0 -file-browser-follow-symlinkx -file-browser-dir '{~,/extra,/shared}'";
 		};
 	};
 }
