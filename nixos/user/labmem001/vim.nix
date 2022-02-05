@@ -2,18 +2,6 @@
 
 let
 	vimConfigurationPath = ../../../vim;
-
-	customVimPackages = {};
-
-	customVimPackages.vim-window-swap = pkgs.vimUtils.buildVimPlugin {
-		name = "vim-window-swap";
-		src = pkgs.fetchFromGitHub {
-			owner = "wesQ3";
-			repo = "vim-windowswap";
-			rev = "15db3f697aa1fa696d99fcdc920c90cd2cec855e";
-			sha256 = "S1CN0Dbb2BtZx4Jhafac2AltkzV2sPAixSESBXbn7/8=";
-		};
-	};
 in {
 	programs.vim = {
 		enable = true;
@@ -27,7 +15,7 @@ in {
 			vim-tmux-navigator
 
 			# Swap split windows with ease
-			customVimPackages.vim-window-swap
+			vim-windowswap
 
 			# Git for Vim
 			vim-fugitive
