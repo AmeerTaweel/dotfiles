@@ -1,12 +1,10 @@
--- { Top Status Bar }
-
 local awful = require("awful")
 local wibox = require("wibox")
 local widgets = require("ui.status_bar.widgets")
 
 local M = {}
 
--- {{ Top Left Status Bar }}
+-- { Top Left Status Bar }
 
 M.left = function(s)
 	widgets.tag_list.setup(s)
@@ -16,13 +14,13 @@ M.left = function(s)
 	}
 end
 
--- {{ Top Center Status Bar }}
+-- { Top Center Status Bar }
 
 M.center = function(s)
 	return { layout = wibox.layout.fixed.horizontal }
 end
 
--- {{ Top Right Status Bar }}
+-- { Top Right Status Bar }
 
 M.right = function(s)
 	return {

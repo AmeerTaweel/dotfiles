@@ -43,6 +43,11 @@ in {
 		recursive = true;
 	};
 
+	xdg.configFile.awesomewmTheme = {
+		text = "return require('ui.themes.${user.theme}.theme')";
+		target = "awesome/ui/theme.lua";
+	};
+
 	home.sessionVariables = {
 		EDITOR = editor.package;
 		MANPAGER = editor.manpager;

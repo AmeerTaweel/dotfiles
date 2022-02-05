@@ -1,5 +1,3 @@
--- { Status Bar }
-
 local M = {}
 
 -- Setup status bars for given screen

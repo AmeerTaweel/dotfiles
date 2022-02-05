@@ -2,24 +2,6 @@
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
---[[
-TODO: Fix the following files:
-	+ bindings/*/keys.lua -> global and client key bindings
-	+ layouts.lua
-	+ tags.lua
---]]
-
---[[
-TODO: Create and integrate with custom Rofi scripts:
-	+ TMUX session launcher
---]]
-
---[[
-TODO: Write a Vicious widget that use pamixer rather than amixer
-
-This helps us get rid of the alsa-utils dependency
---]]
-
 require("error-handling")
 
 -- Standard awesome library

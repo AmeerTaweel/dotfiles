@@ -1,5 +1,3 @@
--- { Tag List Widget }
-
 local awful = require("awful")
 local gears = require("gears")
 local vars = require("user-variables")

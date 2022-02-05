@@ -4,6 +4,7 @@ This is my personal dotfiles configuration for NixOS using flakes. It also
 contains configuration for:
 
 + Alacritty
++ Awesome Window Manager
 + Bash
 + CopyQ
 + Fish
@@ -45,19 +46,6 @@ contains configuration for:
 + [HomeManager Manual - Options Appendix](https://nix-community.github.io/home-manager/options.html).\
   Can be replaced with: `man home-configuration.nix`.
 + [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html).
-
-## Awesome Window Manager
-
-AwesomeWM is my default window manager.
-
-### Dependencies
-
-+ alsa-utils
-
-### Submodules
-
-+ vicious (statusbar widgets)
-+ modalbind (mode-specific bindings)
 
 ## Neovim
 

@@ -1,16 +1,14 @@
--- { Material Yellow Theme }
-
 local themes_path = "~/.config/awesome/ui/themes/"
 
 local create = function(options)
 	local theme = {}
 
-	-- {{ Font }}
+	-- { Font }
 
 	-- Format: "%s %u", FONT_NAME, FONT_SIZE
 	theme.font = options.font
 
-	-- {{ Background Colors }}
+	-- { Background Colors }
 
 	theme.bg_normal = options.bg.normal
 	theme.bg_focus = options.bg.focus
@@ -18,25 +16,25 @@ local create = function(options)
 	theme.bg_minimize = options.bg.minimize
 	theme.bg_systray = options.bg.systray
 
-	-- {{ Foreground Colors }}
+	-- { Foreground Colors }
 
 	theme.fg_normal = options.fg.normal
 	theme.fg_focus = options.fg.focus
 	theme.fg_urgent = options.fg.urgent
 	theme.fg_minimize = options.fg.minimize
 
-	-- {{ Gap }}
+	-- { Gap }
 
 	theme.useless_gap = options.gap
 
-	-- {{ Border }}
+	-- { Border }
 
 	theme.border_width = options.border.width
 	theme.border_normal = options.border.normal
 	theme.border_focus = options.border.focus
 	theme.border_marked = options.border.marked
 
-	-- {{ Widgets }}
+	-- { Widgets }
 
 	theme.widgets = {}
 	theme.widgets.time = options.widgets.time

@@ -1,5 +1,3 @@
--- { Wallpaper }
-
 -- Standard awesome library
 local gears = require("gears")
 -- Theme handling library

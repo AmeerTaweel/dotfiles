@@ -1,5 +1,3 @@
--- { Bottom Status Bar }
-
 local awful = require("awful")
 local wibox = require("wibox")
 local hardware = require("hardware")
@@ -7,7 +5,7 @@ local widgets = require("ui.status_bar.widgets")
 
 local M = {}
 
--- {{ Bottom Left Status Bar }}
+-- { Bottom Left Status Bar }
 
 M.left = function(s)
 	return {
@@ -20,13 +18,13 @@ M.left = function(s)
 	}
 end
 
--- {{ Bottom Center Status Bar }}
+-- { Bottom Center Status Bar }
 
 M.center = function(s)
 	return { layout = wibox.layout.fixed.horizontal }
 end
 
--- {{ Bottom Right Status Bar }}
+-- { Bottom Right Status Bar }
 
 M.right_laptop = function(s)
 	return {
