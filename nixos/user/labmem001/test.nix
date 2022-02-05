@@ -86,6 +86,8 @@ in {
 		# Media
 		vlc
 		zathura
+		yt-dlp
+		tartube-yt-dlp
 
 		# IDE's
 		# vscode
@@ -93,6 +95,7 @@ in {
 		jetbrains.idea-ultimate
 
 		# Other
+		ffmpeg
 		bat
 		fd 
 		ripgrep
@@ -106,21 +109,13 @@ in {
 		postman
 
 		/* emacs */
-		# Terminal Emulators
 		/* kitty */
-		# X Server
-		/* xorg.xmodmap */
-		/* xdotool */
-		/* xclip */
-		/* xe */
-		# Others
-		/* maim */
+		/* termpdfpy */
 		/* tmux */
 		/* exa */
 		/* nnn */
 		/* vifm */
 		/* entr */
-		/* termpdfpy */
 		/* texlive.combined.scheme-full */
 		# neovim stuff
 		/* unstable.pyright */
@@ -162,7 +157,6 @@ in {
 		# to:
 		# latex
 		# patched font
-		# ffmpeg
 		# pulse secure vpn for university
 		# unity 3d
 	];
