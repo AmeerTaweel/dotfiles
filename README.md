@@ -10,6 +10,7 @@ contains configuration for:
 + Fish
 + Git
 + IDEA Vim (JetBrains IDEs plugin)
++ nnn
 + Rofi
 + SXHKD
 + Tmux
