@@ -12,6 +12,7 @@ let
 		};
 	};
 	editor = editors.${user.editor};
+	awesomewmConfigPath = ../../../awesomewm;
 	ideaVimRCPath = ../../../idea-vim/ideavimrc;
 	ideaVimConfigPath = ../../../idea-vim/config;
 in {
@@ -31,12 +32,16 @@ in {
 	xsession.enable = true;
 	xsession.numlock.enable = true;
 
-	# Enable the GNOME Desktop Environment.
-	xsession.windowManager.awesome.enable = true;
-	
-	# Configure keymap in X11
-	# xsession.layout = "us";
-	# xsession.xkbOptions = "eurosign:e";
+	xsession.windowManager.awesome = {
+		enable = true;
+		luaModules = [ pkgs.luaPackages.vicious ];
+	};
+
+	xdg.configFile.awesomewmConfig = {
+		source = awesomewmConfigPath;
+		target = "awesome";
+		recursive = true;
+	};
 
 	home.sessionVariables = {
 		EDITOR = editor.package;

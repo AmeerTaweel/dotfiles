@@ -16,6 +16,9 @@
 			# Reload hotkey daemon
 			"super + shift + r ; h" = "pkill -usr1 -x sxhkd";
 			"super + y" = "copyq show";
+			"super + x ; r"  = "${pkgs.maim}/bin/maim --select | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
+			"super + x ; w" = "${pkgs.xdotool}/bin/xdotool getactivewindow | ${pkgs.xe}/bin/xe ${pkgs.maim}/bin/maim --window | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
+			"super + x ; f"  = "${pkgs.maim}/bin/maim | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
 		};
 	};
 }

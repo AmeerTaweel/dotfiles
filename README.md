@@ -52,19 +52,10 @@ AwesomeWM is my default window manager.
 
 ### Dependencies
 
-+ rofi
-+ copyq (clipboard manager)
-+ xmodmap (remap caps-lock as control)
-+ numlockx (enable numlock by default)
 + qutebrowser (default browser)
 + alacritty (default terminal emulator)
 + vim (default editor)
-+ maim (screenshot utility)
-+ xclip (store screenshots in clipboard)
-+ xdotool (take screenshot of active window)
-
 + alsa-utils
-+ pamixer
 
 ### Submodules
 

@@ -12,9 +12,6 @@ TODO: Fix the following files:
 --[[
 TODO: Create and integrate with custom Rofi scripts:
 	+ TMUX session launcher
-	+ TMUXINATOR session launcher
-	+ Manpages launcher
-	+ TLDR pages launcher
 --]]
 
 --[[
