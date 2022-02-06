@@ -77,6 +77,7 @@ fusermount -u MOUNT_DIRECTORY
 + [HomeManager Manual - Options Appendix](https://nix-community.github.io/home-manager/options.html).\
   Can be replaced with: `man home-configuration.nix`.
 + [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html).
++ [Shell Scripts in NixOS](https://ertt.ca/nix/shell-scripts/).
 
 ## Neovim
 
