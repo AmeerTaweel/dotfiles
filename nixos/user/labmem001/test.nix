@@ -70,6 +70,14 @@ in {
 		};
 	};
 
+	programs.direnv = {
+		enable = true;
+		enableBashIntegration = true;
+		# This is enabled by default
+		# enableFishIntegration = true;
+	};
+	programs.direnv.nix-direnv.enable = true;
+
 	home.packages = with pkgs; [
 		# Browsers
 		google-chrome

@@ -11,6 +11,7 @@ contains configuration for:
 + Git
 + IDEA Vim (JetBrains IDEs plugin)
 + Kitty
++ nix-direnv
 + nnn
 + Rofi
 + SXHKD
