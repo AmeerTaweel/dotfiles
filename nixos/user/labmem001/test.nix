@@ -78,6 +78,10 @@ in {
 	};
 	programs.direnv.nix-direnv.enable = true;
 
+	programs.emacs = {
+		enable = true;
+	};
+
 	home.packages = with pkgs; [
 		# Browsers
 		google-chrome
@@ -123,7 +127,6 @@ in {
 		postman
 		devour
 
-		/* emacs */
 		/* termpdfpy */
 		/* exa */
 		/* vifm */

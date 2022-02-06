@@ -7,6 +7,7 @@ contains configuration for:
 + Awesome Window Manager
 + Bash
 + CopyQ
++ Emacs
 + Fish
 + Git
 + IDEA Vim (JetBrains IDEs plugin)
