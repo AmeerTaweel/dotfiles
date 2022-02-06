@@ -26,13 +26,18 @@ contains configuration for:
 3. Run `sudo nixos-rebuild switch --flake .`.
 4. Setup SSH configuration.
 
-### Start a New `direnv` Project
+### direnv
+
+Start a new project:
 
 ```
 cd PROJECT_DIRECTORY
 nix flake new -t github:nix-community/nix-direnv .
 direnv allow
 ```
+
+Find good references for development shells for various programming languages
+[here](https://github.com/chayward1/dotfiles#development-shells).
 
 ### SSHFS Interactive Mounting
 
