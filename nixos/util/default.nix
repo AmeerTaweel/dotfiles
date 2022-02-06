@@ -32,15 +32,24 @@ with builtins;
 			};
 			programs.${shell}.enable = true;
 		};
-		homeManagerModule = {
+		homeManagerModule = { host, ... }: {
 			name = username;
-			value = import ../user/${username} { inherit user; };
+			value = import ../user/${username} { inherit host user; };
 		};
 	};
 
 	# NIC: Network Interface Card
 	# nics: List of host NIC names.
-	mkHost = host@{ hostName, system, users, nics, timezone, ... }:
+	mkHost = host@{
+		hostName,
+		system,
+		users,
+		nics,
+		timezone,
+		latitude,
+		longitude,
+		...
+	}:
 	nixpkgs.lib.nixosSystem {
 		inherit system;
 		modules = [
@@ -51,7 +60,7 @@ with builtins;
 			({ pkgs, config, ... }: {
 				home-manager.useGlobalPkgs = true;
 				home-manager.useUserPackages = true;
-				home-manager.users = listToAttrs (map (user: user.homeManagerModule) users);
+				home-manager.users = listToAttrs (map (user: (user.homeManagerModule { inherit host; })) users);
 			})
 		] ++ (map (user: user.systemModule ) users);
 	};

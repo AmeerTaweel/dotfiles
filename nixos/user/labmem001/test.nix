@@ -1,4 +1,4 @@
-{ user, pkgs, ... }:
+{ host, user, pkgs, ... }:
 
 let
 	editors = {
@@ -80,6 +80,13 @@ in {
 
 	programs.emacs = {
 		enable = true;
+	};
+
+	services.redshift = {
+		enable = true;
+		latitude = host.latitude;
+		longitude = host.longitude;
+		tray = true;
 	};
 
 	home.packages = with pkgs; [

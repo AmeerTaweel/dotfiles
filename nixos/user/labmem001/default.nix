@@ -1,8 +1,8 @@
-{ user, ... }:
+{ host, user, ... }:
 
 {
 	imports = [
-		{ _module.args = { inherit user; }; }
+		{ _module.args = { inherit host user; }; }
 		./test.nix
 		./vim.nix
 		./neovim.nix

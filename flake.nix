@@ -1,5 +1,4 @@
 {
-	# TODO: Configure RedShift [ HomeManager ]
 	# TODO: Configure notification service [ HomeManager ]
 
 	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
@@ -36,6 +35,8 @@
 				users = [ users.labmem001 ];
 				nics = [ "eno1" "wlo1" ];
 				timezone = "Europe/Istanbul";
+				latitude = 41.20504275770959;
+				longitude = 29.070748249158278;
 			};
 		};
 	};
