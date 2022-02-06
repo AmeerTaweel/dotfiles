@@ -24,7 +24,7 @@ end
 
 M.right = function(s)
 	return {
-		-- awful.widget.keyboardlayout(), -- keyboard layout
+		awful.widget.keyboardlayout(), -- keyboard layout
 		wibox.widget.systray(), -- system tray
 		awful.widget.layoutbox(s), -- indicate which layout is in use
 		layout = wibox.layout.fixed.horizontal
