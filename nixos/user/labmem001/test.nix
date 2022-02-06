@@ -116,7 +116,6 @@ in {
 		devour
 
 		/* emacs */
-		/* kitty */
 		/* termpdfpy */
 		/* exa */
 		/* vifm */
@@ -163,7 +162,6 @@ in {
 		# pulse secure vpn for university
 		# unity 3d
 	];
-
 
 	home.file.ideaVimRC = {
 		source = ideaVimRCPath;
