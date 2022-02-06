@@ -126,6 +126,7 @@ in {
 		libreoffice
 		postman
 		devour
+		sshfs
 
 		/* termpdfpy */
 		/* exa */

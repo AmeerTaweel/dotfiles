@@ -1,7 +1,6 @@
 {
 	# TODO: Configure RedShift [ HomeManager ]
 	# TODO: Configure notification service [ HomeManager ]
-	# TODO: Configure hotkey daemon [ HomeManager ]
 
 	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
 	# NOTE: Home-Manager Tutorial: https://youtu.be/CDzgNxoAlnA

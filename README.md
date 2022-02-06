@@ -26,6 +26,20 @@ contains configuration for:
 3. Run `sudo nixos-rebuild switch --flake .`.
 4. Setup SSH configuration.
 
+### SSHFS Interactive Mounting
+
+To mount:
+
+```
+sshfs USER@HOST:/DIRECTORY MOUNT_DIRECTORY
+```
+
+Like any other FUSE file system, unmount using:
+
+```
+fusermount -u MOUNT_DIRECTORY
+```
+
 ## Long Term TODOs
 
 | TODO                                  | Waiting For                   |
