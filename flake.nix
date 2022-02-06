@@ -1,8 +1,4 @@
 {
-	# TODO: Configure notification service [ HomeManager ]
-
-	# NOTE: Sample NixOS Config: https://github.com/imMaturana/nixos-config
-	# NOTE: Home-Manager Tutorial: https://youtu.be/CDzgNxoAlnA
 	description = "NixOS Configuration";
 
 	inputs = {

@@ -78,6 +78,7 @@ fusermount -u MOUNT_DIRECTORY
   Can be replaced with: `man home-configuration.nix`.
 + [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html).
 + [Shell Scripts in NixOS](https://ertt.ca/nix/shell-scripts/).
++ [Sample NixOS Config](https://github.com/imMaturana/nixos-config).
 
 ## Neovim
 
