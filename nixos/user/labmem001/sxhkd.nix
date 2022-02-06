@@ -7,7 +7,7 @@
 			"super + p" = "rofi -show drun -display-drun 'launch'";
 			"super + control + p" = "power-menu";
 			"super + r" = "rofi -show run";
-			"super + w ; {c,a}" = "rofi -show {window,windowcd -display-windowcd 'window'}";
+			"super + w ; {a,c}" = "rofi -show {window,windowcd -display-windowcd 'window'}";
 			"super + s" = "rofi -show ssh -no-parse-known-hosts -disable-history";
 			"super + c" = "rofi -show calc -no-show-match -no-sort";
 			"super + e" = "rofi -show emoji -matching normal";
