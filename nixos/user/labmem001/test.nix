@@ -134,6 +134,7 @@ in {
 		postman
 		devour
 		sshfs
+		lookatme
 
 		/* termpdfpy */
 		/* exa */
@@ -174,7 +175,6 @@ in {
 
 		# hplip-gui
 		# not found
-		# lookatme
 		# to:
 		# latex
 		# patched font
