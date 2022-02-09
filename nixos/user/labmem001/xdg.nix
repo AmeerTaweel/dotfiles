@@ -4,6 +4,21 @@ let
 	browserList = [ "google-chrome.desktop" "firefox.desktop" ];
 	videoPlayerList = [ "mpv.desktop" "vlc.desktop" ];
 in {
+	xdg.enable = true;
+
+	xdg.userDirs = {
+		enable = true;
+		createDirectories = true;
+		desktop = "$HOME";
+		documents = "$HOME";
+		download = "$HOME/downloads";
+		music = "$HOME";
+		pictures = "$HOME";
+		publicShare = "$HOME";
+		templates = "$HOME";
+		videos = "$HOME";
+	};
+
 	xdg.desktopEntries = {
 		zathura = {
 			type = "Application";
