@@ -135,6 +135,8 @@ in {
 		devour
 		sshfs
 		lookatme
+		unityhub
+		unity3d
 
 		/* termpdfpy */
 		/* exa */
@@ -179,7 +181,6 @@ in {
 		# latex
 		# patched font
 		# pulse secure vpn for university
-		# unity 3d
 	];
 
 	home.file.ideaVimRC = {
