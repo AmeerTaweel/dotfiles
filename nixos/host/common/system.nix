@@ -50,4 +50,6 @@
 	fonts.fonts = with pkgs; [
 		(nerdfonts.override { fonts = [ "Hack" ]; })
 	];
+
+	services.upower.enable = true;
 }
