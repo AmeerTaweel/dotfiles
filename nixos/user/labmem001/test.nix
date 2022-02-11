@@ -121,6 +121,7 @@ in {
 
 		# Other
 		ffmpeg
+		imagemagick
 		bat
 		fd 
 		ripgrep
