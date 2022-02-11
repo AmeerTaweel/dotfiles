@@ -136,7 +136,6 @@ in {
 		sshfs
 		lookatme
 		unityhub
-		unity3d
 
 		/* termpdfpy */
 		/* exa */
