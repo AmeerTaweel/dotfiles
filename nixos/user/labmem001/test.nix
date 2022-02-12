@@ -128,6 +128,8 @@ in {
 		htop
 		copyq
 		rar
+		zip
+		unzip
 		# obsidian
 		gimp
 		octaveFull # Gnu Octave
@@ -171,7 +173,6 @@ in {
 		/* gcc11 */
 		/* nodejs */
 		/* wget */
-		/* unzip */
 		/* glibc */
 		/* gnumake */
 
