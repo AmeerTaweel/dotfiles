@@ -128,7 +128,7 @@ in {
 		htop
 		copyq
 		rar
-		obsidian
+		# obsidian
 		gimp
 		octaveFull # Gnu Octave
 		libreoffice
