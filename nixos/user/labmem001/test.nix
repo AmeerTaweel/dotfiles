@@ -139,9 +139,9 @@ in {
 		sshfs
 		lookatme
 		unityhub
+		gnome.nautilus
 
 		/* termpdfpy */
-		/* exa */
 		/* vifm */
 		/* entr */
 		/* texlive.combined.scheme-full */
@@ -177,8 +177,6 @@ in {
 		/* gnumake */
 
 		# hplip-gui
-		# not found
-		# to:
 		# latex
 		# patched font
 		# pulse secure vpn for university
