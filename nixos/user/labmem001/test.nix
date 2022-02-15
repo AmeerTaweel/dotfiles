@@ -111,7 +111,6 @@ in {
 		vlc
 		zathura
 		yt-dlp
-		tartube-yt-dlp
 		nuclear
 
 		# IDE's
@@ -140,6 +139,7 @@ in {
 		lookatme
 		unityhub
 		gnome.nautilus
+		alsa-utils
 
 		/* termpdfpy */
 		/* vifm */
