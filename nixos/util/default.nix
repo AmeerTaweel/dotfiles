@@ -24,6 +24,7 @@ with builtins;
 					"wheel" # Enable "sudo" for the user.
 					"networkmanager"
 					"video"
+					"libvirtd"
 				];
 				# Don't forget to change the password with "passwd".
 				initialPassword = "";
