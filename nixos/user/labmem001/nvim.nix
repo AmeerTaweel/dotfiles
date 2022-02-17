@@ -1,7 +1,23 @@
-{ pkgs, ... }:
+{ user, pkgs, ... }:
 
 let
 	nvimConfigurationPath = ../../../nvim;
+	
+	nvimThemeConfiguration = {
+		ayu-dark = ''
+			vim.go.background = "dark"
+			require("ayu").colorscheme()
+		'';
+		ayu-mirage = ''
+			vim.go.background = "dark"
+			require("ayu").setup({ mirage = true })
+			require("ayu").colorscheme()
+		'';
+		ayu-light = ''
+			vim.go.background = "light"
+			require("ayu").colorscheme()
+		'';
+	};
 in {
 	programs.neovim = {
 		enable = true;
@@ -74,6 +90,7 @@ in {
 		];
 		extraConfig = ''
 			luafile ~/.config/nvim/lua/settings.lua
+			luafile ~/.config/nvim/lua/theme.lua
 		'';
 	};
 	
@@ -81,6 +98,11 @@ in {
 		source = "${nvimConfigurationPath}/lua";
 		target = "nvim/lua";
 		recursive = true;
+	};
+
+	xdg.configFile.nvimTheme = {
+		text = nvimThemeConfiguration.${user.theme};
+		target = "nvim/lua/theme.lua";
 	};
 
 	xdg.configFile.nvimUltiSnips = {
@@ -94,4 +116,3 @@ in {
 		target = "nvim/tasks.ini";
 	};
 }
-
