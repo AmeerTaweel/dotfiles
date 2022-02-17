@@ -11,7 +11,7 @@ _G.exec.vimscript = vim.cmd
 -- Invokes a Vim function or a user function
 _G.fn = vim.fn
 
--- {{ Options }}
+-- { Options }
 
 _G.options = {}
 _G.options.global = vim.go
@@ -19,7 +19,7 @@ _G.options.window = vim.wo
 _G.options.buffer = vim.bo
 _G.options.object = vim.opt
 
--- {{ Variables }}
+-- { Variables }
 
 _G.variables = {}
 _G.variables.global = vim.g

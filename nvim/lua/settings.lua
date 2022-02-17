@@ -89,8 +89,8 @@ options.buffer.textwidth = 80
 options.window.colorcolumn = "80"
 
 -- Highlight cursor line and column
-options.window.cursorline = true
-options.window.cursorcolumn = true
+-- options.window.cursorline = true
+-- options.window.cursorcolumn = true
 
 -- Enable true color
 options.global.termguicolors = true
@@ -179,7 +179,7 @@ vim_utils.create_auto_command("FileType netrw setlocal nolist")
 Use bash as the default shell.
 This solves speed issue when using fish shell as the default shell.
 --]]
--- options.global.shell = "/bin/bash"
+options.global.shell = "/usr/bin/env bash"
 
 -- Automatically re-balance windows on resize
 vim_utils.create_auto_command("VimResized * :wincmd =")
