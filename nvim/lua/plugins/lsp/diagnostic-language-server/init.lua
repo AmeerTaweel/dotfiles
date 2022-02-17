@@ -1,6 +1,6 @@
 require "globals"
 
-local package = "plugin-config.lsp.diagnostic-language-server"
+local package = "plugins.lsp.diagnostic-language-server"
 
 local customize_server_options = function(config)
 	config.filetypes = {
@@ -11,7 +11,7 @@ local customize_server_options = function(config)
 		-- "python",
 		"sh",
 		"vim",
-		"lua",
+		-- "lua",
 	}
 
 	config.init_options = {
@@ -44,7 +44,7 @@ local customize_server_options = function(config)
 			-- typescript = { "prettier" },
 			-- fish = { "fish_indent" },
 			-- python = { "black", "isort" },
-			lua = { "lua-format" }
+			-- lua = { "lua-format" }
 		}
 	}
 end

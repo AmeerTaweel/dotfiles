@@ -19,4 +19,4 @@ telescope.setup {
 telescope.load_extension("fzf")
 
 -- Load the ultisnips integration
-telescope.load_extension("ultisnips")
+-- telescope.load_extension("ultisnips")

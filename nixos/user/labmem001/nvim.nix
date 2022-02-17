@@ -96,9 +96,25 @@ in {
 
 			# Language Servers
 			rnix-lsp
+			pyright
+			yaml-language-server
+			ccls
+			rust-analyzer
+			nodePackages.bash-language-server
+			nodePackages.vim-language-server
+			nodePackages.vscode-langservers-extracted
+			nodePackages.typescript-language-server
+			nodePackages.diagnostic-languageserver
+			sumneko-lua-language-server
+
+			# Linters
+			shellcheck
+			vim-vint
+			nodePackages.markdownlint-cli2
 		];
 		extraConfig = ''
 			luafile ~/.config/nvim/lua/settings.lua
+			luafile ~/.config/nvim/lua/plugins/init.lua
 			luafile ~/.config/nvim/lua/theme.lua
 		'';
 	};

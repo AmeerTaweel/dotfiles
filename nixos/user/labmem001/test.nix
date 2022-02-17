@@ -141,45 +141,10 @@ in {
 		gnome.nautilus
 		alsa-utils
 
-		/* termpdfpy */
 		/* vifm */
 		/* entr */
-		/* texlive.combined.scheme-full */
-		# neovim stuff
-		/* unstable.pyright */
-		/* unstable.yaml-language-server */
-		/* unstable.texlab */
-		/* unstable.ccls */
-		/* unstable.rust-analyzer */
-		/* unstable.rustfmt */
-		/* unstable.nodePackages.bash-language-server */
-		/* unstable.nodePackages.vim-language-server */
-		/* unstable.nodePackages.vscode-langservers-extracted */
-		/* nodePackages.typescript-language-server */
-		/* nodePackages.diagnostic-languageserver */
-		/* unstable.sumneko-lua-language-server */
-		/* shellcheck */
-		/* luaformatter */
-		/* vim-vint */
-		/* nodePackages.markdownlint-cli2 */
-		#debug adapters
-		/* vscode-extensions.ms-vscode.cpptools */
-		# nodePackages.eslint
-		# nodePackages.prettier
-		# (unstable.nodePackages.typescript-language-server.overrideAttrs (oldAttrs: {
-		# 	buildInputs = oldAttrs.buildInputs ++ [ unstable.nodePackages.typescript ];
-  		# }))
-
-		/* gcc11 */
-		/* nodejs */
-		/* wget */
-		/* glibc */
-		/* gnumake */
-
-		# hplip-gui
-		# latex
-		# patched font
 		# pulse secure vpn for university
+		# hplip-gui
 	];
 
 	home.file.ideaVimRC = {

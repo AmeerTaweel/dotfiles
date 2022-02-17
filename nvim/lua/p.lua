@@ -6,17 +6,9 @@
 		variables.global.asyncrun_open = 8
 
 		-- lightspeed config
-			vim.cmd "map <space> <plug>Lightspeed_,_ft"
+		vim.cmd "map <space> <plug>Lightspeed_,_ft"
 
 	ultisnips-cmp
-
-	-- AsyncTasks
-	use {
-		"skywind3000/asynctasks.vim",
-		requires = "skywind3000/asyncrun.vim",
-		config = function()
-		end
-	}
 
 	-- Telescope
 	use {

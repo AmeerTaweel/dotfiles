@@ -15,13 +15,13 @@ local servers = {
 	"yamlls", -- YAML
 	"vimls", -- VimScript
 	"sumneko_lua", -- Lua
-	"texlab", -- LaTex
 	"diagnosticls", -- Diagnostics
-	"rust_analyzer" -- Rust
+	"rust_analyzer", -- Rust
+	"rnix" -- Nix
 }
 
 local customize_server_options = {
-	diagnosticls = require "plugin-config.lsp.diagnostic-language-server"
+	diagnosticls = require "plugins.lsp.diagnostic-language-server"
 }
 
 local get_diagnostics_options = function()
