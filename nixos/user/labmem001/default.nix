@@ -5,6 +5,7 @@
 		{ _module.args = { inherit host user; }; }
 		./test.nix
 		./vim.nix
+		./nvim.nix
 		./neovim.nix
 		./git.nix
         ./shell.nix
