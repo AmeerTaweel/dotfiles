@@ -58,12 +58,12 @@ in {
 			lightspeed-nvim
 			winshift-nvim
 			asyncrun-vim
+			asynctasks-vim
 
 			# NOTE: Cheatsheet for targets-vim in the link below
 			# https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 			targets-vim
 		];
-
 		extraPackages = with pkgs; [
 			# Telescope
 			ripgrep
@@ -72,12 +72,26 @@ in {
 			# Language Servers
 			rnix-lsp
 		];
+		extraConfig = ''
+			luafile ~/.config/nvim/lua/settings.lua
+		'';
+	};
+	
+	xdg.configFile.nvimConfiguration = {
+		source = "${nvimConfigurationPath}/lua";
+		target = "nvim/lua";
+		recursive = true;
 	};
 
-	xdg.configFile.nvimConfiguration = {
-		source = nvimConfigurationPath;
-		target = "nvim";
+	xdg.configFile.nvimUltiSnips = {
+		source = "${nvimConfigurationPath}/ulti-snips";
+		target = "nvim/UltiSnips";
 		recursive = true;
+	};
+
+	xdg.configFile.nvimAsyncTasks = {
+		source = "${nvimConfigurationPath}/tasks.ini";
+		target = "nvim/tasks.ini";
 	};
 }
 

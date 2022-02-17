@@ -3,7 +3,7 @@
 
 	inputs = {
 		# nixpkgs.url = "github:NixOS/nixpkgs";
-		nixpkgs.url = "github:AmeerTaweel/nixpkgs/pkgs-asyncrun-vim";
+		nixpkgs.url = "github:AmeerTaweel/nixpkgs/pkgs-asynctasks-vim";
 		nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 		home-manager.url = "github:nix-community/home-manager";
 	};
