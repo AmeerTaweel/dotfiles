@@ -63,8 +63,16 @@ in {
 			# https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 			targets-vim
 		];
-	};
 
+		extraPackages = with pkgs; [
+			# Telescope
+			ripgrep
+			fd
+
+			# Language Servers
+			rnix-lsp
+		];
+	};
 
 	xdg.configFile.nvimConfiguration = {
 		source = nvimConfigurationPath;
