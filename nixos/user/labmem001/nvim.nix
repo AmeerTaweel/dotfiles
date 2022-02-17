@@ -7,15 +7,24 @@ let
 		ayu-dark = ''
 			vim.go.background = "dark"
 			require("ayu").colorscheme()
+			require("lualine").setup {
+				options = { theme  = "ayu_dark" }
+			}
 		'';
 		ayu-mirage = ''
 			vim.go.background = "dark"
 			require("ayu").setup({ mirage = true })
 			require("ayu").colorscheme()
+			require("lualine").setup {
+				options = { theme  = "ayu_mirage" }
+			}
 		'';
 		ayu-light = ''
 			vim.go.background = "light"
 			require("ayu").colorscheme()
+			require("lualine").setup {
+				options = { theme  = "ayu_light" }
+			}
 		'';
 	};
 in {
