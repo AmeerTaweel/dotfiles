@@ -48,6 +48,11 @@ in {
 		target = "awesome/ui/theme.lua";
 	};
 
+	xdg.configFile.discordConfig = {
+		text = ''{ "SKIP_HOST_UPDATE": true }'';
+		target = "discord/settings.json";
+	};
+
 	programs.nnn = {
 		enable = true;
 		package = pkgs.nnn.override ({ withNerdIcons = true; });
