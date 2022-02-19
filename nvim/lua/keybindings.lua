@@ -64,7 +64,7 @@ which_key.register({
 		m = { telescope.builtin.marks, "find mark" },
 		r = { telescope.builtin.registers, "find register" },
 		s = { telescope.builtin.search_history, "find search" },
-		t = { "<cmd>TodoTelescope<cr>", "find todo" },
+		t = { "<cmd>TODOTelescope<cr>", "find todo" },
 		u = { "<cmd>Telescope ultisnips<cr>", "find ultisnippet" }
 	}
 }, { prefix = "<leader>" })
@@ -129,7 +129,7 @@ which_key.register({
 		name = "list",
 		d = { vim.diagnostic.setloclist, "list diagnostics <location list>" },
 		r = { vim.lsp.buf.references, "list references <quickfix list>" },
-		t = { "<cmd>TodoQuickFix<cr>", "list todos <quickfix list>" }
+		t = { "<cmd>TODOQuickfixList<cr>", "list todos <quickfix list>" }
 	}
 }, { prefix = "<leader>" })
 
