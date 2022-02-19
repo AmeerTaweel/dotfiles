@@ -30,7 +30,6 @@ let
 in {
 	programs.neovim = {
 		enable = true;
-		# extraConfig = builtins.readFile "${nvimConfigurationPath}/vimrc";
 		plugins = with pkgs.vimPlugins; [
 			plenary-nvim # Required by many packages
 
@@ -61,6 +60,7 @@ in {
 			cmp-cmdline
 			cmp-buffer
 			cmp-nvim-lua
+			cmp-nvim-ultisnips
 
 			# Navigation
 			vim-tmux-navigator
@@ -68,6 +68,8 @@ in {
 			# Telescope
 			telescope-nvim
 			telescope-fzf-native-nvim
+			telescope-ultisnips-nvim
+			telescope-asynctasks-nvim
 
 			vim-commentary
 			vim-eunuch
@@ -84,7 +86,7 @@ in {
 			winshift-nvim
 			asyncrun-vim
 			asynctasks-vim
-
+			todo-nvim
 			# NOTE: Cheatsheet for targets-vim in the link below
 			# https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 			targets-vim

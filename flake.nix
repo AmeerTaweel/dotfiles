@@ -3,12 +3,11 @@
 
 	inputs = {
 		# nixpkgs.url = "github:NixOS/nixpkgs";
-		nixpkgs.url = "github:AmeerTaweel/nixpkgs/pkgs-asynctasks-vim";
-		nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixpkgs.url = "github:AmeerTaweel/nixpkgs/pkgs-todo-nvim";
 		home-manager.url = "github:nix-community/home-manager";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ... }: 
+	outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
 	let
 		util = import ./nixos/util { inherit nixpkgs home-manager; };
 

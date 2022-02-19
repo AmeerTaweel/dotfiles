@@ -6,7 +6,6 @@
 		./test.nix
 		./vim.nix
 		./nvim.nix
-		./neovim.nix
 		./git.nix
         ./shell.nix
 		./terminal.nix
