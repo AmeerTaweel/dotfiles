@@ -117,6 +117,7 @@ in {
 		extraConfig = ''
 			luafile ~/.config/nvim/lua/settings.lua
 			luafile ~/.config/nvim/lua/plugins/init.lua
+			luafile ~/.config/nvim/lua/keybindings.lua
 			luafile ~/.config/nvim/lua/theme.lua
 		'';
 	};
