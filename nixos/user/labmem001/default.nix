@@ -3,7 +3,7 @@
 {
 	imports = [
 		{ _module.args = { inherit host user; }; }
-		./test.nix
+		./general.nix
 		./vim.nix
 		./nvim.nix
 		./git.nix

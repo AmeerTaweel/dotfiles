@@ -17,12 +17,11 @@ let
 	ideaVimConfigPath = ../../../idea-vim/config;
 in {
 	programs.home-manager.enable = true;
-	# Use Bluetooth headset buttons to control media player???
+	# Use Bluetooth headset buttons to control media player
 	services.mpris-proxy.enable = true;
-	/* home.stateVersion = "21.11"; */
 	services.blueman-applet.enable = true;
 	services.network-manager-applet.enable = true;
-	# Automount removable media ????
+	# Automount removable media
 	services.udiskie.enable = true;
 
 	home.keyboard.options = [ "ctrl:nocaps" ];
