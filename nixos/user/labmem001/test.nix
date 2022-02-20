@@ -115,6 +115,8 @@ in {
 		# Media
 		vlc
 		zathura
+		okular
+		koreader
 		yt-dlp
 		nuclear
 
