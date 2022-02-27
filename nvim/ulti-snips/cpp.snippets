@@ -26,7 +26,7 @@ endsnippet
 
 # Standard Output
 snippet cout "print to standard output" b
-cout << ${1:"log"} << endl;
+cout << ${1:"log"} << "\n";
 endsnippet
 
 # Competitive Programming Template
@@ -36,11 +36,30 @@ snippet tempcp "competitive programming template" b
 using namespace std;
 
 // type definitions
-#define intfss int_fast8_t
-#define intfs int_fast16_t
-#define intf int_fast32_t
-#define intfl int_fast64_t
-#define ll long long
+typedef int_fast8_t ib;
+typedef int_fast16_t is;
+typedef int_fast32_t ii;
+typedef int_fast64_t il;
+typedef uint_fast8_t ub;
+typedef uint_fast16_t us;
+typedef uint_fast32_t ui;
+typedef uint_fast64_t ul;
+typedef vector<ib> vib;
+typedef vector<is> vis;
+typedef vector<ii> vii;
+typedef vector<il> vil;
+typedef vector<ub> vub;
+typedef vector<us> vus;
+typedef vector<ui> vui;
+typedef vector<ul> vul;
+typedef pair<ib, ib> pib;
+typedef pair<is, is> pis;
+typedef pair<ii, ii> pii;
+typedef pair<il, il> pil;
+typedef pair<ub, ub> pub;
+typedef pair<us, us> pus;
+typedef pair<ui, ui> pui;
+typedef pair<ul, ul> pul;
 
 int main(){
 	// fast io
