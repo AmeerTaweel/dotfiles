@@ -99,6 +99,7 @@ in {
 		firefox
 		opera
 		qutebrowser
+		torbrowser
 
 		# Communication
 		discord
