@@ -14,5 +14,6 @@
 		./sxhkd.nix
 		./copyq.nix
 		./tmux.nix
+		./emacs.nix
 	];
 }
