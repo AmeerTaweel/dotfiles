@@ -61,6 +61,15 @@ typedef pair<us, us> pus;
 typedef pair<ui, ui> pui;
 typedef pair<ul, ul> pul;
 
+
+// macros
+#define MAKE_UNSIGNED(n) (static_cast<make_unsigned<decltype(n)>::type>(n))
+#define POPCOUNT(n) (__builtin_popcountll(MAKE_UNSIGNED(n)))
+#define HAS_ODD_PARITY(n) (__builtin_parityll(MAKE_UNSIGNED(n)))
+#define HAS_EVEN_PARITY(n) (!HAS_ODD_PARITY(n))
+#define CLZ(n) (__builtin_clzll(MAKE_UNSIGNED(n)))
+#define CTZ(n) (__builtin_ctzll(MAKE_UNSIGNED(n)))
+
 int main() {
 	// fast io
 	ios::sync_with_stdio(0);
