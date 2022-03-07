@@ -1,3 +1,6 @@
+;; Emacs Reference Card
+;; https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
+
 (setq inhibit-startup-message t
       visible-bell nil)
 
