@@ -19,6 +19,8 @@ in {
 			which-key
 
 			helpful
+
+			doom-themes
 		];
 	};
 
