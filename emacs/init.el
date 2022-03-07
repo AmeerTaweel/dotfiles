@@ -31,6 +31,8 @@
 ;; Remember the last cursor location in a file and restore on open
 (save-place-mode 1)
 
+(load-theme 'wombat)
+
 ;; Use a different file for customization variables
 ;; (setq custom-file (locate-user-emacs-file "custom-vars.el"))
 ;; (load custom-file 'noerror 'nomessage)
@@ -43,3 +45,25 @@
 
 ;; Revert dired and other buffers
 (setq global-auto-revert-non-file-buffers t)
+
+;; Close prompts with escaep
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+;; Do not install packages
+;; Packages are installed by NixOS
+(setq use-package-always-ensure nil)
+
+(require 'use-package)
+
+(use-package ivy
+  :diminish
+  :config
+  (ivy-mode 1))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package which-key
+  :init (which-key-mode)
+  :diminish
+  :config (setq which-key-idle-delay 0.5))
