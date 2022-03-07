@@ -11,6 +11,13 @@
 ;; (menu-bar-mode -1)
 
 (global-display-line-numbers-mode 1)
+(column-number-mode)
+;; Disable line numbers for some buffer types
+(dolist (mode '(shell-mode-hook
+		term-mode-hook
+		eshell-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+	  
 
 ;; Remember recent open files
 ;; Run M-x recentf-open-files to use
