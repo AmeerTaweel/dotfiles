@@ -12,10 +12,13 @@ in {
 			ivy
 			counsel
 			swiper
+			ivy-rich
 
 			rainbow-delimiters
 
 			which-key
+
+			helpful
 		];
 	};
 
