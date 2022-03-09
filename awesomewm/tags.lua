@@ -5,7 +5,8 @@ local M = {
 	config = "4 CONF",
 	communication = "5 COMM",
 	turkey = "6 TURK",
-	health = "7 HLTH"
+	health = "7 HLTH",
+	tmp_internship = "8 ISHP"
 }
 
 M.list = {
@@ -15,7 +16,8 @@ M.list = {
 	M.config,
 	M.communication,
 	M.turkey,
-	M.health
+	M.health,
+	M.tmp_internship
 }
 
 return M

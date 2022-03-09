@@ -99,7 +99,7 @@ in {
 		firefox
 		opera
 		qutebrowser
-		torbrowser
+		tor-browser-bundle-bin
 
 		# Communication
 		discord
@@ -136,7 +136,7 @@ in {
 		rar
 		zip
 		unzip
-		# obsidian
+		obsidian
 		gimp
 		octaveFull # Gnu Octave
 		libreoffice
