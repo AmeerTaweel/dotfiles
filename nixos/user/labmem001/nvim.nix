@@ -108,6 +108,8 @@ in {
 			nodePackages.typescript-language-server
 			nodePackages.diagnostic-languageserver
 			sumneko-lua-language-server
+			java-language-server
+			kotlin-language-server
 
 			# Linters
 			shellcheck
@@ -121,11 +123,22 @@ in {
 			luafile ~/.config/nvim/lua/theme.lua
 		'';
 	};
-	
+
 	xdg.configFile.nvimConfiguration = {
 		source = "${nvimConfigurationPath}/lua";
 		target = "nvim/lua";
 		recursive = true;
+	};
+
+	xdg.configFile.nvimJavaLSP = {
+		text = ''
+			local customize_server_options = function(config)
+				config.cmd = { "${pkgs.java-language-server}/share/java/java-language-server/lang_server_linux.sh" };
+			end
+
+			return customize_server_options
+		'';
+		target = "nvim/lua/plugins/lsp/java.lua";
 	};
 
 	xdg.configFile.nvimTheme = {

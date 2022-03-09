@@ -1,6 +1,6 @@
 require "globals"
 
-local package = "plugins.lsp.diagnostic-language-server"
+local package = "plugins.lsp.diagnostic"
 
 local customize_server_options = function(config)
 	config.filetypes = {

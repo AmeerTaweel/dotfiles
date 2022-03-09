@@ -17,11 +17,14 @@ local servers = {
 	"sumneko_lua", -- Lua
 	"diagnosticls", -- Diagnostics
 	"rust_analyzer", -- Rust
-	"rnix" -- Nix
+	"rnix", -- Nix
+	"java_language_server", -- Java
+	"kotlin_language_server" -- Kotlin
 }
 
 local customize_server_options = {
-	diagnosticls = require "plugins.lsp.diagnostic-language-server"
+	diagnosticls = require "plugins.lsp.diagnostic",
+	java_language_server = require "plugins.lsp.java"
 }
 
 local get_diagnostics_options = function()
