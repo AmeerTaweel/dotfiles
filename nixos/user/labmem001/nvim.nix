@@ -110,6 +110,7 @@ in {
 			sumneko-lua-language-server
 			java-language-server
 			kotlin-language-server
+			omnisharp-roslyn
 
 			# Linters
 			shellcheck
@@ -130,15 +131,16 @@ in {
 		recursive = true;
 	};
 
-	xdg.configFile.nvimJavaLSP = {
+	xdg.configFile.nvimLSPPaths = {
 		text = ''
-			local customize_server_options = function(config)
-				config.cmd = { "${pkgs.java-language-server}/share/java/java-language-server/lang_server_linux.sh" };
-			end
+			local M = {}
 
-			return customize_server_options
+			M.java = "${pkgs.java-language-server}/share/java/java-language-server/lang_server_linux.sh"
+			M.csharp = "${pkgs.omnisharp-roslyn}/bin/omnisharp"
+
+			return M
 		'';
-		target = "nvim/lua/plugins/lsp/java.lua";
+		target = "nvim/lua/plugins/lsp/paths.lua";
 	};
 
 	xdg.configFile.nvimTheme = {

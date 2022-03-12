@@ -18,13 +18,15 @@ local servers = {
 	"diagnosticls", -- Diagnostics
 	"rust_analyzer", -- Rust
 	"rnix", -- Nix
-	"java_language_server", -- Java
-	"kotlin_language_server" -- Kotlin
+	-- "java_language_server", -- Java
+	-- "kotlin_language_server", -- Kotlin
+	"omnisharp"
 }
 
 local customize_server_options = {
 	diagnosticls = require "plugins.lsp.diagnostic",
-	java_language_server = require "plugins.lsp.java"
+	-- java_language_server = require "plugins.lsp.java",
+	omnisharp = require "plugins.lsp.csharp"
 }
 
 local get_diagnostics_options = function()

@@ -121,7 +121,7 @@ in {
 		nuclear
 
 		# IDE's
-		# vscode
+		vscode
 		# android-studio
 		jetbrains.idea-ultimate
 
