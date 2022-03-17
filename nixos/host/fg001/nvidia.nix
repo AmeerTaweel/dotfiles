@@ -44,14 +44,14 @@ in {
 		extraPackages = with pkgs; [
 			intel-media-driver
 			vaapiIntel
-			vaapiVdpau
+			# vaapiVdpau
 			libvdpau-va-gl
 		];
 		driSupport32Bit = true;
 		extraPackages32 = with pkgs.pkgsi686Linux; [
 			intel-media-driver
 			vaapiIntel
-			vaapiVdpau
+			# vaapiVdpau
 			libvdpau-va-gl
 			libva
 		];
