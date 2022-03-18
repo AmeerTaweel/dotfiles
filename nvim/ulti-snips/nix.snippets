@@ -1,5 +1,6 @@
+snippet tempflake "project flake template" b
 {
-	description = "Rust Project Template";
+	description = "${1:Flake Project Template}";
 	inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 	inputs.flake-utils.url = "github:numtide/flake-utils";
 
@@ -9,10 +10,11 @@
 	in {
 		devShell = pkgs.mkShell {
 			nativeBuildInputs = with pkgs; [
-				rustc
-				cargo
+				# Dependencies go here
+				${0}
 			];
 			buildInputs = [ ];
 		};
 	});
 }
+endsnippet
