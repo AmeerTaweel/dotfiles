@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, ... }:
+{ nixpkgs, nur, home-manager, ... }:
 with builtins;
 {
 	mkUser = user@{
@@ -55,6 +55,7 @@ with builtins;
 		inherit system;
 		modules = [
 			{ _module.args = { inherit host; }; }
+			{ nixpkgs.overlays = [ nur.overlay ]; }
 			../host/common
 			../host/${hostName}
 			home-manager.nixosModules.home-manager

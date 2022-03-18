@@ -3,12 +3,14 @@
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+		# Nix User Repository
+		nur.url = "github:nix-community/NUR";
 		home-manager.url = "github:nix-community/home-manager";
 	};
 
-	outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
+	outputs = inputs@{ self, nixpkgs, nur, home-manager, ... }: 
 	let
-		util = import ./nixos/util { inherit nixpkgs home-manager; };
+		util = import ./nixos/util { inherit nixpkgs nur home-manager; };
 
 		users = {
 			labmem001 = util.mkUser {
