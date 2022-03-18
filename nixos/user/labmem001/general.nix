@@ -79,8 +79,8 @@ in {
 		enableBashIntegration = true;
 		# This is enabled by default
 		# enableFishIntegration = true;
+		nix-direnv.enable = true;
 	};
-	programs.direnv.nix-direnv.enable = true;
 
 	programs.emacs = {
 		enable = true;
