@@ -64,6 +64,6 @@ with builtins;
 				home-manager.useUserPackages = true;
 				home-manager.users = listToAttrs (map (user: (user.homeManagerModule { inherit host; })) users);
 			})
-		] ++ (map (user: user.systemModule ) users);
+		] ++ (map (user: user.systemModule) users);
 	};
 }
