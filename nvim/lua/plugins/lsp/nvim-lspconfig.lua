@@ -21,7 +21,7 @@ local servers = {
 }
 
 local customize_server_options = {
-	diagnosticls = require "plugins.lsp.diagnostic",
+	diagnosticls = require "plugins.lsp.diagnostic"
 }
 
 local get_diagnostics_options = function()
