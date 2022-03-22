@@ -34,7 +34,8 @@
 		options = "--delete-older-than 30d";
 	};
 
-	system.autoUpgrade.enable = true;
+	# Disable auto-upgrade
+	system.autoUpgrade.enable = false;
 	system.autoUpgrade.allowReboot = false;
 
 	# Essential system packages
