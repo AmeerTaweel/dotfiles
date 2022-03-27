@@ -92,6 +92,9 @@ in {
 			targets-vim
 		];
 		extraPackages = with pkgs; [
+			# Clipboard Support
+			xclip
+
 			# Telescope
 			ripgrep
 			fd

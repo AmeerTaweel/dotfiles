@@ -167,10 +167,10 @@ options.global.shortmess = options.global.shortmess .. "c"
 
 exec.command "set list"
 local defaultListChars = {
-  eol = "↲",
-  trail = "·",
-  space = ".",
-  tab = "-->"
+	eol = "↲",
+	trail = "·",
+	space = ".",
+	tab = "-->"
 }
 options.object.listchars = defaultListChars
 vim_utils.create_auto_command("FileType netrw setlocal nolist")

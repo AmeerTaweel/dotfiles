@@ -11,14 +11,21 @@ variables.global.mapleader = ","
 -- { System Clipboard }
 
 local clipboard_mappings = {
-	d = { [["+d]], "delete to clipboard" },
-	p = { [["+p]], "paste from clipboard" },
-	P = { [["+P]], "paste from clipboard" },
-	y = { [["+y]], "yank to clipboard" }
+	normal_visual = {
+		d = { [["+d]], "delete to clipboard" },
+		p = { [["+p]], "paste from clipboard" },
+		P = { [["+P]], "paste from clipboard" },
+		y = { [["+y]], "yank to clipboard" }
+	},
+	normal_only = {
+		D = { [["+d$]], "delete to clipboard (d$)" },
+		Y = { [["+y$]], "yank to clipboard (y$)" }
+	}
 }
 
-which_key.register(clipboard_mappings, { prefix = "<leader>", mode = "n" })
-which_key.register(clipboard_mappings, { prefix = "<leader>", mode = "x" })
+which_key.register(clipboard_mappings.normal_only, { prefix = "<leader>", mode = "n" })
+which_key.register(clipboard_mappings.normal_visual, { prefix = "<leader>", mode = "n" })
+which_key.register(clipboard_mappings.normal_visual, { prefix = "<leader>", mode = "x" })
 
 -- { Split Windows }
 
