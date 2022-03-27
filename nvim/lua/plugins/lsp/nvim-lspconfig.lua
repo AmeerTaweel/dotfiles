@@ -17,7 +17,8 @@ local servers = {
 	"sumneko_lua", -- Lua
 	"diagnosticls", -- Diagnostics
 	"rust_analyzer", -- Rust
-	"rnix" -- Nix
+	"rnix", -- Nix
+	"racket_langserver" -- Racket/Scheme
 }
 
 local customize_server_options = {
