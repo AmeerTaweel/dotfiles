@@ -18,7 +18,7 @@
 				fullName = "Ameer Taweel";
 				email = "ameertaweel2002@gmail.com";
 				editor = "nvim";
-				terminal = "alacritty";
+				terminal = "kitty";
 				theme = "ayu-dark";
 				system = "x86_64-linux";
 				shell = "fish";
