@@ -25,6 +25,16 @@ in {
 		recursive = true;
 	};
 
+	xdg.configFile.vimKittyNavigatorFile1 = with pkgs.vimPlugins; {
+		source = "${vim-kitty-navigator}/pass_keys.py";
+		target = "kitty/pass_keys.py";
+	};
+
+	xdg.configFile.vimKittyNavigatorFile2 = with pkgs.vimPlugins; {
+		source = "${vim-kitty-navigator}/neighboring_window.py";
+		target = "kitty/neighboring_window.py";
+	};
+
 	xdg.configFile.kittyTheme = {
 		text = "include themes/${user.theme}.conf";
 		target = "kitty/theme.conf";

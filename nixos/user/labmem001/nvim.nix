@@ -63,7 +63,7 @@ in {
 			cmp-nvim-ultisnips
 
 			# Navigation
-			vim-tmux-navigator
+			vim-kitty-navigator
 
 			# Telescope
 			telescope-nvim

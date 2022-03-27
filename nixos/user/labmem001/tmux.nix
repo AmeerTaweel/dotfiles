@@ -4,18 +4,6 @@ let
     tmuxRCPath = ../../../tmux/rc.tmux;
     tmuxConfigPath = ../../../tmux/config;
 
-	customTmuxPackages.vim-tmux-navigator = pkgs.tmuxPlugins.mkTmuxPlugin {
-		pluginName = "vim-tmux-navigator";
-		rtpFilePath = "vim-tmux-navigator.tmux";
-		version = "unstable-2019-12-10";
-		src = pkgs.fetchFromGitHub {
-			owner = "AmeerTaweel";
-			repo = "vim-tmux-navigator";
-			rev = "82b5e1242f5a2c3a3e68b891c6eb0c33e155eb9f";
-			sha256 = "htnnjhFUNqoLszSVkpeAOsujtScCQ3sp9XDAOydG2XQ=";
-		};
-	};
-
 	# Create a Tmux session with the name of current directory
 	dmux = pkgs.writeShellScriptBin "dmux" ''
 		path_name="$(basename "$PWD" | tr . -)"
@@ -51,8 +39,6 @@ in {
     programs.tmux = {
         enable = true;
 		plugins = with pkgs.tmuxPlugins; [{
-            plugin = customTmuxPackages.vim-tmux-navigator;
-		} {
 			plugin = tmux-fzf;
 			extraConfig = ''
 				TMUX_FZF_SESSION_FORMAT="#{session_windows} windows"
