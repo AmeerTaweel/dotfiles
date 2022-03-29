@@ -36,30 +36,30 @@ snippet tempcp "competitive programming template" b
 using namespace std;
 
 // type definitions
-typedef int_fast8_t ib;
-typedef int_fast16_t is;
-typedef int_fast32_t ii;
-typedef int_fast64_t il;
-typedef uint_fast8_t ub;
-typedef uint_fast16_t us;
-typedef uint_fast32_t ui;
-typedef uint_fast64_t ul;
-typedef vector<ib> vib;
-typedef vector<is> vis;
-typedef vector<ii> vii;
-typedef vector<il> vil;
-typedef vector<ub> vub;
-typedef vector<us> vus;
-typedef vector<ui> vui;
-typedef vector<ul> vul;
-typedef pair<ib, ib> pib;
-typedef pair<is, is> pis;
-typedef pair<ii, ii> pii;
-typedef pair<il, il> pil;
-typedef pair<ub, ub> pub;
-typedef pair<us, us> pus;
-typedef pair<ui, ui> pui;
-typedef pair<ul, ul> pul;
+using ib = int_fast8_t;
+using is = int_fast16_t;
+using ii = int_fast32_t;
+using il = int_fast64_t;
+using ub = uint_fast8_t;
+using us = uint_fast16_t;
+using ui = uint_fast32_t;
+using ul = uint_fast64_t;
+using vib = vector<ib>;
+using vis = vector<is>;
+using vii = vector<ii>;
+using vil = vector<il>;
+using vub = vector<ub>;
+using vus = vector<us>;
+using vui = vector<ui>;
+using vul = vector<ul>;
+using pib = pair<ib, ib>;
+using pis = pair<is, is>;
+using pii = pair<ii, ii>;
+using pil = pair<il, il>;
+using pub = pair<ub, ub>;
+using pus = pair<us, us>;
+using pui = pair<ui, ui>;
+using pul = pair<ul, ul>;
 
 // macros
 #define MAKE_UNSIGNED(n) (static_cast<make_unsigned<decltype(n)>::type>(n))
@@ -68,7 +68,12 @@ typedef pair<ul, ul> pul;
 #define HAS_EVEN_PARITY(n) (!HAS_ODD_PARITY(n))
 #define CLZ(n) (__builtin_clzll(MAKE_UNSIGNED(n)))
 #define CTZ(n) (__builtin_ctzll(MAKE_UNSIGNED(n)))
-#define SORT(x) sort(x.begin(), x.end())
+#define SORT_STD_INC(x) sort(x.begin(), x.end())
+#define SORT_STD_DEC(x) sort(x.rbegin(), x.rend())
+#define SORT_ARR_INC(x) sort(a, a + (sizeof a / sizeof a[0]))
+#define SORT_ARR_DEC(x) sort(a, a + (sizeof a / sizeof a[0]), greater<>())
+#define REVERSE_STD(x) reverse(x.begin(), x.end())
+#define REVERSE_ARR(x) reverse(a, a + (sizeof a / sizeof a[0]))
 
 int main() {
 	// fast io
