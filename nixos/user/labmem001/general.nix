@@ -124,6 +124,7 @@ in {
 		vscode
 		# android-studio
 		jetbrains.idea-ultimate
+		jetbrains.rider
 
 		# Other
 		ffmpeg
@@ -147,10 +148,8 @@ in {
 		unityhub
 		gnome.nautilus
 		alsa-utils
-
-		/* vifm */
-		/* entr */
-		# pulse secure vpn for university
+		# vifm
+		# entr
 		# hplip-gui
 	];
 
