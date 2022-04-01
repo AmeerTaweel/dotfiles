@@ -20,7 +20,8 @@ local format = function (_, args)
 	return (span.open_tag .. " DISK: %03s%% " .. span.end_tag):format(disk_usage)
 end
 
-local widget = vicious_widget.create(vicious.widgets.fs, format, 3600)
+-- Approximately update each hour
+local widget = vicious_widget.create(vicious.widgets.fs, format, 3607)
 
 -- Initial draw while waiting for data
 local default_level = beautiful.widgets.disk.normal

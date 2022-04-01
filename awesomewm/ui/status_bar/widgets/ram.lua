@@ -20,4 +20,4 @@ local format = function (_, args)
 	return (span.open_tag .. " RAM: %02d%% " .. span.end_tag):format(ram_usage)
 end
 
-return vicious_widget.create(vicious.widgets.mem, format, 1)
+return vicious_widget.create(vicious.widgets.mem, format, 7)

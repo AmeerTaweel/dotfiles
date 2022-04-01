@@ -26,4 +26,4 @@ local format = function (_, args)
 	return (span.open_tag .. " BATTERY: %3s%% %s " .. span.end_tag):format(percentage, charging_text)
 end
 
-return vicious_widget.create(vicious.widgets.bat, format, 1, "BAT1")
+return vicious_widget.create(vicious.widgets.bat, format, 11, "BAT1")

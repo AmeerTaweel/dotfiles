@@ -20,4 +20,4 @@ local format = function (_, args)
 	return (span.open_tag .. " CPU: %02d%% " .. span.end_tag):format(cpu_usage)
 end
 
-return vicious_widget.create(vicious.widgets.cpu, format, 1)
+return vicious_widget.create(vicious.widgets.cpu, format, 5)
