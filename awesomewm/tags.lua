@@ -6,7 +6,8 @@ local M = {
 	communication = "5 COMM",
 	turkey = "6 TURK",
 	health = "7 HLTH",
-	tmp_internship = "8 ISHP"
+	tmp_internship = "8 ISHP",
+	cyber_security = "9 CSEC"
 }
 
 M.list = {
@@ -17,7 +18,8 @@ M.list = {
 	M.communication,
 	M.turkey,
 	M.health,
-	M.tmp_internship
+	M.tmp_internship,
+	M.cyber_security
 }
 
 return M
