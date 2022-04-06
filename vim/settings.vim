@@ -113,7 +113,7 @@ set noexpandtab
 " Set tab width equal to 4 spaces
 set tabstop=4
 set shiftwidth=4
-set softtabstop=4
+set softtabstop=0 " Use hard tabs always
 
 " # Temporary Files
 
@@ -165,7 +165,7 @@ autocmd VimResized * :wincmd =
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set tab width equal to 4 spaces
-autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=0
 
 " TMUX filetype detection
 augroup TmuxFixFileType

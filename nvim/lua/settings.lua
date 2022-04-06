@@ -50,7 +50,7 @@ options.object.expandtab = false
 -- Set tab width
 options.object.shiftwidth = tabWidth
 options.object.tabstop = tabWidth
-options.object.softtabstop = tabWidth
+options.object.softtabstop = 0 -- Use hard tabs always
 
 -- { Temporary Files }
 
