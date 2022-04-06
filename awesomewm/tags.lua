@@ -7,7 +7,8 @@ local M = {
 	turkey = "6 TURK",
 	health = "7 HLTH",
 	tmp_internship = "8 ISHP",
-	cyber_security = "9 CSEC"
+	cyber_security = "9 CSEC",
+	common_lisp = "10 LISP"
 }
 
 M.list = {
@@ -19,7 +20,8 @@ M.list = {
 	M.turkey,
 	M.health,
 	M.tmp_internship,
-	M.cyber_security
+	M.cyber_security,
+	M.common_lisp
 }
 
 return M
