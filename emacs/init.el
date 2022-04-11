@@ -31,7 +31,7 @@
 ;; Remember the last cursor location in a file and restore on open
 (save-place-mode 1)
 
-(load-theme 'wombat t)
+(load-theme 'ayu-dark t)
 
 ;; Use a different file for customization variables
 ;; (setq custom-file (locate-user-emacs-file "custom-vars.el"))
@@ -82,6 +82,27 @@
   :config
   (telephone-line-mode 1)
   :diminish)
+
+;; Keybindings
+
+(defconst <leader> ",")
+
+(use-package general
+  :config
+  (general-evil-setup)
+  ;; Split Windows
+  (general-define-key
+   :states 'normal
+   :prefix <leader>
+   "/" '(evil-window-vsplit :which-key "split window vertically")
+   "-" '(evil-window-split :which-key "split window horizontally"))
+  ;; Movement
+  (general-define-key
+   :states 'normal
+   "C-h" '(evil-window-left :which-key "navigate window left")
+   "C-j" '(evil-window-down :which-key "navigate window down")
+   "C-k" '(evil-window-up :which-key "navigate window up")
+   "C-l" '(evil-window-right :which-key "navigate window right")))
 
 (use-package ivy
   :diminish

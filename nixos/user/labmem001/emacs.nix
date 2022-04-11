@@ -6,6 +6,9 @@ in {
 	programs.emacs = {
 		enable = true;
 		extraPackages = emacsPackages: with emacsPackages; [
+			# Themes
+			ayu-theme
+
 			# Package Management
 			use-package
 			diminish
@@ -17,14 +20,17 @@ in {
 			# Modeline
 			telephone-line
 
+			# Keybindings
+			which-key
+			general
+			hydra
+
 			ivy
 			counsel
 			swiper
 			ivy-rich
 
 			rainbow-delimiters
-
-			which-key
 
 			helpful
 
