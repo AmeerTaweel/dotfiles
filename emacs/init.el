@@ -31,7 +31,7 @@
 ;; Remember the last cursor location in a file and restore on open
 (save-place-mode 1)
 
-(load-theme 'wombat)
+(load-theme 'wombat t)
 
 ;; Use a different file for customization variables
 ;; (setq custom-file (locate-user-emacs-file "custom-vars.el"))
