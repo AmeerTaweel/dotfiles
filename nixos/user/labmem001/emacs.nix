@@ -6,12 +6,16 @@ in {
 	programs.emacs = {
 		enable = true;
 		extraPackages = emacsPackages: with emacsPackages; [
+			# Package Management
 			use-package
 			diminish
 
 			# Evil Mode
 			evil
 			evil-collection
+
+			# Modeline
+			telephone-line
 
 			ivy
 			counsel

@@ -55,11 +55,14 @@
 
 (require 'use-package)
 
+;;; Evil Mode
+
 (use-package evil
   :init
   ; evil-want-integration is set to t by default
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
+  (setq evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
   :diminish)
@@ -70,11 +73,18 @@
   (evil-collection-init)
   :diminish)
 
+;;; Mode Line
+
+(use-package telephone-line
+  :config
+  (telephone-line-mode 1)
+  :diminish)
+
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
-         :map ivy-minibuffer-map
-         ("TAB" . ivy-alt-done)	
+	 :map ivy-minibuffer-map
+	 ("TAB" . ivy-alt-done)	
          ("C-l" . ivy-alt-done)
          ("C-j" . ivy-next-line)
          ("C-k" . ivy-previous-line)
