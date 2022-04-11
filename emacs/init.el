@@ -65,6 +65,9 @@
   (setq evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
+  ;; Use visual line motion
+  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
+  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   :diminish)
 
 (use-package evil-collection
