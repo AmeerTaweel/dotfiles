@@ -9,6 +9,10 @@ in {
 			use-package
 			diminish
 
+			# Evil Mode
+			evil
+			evil-collection
+
 			ivy
 			counsel
 			swiper
@@ -21,6 +25,9 @@ in {
 			helpful
 
 			doom-themes
+
+			# Common Lisp
+			slime
 		];
 	};
 

@@ -55,6 +55,21 @@
 
 (require 'use-package)
 
+(use-package evil
+  :init
+  ; evil-want-integration is set to t by default
+  (setq evil-want-integration t)
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1)
+  :diminish)
+
+(use-package evil-collection
+  :after evil
+  :config
+  (evil-collection-init)
+  :diminish)
+
 (use-package ivy
   :diminish
   :bind (("C-s" . swiper)
