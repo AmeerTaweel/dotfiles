@@ -78,7 +78,7 @@ fusermount -u MOUNT_DIRECTORY
   Can be replaced with: `man home-configuration.nix`.
 + [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html).
 + [Shell Scripts in NixOS](https://ertt.ca/nix/shell-scripts/).
-+ [Sample NixOS Config](https://github.com/imMaturana/nixos-config).
++ [Sample NixOS Config](https://github.com/rasendubi/dotfiles).
 
 [1]: https://support.discord.com/hc/en-us/community/posts/360050971374-Linux-Screen-Share-Sound-Support
 [2]: https://nixos.wiki/wiki/Printing
