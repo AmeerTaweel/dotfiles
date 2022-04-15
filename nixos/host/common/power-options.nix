@@ -18,8 +18,8 @@ let
 
 		for i in "''${confirmations[@]}"; do
 			if [[ $i == $choice ]]; then
-				confirmation=$(echo -e "yes, ''${choice}\nno" | rofi -dmenu -p "are you sure" -l 5)
-				if [[ $confirmation == "no" ]]; then
+				confirmation=$(echo -e "no\nyes, ''${choice}" | rofi -dmenu -p "are you sure" -l 5)
+				if [[ $confirmation != "yes" ]]; then
 					exit
 				fi
 			fi
