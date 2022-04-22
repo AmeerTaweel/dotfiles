@@ -9,9 +9,6 @@ from __future__ import division, print_function
 import os
 import sys
 from io import BytesIO, IOBase
-if sys.version_info[0] < 3:
-	from __builtin__ import xrange as range
-	from future_builtins import ascii, filter, hex, map, oct, zip
 
 import math
 from bisect import bisect_left, bisect_right
@@ -97,10 +94,7 @@ def print(*args, **kwargs):
 		file.flush()
  
  
-if sys.version_info[0] < 3:
-	sys.stdin, sys.stdout = FastIO(sys.stdin), FastIO(sys.stdout)
-else:
-	sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
+sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
  
 input = lambda: sys.stdin.readline().rstrip("\r\n")
  
