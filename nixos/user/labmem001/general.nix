@@ -99,6 +99,8 @@ in {
 		firefox
 		opera
 		qutebrowser
+		vieb
+		luakit
 		tor-browser-bundle-bin
 
 		# Communication
