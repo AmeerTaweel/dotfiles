@@ -15,14 +15,6 @@ from bisect import bisect_left, bisect_right
 from collections import Counter
 
 ################################################################################
-# Macros
-################################################################################
-
-def transpose(l):
-	'''Returns the transpose of a list'''
-	return list(map(list, zip(*l)))
- 
-################################################################################
 # Logic
 ################################################################################
  
@@ -97,7 +89,49 @@ def print(*args, **kwargs):
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
  
 input = lambda: sys.stdin.readline().rstrip("\r\n")
- 
+
+################################################################################
+# Macros
+################################################################################
+
+def transpose(l):
+	"""Returns the transpose of a list"""
+	return list(map(list, zip(*l)))
+
+################################################################################
+# Data Structures
+################################################################################
+
+# UnionFind data structure
+# With path compression and union by rank optimizations
+class UnionFind:
+	def __init__(self, size):
+		self.root = [i for i in range(size)]
+		self.rank = [1] * size
+
+	def find(self, x):
+		if x == self.root[x]:
+			return x
+		# Path compression
+		self.root[x] = self.find(self.root[x])
+		return self.root[x]
+
+	def union(self, x, y):
+		rootX = self.find(x)
+		rootY = self.find(y)
+		if rootX != rootY:
+			# Union by rank
+			if self.rank[rootX] > self.rank[rootY]:
+				self.root[rootY] = rootX
+			elif self.rank[rootX] < self.rank[rootY]:
+				self.root[rootX] = rootY
+			else:
+				self.root[rootY] = rootX
+				self.rank[rootX] += 1
+
+	def connected(self, x, y):
+		return self.find(x) == self.find(y)
+
 ################################################################################
 # Driver
 ################################################################################
