@@ -73,6 +73,7 @@
 (use-package evil-collection
   :after evil
   :config
+  (setq evil-collection-mode-list nil)
   (evil-collection-init)
   :diminish)
 
@@ -88,6 +89,7 @@
 (defconst <leader> ",")
 
 (use-package general
+  :after evil
   :config
   (general-evil-setup)
   ;; Split Windows
@@ -99,6 +101,7 @@
   ;; Movement
   (general-define-key
    :states 'normal
+   ;; :keymaps 'override
    "C-h" '(evil-window-left :which-key "navigate window left")
    "C-j" '(evil-window-down :which-key "navigate window down")
    "C-k" '(evil-window-up :which-key "navigate window up")
@@ -153,3 +156,22 @@
   ([remap describe-key] . helpful-key))
 
 (use-package doom-themes)
+
+(defun labmem001/disable-line-numbers-in-mode (mode)
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+(defun labmem001/clear-keymap (keymap)
+  (setq keymap (make-sparse-keymap)))
+
+(require (expand-file-name "pdf.el" user-emacs-directory))
+
+  ;; (:keymaps 'pdf-view-mode-map
+	    ;; "TAB" 'org-cycle))
+  ;; (general-unbind '(normal visual) 'pdf-view-mode-map
+    ;; "C-h"
+    ;; "C-j"
+    ;; "C-k"
+    ;; "C-l"))
+  ;; (add-hook 'pdf-view-mode-hook
+	    ;; (lambda ()
+	      ;; ))

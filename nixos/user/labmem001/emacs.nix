@@ -6,6 +6,9 @@ in {
 	programs.emacs = {
 		enable = true;
 		extraPackages = emacsPackages: with emacsPackages; [
+			# Util
+			load-relative
+
 			# Themes
 			ayu-theme
 
@@ -38,12 +41,18 @@ in {
 
 			# Common Lisp
 			slime
+
+			# PDF
+			pdf-tools
+
+			# Music
+			emms
 		];
 	};
 
-	xdg.configFile.emacsConfiguration = {
-		source = emacsConfigurationPath;
-		target = "emacs";
-		recursive = true;
-	};
+	/* xdg.configFile.emacsConfiguration = { */
+	/* 	source = emacsConfigurationPath; */
+	/* 	target = "emacs"; */
+	/* 	recursive = true; */
+	/* }; */
 }

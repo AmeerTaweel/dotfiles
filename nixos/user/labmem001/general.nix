@@ -129,6 +129,7 @@ in {
 		jetbrains.rider
 
 		# Other
+		stow
 		ffmpeg
 		imagemagick
 		bat
@@ -146,7 +147,6 @@ in {
 		postman
 		devour
 		sshfs
-		lookatme
 		unityhub
 		gnome.nautilus
 		alsa-utils
