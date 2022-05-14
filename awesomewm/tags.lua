@@ -8,7 +8,8 @@ local M = {
 	health = "7 HLTH",
 	tmp_internship = "8 ISHP",
 	cyber_security = "9 CSEC",
-	common_lisp = "10 LISP"
+	common_lisp = "10 LISP",
+	parallel_programming = "11 PPRG"
 }
 
 M.list = {
@@ -21,7 +22,8 @@ M.list = {
 	M.health,
 	M.tmp_internship,
 	M.cyber_security,
-	M.common_lisp
+	M.common_lisp,
+	M.parallel_programming
 }
 
 return M
