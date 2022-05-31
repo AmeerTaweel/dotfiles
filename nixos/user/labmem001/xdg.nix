@@ -12,7 +12,7 @@ in {
 		desktop = "$HOME";
 		documents = "$HOME";
 		download = "$HOME/downloads";
-		music = "$HOME";
+		music = "/extra/music";
 		pictures = "$HOME";
 		publicShare = "$HOME";
 		templates = "$HOME";
