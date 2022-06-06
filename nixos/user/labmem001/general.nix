@@ -121,6 +121,7 @@ in {
 		koreader
 		yt-dlp
 		nuclear
+		kdenlive
 
 		# IDE's
 		vscode
