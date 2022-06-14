@@ -47,6 +47,9 @@ in {
 
 			# Music
 			emms
+
+			# TODO Highlight
+			hl-todo
 		];
 	};
 

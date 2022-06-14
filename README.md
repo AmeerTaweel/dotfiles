@@ -54,6 +54,15 @@ Like any other FUSE file system, unmount using:
 fusermount -u MOUNT_DIRECTORY
 ```
 
+### MPD
+
+MPD is configured to use the XDG music directory. Either put the music there,
+or put it in another directory and create a symlink by:
+
+```bash
+ln -s /abs/path/music/dir /abs/path/xdg/music/dir/mpd
+```
+
 ## Long Term TODOs
 
 | TODO                                  | Waiting For                   |

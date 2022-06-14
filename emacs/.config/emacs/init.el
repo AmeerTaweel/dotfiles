@@ -98,6 +98,12 @@
    :prefix <leader>
    "/" '(evil-window-vsplit :which-key "split window vertically")
    "-" '(evil-window-split :which-key "split window horizontally"))
+  ;; Buffers
+  (general-define-key
+   :states 'normal
+   :prefix (concat <leader> "b")
+   "k" '(kill-this-buffer :which-key "kill buffer")
+   "r" '(revert-buffer :which-key "refresh buffer"))
   ;; Movement
   (general-define-key
    :states 'normal
@@ -157,13 +163,22 @@
 
 (use-package doom-themes)
 
-(defun labmem001/disable-line-numbers-in-mode (mode)
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+(use-package load-relative)
 
-(defun labmem001/clear-keymap (keymap)
-  (setq keymap (make-sparse-keymap)))
+(require-relative "pdf")
 
-(require (expand-file-name "pdf.el" user-emacs-directory))
+(use-package hl-todo
+  :config
+  (setq hl-todo-highlight-punctuation ":"
+	hl-todo-keyword-faces
+	`(("TODO" warning bold)
+	  ("FIXME" error bold)
+	  ("HACK" font-lock-constant-face bold)
+	  ("REVIEW" font-lock-keyword-face bold)
+	  ("NOTE" success bold)
+	  ("DEPRECATED" font-lock-doc-face bold)))
+  :hook ((prog-mode . hl-todo-mode)
+	 (yaml-mode . hl-todo-mode)))
 
   ;; (:keymaps 'pdf-view-mode-map
 	    ;; "TAB" 'org-cycle))

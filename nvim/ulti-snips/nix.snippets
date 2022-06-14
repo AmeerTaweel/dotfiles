@@ -1,6 +1,6 @@
-snippet tempflake "project flake template" b
+snippet temp-general-flake "project flake template" b
 {
-	description = "${1:Flake Project Template}";
+	description = "${1:General Project Flake Template}";
 	inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 	inputs.flake-utils.url = "github:numtide/flake-utils";
 
@@ -12,6 +12,52 @@ snippet tempflake "project flake template" b
 			nativeBuildInputs = with pkgs; [
 				# Dependencies go here
 				${0}
+			];
+			buildInputs = [ ];
+		};
+	});
+}
+endsnippet
+
+snippet temp-python-flake "python project flake template" b
+{
+	description = "${1:Python Project Flake Template}";
+
+	inputs = {
+		nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+		flake-utils.url = "github:numtide/flake-utils";
+		mach-nix.url = "github:DavHau/mach-nix/3.4.0";
+	};
+
+	outputs = { self, nixpkgs, mach-nix, flake-utils }:
+	flake-utils.lib.eachDefaultSystem (system: let
+		python = "python39";
+
+		pkgs = import nixpkgs { inherit system; };
+		mach = import mach-nix { inherit pkgs python; };
+
+		${2:custom-package} = mach.buildPythonPackage {
+			src = builtins.fetchGit {
+				url = "git@github.com:${3:username}/${4:repository}.git";
+				ref = "${5:branch}";
+				rev = "${6:commit-hash}";
+			};
+		};
+
+		python-env = (mach.mkPython {
+			requirements = ''
+				${7:notebook}
+				${0}
+			'';
+			packagesExtra = [
+				$2
+			];
+			ignoreCollisions = true;
+		});
+	in {
+		devShell = pkgs.mkShell {
+			nativeBuildInputs = with pkgs; [
+				python-env
 			];
 			buildInputs = [ ];
 		};

@@ -9,14 +9,14 @@ in {
 	xdg.userDirs = {
 		enable = true;
 		createDirectories = true;
-		desktop = "$HOME";
-		documents = "$HOME";
-		download = "$HOME/downloads";
-		music = "/extra/music";
-		pictures = "$HOME";
-		publicShare = "$HOME";
-		templates = "$HOME";
-		videos = "$HOME";
+		desktop = user.xdgDirs.desktop;
+		documents = user.xdgDirs.documents;
+		download = user.xdgDirs.download;
+		music = user.xdgDirs.music;
+		pictures = user.xdgDirs.pictures;
+		publicShare = user.xdgDirs.publicShare;
+		templates = user.xdgDirs.templates;
+		videos = user.xdgDirs.videos;
 	};
 
 	xdg.desktopEntries = {

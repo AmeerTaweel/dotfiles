@@ -10,6 +10,7 @@ with builtins;
 		theme,
 		system,
 		shell,
+		xdgDirs,
 		...
 	}:
 	let

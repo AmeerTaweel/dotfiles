@@ -15,5 +15,6 @@
 		./copyq.nix
 		./tmux.nix
 		./emacs.nix
+		./music.nix
 	];
 }

@@ -22,6 +22,16 @@
 				theme = "ayu-dark";
 				system = "x86_64-linux";
 				shell = "fish";
+				xdgDirs = {
+					desktop = "$HOME";
+					documents = "$HOME";
+					download = "$HOME/downloads";
+					music = "$HOME/music";
+					pictures = "$HOME";
+					publicShare = "$HOME";
+					templates = "$HOME";
+					videos = "$HOME";
+				};
 			};
 		};
 	in {
