@@ -46,17 +46,24 @@ in {
 			"super + s" = "rofi -show ssh -no-parse-known-hosts -disable-history";
 			"super + c" = "rofi -show calc -no-show-match -no-sort";
 			"super + e" = "rofi -show emoji -matching normal";
-			"XF86Audio{Raise,Lower}Volume" = "${volume-change}/bin/volume-change {+,-}5";
-			"XF86AudioMute" = "${pkgs.alsa-utils}/bin/amixer -M set Master toggle";
 			"{F2,F3}" = "${pkgs.brightnessctl}/bin/brightnessctl set {10%-,10%+}";
+			"super + y" = "copyq show";
+			"super + x ; r" = "${pkgs.maim}/bin/maim --select | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
+			"super + x ; w" = "${pkgs.xdotool}/bin/xdotool getactivewindow | ${pkgs.xe}/bin/xe ${pkgs.maim}/bin/maim --window | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
+			"super + x ; f" = "${pkgs.maim}/bin/maim | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
+			# Launch a new terminal
+			"super + Return" = user.terminal;
+			# Audio Keys
+			"XF86Audio{Lower,Raise}Volume" = "${volume-change}/bin/volume-change {-,+}5";
+			"XF86AudioMute" = "${pkgs.alsa-utils}/bin/amixer -M set Master toggle";
+			"XF86Audio{Prev,Play,Next}" = "${pkgs.playerctl}/bin/playerctl --player playerctld {previous,play-pause,next}";
+			# Music
+			"super + m ; {p,t,n}" = "${pkgs.mpc_cli}/bin/mpc {prev,toggle,next}";
+			"super + m ; {-,+}" = "${pkgs.mpc_cli}/bin/mpc volume {-,+}10";
+			"super + m ; {b,f}" = "${pkgs.mpc_cli}/bin/mpc seek {-,+}10";
+			"super + m ; {r,s,l}" = "${pkgs.mpc_cli}/bin/mpc {repeat,random,single}";
 			# Reload hotkey daemon
 			"super + shift + r ; h" = "pkill -usr1 -x sxhkd";
-			"super + y" = "copyq show";
-			"super + x ; r"  = "${pkgs.maim}/bin/maim --select | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
-			"super + x ; w" = "${pkgs.xdotool}/bin/xdotool getactivewindow | ${pkgs.xe}/bin/xe ${pkgs.maim}/bin/maim --window | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
-			"super + x ; f"  = "${pkgs.maim}/bin/maim | ${pkgs.xclip}/bin/xclip -selection clipboard -target image/png";
-			"super + Return" = user.terminal;
-			"super + o ; {h,e,s}" = "rofi -show file-browser-extended -file-browser-depth 0 -file-browser-follow-symlinkx -file-browser-dir '{~,/extra,/shared}'";
 		};
 	};
 }

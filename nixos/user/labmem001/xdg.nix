@@ -1,22 +1,23 @@
-{ user, pkgs, ... }:
+{ user, pkgs, config, ... }:
 
 let
 	browserList = [ "google-chrome.desktop" "firefox.desktop" ];
 	videoPlayerList = [ "mpv.desktop" "vlc.desktop" ];
+	homeDir = config.home.homeDirectory;
 in {
 	xdg.enable = true;
 
 	xdg.userDirs = {
 		enable = true;
 		createDirectories = true;
-		desktop = user.xdgDirs.desktop;
-		documents = user.xdgDirs.documents;
-		download = user.xdgDirs.download;
-		music = user.xdgDirs.music;
-		pictures = user.xdgDirs.pictures;
-		publicShare = user.xdgDirs.publicShare;
-		templates = user.xdgDirs.templates;
-		videos = user.xdgDirs.videos;
+		desktop = "${homeDir}";
+		documents = "${homeDir}";
+		download = "${homeDir}/downloads";
+		music = "${homeDir}/music";
+		pictures = "${homeDir}";
+		publicShare = "${homeDir}";
+		templates = "${homeDir}";
+		videos = "${homeDir}";
 	};
 
 	xdg.desktopEntries = {

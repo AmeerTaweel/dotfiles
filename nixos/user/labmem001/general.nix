@@ -151,6 +151,7 @@ in {
 		unityhub
 		gnome.nautilus
 		alsa-utils
+		playerctl
 		# vifm
 		# entr
 		# hplip-gui

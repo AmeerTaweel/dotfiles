@@ -5,6 +5,10 @@ local awful = require("awful")
 -- Start clipboard manager
 awful.spawn.with_shell("copyq")
 
+-- Start MPD and mpDris2
+awful.spawn.with_shell("mpd")
+awful.spawn.with_shell("mpDris2")
+
 -- { Applications }
 
 -- Start communication applications
