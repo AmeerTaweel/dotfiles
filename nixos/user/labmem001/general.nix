@@ -25,7 +25,7 @@ in {
 	services.udiskie.enable = true;
 
 	home.keyboard.options = [ "ctrl:nocaps" ];
-	home.keyboard.layout = "us,ar";
+	home.keyboard.layout = "us,ar,tr";
 
 	# Enable the X11 windowing system.
 	xsession.enable = true;
