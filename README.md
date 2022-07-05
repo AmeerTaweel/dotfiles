@@ -27,7 +27,7 @@ contains configuration for:
 
 1. Clone this repository to your home directory.
 2. `cd` into the repository's directory.
-3. Run `sudo nixos-rebuild switch --flake .`.
+3. Run `nixos-rebuild --use-remote-sudo switch --flake .`.
 4. Setup SSH configuration.
 
 ### direnv
