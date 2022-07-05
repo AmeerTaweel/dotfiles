@@ -7,6 +7,7 @@ contains configuration for:
 + Awesome Window Manager
 + Bash
 + CopyQ
++ Docker
 + Emacs
 + Fish
 + Git

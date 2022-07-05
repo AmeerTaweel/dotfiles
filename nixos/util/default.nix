@@ -25,6 +25,7 @@ with builtins;
 					"networkmanager"
 					"video"
 					"libvirtd"
+					"docker"
 				];
 				# Don't forget to change the password with "passwd".
 				initialPassword = "";

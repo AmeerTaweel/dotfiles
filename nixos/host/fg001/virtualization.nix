@@ -9,4 +9,7 @@
 
 	# USB Redirection
 	virtualisation.spiceUSBRedirection.enable = true;
+
+	# Docker
+	virtualisation.docker.enable = true;
 }
