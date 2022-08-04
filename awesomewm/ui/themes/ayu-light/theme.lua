@@ -1,4 +1,4 @@
--- { Material Yellow Theme }
+-- { Ayu Light Theme }
 
 -- {{ Imports }}
 local xresources = require("beautiful.xresources")
@@ -92,5 +92,11 @@ theme.widgets.net = {
 	connected = { bg = colors.green, fg = colors.black },
 	disconnected = { bg = colors.red, fg = colors.black }
 }
+
+-- {{ Notifications }}
+
+theme.notification_width = dpi(400)
+theme.notification_height = dpi(100)
+theme.notification_icon_size = dpi(100)
 
 return theme_manager.create(theme)

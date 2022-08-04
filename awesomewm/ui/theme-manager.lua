@@ -48,6 +48,12 @@ local create = function(options)
 
 	theme.wallpaper = themes_path .. options.name .. "/background.png"
 
+	-- { Notifications }
+
+	theme.notification_width = options.notification_width
+	theme.notification_height = options.notification_height
+	theme.notification_icon_size = options.notification_icon_size
+
 	return theme
 end
 
