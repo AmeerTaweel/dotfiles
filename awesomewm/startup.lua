@@ -12,6 +12,7 @@ awful.spawn.with_shell("mpDris2")
 -- { Applications }
 
 -- Start communication applications
-awful.spawn ("telegram-desktop")
 awful.spawn ("slack")
 awful.spawn ("discord")
+awful.spawn ("telegram-desktop")
+awful.spawn ("element-desktop")

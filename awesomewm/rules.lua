@@ -18,7 +18,14 @@ local M =  {
 		}
 	}, {
 		-- Communication Clients
-		rule_any = { instance = { "slack", "discord", "telegram-desktop" } },
+		rule_any = {
+			instance = {
+				"slack",
+				"discord",
+				"telegram-desktop",
+				"element-desktop"
+			}
+		},
 		properties = { tag = tags.communication }
 	}, {
 		-- Floating clients.
