@@ -1,197 +1,32 @@
-;; Emacs Reference Card
-;; https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf
+;;;; Emacs Configuration
 
-(setq inhibit-startup-message t
-      visible-bell nil)
+;;; Setup
 
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-
-;; TODO: Uncomment when I get more used to Emacs
-;; (menu-bar-mode -1)
-
-(global-display-line-numbers-mode 1)
-(column-number-mode)
-;; Disable line numbers for some buffer types
-(dolist (mode '(shell-mode-hook
-		term-mode-hook
-		eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
-	  
-
-;; Remember recent open files
-;; Run M-x recentf-open-files to use
-;; (recentf-mode 1)
-
-;; Control history length
-;; (setq history-length 25)
-;; Save minibuffer history
-;; (savehist-mode 1)
-
-;; Remember the last cursor location in a file and restore on open
-(save-place-mode 1)
-
-(load-theme 'ayu-dark t)
-
-;; Use a different file for customization variables
-;; (setq custom-file (locate-user-emacs-file "custom-vars.el"))
-;; (load custom-file 'noerror 'nomessage)
-
-;; Don't use UI popups
-(setq use-dialog-box nil)
-
-;; Refresh buffer on external change
-(global-auto-revert-mode 1)
-
-;; Revert dired and other buffers
-(setq global-auto-revert-non-file-buffers t)
-
-;; Close prompts with escaep
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
-;; Do not install packages
-;; Packages are installed by NixOS
+;; do not install packages from within emacs
 (setq use-package-always-ensure nil)
 
 (require 'use-package)
 
-;;; Evil Mode
-
-(use-package evil
-  :init
-  ; evil-want-integration is set to t by default
-  (setq evil-want-integration t)
-  (setq evil-want-keybinding nil)
-  (setq evil-want-C-u-scroll t)
-  :config
-  (evil-mode 1)
-  ;; Use visual line motion
-  (evil-global-set-key 'motion "j" 'evil-next-visual-line)
-  (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-  :diminish)
-
-(use-package evil-collection
-  :after evil
-  :config
-  (setq evil-collection-mode-list nil)
-  (evil-collection-init)
-  :diminish)
-
-;;; Mode Line
-
-(use-package telephone-line
-  :config
-  (telephone-line-mode 1)
-  :diminish)
-
-;; Keybindings
-
-(defconst <leader> ",")
-
-(use-package general
-  :after evil
-  :config
-  (general-evil-setup)
-  ;; Split Windows
-  (general-define-key
-   :states 'normal
-   :prefix <leader>
-   "/" '(evil-window-vsplit :which-key "split window vertically")
-   "-" '(evil-window-split :which-key "split window horizontally"))
-  ;; Buffers
-  (general-define-key
-   :states 'normal
-   :prefix (concat <leader> "b")
-   "k" '(kill-this-buffer :which-key "kill buffer")
-   "r" '(revert-buffer :which-key "refresh buffer"))
-  ;; Movement
-  (general-define-key
-   :states 'normal
-   ;; :keymaps 'override
-   "C-h" '(evil-window-left :which-key "navigate window left")
-   "C-j" '(evil-window-down :which-key "navigate window down")
-   "C-k" '(evil-window-up :which-key "navigate window up")
-   "C-l" '(evil-window-right :which-key "navigate window right")))
-
-(use-package ivy
-  :diminish
-  :bind (("C-s" . swiper)
-	 :map ivy-minibuffer-map
-	 ("TAB" . ivy-alt-done)	
-         ("C-l" . ivy-alt-done)
-         ("C-j" . ivy-next-line)
-         ("C-k" . ivy-previous-line)
-         :map ivy-switch-buffer-map
-	 ("C-l" . ivy-done)
-	 ("C-j" . ivy-next-line)
-         ("C-k" . ivy-previous-line)
-         ("C-d" . ivy-switch-buffer-kill)
-         :map ivy-reverse-i-search-map
-	 ("C-j" . ivy-next-line)
-         ("C-k" . ivy-previous-line)
-         ("C-d" . ivy-reverse-i-search-kill))
-  :config
-  (ivy-mode 1))
-(use-package counsel
-  :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history))
-  :config
-  (setq ivy-initial-inputs-alist nil)) ;; Don't start search with ^
-(use-package ivy-rich
-  :init (ivy-rich-mode 1))
-
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
-
-(use-package which-key
-  :init (which-key-mode)
-  :diminish
-  :config (setq which-key-idle-delay 0.5))
-
-(use-package helpful
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
-  :bind
-  ([remap describe-function] . counsel-describe-function)
-  ([remap describe-command] . helpful-command)
-  ([remap describe-variable] . counsel-describe-variable)
-  ([remap describe-key] . helpful-key))
-
-(use-package doom-themes)
-
 (use-package load-relative)
 
-;; (require-relative "pdf")
+;;; Imports
 
-(use-package hl-todo
-  :config
-  (setq hl-todo-highlight-punctuation ":"
-	hl-todo-keyword-faces
-	`(("TODO" warning bold)
-	  ("FIXME" error bold)
-	  ("HACK" font-lock-constant-face bold)
-	  ("REVIEW" font-lock-keyword-face bold)
-	  ("NOTE" success bold)
-	  ("DEPRECATED" font-lock-doc-face bold)))
-  :hook ((prog-mode . hl-todo-mode)
-	 (yaml-mode . hl-todo-mode)))
+(require-relative "settings")
+(require-relative "theme")
+
 
 (use-package org-roam
   :init
   (setq org-roam-v2-ack t)
   :custom
   (org-roam-directory "~/knowledge-base")
-  :general
-  (general-define-key
-   :states 'normal
-   :prefix (concat <leader> "or")
-   "f" '(org-roam-node-find :which-key "org-roam find node")
-   "b" '(org-roam-buffer-toggle :which-key "org-roam display buffer")
-   "i" '(org-roam-node-insert :which-key "org-roam insert node"))
+  ;; :general
+  ;; (general-define-key
+  ;;  :states 'normal
+  ;;  :prefix (concat <leader> "or")
+  ;;  "f" '(org-roam-node-find :which-key "org-roam find node")
+  ;;  "b" '(org-roam-buffer-toggle :which-key "org-roam display buffer")
+  ;;  "i" '(org-roam-node-insert :which-key "org-roam insert node"))
   :config
   (make-directory org-roam-directory t) ; ensure directory exists
   (org-roam-setup))
@@ -206,8 +41,5 @@
   ;; (add-hook 'pdf-view-mode-hook
 	    ;; (lambda ()
 	      ;; ))
-
-
-;; TODO: Display ruler on column 80
 
 ;; TODO: no cluttering every directory
