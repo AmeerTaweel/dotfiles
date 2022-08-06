@@ -23,7 +23,7 @@ local M =  {
 				"slack",
 				"discord",
 				"telegram-desktop",
-				"element-desktop"
+				"element"
 			}
 		},
 		properties = { tag = tags.communication }
