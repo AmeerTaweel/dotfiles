@@ -44,4 +44,11 @@
 
 (icomplete-vertical-mode)
 
+; put all backup files in the system's "temp" directory
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+; put all auto-save files in the system's "temp" director
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
 (provide-me)

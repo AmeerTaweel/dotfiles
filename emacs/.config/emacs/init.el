@@ -41,5 +41,3 @@
   ;; (add-hook 'pdf-view-mode-hook
 	    ;; (lambda ()
 	      ;; ))
-
-;; TODO: no cluttering every directory
