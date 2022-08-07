@@ -13,8 +13,6 @@
 ; close prompts with escaep
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
-
-
 ;;; Mode Line
 
 ;; (use-package telephone-line
@@ -51,11 +49,6 @@
    "C-k" '(evil-window-up :which-key "navigate window up")
    "C-l" '(evil-window-right :which-key "navigate window right")))
 
-(use-package which-key
-  :init (which-key-mode)
-  :diminish
-  :config (setq which-key-idle-delay 0.5))
-
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -65,7 +58,6 @@
   ([remap describe-command] . helpful-command)
   ([remap describe-variable] . counsel-describe-variable)
   ([remap describe-key] . helpful-key))
-
 
 ;; (require-relative "pdf")
 

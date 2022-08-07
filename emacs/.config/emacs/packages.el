@@ -9,7 +9,17 @@
 
 (use-package rainbow-delimiters
   :diminish
-  :hook (prog-mode . rainbow-delimiters-mode))
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
+
+;;; Which Key
+
+(use-package which-key
+  :diminish
+  :init
+  (which-key-mode 1)
+  :config
+  (customize-set-variable 'which-key-idle-delay 0.5))
 
 ;;; Module End
 
