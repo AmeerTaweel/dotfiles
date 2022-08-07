@@ -1,19 +1,13 @@
 ;;;; Emacs Configuration
 
-;;; Setup
-
-;; do not install packages from within emacs
-(setq use-package-always-ensure nil)
-
-(require 'use-package)
-
-(use-package load-relative)
-
 ;;; Imports
+
+(require 'load-relative)
 
 (require-relative "settings")
 (require-relative "theme")
-
+(require-relative "evil")
+(require-relative "packages")
 
 (use-package org-roam
   :init

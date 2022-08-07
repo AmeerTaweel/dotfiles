@@ -42,13 +42,22 @@
 (setq fill-column 80)
 (display-fill-column-indicator-mode)
 
-(icomplete-vertical-mode)
-
 ; put all backup files in the system's "temp" directory
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 ; put all auto-save files in the system's "temp" director
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory t)))
+
+(customize-set-variable 'scroll-step 1)
+(customize-set-variable 'scroll-margin 3)
+
+;;; Imports
+
+(require 'load-relative)
+
+(require-relative "completion")
+
+;;; Provide Module
 
 (provide-me)
