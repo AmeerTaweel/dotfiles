@@ -45,6 +45,9 @@ in {
 			geiser-guile
 			geiser-racket
 
+			# Nix
+			nix-mode
+
 			# Other
 			rainbow-delimiters
 			helpful

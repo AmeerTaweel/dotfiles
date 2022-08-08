@@ -16,3 +16,4 @@
 ;; Language-Specific Modules
 
 (require-relative "lisp")
+(require-relative "nix")
