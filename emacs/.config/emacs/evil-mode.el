@@ -59,6 +59,35 @@
   :config
   (evil-commentary-mode 1))
 
+;;; Evil Matchit
+;;; Vim matchit ported into Emacs
+
+(use-package evil-matchit
+  :diminish
+  :after evil
+  :config
+  (global-evil-matchit-mode 1))
+
+;;; Evil Surround
+;;; Emulate surround.vim
+
+(use-package evil-surround
+  :diminish
+  :after evil
+  :config
+  (global-evil-surround-mode 1))
+
+;;; Evil Snipe
+;;; Emulate vim-seek
+
+(use-package evil-snipe
+  :diminish
+  :after evil
+  :custom
+  (evil-snipe-scope 'visible)
+  :config
+  (evil-snipe-mode 1))
+
 ;;; Module End
 
 (provide-me)
