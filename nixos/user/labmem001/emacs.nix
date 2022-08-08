@@ -38,8 +38,12 @@ in {
 			# Common Lisp
 			sly
 			sly-asdf
-			sly-quicklisp
 			sly-repl-ansi-color
+
+			# Scheme
+			geiser
+			geiser-guile
+			geiser-racket
 
 			# Other
 			rainbow-delimiters

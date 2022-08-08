@@ -1,5 +1,9 @@
 ;;;; General Settings
 
+;;; Imports
+
+(require 'load-relative)
+
 ; disable startup screen
 (setq inhibit-startup-message t)
 ; disble visible bell
@@ -15,6 +19,10 @@
 ; remember recent open files
 ; run M-x recentf-open-files to use
 (recentf-mode 1)
+
+(setq-default tab-width 4)
+
+(setq use-short-answers t)
 
 ; save minibuffer history
 (savehist-mode 1)
@@ -40,7 +48,7 @@
 ; enable fill-column-indicator
 ; also named color-column in vim
 (setq fill-column 80)
-(display-fill-column-indicator-mode)
+(global-display-fill-column-indicator-mode 1)
 
 ; put all backup files in the system's "temp" directory
 (setq backup-directory-alist
@@ -52,12 +60,9 @@
 (customize-set-variable 'scroll-step 1)
 (customize-set-variable 'scroll-margin 3)
 
-;;; Imports
+;; make prompt read-only in shell mode
+(customize-set-variable 'comint-prompt-read-only t)
 
-(require 'load-relative)
-
-(require-relative "completion")
-
-;;; Provide Module
+;;; Module End
 
 (provide-me)

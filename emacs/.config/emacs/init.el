@@ -4,10 +4,17 @@
 
 (require 'load-relative)
 
+;; General Modules
+
 (require-relative "settings")
 (require-relative "theme")
-(require-relative "evil")
 (require-relative "packages")
+(require-relative "completion")
+(require-relative "evil")
+
+;; Language-Specific Modules
+
+(require-relative "lisp")
 
 (use-package org-roam
   :init
