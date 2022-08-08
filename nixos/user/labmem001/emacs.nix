@@ -6,50 +6,49 @@ in {
 	programs.emacs = {
 		enable = true;
 		extraPackages = emacsPackages: with emacsPackages; [
-			# Util
+			# Config Util
 			load-relative
-
-			# Themes
-			ayu-theme
-
-			# Package Management
 			use-package
 			diminish
 
 			# Evil Mode
 			evil
 			evil-collection
-
-			# Modeline
-			telephone-line
+			evil-commentary
 
 			# Keybindings
 			which-key
 			general
 			hydra
 
-			ivy
-			counsel
-			swiper
-			ivy-rich
+			# Completion
+			vertico
+			marginalia
+			orderless
+			consult
+			embark
+			embark-consult
+			corfu
+			corfu-doc
+			cape
 
-			rainbow-delimiters
-
-			helpful
-
-			doom-themes
+			# Org Mode
+			org-roam
 
 			# Common Lisp
-			slime
+			sly
+			sly-asdf
+			sly-quicklisp
+			sly-repl-ansi-color
+
+			# Other
+			rainbow-delimiters
+			helpful
+			hl-todo # TODO Highlight
 
 			# PDF
+			# TODO
 			pdf-tools
-
-			# Music
-			emms
-
-			# TODO Highlight
-			hl-todo
 		];
 	};
 
