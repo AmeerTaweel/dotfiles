@@ -44,7 +44,7 @@
   (general-define-key
    :prefix <prefix-emacs>
    "r" '(consult-recent-file :which-key "find recent file")
-   "o" '(consult-file-externally :which-key "open file externally")
+   "e" '(consult-file-externally :which-key "open file externally")
    "s" '(consult-line :which-key "find line in buffer"))
   :custom
   (completion-in-region-function #'consult-completion-in-region))
