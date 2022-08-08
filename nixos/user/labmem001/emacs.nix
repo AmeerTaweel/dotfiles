@@ -49,9 +49,6 @@ in {
 			rainbow-delimiters
 			helpful
 			hl-todo # TODO Highlight
-
-			# PDF
-			# TODO
 			pdf-tools
 		];
 	};

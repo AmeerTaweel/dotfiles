@@ -84,6 +84,11 @@
   ((prog-mode . hl-todo-mode)
    (yaml-mode . hl-todo-mode)))
 
+;;; PDF Tools
+
+(use-package pdf-tools
+  :mode ("\\.pdf\\'" . pdf-view-mode))
+
 ;;; Module End
 
 (provide-me)
