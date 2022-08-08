@@ -15,11 +15,13 @@ in {
 			evil
 			evil-collection
 			evil-commentary
+			evil-matchit
+			evil-surround
+			evil-snipe
 
 			# Keybindings
 			which-key
 			general
-			hydra
 
 			# Completion
 			vertico
