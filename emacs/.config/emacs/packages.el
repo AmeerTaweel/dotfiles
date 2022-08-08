@@ -89,6 +89,14 @@
 (use-package pdf-tools
   :mode ("\\.pdf\\'" . pdf-view-mode))
 
+;;; Git
+
+(use-package magit
+  :general
+  (general-define-key
+   :prefix (custom/keys-join <prefix-emacs> "g")
+   "s" 'magit-status))
+
 ;;; Module End
 
 (provide-me)
