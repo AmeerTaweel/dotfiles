@@ -55,7 +55,7 @@ in {
 			helpful
 			hl-todo # TODO Highlight
 			pdf-tools
-      magit
+			magit
 		];
 	};
 
