@@ -16,6 +16,7 @@ let
 	ideaVimRCPath = ../../../idea-vim/ideavimrc;
 	ideaVimConfigPath = ../../../idea-vim/config;
 in {
+	home.stateVersion = "21.11";
 	programs.home-manager.enable = true;
 	# Use Bluetooth headset buttons to control media player
 	services.mpris-proxy.enable = true;
@@ -124,10 +125,14 @@ in {
 		kdenlive
 
 		# IDE's
-		vscode
 		# android-studio
 		jetbrains.idea-ultimate
 		jetbrains.rider
+
+		# Chess
+		stockfish
+		gnuchess
+		chessx
 
 		# Other
 		stow
@@ -141,7 +146,6 @@ in {
 		rar
 		zip
 		unzip
-		obsidian
 		gimp
 		octaveFull # Gnu Octave
 		libreoffice
@@ -152,6 +156,7 @@ in {
 		gnome.nautilus
 		alsa-utils
 		playerctl
+
 		# vifm
 		# entr
 		# hplip-gui
