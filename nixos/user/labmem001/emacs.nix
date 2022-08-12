@@ -36,6 +36,7 @@ in {
 
 			# Org Mode
 			org-roam
+			doct
 
 			# Common Lisp
 			sly
