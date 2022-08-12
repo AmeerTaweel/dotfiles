@@ -39,7 +39,12 @@
   (org-log-done 'time)
   (org-log-into-drawer t)
   ;; Add custom state workflows
-  (org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELLED(c!)"))))
+  (org-todo-keywords '((sequence "TODO(t)" "|" "DONE(d!)" "CANCELLED(c!)")))
+  :general
+  (general-define-key
+   :prefix (custom/keys-join <prefix-emacs> "o" "a")
+   "a" 'org-agenda
+   "l" 'org-agenda-list))
 
 ;;; Capture Templates
 
