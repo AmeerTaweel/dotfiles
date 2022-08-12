@@ -64,6 +64,11 @@
    :prefix (custom/keys-join <prefix-emacs> "o")
    "c" 'org-capture))
 
+;;; Org Habit
+
+(use-package org-habit
+  :config
+  (add-to-list 'org-modules 'org-habit))
 
 ;;; Org Timer
 
