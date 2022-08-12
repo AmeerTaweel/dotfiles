@@ -50,9 +50,10 @@
   (org-capture-templates
    (doct '(("Task" :keys "t"
 			:file custom/org-mode--todo-list
-			:prepend t
 			:template ("* TODO %?" "%U" "%a")
-			:headline "Captured")))))
+			:headline "Captured"
+			:prepend t
+			:kill-buffer t)))))
 
 ;;; Org Timer
 
