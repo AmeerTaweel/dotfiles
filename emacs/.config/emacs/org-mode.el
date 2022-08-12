@@ -58,7 +58,12 @@
 			:template ("* TODO %?" "%U" "%a")
 			:headline "Captured"
 			:prepend t
-			:kill-buffer t)))))
+			:kill-buffer t))))
+  :general
+  (general-define-key
+   :prefix (custom/keys-join <prefix-emacs> "o")
+   "c" 'org-capture))
+
 
 ;;; Org Timer
 
