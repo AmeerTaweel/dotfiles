@@ -12,6 +12,7 @@
 (require-relative "completion")
 (require-relative "evil-mode")
 (require-relative "org-mode")
+(require-relative "treesitter")
 
 ;; Language-Specific Modules
 

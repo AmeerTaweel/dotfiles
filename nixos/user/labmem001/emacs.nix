@@ -38,6 +38,11 @@ in {
 			org-roam
 			doct
 
+			# Treesitter
+			tree-sitter
+			tree-sitter-langs
+			tsc
+
 			# Common Lisp
 			sly
 			sly-asdf
