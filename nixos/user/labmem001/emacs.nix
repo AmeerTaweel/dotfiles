@@ -62,6 +62,7 @@ in {
 			hl-todo # TODO Highlight
 			pdf-tools
 			magit
+			vterm
 		];
 	};
 

@@ -13,6 +13,7 @@
 (require-relative "evil-mode")
 (require-relative "org-mode")
 (require-relative "treesitter")
+(require-relative "terminal")
 
 ;; Language-Specific Modules
 
