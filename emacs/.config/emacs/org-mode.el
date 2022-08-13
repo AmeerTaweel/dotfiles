@@ -1,3 +1,5 @@
+;;;; Org Mode
+
 ;;; Imports
 
 (require 'use-package)
