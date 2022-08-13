@@ -82,6 +82,7 @@
 
 (use-package evil-snipe
   :diminish
+  :diminish evil-snipe-local-mode
   :after evil
   :custom
   (evil-snipe-scope 'visible)
