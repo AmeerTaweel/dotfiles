@@ -121,7 +121,6 @@ in {
 		okular
 		koreader
 		yt-dlp
-		nuclear
 		kdenlive
 
 		# IDE's
