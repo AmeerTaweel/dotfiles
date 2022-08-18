@@ -1,4 +1,4 @@
-{ nixpkgs, nur, home-manager, ... }:
+{ nixpkgs, nur, home-manager, za-zombie, nix-vscode-marketplace, ... }:
 with builtins;
 {
 	mkUser = user@{
@@ -14,6 +14,7 @@ with builtins;
 	}:
 	let
 		pkgs = import nixpkgs { inherit system; }; 
+		vscode-extensions = nix-vscode-marketplace.packages.${system};
 	in {
 		inherit username fullName;
 		systemModule = { ... }: {
@@ -36,7 +37,7 @@ with builtins;
 		};
 		homeManagerModule = { host, ... }: {
 			name = username;
-			value = import ../user/${username} { inherit host user; };
+			value = import ../user/${username} { inherit host user vscode-extensions; };
 		};
 	};
 
@@ -52,11 +53,13 @@ with builtins;
 		longitude,
 		...
 	}:
-	nixpkgs.lib.nixosSystem {
+	let
+		zombie = import za-zombie { inherit system; }; 
+	in nixpkgs.lib.nixosSystem {
 		inherit system;
 		modules = [
 			{ _module.args = { inherit host; }; }
-			{ nixpkgs.overlays = [ nur.overlay ]; }
+			{ nixpkgs.overlays = [ nur.overlay za-zombie.overlays.${system}.default]; }
 			../host/common
 			../host/${hostName}
 			home-manager.nixosModules.home-manager

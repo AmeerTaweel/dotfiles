@@ -5,12 +5,14 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 		# Nix User Repository
 		nur.url = "github:nix-community/NUR";
+		za-zombie.url = "github:AmeerTaweel/za-zombie";
 		home-manager.url = "github:nix-community/home-manager";
+		nix-vscode-marketplace.url = "github:AmeerTaweel/nix-vscode-marketplace";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nur, home-manager, ... }: 
+	outputs = inputs@{ self, nixpkgs, nur, home-manager, za-zombie, nix-vscode-marketplace, ... }: 
 	let
-		util = import ./nixos/util { inherit nixpkgs nur home-manager; };
+		util = import ./nixos/util { inherit nixpkgs nur home-manager za-zombie nix-vscode-marketplace; };
 
 		users = {
 			labmem001 = util.mkUser {
