@@ -19,3 +19,4 @@
 
 (require-relative "lisp")
 (require-relative "nix")
+(require-relative "zig")
