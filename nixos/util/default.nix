@@ -53,9 +53,7 @@ with builtins;
 		longitude,
 		...
 	}:
-	let
-		zombie = import za-zombie { inherit system; }; 
-	in nixpkgs.lib.nixosSystem {
+	nixpkgs.lib.nixosSystem {
 		inherit system;
 		modules = [
 			{ _module.args = { inherit host; }; }
