@@ -15,6 +15,12 @@
 ;; Ensure knowledge base exists
 (make-directory custom/org-mode-knowledge-base t)
 
+;;; RTL Language Support
+
+(use-package org
+  :hook
+  ((org-mode . (lambda () (setq bidi-paragraph-direction nil)))))
+
 ;;; Org Roam
 ;;; Plain-text personal knowledge management system
 
