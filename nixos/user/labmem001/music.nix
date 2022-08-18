@@ -8,6 +8,8 @@ in {
 		mpd
 		mpdris2 # control mpd via playerctl
 		mpc_cli
+		picard # auto music tagger
+		za-zombie # music downloader
 	];
 
 	services.playerctld.enable = true;
