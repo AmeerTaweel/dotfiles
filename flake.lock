@@ -243,11 +243,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1660821608,
-        "narHash": "sha256-dV58/Ois+R5gLjlB6Oj/Sbco4ImzMs0uVzaYfqBphMs=",
+        "lastModified": 1660851015,
+        "narHash": "sha256-VqUPhiqqvqIwrB1b/HOJlvtV73VIY9o+iLsBVhWVQl8=",
         "owner": "AmeerTaweel",
         "repo": "za-zombie",
-        "rev": "7c8d033f073a14fafe288723747be3353cc4aaba",
+        "rev": "601b7484397ae069a77293522d77de4c829b744e",
         "type": "github"
       },
       "original": {
