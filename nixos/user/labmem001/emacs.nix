@@ -38,23 +38,24 @@ in {
 			org-roam
 			doct
 
-			# Treesitter
-			tree-sitter
-			tree-sitter-langs
-			tsc
+			# Programming
+			nix-mode
+			zig-mode
 
-			# Common Lisp
+			## Common Lisp
 			sly
 			sly-asdf
 			sly-repl-ansi-color
 
-			# Scheme
+			## Scheme
 			geiser
 			geiser-guile
 			geiser-racket
 
-			# Nix
-			nix-mode
+			## Treesitter
+			tree-sitter
+			tree-sitter-langs
+			tsc
 
 			# Other
 			rainbow-delimiters
