@@ -66,6 +66,26 @@ or put it in another directory and create a symlink by:
 ln -s /abs/path/music/dir /abs/path/xdg/music/dir/mpd
 ```
 
+## Mount Android Devices
+
+Get a shell with `jmtpfs`:
+
+```bash
+nix shell nixpkgs#jmtpfs
+```
+
+Mount the only available device:
+
+```bash
+mkdir mountpoint
+jmtpfs mountpoint
+```
+
+Read more at:
+
++ [Android - NixOS Wiki](https://nixos.wiki/wiki/Android)
++ [MTP - NixOS Wiki](https://nixos.wiki/wiki/MTP)
+
 ## Long Term TODOs
 
 | TODO                                  | Waiting For                   |
