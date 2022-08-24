@@ -93,11 +93,11 @@ Read more at:
 | Convert to Wayland                    | NixOS Wayland Support         |
 | External Monitor Support              | NixOS Wayland Support         |
 | Game Emulator Support                 | Better GPU Support            |
-| Steam Game Configuration              | Better GPU Support            |
+| Steam Game Configuration              | Better GPU Support [[1]]      |
 | Legendary Game Launcher Configuration | Better GPU Support            |
 | Wine Configuration                    | Better GPU Support            |
-| Fix Discord screensharing sound issue | Proper Discord Solution [[1]] |
-| Setup Printer and Scanner [[2]] [[3]] | Having Access Back            |
+| Fix Discord screensharing sound issue | Proper Discord Solution [[2]] |
+| Setup Printer and Scanner [[3]] [[4]] | Having Access Back            |
 
 ## Useful Resources
 
@@ -114,6 +114,7 @@ Read more at:
 + [Sample Flake Project](https://github.com/nix-community/todomvc-nix).
 + [Awesome Nix](https://github.com/nix-community/awesome-nix).
 
-[1]: https://support.discord.com/hc/en-us/community/posts/360050971374-Linux-Screen-Share-Sound-Support
-[2]: https://nixos.wiki/wiki/Printing
-[3]: https://nixos.wiki/wiki/Scanners
+[1]: https://youtu.be/v9tb1gTTbJE
+[2]: https://support.discord.com/hc/en-us/community/posts/360050971374-Linux-Screen-Share-Sound-Support
+[3]: https://nixos.wiki/wiki/Printing
+[4]: https://nixos.wiki/wiki/Scanners
