@@ -1,8 +1,8 @@
-{ host, user, vscode-extensions, ... }:
+{ host, user, ... }:
 
 {
 	imports = [
-		{ _module.args = { inherit host user vscode-extensions; }; }
+		{ _module.args = { inherit host user; }; }
 		./general.nix
 		./vim.nix
 		./nvim.nix

@@ -7,12 +7,13 @@
 		nur.url = "github:nix-community/NUR";
 		za-zombie.url = "github:AmeerTaweel/za-zombie";
 		home-manager.url = "github:nix-community/home-manager";
-		nix-vscode-marketplace.url = "github:AmeerTaweel/nix-vscode-marketplace";
+		nix-vscode-marketplace.url = "github:AmeerTaweel/nix-vscode-marketplace/feat-auto-generate";
 	};
 
-	outputs = inputs@{ self, nixpkgs, nur, home-manager, za-zombie, nix-vscode-marketplace, ... }: 
+	outputs = inputs@{ self, nixpkgs, nur, home-manager, ... }: 
 	let
-		util = import ./nixos/util { inherit nixpkgs nur home-manager za-zombie nix-vscode-marketplace; };
+		other = with inputs; { inherit za-zombie nix-vscode-marketplace; };
+		util = import ./nixos/util { inherit nixpkgs nur home-manager other; };
 
 		users = {
 			labmem001 = util.mkUser {
