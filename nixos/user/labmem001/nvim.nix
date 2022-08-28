@@ -42,6 +42,7 @@ in {
 
 			# Version Control
 			neogit
+			gitsigns-nvim
 
 			# TreeSitter
 			(nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))

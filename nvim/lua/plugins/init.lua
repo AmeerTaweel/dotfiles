@@ -4,7 +4,7 @@ require "plugins.nvim-cmp"
 require "plugins.telescope-config"
 require "plugins.ultisnips"
 require "plugins.vim-matchup"
-require "plugins.which-key"
+require "plugins.which-key-config"
 
 require "plugins.ts.nvim-treesitter"
 require "plugins.ts.indent-blankline"
@@ -31,10 +31,14 @@ local fidget = require "fidget"
 fidget.setup { }
 
 -- Comment.nvim
-local comment = require("Comment")
+local comment = require "Comment"
 comment.setup { }
 
 -- taboo.vim
 -- Show tab numbers
 variables.global.taboo_tab_format = " [%N] %f%m "
 variables.global.taboo_renamed_tab_format = " [%N] %l%m "
+
+-- gitsigns.nvim
+local gitsigns = require "gitsigns"
+gitsigns.setup { }

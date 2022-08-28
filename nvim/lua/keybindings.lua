@@ -87,13 +87,7 @@ which_key.register({
 -- { Git }
 
 which_key.register({
-	g = {
-		name = "git",
-		c = { "<cmd>Neogit commit<cr>", "commit" },
-		l = { "<cmd>Neogit log<cr>", "log" },
-		m = { "<cmd>Neogit<cr>", "manage" },
-		p = { "<cmd>Neogit push<cr>", "push" },
-	}
+	vs = { "<cmd>Neogit<cr>", "open neogit" }
 }, { prefix = "<leader>" })
 
 -- { Toggle }
