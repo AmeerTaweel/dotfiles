@@ -1,5 +1,5 @@
 " Leader Key
-let mapleader = ","
+let mapleader = ','
 
 " # Splitting windows
 

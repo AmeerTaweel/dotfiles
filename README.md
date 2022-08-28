@@ -6,6 +6,7 @@ contains configuration for:
 + Alacritty
 + Awesome Window Manager
 + Bash
++ BTOP
 + CopyQ
 + Docker
 + Emacs

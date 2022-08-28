@@ -31,7 +31,7 @@ set confirm
 set backspace="indent,eol,start"
 
 " Enable mouse support for scrolling and resizing
-set mouse="a"
+set mouse=a
 
 " Make mouse work properly inside Tmux
 set ttymouse=xterm2
@@ -59,10 +59,10 @@ set showcmd
 set nomodeline
 
 " Use a block cursor in insert mode
-set guicursor="i:block"
+set guicursor=i:block
 
 " Auto-completion options
-set completeopt = "menuone,noinsert,noselect,preview"
+set completeopt=menuone,noinsert,noselect,preview
 
 " Use diff mode vertical split
 set diffopt+=vertical
@@ -127,7 +127,7 @@ set undodir=/tmp/.vim/undo//
 
 " Create directory automatically if it does not exist
 if !isdirectory(expand(&undodir))
-	call mkdir(expand(&undodir), "p")
+	call mkdir(expand(&undodir), 'p')
 endif
 
 " ## Backup
@@ -140,7 +140,7 @@ set backupdir=/tmp/.vim/backup//
 
 " Create directory automatically if it does not exist
 if !isdirectory(expand(&backupdir))
-	call mkdir(expand(&backupdir), "p")
+	call mkdir(expand(&backupdir), 'p')
 endif
 
 " ## Swap
@@ -153,23 +153,19 @@ set directory=/tmp/.vim/swap//
 
 " Create directory automatically if it does not exist
 if !isdirectory(expand(&directory))
-	call mkdir(expand(&directory), "p")
+	call mkdir(expand(&directory), 'p')
 endif
 
 " # Auto Commands and Groups
 
 " Automatically re-balance windows on resize
-autocmd VimResized * :wincmd =
+augroup AUTO_REBALANCE
+	autocmd!
+	autocmd VimResized * :wincmd =
+augroup end
 
 " Disable auto-commenting
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Set tab width equal to 4 spaces
-autocmd FileType * setlocal tabstop=4 shiftwidth=4 softtabstop=0
-
-" TMUX filetype detection
-augroup TmuxFixFileType
+augroup DISABLE_AUTO_COMMENT
 	autocmd!
-	autocmd BufRead,BufNewFile .tmux.conf set filetype=tmux
-	autocmd BufRead,BufNewFile *.tmux set filetype=tmux
+	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 augroup end

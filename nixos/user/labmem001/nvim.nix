@@ -53,6 +53,7 @@ in {
 			indent-blankline-nvim
 			playground
 
+			# LSP
 			nvim-lspconfig
 			nvim-cmp
 			cmp-nvim-lsp
@@ -61,6 +62,7 @@ in {
 			cmp-buffer
 			cmp-nvim-lua
 			cmp-nvim-ultisnips
+			fidget-nvim
 
 			# Navigation
 			vim-kitty-navigator
@@ -71,7 +73,8 @@ in {
 			telescope-ultisnips-nvim
 			telescope-asynctasks-nvim
 
-			vim-commentary
+			# Other
+			comment-nvim
 			vim-eunuch
 			vim-surround
 			vim-repeat
@@ -87,6 +90,7 @@ in {
 			asyncrun-vim
 			asynctasks-vim
 			todo-nvim
+			taboo-vim
 			# NOTE: Cheatsheet for targets-vim in the link below
 			# https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 			targets-vim
@@ -122,8 +126,18 @@ in {
 			luafile ~/.config/nvim/lua/plugins/init.lua
 			luafile ~/.config/nvim/lua/keybindings.lua
 			luafile ~/.config/nvim/lua/theme.lua
+			luafile ~/.config/nvim/lua/autocmd.lua
+
+			if exists("g:neovide")
+				luafile ~/.config/nvim/lua/neovide.lua
+			endif
 		'';
 	};
+
+	home.packages = with pkgs; [
+		# Neovim GUI
+		neovide
+	];
 
 	xdg.configFile.nvimConfiguration = {
 		source = "${nvimConfigurationPath}/lua";

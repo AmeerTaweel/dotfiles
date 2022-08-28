@@ -1,5 +1,4 @@
 require "globals"
-local vim_utils = require "utils.vim"
 
 -- { Hybrid Line Numbers }
 
@@ -8,12 +7,6 @@ options.window.relativenumber = true
 
 -- Show current line number
 options.window.number = true
-
--- Make line numbers absolute when in insert mode and on buffer leaving
-vim_utils.create_auto_group("LineNumberDisplayToggle", {
-	"BufEnter,FocusGained,InsertLeave * setlocal relativenumber",
-	"BufLeave,FocusLost,InsertEnter * setlocal norelativenumber"
-})
 
 -- { Search }
 
@@ -60,25 +53,14 @@ if fn.isdirectory(temporaryFilesDirectory) == 0 then
 	fn.mkdir(temporaryFilesDirectory)
 end
 
---[[
-Save backup, swap, and undo files in the temporaryFilesDirectory.
-This is cleaner than saving them in the current working directory.
---]]
+-- Save backup, swap, and undo files in the temporaryFilesDirectory.
+-- This is cleaner than saving them in the current working directory.
 options.global.backupdir = temporaryFilesDirectory
 options.global.directory = temporaryFilesDirectory
 options.global.undodir = temporaryFilesDirectory
 
-
 -- Enable Persistent Undo
 options.buffer.undofile = true
-
--- { Filetype Detection }
-
--- TMUX
-vim_utils.create_auto_group("TmuxFiletypeDetection", {
-	"BufRead,BufNewFile .tmux.conf setlocal filetype=tmux",
-	"BufRead,BufNewFile *.tmux setlocal filetype=tmux"
-})
 
 -- { Others }
 
@@ -145,7 +127,7 @@ options.global.guicursor = "i:block"
 options.global.completeopt = "menuone,noinsert,noselect,preview"
 
 -- Use diff mode vertical split
-options.global.diffopt = options.global.diffopt .. ",vertical"
+options.global.diffopt = "internal,filler,closeoff,vertical"
 
 -- Remove the Netrw banner
 variables.global.netrw_banner = 0
@@ -153,14 +135,17 @@ variables.global.netrw_banner = 0
 -- Give more space for displaying messages.
 options.global.cmdheight = 1
 
---[[
-Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays
-and poor user experience.
---]]
+-- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+-- delays and poor user experience.
 options.global.updatetime = 100
 
 -- Time to wait for a keybinding to complete
 options.global.timeoutlen = 500
+
+-- Number of vertical context lines
+options.global.scrolloff = 10
+-- Number of horizontal context lines
+options.global.sidescrolloff = 5
 
 -- Don't pass messages to |insertion-completion-menu|.
 options.global.shortmess = options.global.shortmess .. "c"
@@ -173,30 +158,11 @@ local defaultListChars = {
 	tab = "-->"
 }
 options.object.listchars = defaultListChars
-vim_utils.create_auto_command("FileType netrw setlocal nolist")
-
---[[
-Use bash as the default shell.
-This solves speed issue when using fish shell as the default shell.
---]]
-options.global.shell = "/usr/bin/env bash"
-
--- Automatically re-balance windows on resize
-vim_utils.create_auto_command("VimResized * :wincmd =")
 
 options.object.viewoptions = {
 	"folds",
 	"cursor"
 }
 
--- Make folds persistent
-vim_utils.create_auto_group("AutoSaveFolds", {
-	-- View files are about 500 bytes
-	-- Bufleave but not BufWinLeave captures closing 2nd tab
-	-- Nested is needed by BufWrite* (if triggered via other auto-command)
-	"BufWinLeave,BufLeave,BufWritePost *.* nested silent! mkview!",
-	"BufWinEnter *.* silent! loadview"
-})
-
--- Disable auto-commenting
-vim_utils.create_auto_command("FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o")
+-- Use bash as the default shell.
+-- options.global.shell = "/usr/bin/env bash"

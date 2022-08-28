@@ -12,9 +12,6 @@ let
 		};
 	};
 	editor = editors.${user.editor};
-	awesomewmConfigPath = ../../../awesomewm;
-	ideaVimRCPath = ../../../idea-vim/ideavimrc;
-	ideaVimConfigPath = ../../../idea-vim/config;
 in {
 	home.stateVersion = "21.11";
 	programs.home-manager.enable = true;
@@ -38,7 +35,7 @@ in {
 	};
 
 	xdg.configFile.awesomewmConfig = {
-		source = awesomewmConfigPath;
+		source = ../../../awesomewm;
 		target = "awesome";
 		recursive = true;
 	};
@@ -83,10 +80,6 @@ in {
 		nix-direnv.enable = true;
 	};
 
-	programs.emacs = {
-		enable = true;
-	};
-
 	services.redshift = {
 		enable = true;
 		latitude = host.latitude;
@@ -122,6 +115,7 @@ in {
 		koreader
 		yt-dlp
 		kdenlive
+		image-roll
 
 		# IDE's
 		# android-studio
@@ -141,6 +135,7 @@ in {
 		fd 
 		ripgrep
 		htop
+		btop
 		copyq
 		rar
 		zip
@@ -162,12 +157,17 @@ in {
 	];
 
 	home.file.ideaVimRC = {
-		source = ideaVimRCPath;
+		source = ../../../idea-vim/ideavimrc;
 		target = ".ideavimrc";
 	};
 	xdg.configFile.ideaVimConfig = {
-		source = ideaVimConfigPath;
+		source = ../../../idea-vim/config;
 		target = "idea-vim";
+		recursive = true;
+	};
+	xdg.configFile.botpConfig = {
+		source = ../../../btop;
+		target = "btop";
 		recursive = true;
 	};
 }

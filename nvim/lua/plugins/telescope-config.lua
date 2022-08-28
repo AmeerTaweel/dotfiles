@@ -7,8 +7,8 @@ telescope.setup {
 		mappings = {
 			i = {
 				["<esc>"] = actions.close,
-				["<tab>"] = actions.move_selection_next,
-				["<s-tab>"] = actions.move_selection_previous,
+				["<tab>"] = actions.move_selection_previous,
+				["<s-tab>"] = actions.move_selection_next,
 				["<c-s>"] = actions.toggle_selection
 			}
 		}
@@ -19,4 +19,4 @@ telescope.setup {
 telescope.load_extension("fzf")
 
 -- Load the ultisnips integration
--- telescope.load_extension("ultisnips")
+telescope.load_extension("ultisnips")

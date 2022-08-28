@@ -49,7 +49,14 @@ which_key.register({
 which_key.register({
 	t = {
 		c = { "<cmd>tabclose<cr>", "close tab" },
-		n = { "<cmd>tabnew<cr>", "new tab" }
+		n = { "<cmd>tabnew<cr>", "new tab" },
+		r = {
+			function ()
+				local new_name = fn.input("Rename Tab To: ")
+				exec.command("TabooRename " .. new_name)
+			end,
+			"rename tab"
+		}
 	}
 }, { prefix = "<leader>" })
 
@@ -62,6 +69,7 @@ which_key.register({
 		b = { telescope.builtin.buffers, "find buffer" },
 		c = { telescope.builtin.command_history, "find command" },
 		f = { telescope.builtin.find_files, "find file" },
+		h = { telescope.builtin.help_tags, "find help" },
 		j = { telescope.extensions.asynctasks.all, "find job" },
 		l = {
 			name = "find line",
@@ -72,7 +80,7 @@ which_key.register({
 		r = { telescope.builtin.registers, "find register" },
 		s = { telescope.builtin.search_history, "find search" },
 		t = { "<cmd>TODOTelescope<cr>", "find todo" },
-		u = { "<cmd>Telescope ultisnips<cr>", "find ultisnippet" }
+		u = { telescope.extensions.ultisnips.ultisnips, "find ultisnippet" }
 	}
 }, { prefix = "<leader>" })
 
@@ -92,7 +100,7 @@ which_key.register({
 
 which_key.register({
 	t = {
-		h = { "<cmd>set hlsearch!<cr>", "toggle search highlight" },
+		h = { "<cmd>nohlsearch<cr>", "toggle search highlight" },
 	}
 }, { prefix = "<leader>" })
 
