@@ -95,6 +95,7 @@ which_key.register({
 which_key.register({
 	t = {
 		h = { "<cmd>nohlsearch<cr>", "toggle search highlight" },
+		s = { "<cmd>set spell!<cr>", "toggle spell checking" }
 	}
 }, { prefix = "<leader>" })
 
