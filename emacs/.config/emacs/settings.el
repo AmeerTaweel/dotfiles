@@ -63,6 +63,11 @@
 ;; make prompt read-only in shell mode
 (customize-set-variable 'comint-prompt-read-only t)
 
+(use-package emacs
+  :diminish global-whitespace-mode
+  :config
+  (global-whitespace-mode 1))
+
 ;;; Module End
 
 (provide-me)
