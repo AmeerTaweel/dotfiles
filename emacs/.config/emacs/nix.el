@@ -7,7 +7,9 @@
 
 ;;; Nix Mode
 
-(use-package nix-mode)
+(use-package nix-mode
+  :hook
+  ((nix-mode . indent-tabs-mode)))
 
 ;;; Module End
 
