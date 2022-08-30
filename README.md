@@ -99,6 +99,7 @@ Read more at:
 | Wine Configuration                    | Better GPU Support            |
 | Fix Discord screensharing sound issue | Proper Discord Solution [[2]] |
 | Setup Printer and Scanner [[3]] [[4]] | Having Access Back            |
+| Use Neorg instead of Emacs Org Mode   | Neorg Becomes Ready [[5]]     |
 
 ## Useful Resources
 
@@ -119,3 +120,4 @@ Read more at:
 [2]: https://support.discord.com/hc/en-us/community/posts/360050971374-Linux-Screen-Share-Sound-Support
 [3]: https://nixos.wiki/wiki/Printing
 [4]: https://nixos.wiki/wiki/Scanners
+[5]: https://github.com/nvim-neorg/neorg
