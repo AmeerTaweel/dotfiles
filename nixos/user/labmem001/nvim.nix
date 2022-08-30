@@ -95,6 +95,7 @@ in {
 			# NOTE: Cheatsheet for targets-vim in the link below
 			# https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 			targets-vim
+			vim-sleuth
 		];
 		extraPackages = with pkgs; [
 			# Clipboard Support
