@@ -42,3 +42,19 @@ variables.global.taboo_renamed_tab_format = " [%N] %l%m "
 -- gitsigns.nvim
 local gitsigns = require "gitsigns"
 gitsigns.setup { }
+
+-- vimtex
+variables.global.vimtex_view_method = "zathura"
+variables.global.vimtex_compiler_latexmk = {
+	build_dir = "",
+	callback = 1,
+	continuous = 1,
+	executable = "latexmk",
+	options = {
+	  	"-shell-escape",
+		"-verbose",
+	  	"-file-line-error",
+	  	"-synctex=1",
+	  	"-interaction=nonstopmode"
+	}
+}

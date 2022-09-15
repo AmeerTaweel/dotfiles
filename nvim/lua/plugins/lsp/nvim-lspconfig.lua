@@ -18,7 +18,8 @@ local servers = {
 	"diagnosticls", -- Diagnostics
 	"rust_analyzer", -- Rust
 	"rnix", -- Nix
-	"racket_langserver" -- Racket/Scheme
+	"racket_langserver", -- Racket/Scheme
+	"texlab" -- LaTeX
 }
 
 local customize_server_options = {

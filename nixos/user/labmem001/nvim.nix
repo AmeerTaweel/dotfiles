@@ -96,6 +96,7 @@ in {
 			# https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
 			targets-vim
 			vim-sleuth
+			vimtex
 		];
 		extraPackages = with pkgs; [
 			# Clipboard Support
@@ -117,6 +118,7 @@ in {
 			nodePackages.typescript-language-server
 			nodePackages.diagnostic-languageserver
 			sumneko-lua-language-server
+			texlab
 
 			# Linters
 			shellcheck
