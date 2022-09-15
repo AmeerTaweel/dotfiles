@@ -141,6 +141,8 @@ in {
 	home.packages = with pkgs; [
 		# Neovim GUI
 		neovide
+		# Tool for controlling Neovim processes from a terminal
+		neovim-remote
 	];
 
 	xdg.configFile.nvimConfiguration = {
