@@ -23,7 +23,7 @@ local clipboard_mappings = {
 	}
 }
 
-which_key.register(clipboard_mappings.normal_only, { prefix = "<leader>", mode = "n" })
+which_key.register(clipboard_mappings.normal_only,   { prefix = "<leader>", mode = "n" })
 which_key.register(clipboard_mappings.normal_visual, { prefix = "<leader>", mode = "n" })
 which_key.register(clipboard_mappings.normal_visual, { prefix = "<leader>", mode = "x" })
 
