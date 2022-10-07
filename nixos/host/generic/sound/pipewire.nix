@@ -1,22 +1,14 @@
-{ host, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-	# Use PulseAudio
-	# sound.enable = true;
-	# hardware.pulseaudio.enable = true;
-	# hardware.pulseaudio.package = pkgs.pulseaudioFull;
-
-	# Use PipeWire
 	security.rtkit.enable = true;
 	services.pipewire = {
 		enable = true;
 		alsa.enable = true;
 		alsa.support32Bit = true;
 		pulse.enable = true;
-		# Enable JACK applicaitons
-		# jack.enable = true;
 
-		# Bluetooth Configuration
+		# Bluetooth Support
 		media-session.config.bluez-monitor.rules = [{
 			# Match all cards
 			matches = [ { "device.name" = "~bluez_card.*"; } ];
