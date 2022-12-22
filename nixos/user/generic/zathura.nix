@@ -1,3 +1,8 @@
+# Zathura
+#
+# Highly customizable and functional document viewer focused on keyboard
+# interaction.
+
 { ... }:
 
 {
