@@ -1,20 +1,21 @@
-{ host, user, ... }:
+{ host, user, flake-inputs, ... }:
 
 {
 	imports = [
-		{ _module.args = { inherit host user; }; }
+		{ _module.args = { inherit host user flake-inputs; }; }
+		../generic/copyq.nix
+		../generic/git.nix
+		../generic/tmux.nix
+
 		./general.nix
 		./vim.nix
 		./nvim.nix
 		./vscode.nix
-		./git.nix
-        ./shell.nix
+		./shell.nix
 		./terminal.nix
 		./xdg.nix
 		./rofi.nix
 		./sxhkd.nix
-		./copyq.nix
-		./tmux.nix
 		./emacs.nix
 		./music.nix
 	];

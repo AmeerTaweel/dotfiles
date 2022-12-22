@@ -12,8 +12,34 @@ let
 		};
 	};
 	editor = editors.${user.editor};
+
+	power-menu = pkgs.writeShellScriptBin "power-menu" ''
+		choices=(suspend lock hibernate reboot poweroff)
+
+		declare -A actions
+		actions[suspend]="systemctl suspend"
+		actions[lock]="physlock"
+		actions[hibernate]="systemctl hibernate"
+		actions[reboot]="systemctl reboot"
+		actions[poweroff]="systemctl poweroff"
+
+		# Ask for confirmation for actions that are irreversible
+		confirmations=(reboot poweroff)
+
+		choice=$(echo -e "''${choices[@]}" | ${pkgs.rofi}/bin/rofi -sep " " -dmenu -p "power menu" -l 5)
+
+		for i in "''${confirmations[@]}"; do
+			if [[ $i == $choice ]]; then
+				confirmation=$(echo -e "no\nyes" | ${pkgs.rofi}/bin/rofi -dmenu -p "are you sure you want to ''${choice}" -l 5)
+				if [[ $confirmation != "yes" ]]; then
+					exit
+				fi
+			fi
+		done
+
+		eval "''${actions[$choice]}"
+	'';
 in {
-	home.stateVersion = "21.11";
 	programs.home-manager.enable = true;
 	# Use Bluetooth headset buttons to control media player
 	services.mpris-proxy.enable = true;
@@ -30,9 +56,11 @@ in {
 	xsession.numlock.enable = true;
 
 	xsession.windowManager.awesome = {
-		enable = true;
+		enable = false;
 		luaModules = [ pkgs.luaPackages.vicious ];
 	};
+
+	xsession.windowManager.xmonad.enable = true;
 
 	xdg.configFile.awesomewmConfig = {
 		source = ../../../awesomewm;
@@ -70,6 +98,7 @@ in {
 			vo = "gpu";
 			hwdec = "auto";
 		};
+		scripts = with pkgs.mpvScripts; [ mpris ];
 	};
 
 	programs.direnv = {
@@ -151,6 +180,11 @@ in {
 		alsa-utils
 		playerctl
 
+		file
+		tree
+		curl	
+		power-menu
+
 		# vifm
 		# entr
 		# hplip-gui
@@ -170,4 +204,8 @@ in {
 		target = "btop";
 		recursive = true;
 	};
+
+	programs.eww.enable = true;
+	programs.eww.configDir = ../../../eww;
+	programs.obs-studio.enable = true;
 }

@@ -4,6 +4,10 @@ let
 	alacrittyConfigPath = ../../../alacritty;
 	kittyConfigPath = ../../../kitty;
 in {
+	home.sessionVariables = {
+		TERMINAL = user.terminal;
+	};
+
 	programs.alacritty.enable = true;
 
 	xdg.configFile.alacrittyConfig = {

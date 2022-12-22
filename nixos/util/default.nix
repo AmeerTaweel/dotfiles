@@ -1,17 +1,17 @@
-{ nixpkgs, nur, home-manager, other, ... }:
+{ nixpkgs, home-manager, flake-inputs, ... }:
 with builtins;
 {
 	mkUser = user@{
 		username,
 		fullName,
+		groups,
 		email,
 		editor,
 		terminal,
 		theme,
-		system,
 		shell,
 		...
-	}:
+	}: system:
 	let
 		pkgs = import nixpkgs { inherit system; }; 
 	in {
@@ -20,23 +20,16 @@ with builtins;
 			users.users.${username} = {
 				createHome = true;
 				description = fullName;
-				extraGroups = [
-					"wheel" # Enable "sudo" for the user.
-					"networkmanager"
-					"video"
-					"libvirtd"
-					"docker"
-				];
+				extraGroups = groups;
 				# Don't forget to change the password with "passwd".
 				initialPassword = "";
 				isNormalUser = true;
 				shell = pkgs.${shell};
 			};
-			programs.${shell}.enable = true;
 		};
 		homeManagerModule = { host, ... }: {
 			name = username;
-			value = import ../user/${username} { inherit host user; };
+			value = import ../user/${username} { inherit host user flake-inputs; } // { home.stateVersion = host.stateVersion; };
 		};
 	};
 
@@ -50,21 +43,20 @@ with builtins;
 		timezone,
 		latitude,
 		longitude,
+		overlays,
 		...
 	}:
-	nixpkgs.lib.nixosSystem {
+	let
+		# Pass the system attribute to users
+		users = map (user: user system) host.users;
+	in nixpkgs.lib.nixosSystem {
 		inherit system;
 		modules = [
-			{ _module.args = { inherit host; }; }
-			{
-				nixpkgs.overlays = [
-					nur.overlay
-					other.za-zombie.overlays.${system}.default
-					other.nix-vscode-marketplace.overlays.${system}.default
-				];
+			{ 
+				_module.args = { inherit host flake-inputs; };
+				nixpkgs.overlays = overlays;
 			}
-			../host/common
-			../host/${hostName}
+			../host/specific/${hostName}
 			home-manager.nixosModules.home-manager
 			({ pkgs, config, ... }: {
 				home-manager.useGlobalPkgs = true;

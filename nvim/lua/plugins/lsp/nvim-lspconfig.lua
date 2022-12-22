@@ -47,7 +47,7 @@ local on_attach = function(client, buffer_num)
 	vim_utils.create_auto_command "CursorHold,CursorHoldI * lua vim.diagnostic.open_float({ focusable = false })"
 
 	-- Set highlighting autocommand if server supports that
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.document_highlight then
 		vim_utils.create_auto_group("LSPDocumentHighlight", {
 			"CursorHold <buffer> lua vim.lsp.buf.document_highlight()",
 			"CursorMoved <buffer> lua vim.lsp.buf.clear_references()"

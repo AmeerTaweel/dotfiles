@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, flake-inputs, ... }:
 
 let
 	shellAliases = {
@@ -30,12 +30,7 @@ in {
 		inherit shellAliases;
 		plugins = [{
 			name = "z";
-			src = pkgs.fetchFromGitHub {
-				owner = "jethrokuan";
-				repo = "z";
-				rev = "45a9ff6d0932b0e9835cbeb60b9794ba706eef10";
-				sha256 = "pWkEhjbcxXduyKz1mAFo90IuQdX7R8bLCQgb0R+hXs4=";
-			};
+			src = flake-inputs.fish-z;
 		}];
 	};
 
