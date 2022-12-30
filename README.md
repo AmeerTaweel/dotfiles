@@ -63,29 +63,9 @@ fusermount -u MOUNT_DIRECTORY
 MPD is configured to use the XDG music directory. Either put the music there,
 or put it in another directory and create a symlink by:
 
-```bash
+```shell
 ln -s /abs/path/music/dir /abs/path/xdg/music/dir/mpd
 ```
-
-## Mount Android Devices
-
-Get a shell with `jmtpfs`:
-
-```bash
-nix shell nixpkgs#jmtpfs
-```
-
-Mount the only available device:
-
-```bash
-mkdir mountpoint
-jmtpfs mountpoint
-```
-
-Read more at:
-
-+ [Android - NixOS Wiki](https://nixos.wiki/wiki/Android)
-+ [MTP - NixOS Wiki](https://nixos.wiki/wiki/MTP)
 
 ## Long Term TODOs
 
@@ -115,6 +95,8 @@ Read more at:
 + [Sample NixOS Config](https://github.com/rasendubi/dotfiles).
 + [Sample Flake Project](https://github.com/nix-community/todomvc-nix).
 + [Awesome Nix](https://github.com/nix-community/awesome-nix).
++ [Android - NixOS Wiki](https://nixos.wiki/wiki/Android)
++ [MTP - NixOS Wiki](https://nixos.wiki/wiki/MTP)
 
 [1]: https://youtu.be/v9tb1gTTbJE
 [2]: https://support.discord.com/hc/en-us/community/posts/360050971374-Linux-Screen-Share-Sound-Support
