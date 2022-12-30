@@ -35,7 +35,7 @@ contains configuration for:
 
 Start a new project:
 
-```bash
+```shell
 cd PROJECT_DIRECTORY
 nix flake new -t github:nix-community/nix-direnv .
 direnv allow
@@ -48,13 +48,13 @@ Find good references for development shells for various programming languages
 
 To mount:
 
-```bash
+```shell
 sshfs USER@HOST:/DIRECTORY MOUNT_DIRECTORY
 ```
 
 Like any other FUSE file system, unmount using:
 
-```bash
+```shell
 fusermount -u MOUNT_DIRECTORY
 ```
 
