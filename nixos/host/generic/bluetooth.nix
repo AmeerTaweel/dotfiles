@@ -4,9 +4,6 @@
 	hardware.bluetooth.enable = true;
 	hardware.bluetooth.package = pkgs.bluez;
 
-	# Support high-quality Bluetooth sound
-	hardware.bluetooth.hsphfpd.enable = true;
-
 	services.blueman.enable = true;
 
 	systemd.user.services.mpris-proxy = {
