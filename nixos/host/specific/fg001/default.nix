@@ -11,7 +11,6 @@
 		../../generic/physlock.nix
 		# Host-Specific Modules
 		./bootloader.nix
-		./fonts.nix
 		./hardware.nix
 		./nvidia.nix
 		./xserver.nix
