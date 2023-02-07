@@ -1,16 +1,9 @@
-from libqtile import bar, layout, widget
+from libqtile import bar, widget
 
 import my_widgets
 
 def get_top_bar(with_systray = False):
     top_bar_widgets = [
-        widget.Image(
-            filename = "~/downloads/nixos-icon.png",
-            margin = 3,
-        ),
-        widget.Separator(),
-        widget.CurrentScreen(),
-        widget.Separator(),
         widget.GroupBox(),
         widget.Separator(),
         widget.CurrentLayout(
@@ -19,8 +12,10 @@ def get_top_bar(with_systray = False):
         widget.Separator(),
         widget.WindowCount(
             show_zero = True,
-            fmt = "{:<2}",
+            fmt = "{:^3}",
         ),
+        widget.Separator(),
+        widget.CurrentScreen(),
         widget.Spacer(),
         widget.Prompt(),
         widget.KeyboardLayout(
