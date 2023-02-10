@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "My personal dotfiles";
 
   inputs = {
     # Nixpkgs
