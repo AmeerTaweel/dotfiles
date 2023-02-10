@@ -17,9 +17,11 @@ def get_top_bar(with_systray = False):
         widget.Separator(),
         widget.CurrentScreen(),
         widget.Spacer(),
-        widget.Prompt(),
         widget.KeyboardLayout(
             fmt = " {}",
+            # TODO: Fix
+            # Shouldn't have to specify configured keyboards here
+            configured_keyboards = [ "us", "ar", "tr" ],
             display_map = {
                 "us": "EN",
                 "ar": "AR",
