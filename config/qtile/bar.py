@@ -21,6 +21,7 @@ def get_top_bar(with_systray = False):
             fmt = " {}",
             # TODO: Fix
             # Shouldn't have to specify configured keyboards here
+            # https://github.com/qtile/qtile/issues/2027
             configured_keyboards = [ "us", "ar", "tr" ],
             display_map = {
                 "us": "EN",
