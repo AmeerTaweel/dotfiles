@@ -56,8 +56,7 @@
 
     # You can also add overlays exported from other flakes:
     # neovim-nightly-overlay.overlays.default
-    # TODO: Fix
-    inputs.za-zombie.outputs.overlays.x86_64-linux.default
+    inputs.za-zombie.overlays.default
 
     # Or define it inline, for example:
     # (final: prev: {
