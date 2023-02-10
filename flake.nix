@@ -18,6 +18,8 @@
     # Fish shell plugin for directory jumping
     fish-z.url = "github:jethrokuan/z";
     fish-z.flake = false;
+
+    # NOTE: Any any other needed flakes here
   };
 
   outputs = {
