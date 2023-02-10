@@ -32,9 +32,9 @@
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
     ];
-  in rec {
-    # Your custom packages
-    # Acessible through 'nix build', 'nix shell', etc
+  in {
+    # Custom packages
+    # Acessible through `nix build`, `nix shell`, etc...
     packages = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -42,7 +42,7 @@
         import ./pkgs {inherit pkgs;}
     );
     # Devshell for bootstrapping
-    # Acessible through 'nix develop' or 'nix-shell' (legacy)
+    # Acessible through `nix develop` or `nix-shell` (legacy)
     devShells = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -50,7 +50,7 @@
         import ./shell.nix {inherit pkgs;}
     );
 
-    # Your custom packages and modifications, exported as overlays
+    # Custom packages and modifications, exported as overlays
     overlays = import ./overlays;
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
@@ -60,7 +60,7 @@
     homeManagerModules = import ./modules/home-manager;
 
     # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
+    # Available through `nixos-rebuild --flake .#your-hostname`
     nixosConfigurations = {
       # NOTE: fg001 is the hostname
       fg001 = nixpkgs.lib.nixosSystem {
@@ -74,19 +74,20 @@
     };
 
     # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
+    # Available through `home-manager --flake .#your-username@your-hostname`
     homeConfigurations = {
-      # FIXME replace with your username@hostname
       "labmem001@fg001" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
+        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires `pkgs` instance
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main home-manager configuration file <
+          # Our main home-manager configuration file
           ./home-manager/specific/labmem001
         ];
       };
     };
 
+    # Formatter (alejandra, nixfmt or nixpkgs-fmt)
+    # Available through `nix fmt`
     formatter = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
