@@ -166,6 +166,8 @@
     gcc
 
     pamixer
+
+    virt-manager
   ];
 
   home.file.ideaVimRC = {

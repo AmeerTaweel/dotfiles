@@ -8,7 +8,4 @@
 
   # Docker
   virtualisation.docker.enable = true;
-
-  # TODO: Install virt-manager via home-manager
-  environment.systemPackages = [pkgs.virt-manager];
 }
