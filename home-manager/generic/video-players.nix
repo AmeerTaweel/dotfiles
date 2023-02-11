@@ -8,6 +8,7 @@
       video-sync = "display-resample";
       vo = "gpu";
       hwdec = "auto";
+      sub-font = "Noto Sans Arabic";
     };
     scripts = with pkgs.mpvScripts; [mpris];
   };

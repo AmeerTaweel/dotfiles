@@ -26,5 +26,8 @@
     amiri
     redhat-official-fonts
     liberation_ttf
+    font-noto-sans-arabic
+    font-dubai
+    font-cairo
   ];
 }
