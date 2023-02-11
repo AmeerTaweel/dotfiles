@@ -13,6 +13,7 @@
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
     outputs.homeManagerModules.autostart
+    outputs.homeManagerModules.thefuck
 
     # Or modules exported from other flakes (such as nix-colors):
     inputs.nix-colors.homeManagerModules.default
@@ -228,6 +229,8 @@
   #   text = "return require('ui.themes.${user.theme}.theme')";
   #   target = "awesome/ui/theme.lua";
   # };
+
+  programs.thefuck.enable = true;
 
   # TODO: END FIX
 

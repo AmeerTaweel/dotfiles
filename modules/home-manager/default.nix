@@ -3,4 +3,5 @@
 {
   # List your module files here
   autostart = import ./autostart.nix;
+  thefuck = import ./thefuck.nix;
 }
