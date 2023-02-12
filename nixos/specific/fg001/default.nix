@@ -58,23 +58,47 @@
 
   # Services
   services = {
+    # Keeps the system timezone up-to-date based on the current location
+    automatic-timezoned = {
+      enable = true;
+    };
+
     # Automatic CPU speed and power optimizer for Linux
     auto-cpufreq = {
       enable = true;
     };
 
-    # TODO: Check the following services:
-    # - autofs and afuse
-    # - upower
-    # - gvfs
-
-    # Keeps the system timezone up-to-date based on the current location
-    automatic-timezoned = {
+    # Temperature management daemon
+    thermald = {
       enable = true;
     };
+
+    # Auto Nice Daemon
+    ananicy = {
+      enable = true;
+    };
+
+    # Provide Power Management Support
+    # TODO: Fine-tune percentage levels
+    upower = {
+      enable = true;
+      usePercentageForPolicy = true;
+      percentageLow = 20;
+      percentageCritical = 10;
+      percentageAction = 5;
+      criticalPowerAction = "Hibernate";
+    };
+
+    # TODO: Check the following services:
+    # - gvfs
   };
 
-  # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
+  # TODO: Check these options
+  # - programs.adb.enable
+  # - programs.gamemode.enable
+  #   https://github.com/FeralInteractive/GameMode
+  # - programs.steam.enable
+  # - programs.system-config-printer.enable
 
   users.users = {
     labmem001 = {
@@ -89,23 +113,13 @@
         "docker"
       ];
       # You can set an initial password for your user.
-      # If you do, you can skip setting a root password by passing '--no-root-passwd' to nixos-install.
+      # If you do, you can skip setting a root password by passing `--no-root-passwd` to nixos-install.
       # Be sure to change it (using passwd) after rebooting!
-      initialPassword = "labmem001";
+      initialPassword = "";
       isNormalUser = true;
       shell = pkgs.fish;
     };
   };
-
-  fonts.fonts = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Hack"
-        "UbuntuMono"
-      ];
-    })
-  ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "21.11";

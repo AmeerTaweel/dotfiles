@@ -230,6 +230,16 @@
   #   target = "awesome/ui/theme.lua";
   # };
 
+  # TODO: Check these options
+  # - programs.autojump.enable
+  #   https://github.com/wting/autojump
+  # - programs.browserpass.enable
+  # - programs.firefox.enable
+  # - programs.chromium.enable
+  # - programs.gpg.enable
+  # - programs.borgmatic.enable
+  # - services.emacs.enable
+
   programs.thefuck.enable = true;
 
   # TODO: END FIX
