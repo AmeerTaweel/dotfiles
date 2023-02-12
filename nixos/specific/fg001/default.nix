@@ -79,18 +79,19 @@
     };
 
     # Provide Power Management Support
-    # TODO: Fine-tune percentage levels
     upower = {
       enable = true;
       usePercentageForPolicy = true;
-      percentageLow = 20;
-      percentageCritical = 10;
-      percentageAction = 5;
+      percentageLow = 40;
+      percentageCritical = 20;
+      percentageAction = 10;
       criticalPowerAction = "Hibernate";
     };
 
-    # TODO: Check the following services:
-    # - gvfs
+    # Virtual Filesystem Support Library
+    gvfs = {
+      enable = true;
+    };
   };
 
   # TODO: Check these options
