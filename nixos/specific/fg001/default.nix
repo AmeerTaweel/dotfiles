@@ -94,13 +94,6 @@
     };
   };
 
-  # TODO: Check these options
-  # - programs.adb.enable
-  # - programs.gamemode.enable
-  #   https://github.com/FeralInteractive/GameMode
-  # - programs.steam.enable
-  # - programs.system-config-printer.enable
-
   users.users = {
     labmem001 = {
       createHome = true;
