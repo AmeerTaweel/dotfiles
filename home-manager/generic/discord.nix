@@ -11,9 +11,11 @@
   # Configure
   # Prevent Discord from trying to update itself.
   xdg.configFile.discordConfig = {
-    text = ''      {
-            "SKIP_HOST_UPDATE": true
-          }'';
+    text = ''
+      {
+        "SKIP_HOST_UPDATE": true
+      }
+    '';
     target = "discord/settings.json";
   };
 }

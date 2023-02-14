@@ -20,22 +20,22 @@
 
     # You can also split up your configuration and import pieces of it here:
     ../../generic/copyq.nix
+    ../../generic/discord.nix
+    ../../generic/gammastep.nix
+    ../../generic/keyboard.nix
+    ../../generic/nixpkgs.nix
+    ../../generic/telegram.nix
+    ../../generic/top.nix
     ../../generic/dunst.nix
     ../../generic/git.nix
-    ../../generic/nixpkgs.nix
     ../../generic/qutebrowser.nix
     ../../generic/tmux.nix
     ../../generic/zathura.nix
     ../../generic/vim.nix
     ../../generic/nvim.nix
-    ../../generic/keyboard.nix
     ../../generic/kitty.nix
     ../../generic/alacritty.nix
-    ../../generic/discord.nix
-    ../../generic/telegram.nix
-    ../../generic/top.nix
     ../../generic/fonts.nix
-    ../../generic/gammastep.nix
     ../../generic/direnv.nix
     ../../generic/video-players.nix
     ../../generic/file-managers.nix
