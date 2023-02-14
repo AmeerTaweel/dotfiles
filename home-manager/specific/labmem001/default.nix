@@ -20,6 +20,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     ../../generic/copyq.nix
+    ../../generic/direnv.nix
     ../../generic/discord.nix
     ../../generic/documents.nix
     ../../generic/gammastep.nix
@@ -40,7 +41,6 @@
     ../../generic/kitty.nix
     ../../generic/alacritty.nix
     ../../generic/fonts.nix
-    ../../generic/direnv.nix
     ../../generic/video-players.nix
     ../../generic/file-managers.nix
     ../../generic/emacs.nix
