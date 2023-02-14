@@ -28,6 +28,10 @@ in {
     inherit shellAliases;
   };
 
+  programs.nushell = {
+    enable = true;
+  };
+
   # Easy directory jumping in all shells
   programs.autojump.enable = true;
 
