@@ -26,13 +26,10 @@ in {
       set fish_greeting
     '';
     inherit shellAliases;
-    plugins = [
-      {
-        name = "z";
-        src = inputs.fish-z;
-      }
-    ];
   };
+
+  # Easy directory jumping in all shells
+  programs.autojump.enable = true;
 
   programs.exa = {
     enable = true;

@@ -26,6 +26,7 @@
     ../../generic/music.nix
     ../../generic/nixpkgs.nix
     ../../generic/telegram.nix
+    ../../generic/shell.nix
     ../../generic/top.nix
     ../../generic/vscode.nix
     ../../generic/xdg.nix
@@ -45,7 +46,6 @@
     ../../generic/emacs.nix
     ../../generic/rofi.nix
     ../../generic/sxhkd.nix
-    ../../generic/shell.nix
   ];
 
   # You can add overlays here
@@ -84,6 +84,14 @@
   colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
 
   home.keyboard.layout = "us,ar,tr";
+
+  programs.fish.shellAbbrs = {
+    sl = "xrandr --setprovideroutputsource NVIDIA-G0 modesetting && xrandr --output eDP-1 --auto --output HDMI-1-0 --auto --left-of  eDP-1";
+    ss = "xrandr --setprovideroutputsource NVIDIA-G0 modesetting && xrandr --output eDP-1 --auto --output HDMI-1-0 --auto --same-as  eDP-1";
+    sr = "xrandr --setprovideroutputsource NVIDIA-G0 modesetting && xrandr --output eDP-1 --auto --output HDMI-1-0 --auto --right-of eDP-1";
+    ns = "sudo nixos-rebuild switch --flake .";
+    hs = "home-manager switch --flake .#labmem001@fg001";
+  };
 
   # TODO: START FIX
 
@@ -243,8 +251,6 @@
   # };
 
   # TODO: Check these options
-  # - programs.autojump.enable
-  #   https://github.com/wting/autojump
   # - programs.browserpass.enable
   # - programs.firefox.enable
   # - programs.chromium.enable

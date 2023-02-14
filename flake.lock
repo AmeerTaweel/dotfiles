@@ -16,22 +16,6 @@
         "type": "github"
       }
     },
-    "fish-z": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1649439817,
-        "narHash": "sha256-+FUBM7CodtZrYKqU542fQD+ZDGrd2438trKM0tIESs0=",
-        "owner": "jethrokuan",
-        "repo": "z",
-        "rev": "85f863f20f24faf675827fb00f3a4e15c7838d76",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jethrokuan",
-        "repo": "z",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -203,7 +187,6 @@
     },
     "root": {
       "inputs": {
-        "fish-z": "fish-z",
         "home-manager": "home-manager",
         "nix-colors": "nix-colors",
         "nix-vscode-extensions": "nix-vscode-extensions",
