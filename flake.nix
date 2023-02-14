@@ -12,6 +12,9 @@
     # Nix Base-16 Theming
     nix-colors.url = "github:misterio77/nix-colors";
 
+    # VSCode Extensions
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
     # Music Downloader
     za-zombie.url = "github:AmeerTaweel/za-zombie";
 

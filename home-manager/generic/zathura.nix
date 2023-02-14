@@ -2,7 +2,7 @@
 #
 # Highly customizable and functional document viewer focused on keyboard
 # interaction.
-{...}: {
+{pkgs, ...}: {
   programs.zathura = {
     enable = true;
     options = {
@@ -11,5 +11,13 @@
       # Ability to paste selection
       selection-clipboard = "clipboard";
     };
+  };
+  xdg.desktopEntries.zathura = {
+    type = "Application";
+    name = "Zathura";
+    genericName = "Document Viewer";
+    exec = "${pkgs.zathura}/bin/zathura %U";
+    categories = ["Application"];
+    mimeType = ["application/pdf"];
   };
 }

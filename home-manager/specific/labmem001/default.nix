@@ -26,6 +26,8 @@
     ../../generic/nixpkgs.nix
     ../../generic/telegram.nix
     ../../generic/top.nix
+    ../../generic/vscode.nix
+    ../../generic/xdg.nix
     ../../generic/dunst.nix
     ../../generic/git.nix
     ../../generic/qutebrowser.nix
@@ -44,9 +46,6 @@
     ../../generic/rofi.nix
     ../../generic/sxhkd.nix
     ../../generic/shell.nix
-
-    # ./vscode.nix
-    # ./xdg.nix
   ];
 
   # You can add overlays here
@@ -58,6 +57,7 @@
     # You can also add overlays exported from other flakes:
     # neovim-nightly-overlay.overlays.default
     inputs.za-zombie.overlays.default
+    inputs.nix-vscode-extensions.overlays.default
 
     # Or define it inline, for example:
     # (final: prev: {
@@ -86,6 +86,18 @@
   home.keyboard.layout = "us,ar,tr";
 
   # TODO: START FIX
+
+  xdg.mime.enable = true;
+  xdg.mimeApps.enable = true;
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = "google-chrome.desktop";
+    "x-scheme-handler/http" = "google-chrome.desktop";
+    "x-scheme-handler/https" = "google-chrome.desktop";
+    "x-scheme-handler/about" = "google-chrome.desktop";
+    "x-scheme-handler/unknown" = "google-chrome.desktop";
+    "video/mp4" = "mpv.desktop";
+    "application/pdf" = "zathura.desktop";
+  };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;

@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  # MPV
   programs.mpv = {
     enable = true;
     defaultProfiles = ["gpu-hq"];
@@ -11,6 +12,15 @@
       sub-font = "Noto Sans Arabic";
     };
     scripts = with pkgs.mpvScripts; [mpris];
+  };
+
+  xdg.desktopEntries.mpv = {
+    type = "Application";
+    name = "mpv";
+    genericName = "Video Player";
+    exec = "${pkgs.mpv}/bin/mpv %U";
+    categories = ["Application"];
+    mimeType = ["video/mp4"];
   };
 
   home.packages = [pkgs.vlc];
