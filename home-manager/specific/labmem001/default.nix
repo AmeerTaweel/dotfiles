@@ -23,6 +23,7 @@
     ../../generic/discord.nix
     ../../generic/gammastep.nix
     ../../generic/keyboard.nix
+    ../../generic/music.nix
     ../../generic/nixpkgs.nix
     ../../generic/telegram.nix
     ../../generic/top.nix
@@ -42,7 +43,6 @@
     ../../generic/video-players.nix
     ../../generic/file-managers.nix
     ../../generic/emacs.nix
-    ../../generic/music.nix
     ../../generic/rofi.nix
     ../../generic/sxhkd.nix
     ../../generic/shell.nix

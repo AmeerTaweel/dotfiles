@@ -1,34 +1,16 @@
 {
-  pkgs,
   config,
+  pkgs,
   ...
-}: let
-  mpdDataDir = "${config.xdg.dataHome}/mpd";
-in {
-  # TODO: Autostart mpd and mpDris2
-
-  # TODO: configure playerctl and sxhkd
-  home.packages = with pkgs; [
-    mpd
-    mpdris2 # control mpd via playerctl
-    mpc_cli
-    picard # auto music tagger
-    za-zombie # music downloader
-  ];
-
-  services.playerctld.enable = true;
-
-  xdg.configFile.mpdConfiguration = {
-    text = ''
-      # music location
-      music_directory "${config.xdg.userDirs.music}"
-
-      # database location
-      db_file "${mpdDataDir}/tag_cache"
-
-      # playlists location
-      playlist_directory "${mpdDataDir}/playlists"
-
+}: {
+  # MPD Config
+  services.mpd = {
+    enable = true;
+    musicDirectory = config.xdg.userDirs.music;
+    network = {
+      startWhenNeeded = true;
+    };
+    extraConfig = ''
       # process id of mpd
       # pid_file "XXX"
 
@@ -43,13 +25,16 @@ in {
 
       # audio config
       audio_output {
-      	type "pulse"
-      	name "pulse"
+        type "pulse"
+        name "pulse"
       }
     '';
-    target = "mpd/mpd.conf";
   };
 
+  # Enable PlayerCTL
+  services.playerctld.enable = true;
+
+  # NCMPCPP MPD Client
   programs.ncmpcpp = {
     enable = true;
     mpdMusicDir = /.${config.xdg.userDirs.music};
@@ -71,15 +56,6 @@ in {
         key = "l";
         command = "next_column";
       }
-
-      {
-        key = "J";
-        command = ["select_item" "scroll_down"];
-      }
-      {
-        key = "K";
-        command = ["select_item" "scroll_up"];
-      }
     ];
     settings = {
       # Use alternative interface
@@ -91,5 +67,19 @@ in {
       playlist_display_mode = "columns";
       song_columns_list_format = "(30)[yellow]{a} (30)[white]{t} (30)[cyan]{b} (10)[red]{l}";
     };
+  };
+
+  # Install programs
+  home.packages = with pkgs; [
+    mpdris2 # control mpd via playerctl
+    mpc_cli
+    picard # auto music tagger
+    za-zombie # music downloader
+  ];
+
+  # AutoStart mpdris2
+  autostart.mpdris2 = {
+    description = "Autostart mpdris2";
+    exec = "${pkgs.mpdris2}/bin/mpDris2";
   };
 }
