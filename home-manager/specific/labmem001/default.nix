@@ -21,6 +21,7 @@
     # You can also split up your configuration and import pieces of it here:
     ../../generic/copyq.nix
     ../../generic/discord.nix
+    ../../generic/documents.nix
     ../../generic/gammastep.nix
     ../../generic/keyboard.nix
     ../../generic/music.nix
@@ -34,7 +35,6 @@
     ../../generic/git.nix
     ../../generic/qutebrowser.nix
     ../../generic/tmux.nix
-    ../../generic/zathura.nix
     ../../generic/vim.nix
     ../../generic/nvim.nix
     ../../generic/kitty.nix
@@ -130,8 +130,6 @@
     cht-sh
 
     # Media
-    okular
-    koreader
     yt-dlp
     kdenlive
     image-roll
@@ -158,7 +156,6 @@
     unzip
     gimp
     octaveFull # Gnu Octave
-    libreoffice
     postman
     devour
     sshfs
@@ -166,7 +163,6 @@
     # TODO: Decide on archiver
     xarchiver
     alsa-utils
-    playerctl
 
     file
     tree

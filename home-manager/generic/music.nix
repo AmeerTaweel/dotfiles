@@ -75,6 +75,7 @@
     mpc_cli
     picard # auto music tagger
     za-zombie # music downloader
+    playerctl
   ];
 
   # AutoStart mpdris2

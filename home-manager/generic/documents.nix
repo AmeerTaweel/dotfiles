@@ -1,8 +1,7 @@
-# Zathura
-#
-# Highly customizable and functional document viewer focused on keyboard
-# interaction.
 {pkgs, ...}: {
+  # Zathura
+  # Highly customizable and functional document viewer focused on keyboard
+  # interaction.
   programs.zathura = {
     enable = true;
     options = {
@@ -20,4 +19,11 @@
     categories = ["Application"];
     mimeType = ["application/pdf"];
   };
+
+  # Others
+  home.packages = with pkgs; [
+    okular
+    koreader
+    libreoffice
+  ];
 }
