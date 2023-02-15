@@ -1,4 +1,15 @@
 {pkgs, ...}: {
+  # Install different browser packages
+  home.packages = with pkgs; [
+    brave
+    firefox
+    google-chrome
+    luakit
+    opera
+    tor-browser-bundle-bin
+    vieb
+  ];
+
   programs.qutebrowser = {
     enable = true;
     settings = {

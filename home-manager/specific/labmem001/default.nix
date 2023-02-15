@@ -37,7 +37,7 @@
     ../../generic/xdg.nix
     ../../generic/dunst.nix
     ../../generic/git.nix
-    ../../generic/qutebrowser.nix
+    ../../generic/browsers.nix
     ../../generic/tmux.nix
     ../../generic/vim.nix
     ../../generic/nvim.nix
@@ -112,15 +112,6 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
   home.packages = with pkgs; [
-    # Browsers
-    google-chrome
-    firefox
-    opera
-    vieb
-    luakit
-    tor-browser-bundle-bin
-    brave
-
     # Communication
     element-desktop
     slack
