@@ -25,6 +25,7 @@
     ../../generic/documents.nix
     ../../generic/file-managers.nix
     ../../generic/gammastep.nix
+    ../../generic/jetbrains.nix
     ../../generic/keyboard.nix
     ../../generic/music.nix
     ../../generic/nixpkgs.nix
@@ -134,11 +135,6 @@
     kdenlive
     image-roll
 
-    # IDE's
-    # android-studio
-    jetbrains.idea-ultimate
-    # jetbrains.rider
-
     # Chess
     stockfish
     gnuchess
@@ -186,16 +182,6 @@
 
     virt-manager
   ];
-
-  home.file.ideaVimRC = {
-    source = ../../../config/idea-vim/ideavimrc;
-    target = ".ideavimrc";
-  };
-  xdg.configFile.ideaVimConfig = {
-    source = ../../../config/idea-vim/config;
-    target = "idea-vim";
-    recursive = true;
-  };
 
   programs.obs-studio.enable = true;
 
