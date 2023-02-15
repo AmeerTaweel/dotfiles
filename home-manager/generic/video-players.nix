@@ -23,5 +23,8 @@
     mimeType = ["video/mp4"];
   };
 
-  home.packages = [pkgs.vlc];
+  # VLC
+  home.packages = [
+    pkgs.vlc
+  ];
 }

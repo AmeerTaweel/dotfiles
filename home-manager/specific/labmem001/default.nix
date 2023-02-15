@@ -23,6 +23,7 @@
     ../../generic/direnv.nix
     ../../generic/discord.nix
     ../../generic/documents.nix
+    ../../generic/file-managers.nix
     ../../generic/gammastep.nix
     ../../generic/keyboard.nix
     ../../generic/music.nix
@@ -30,6 +31,7 @@
     ../../generic/telegram.nix
     ../../generic/shell.nix
     ../../generic/top.nix
+    ../../generic/video-players.nix
     ../../generic/vscode.nix
     ../../generic/xdg.nix
     ../../generic/dunst.nix
@@ -41,8 +43,6 @@
     ../../generic/kitty.nix
     ../../generic/alacritty.nix
     ../../generic/fonts.nix
-    ../../generic/video-players.nix
-    ../../generic/file-managers.nix
     ../../generic/emacs.nix
     ../../generic/rofi.nix
     ../../generic/sxhkd.nix
