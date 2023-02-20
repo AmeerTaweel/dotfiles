@@ -17,8 +17,6 @@
 
     # Music Downloader
     za-zombie.url = "github:AmeerTaweel/za-zombie";
-
-    # NOTE: Any any other needed flakes here
   };
 
   outputs = {
