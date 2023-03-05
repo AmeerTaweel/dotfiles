@@ -172,6 +172,8 @@
     pamixer
 
     virt-manager
+
+    qbittorrent
   ];
 
   programs.obs-studio.enable = true;
