@@ -14,7 +14,7 @@ local servers = {
 	"pyright", -- Python
 	"yamlls", -- YAML
 	"vimls", -- VimScript
-	"sumneko_lua", -- Lua
+	"lua_ls", -- Lua
 	"diagnosticls", -- Diagnostics
 	"rust_analyzer", -- Rust
 	"rnix", -- Nix

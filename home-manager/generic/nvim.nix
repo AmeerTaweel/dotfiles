@@ -119,7 +119,7 @@ in {
       nodePackages.vscode-langservers-extracted
       nodePackages.typescript-language-server
       nodePackages.diagnostic-languageserver
-      sumneko-lua-language-server
+      lua-language-server
       texlab
 
       # Linters
