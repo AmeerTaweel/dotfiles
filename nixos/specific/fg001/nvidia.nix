@@ -40,4 +40,8 @@ in {
       libva
     ];
   };
+
+  environment.systemPackages = with pkgs; [
+    nvidia-offload
+  ];
 }
