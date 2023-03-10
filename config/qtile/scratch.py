@@ -38,6 +38,16 @@ scratchpad = ScratchPad("scratchpad", [
         opacity = 1,
         on_focus_lost_hide = True
     ),
+    DropDown(
+        "scratch-calculator",
+        "kitty --override font_size=32 --title scratch-calculator sh -c 'eva'",
+        x       = 0.15,
+        y       = 0.15,
+        width   = 0.7,
+        height  = 0.7,
+        opacity = 1,
+        on_focus_lost_hide = True
+    ),
 ])
 
 groups = [scratchpad]
@@ -64,5 +74,10 @@ binds = [EzKeyChord("M-s", [
         "k",
         lazy.toggle_scratchpad('scratch-knowledge-base'),
         desc = "Toggle knowledge-base scratchpad"
+    ),
+    EzKey(
+        "c",
+        lazy.toggle_scratchpad('scratch-calculator'),
+        desc = "Toggle calculator scratchpad"
     ),
 ])]

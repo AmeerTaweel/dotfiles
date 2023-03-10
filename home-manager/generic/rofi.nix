@@ -11,7 +11,6 @@ in {
     terminal = config.home.sessionVariables.TERMINAL;
     theme = config.colorScheme.slug;
     plugins = with pkgs; [
-      rofi-calc
       rofi-emoji
     ];
     extraConfig = {

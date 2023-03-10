@@ -174,6 +174,8 @@
     virt-manager
 
     qbittorrent
+
+    eva # Calculator
   ];
 
   programs.obs-studio.enable = true;
