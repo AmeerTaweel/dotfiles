@@ -14,7 +14,7 @@ in {
       rofi-emoji
     ];
     extraConfig = {
-      modi = "window,windowcd,run,drun,ssh,calc,emoji";
+      modi = "window,windowcd,run,drun,ssh,emoji";
       matching = "fuzzy";
       kb-cancel = "Escape";
     };
