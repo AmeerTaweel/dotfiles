@@ -31,6 +31,7 @@
     ../../generic/nixpkgs.nix
     ../../generic/telegram.nix
     ../../generic/shell.nix
+    ../../generic/signal.nix
     ../../generic/top.nix
     ../../generic/video-players.nix
     ../../generic/vscode.nix
