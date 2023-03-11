@@ -27,7 +27,6 @@
     ../../generic/gammastep.nix
     ../../generic/jetbrains.nix
     ../../generic/keyboard.nix
-    ../../generic/music.nix
     ../../generic/nixpkgs.nix
     ../../generic/telegram.nix
     ../../generic/shell.nix
@@ -96,6 +95,9 @@
   };
 
   # TODO: START FIX
+
+  # Enable PlayerCTL
+  services.playerctld.enable = true;
 
   xdg.mime.enable = true;
   xdg.mimeApps.enable = true;

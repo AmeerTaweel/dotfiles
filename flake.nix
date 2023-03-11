@@ -14,9 +14,6 @@
 
     # VSCode Extensions
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    # Music Downloader
-    za-zombie.url = "github:AmeerTaweel/za-zombie";
   };
 
   outputs = {

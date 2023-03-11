@@ -26,11 +26,6 @@ in {
       "XF86Audio{Lower,Raise}Volume" = "${pamixer}/bin/pamixer --allow-boost {--decrease,--increase} 5";
       "XF86AudioMute" = "${pamixer}/bin/pamixer --allow-boost --toggle-mute";
       "XF86Audio{Prev,Play,Next}" = "${playerctl}/bin/playerctl --player playerctld {previous,play-pause,next}";
-      # Music
-      "${mod} + m ; {p,t,n}" = "${mpc_cli}/bin/mpc {prev,toggle,next}";
-      "${mod} + m ; {-,+}" = "${mpc_cli}/bin/mpc volume {-,+}10";
-      "${mod} + m ; {b,f}" = "${mpc_cli}/bin/mpc seek {-,+}10";
-      "${mod} + m ; {r,s,l}" = "${mpc_cli}/bin/mpc {repeat,random,single}";
     };
   };
 }

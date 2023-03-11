@@ -19,16 +19,6 @@ scratchpad = ScratchPad("scratchpad", [
         on_focus_lost_hide = True
     ),
     DropDown(
-        "scratch-music",
-        "kitty --title scratch-music sh -c 'ncmpcpp'",
-        x       = 0.05,
-        y       = 0.05,
-        width   = 0.9,
-        height  = 0.9,
-        opacity = 1,
-        on_focus_lost_hide = True
-    ),
-    DropDown(
         "scratch-knowledge-base",
         "emacs --title knowledge-base",
         x       = 0.05,
@@ -64,11 +54,6 @@ binds = [EzKeyChord("M-s", [
         "t",
         lazy.toggle_scratchpad('scratch-terminal'),
         desc = "Toggle terminal scratchpad"
-    ),
-    EzKey(
-        "m",
-        lazy.toggle_scratchpad('scratch-music'),
-        desc = "Toggle music scratchpad"
     ),
     EzKey(
         "k",

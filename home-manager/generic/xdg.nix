@@ -6,10 +6,10 @@ in {
     userDirs = {
       enable = true;
       createDirectories = true;
-      desktop = "${homeDir}/downloads";
+      desktop = null;
       documents = null;
       download = "${homeDir}/downloads";
-      music = "${homeDir}/music";
+      music = null;
       pictures = null;
       publicShare = null;
       templates = null;
