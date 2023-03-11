@@ -15,7 +15,6 @@ contains configuration for:
 + Git
 + IDEA Vim (JetBrains IDEs plugin)
 + Kitty
-+ MPD
 + ncmpcpp
 + Neovim
 + nix-direnv
@@ -58,15 +57,6 @@ Like any other FUSE file system, unmount using:
 
 ```shell
 fusermount -u MOUNT_DIRECTORY
-```
-
-### MPD
-
-MPD is configured to use the XDG music directory. Either put the music there,
-or put it in another directory and create a symlink by:
-
-```shell
-ln -s /abs/path/music/dir /abs/path/xdg/music/dir/mpd
 ```
 
 ## Long Term TODOs
