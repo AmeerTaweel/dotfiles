@@ -30,6 +30,7 @@ in {
 
   programs.nushell = {
     enable = true;
+    configFile.source = ../../config/nushell/config.nu;
   };
 
   # Easy directory jumping in all shells
