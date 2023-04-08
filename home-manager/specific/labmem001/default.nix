@@ -178,6 +178,8 @@
     qbittorrent
 
     eva # Calculator
+
+    katawa-shoujo
   ];
 
   programs.obs-studio.enable = true;
