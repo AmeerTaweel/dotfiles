@@ -10,7 +10,7 @@ from lib import EzKeyChord
 scratchpad = ScratchPad("scratchpad", [
     DropDown(
         "scratch-terminal",
-        "kitty --title scratch-terminal",
+        "kitty --title scratch-terminal --session scratch.session",
         x       = 0.05,
         y       = 0.05,
         width   = 0.9,
