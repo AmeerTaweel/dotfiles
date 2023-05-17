@@ -42,13 +42,13 @@ class Volume(base._TextBox):
 
     def _update_drawer(self):
         if self.mute:
-            icon = "婢"
+            icon = "󰝟"
         elif self.volume <= 30:
-            icon = "奄"
+            icon = "󰕿"
         elif self.volume < 80:
-            icon = "奔"
+            icon = "󰖀"
         elif self.volume >= 80:
-            icon = "墳"
+            icon = "󰕾"
 
         self.text = "{} {:3}%".format(icon, self.volume)
 
