@@ -17,6 +17,7 @@ in {
       modi = "window,windowcd,run,drun,ssh,emoji";
       matching = "fuzzy";
       kb-cancel = "Escape";
+      sort = true;
     };
   };
 

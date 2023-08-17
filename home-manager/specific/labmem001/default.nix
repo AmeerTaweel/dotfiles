@@ -91,6 +91,7 @@
     sr = "xrandr --setprovideroutputsource NVIDIA-G0 modesetting && xrandr --output eDP-1 --auto --output HDMI-1-0 --auto --right-of eDP-1";
     ns = "sudo nixos-rebuild switch --flake .";
     hs = "home-manager switch --flake .#labmem001@fg001";
+    ts = "sudo systemctl restart systemd-timesyncd.service";
   };
 
   # TODO: START FIX
@@ -180,6 +181,8 @@
     eva # Calculator
 
     katawa-shoujo
+
+    # upscayl
   ];
 
   programs.obs-studio.enable = true;

@@ -3,7 +3,10 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-pipewire.url = "github:NixOS/nixpkgs/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1";
+    # nixpkgs.url = "github:NixOS/nixpkgs/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1";
+    # nixpkgs.url = "github:NixOS/nixpkgs/638ad26bf6c7e1163eecc988ad32e7f0e407aca7";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager";

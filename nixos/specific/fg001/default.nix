@@ -102,9 +102,11 @@
         # Enable "sudo" for the user
         "wheel"
         "networkmanager"
+        "audio"
         "video"
         "libvirtd"
         "docker"
+        "vboxusers"
       ];
       # You can set an initial password for your user.
       # If you do, you can skip setting a root password by passing `--no-root-passwd` to nixos-install.

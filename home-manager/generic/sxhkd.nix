@@ -14,7 +14,10 @@ in {
       "${mod} + r; e" = "rofi -show emoji -matching normal";
       "${mod} + r; s" = "rofi -show ssh -no-parse-known-hosts -disable-history";
       # "super + control + p" = "power-menu";
-      "${mod} + wc; {a,c}" = "rofi -show {window,windowcd -display-windowcd 'window'}";
+      # Show all windows
+      "${mod} + r; w" = "rofi -show window";
+      # Show windows in the current workspace
+      "${mod} + r; W" = "rofi -show windowcd -display-windowcd 'window'";
       "{F2,F3}" = "${brightnessctl}/bin/brightnessctl set {10%-,10%+}";
       "${mod} + y" = "copyq show";
       "${mod} + x ; r" = "${maim}/bin/maim --select | ${xclip}/bin/xclip -selection clipboard -target image/png";

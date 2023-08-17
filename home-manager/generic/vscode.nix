@@ -30,6 +30,9 @@ in {
 
       # nix language support
       jnoortheen.nix-ide
+
+      # Use remote machines as a development environment with SSH
+      ms-vscode-remote.remote-ssh
     ];
     userSettings = {
       "editor.cursorStyle" = "block";

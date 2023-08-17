@@ -9,5 +9,6 @@
   font-noto-sans-arabic = pkgs.callPackage ./fonts/noto-sans-arabic {};
 
   # Scripts
-  nvidia-offload = pkgs.callPackage ./scripts/nvidia-offload {};
+  # TODO: Add scripts
+  # nvidia-offload = pkgs.callPackage ./scripts/nvidia-offload {};
 }

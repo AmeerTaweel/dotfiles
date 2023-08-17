@@ -1,10 +1,15 @@
-{pkgs, ...}: let
+{config, pkgs, ...}: let
   intelBusId = "PCI:0:2:0";
   nvidiaBusId = "PCI:1:0:0";
 in {
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.prime = {
-    offload.enable = true;
+    offload = {
+      enable = true;
+      enableOffloadCmd = true;
+    };
+
+    # sync.enable = true;
 
     # Bus ID of the Intel GPU
     # Find it using lspci, either under 3D or VGA
@@ -16,7 +21,21 @@ in {
   };
 
   # Useful for when NixOS has issues finding the primary display
-  hardware.nvidia.modesetting.enable = true;
+  # hardware.nvidia.modesetting.enable = true;
+
+  hardware.nvidia = {
+    # Modesetting is needed for most Wayland compositors
+    modesetting.enable = true;
+
+    # Use the open source version of the kernel module
+    # Only available on driver 515.43.04+
+    open = false;
+
+    # Enable the nvidia settings menu
+    nvidiaSettings = true;
+
+    # forceFullCompositionPipeline = true;
+  };
 
   # OpenGL and accelerated video playback
   nixpkgs.config.packageOverrides = pkgs: {
@@ -42,6 +61,6 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    nvidia-offload
+    nvtop
   ];
 }

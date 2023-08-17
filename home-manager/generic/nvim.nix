@@ -47,7 +47,7 @@ in {
       gitsigns-nvim
 
       # TreeSitter
-      (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
+      # (nvim-treesitter.withPlugins (_: pkgs.tree-sitter.allGrammars))
 
       nvim-ts-rainbow
       nvim-ts-context-commentstring
