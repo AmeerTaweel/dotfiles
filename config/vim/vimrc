@@ -1,34 +1,27 @@
 " Use Vim settings rather than Vi settings
 set nocompatible
 
-" Respect XDG Base Directory Specification
-function EnsureDir(dir)
-	if !isdirectory(expand(a:dir))
-		call mkdir(expand(a:dir), "p")
-	endif
-endfunction
+let s:vimrc_dir = $XDG_CONFIG_HOME . "/" . "vim"
 
-let s:vim_cache_dir = $XDG_CACHE_HOME . "/" . "vim"
-call EnsureDir(s:vim_cache_dir)
+"+------------------+
+"| Load Base Config |
+"+------------------+
 
-let &viminfo .= "," . "n" . s:vim_cache_dir . "/" . "viminfo"
-let &directory = s:vim_cache_dir . "/" . "swap"
-let &backupdir = s:vim_cache_dir . "/" . "backup"
-let &undodir = s:vim_cache_dir . "/" . "undo"
-let g:netrw_home = s:vim_cache_dir . "/" . "netrw"
-call EnsureDir(&directory)
-call EnsureDir(&backupdir)
-call EnsureDir(&undodir)
-call EnsureDir(g:netrw_home)
-
-" Current script's directory
-let s:vimrcdir = expand("<sfile>:p:h")
+" XDG Cache
+exec "source" . s:vimrc_dir . "/" . "xdg_cache.vim"
 
 " Settings
-exec "source" . s:vimrcdir . "/" . "settings.vim"
+exec "source" . s:vimrc_dir . "/" . "settings.vim"
 
 " Keybindings
-exec "source" . s:vimrcdir . "/" . "keybindings.vim"
+exec "source" . s:vimrc_dir . "/" . "keybindings.vim"
 
-" Plugins
-exec "source" . s:vimrcdir . "/" . "plugins.vim"
+"+---------------------+
+"| Load Plugins Config |
+"+---------------------+
+
+" Statusbar
+exec "source" . s:vimrc_dir . "/" . "plugins/lightline.vim"
+
+" Swap split windows with ease
+exec "source" . s:vimrc_dir . "/" . "plugins/window-swap.vim"
