@@ -23,8 +23,8 @@
 
   home.sessionVariables = {
     # TERMINAL = "kitty";
-    # EDITOR = "${pkgs.neovim}/bin/nvim";
-    # MANPAGER = "nvim +Man!";
+    EDITOR = "${pkgs.neovim}/bin/nvim";
+    MANPAGER = "${pkgs.neovim}/bin/nvim +Man!";
     FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
     HISTFILE = "${config.xdg.stateHome}/bash/history";
   };
@@ -59,9 +59,7 @@
   # };
 
   # Add stuff for your user as you see fit:
-  # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ steam ];
-  home.packages = with pkgs; [ vim brave ];
+  home.packages = with pkgs; [ vim neovim brave ];
   #   # Media
   #   yt-dlp
   #   kdenlive
