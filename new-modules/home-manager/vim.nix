@@ -1,6 +1,11 @@
-{pkgs, ...}: let
+{lib, params, pkgs, ...}: let
   vimConfigurationPath = ./config/vim;
 in {
+  home.sessionVariables = lib.mkIf (params.editor == "vim") {
+    EDITOR = "${pkgs.vim}/bin/vim";
+    MANPAGER = "${pkgs.vim}/bin/vim -M +MANPAGER -";
+  };
+
   programs.vim = {
     enable = true;
     extraConfig = builtins.readFile "${vimConfigurationPath}/vimrc";

@@ -11,6 +11,7 @@
     # Nix-Colors HM Module
     inputs.nix-colors.homeManagerModules.default
 
+    ./home-modules/nvim.nix
     ./home-modules/rar.nix
     ./home-modules/shell.nix
     ./home-modules/vim.nix
@@ -24,8 +25,6 @@
 
   home.sessionVariables = {
     # TERMINAL = "kitty";
-    EDITOR = "${pkgs.neovim}/bin/nvim";
-    MANPAGER = "${pkgs.neovim}/bin/nvim +Man!";
     FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
     HISTFILE = "${config.xdg.stateHome}/bash/history";
   };
@@ -60,7 +59,7 @@
   # };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ neovim brave ];
+  home.packages = with pkgs; [ brave ];
   #   # Media
   #   yt-dlp
   #   kdenlive

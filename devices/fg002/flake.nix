@@ -31,6 +31,7 @@
       email = "ameertaweel2002@gmail.com";
       system = "x86_64-linux";
       state-version = "23.05";
+      editor = "nvim";
     };
   in {
     # NixOS configuration entrypoint
