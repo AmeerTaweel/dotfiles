@@ -11,7 +11,9 @@
     # Nix-Colors HM Module
     inputs.nix-colors.homeManagerModules.default
 
+    ./home-modules/rar.nix
     ./home-modules/shell.nix
+    ./home-modules/shell-utils.nix
     ./home-modules/xdg.nix
   ];
 
@@ -74,10 +76,6 @@
   #   slack
   #   zoom-us
 
-  #   # Help
-  #   tealdeer # TLDR
-  #   cht-sh
-
   #   # Media
   #   yt-dlp
   #   kdenlive
@@ -89,15 +87,6 @@
   #   chessx
 
   #   # Other
-  #   stow
-  #   ffmpeg
-  #   imagemagick
-  #   bat
-  #   fd
-  #   ripgrep
-  #   rar
-  #   zip
-  #   unzip
   #   gimp
   #   octaveFull # Gnu Octave
   #   postman
@@ -108,14 +97,10 @@
   #   xarchiver
   #   alsa-utils
 
-  #   file
-  #   tree
-  #   curl
   #   # TODO: Fix
   #   # shell-scripts = import ../../../shell-scripts {inherit pkgs;};
   #   # shell-scripts.power-menu
 
-  #   # entr
   #   # hplip-gui
 
   #   xorg.xmessage
@@ -137,6 +122,7 @@
   #   katawa-shoujo
 
   #   # upscayl
+
   # ];
 
   # Enable home-manager and git
