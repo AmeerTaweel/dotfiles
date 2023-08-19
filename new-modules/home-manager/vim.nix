@@ -1,9 +1,20 @@
-{pkgs, ...}: let
-  vimConfigurationPath = ../../config/vim;
+{config, pkgs, ...}: let
+  vimConfigurationPath = ./config/vim;
+  shellAliases = {
+    # Respect XDG Base Directory Specification
+    vim = "vim -u ${config.xdg.configHome}/vim/vimrc";
+  };
 in {
+  programs.bash = {
+    inherit shellAliases;
+  };
+
+  programs.fish = {
+    inherit shellAliases;
+  };
+
   programs.vim = {
     enable = true;
-    extraConfig = builtins.readFile "${vimConfigurationPath}/vimrc";
     plugins = with pkgs.vimPlugins; [
       # Statusbar
       lightline-vim
@@ -40,9 +51,9 @@ in {
     ];
   };
 
-  home.file.vimConfiguration = {
+  xdg.configFile.vimConfig = {
     source = vimConfigurationPath;
-    target = ".vim";
+    target = "vim";
     recursive = true;
   };
 }

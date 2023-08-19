@@ -1,5 +1,8 @@
+" Current script's directory
+let s:vimrcdir = expand("<sfile>:p:h")
+
 " Statusbar
-source ~/.vim/plugin-config/lightline.vim
+exec "source" . s:vimrcdir . "/" . "plugin-config/lightline.vim"
 
 " Swap split windows with ease
-source ~/.vim/plugin-config/window-swap.vim
+exec "source" . s:vimrcdir . "/" . "plugin-config/window-swap.vim"

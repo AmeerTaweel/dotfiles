@@ -1,11 +1,34 @@
 " Use Vim settings rather than Vi settings
 set nocompatible
 
+" Respect XDG Base Directory Specification
+function EnsureDir(dir)
+	if !isdirectory(expand(a:dir))
+		call mkdir(expand(a:dir), "p")
+	endif
+endfunction
+
+let s:vim_cache_dir = $XDG_CACHE_HOME . "/" . "vim"
+call EnsureDir(s:vim_cache_dir)
+
+let &viminfo .= "," . "n" . s:vim_cache_dir . "/" . "viminfo"
+let &directory = s:vim_cache_dir . "/" . "swap"
+let &backupdir = s:vim_cache_dir . "/" . "backup"
+let &undodir = s:vim_cache_dir . "/" . "undo"
+let g:netrw_home = s:vim_cache_dir . "/" . "netrw"
+call EnsureDir(&directory)
+call EnsureDir(&backupdir)
+call EnsureDir(&undodir)
+call EnsureDir(g:netrw_home)
+
+" Current script's directory
+let s:vimrcdir = expand("<sfile>:p:h")
+
 " Settings
-source ~/.vim/settings.vim
+exec "source" . s:vimrcdir . "/" . "settings.vim"
 
 " Keybindings
-source ~/.vim/keybindings.vim
+exec "source" . s:vimrcdir . "/" . "keybindings.vim"
 
 " Plugins
-source ~/.vim/plugins.vim
+exec "source" . s:vimrcdir . "/" . "plugins.vim"

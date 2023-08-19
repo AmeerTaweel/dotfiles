@@ -13,6 +13,7 @@
 
     ./home-modules/rar.nix
     ./home-modules/shell.nix
+    ./home-modules/vim.nix
     ./home-modules/xdg.nix
   ];
 
@@ -59,7 +60,7 @@
   # };
 
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ vim neovim brave ];
+  home.packages = with pkgs; [ neovim brave ];
   #   # Media
   #   yt-dlp
   #   kdenlive

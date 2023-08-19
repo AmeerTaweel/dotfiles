@@ -33,7 +33,7 @@ set backspace="indent,eol,start"
 " Enable mouse support for scrolling and resizing
 set mouse=a
 
-" Make mouse work properly inside Tmux
+" Make mouse work properly inside tmux
 set ttymouse=xterm2
 
 " Set the window’s title, reflecting the file currently being edited
@@ -117,44 +117,14 @@ set softtabstop=0 " Use hard tabs always
 
 " # Temporary Files
 
-" ## Undo
-
 " Enable persistent undo
 set undofile
-
-" Set undo files directory
-set undodir=/tmp/.vim/undo//
-
-" Create directory automatically if it does not exist
-if !isdirectory(expand(&undodir))
-	call mkdir(expand(&undodir), 'p')
-endif
-
-" ## Backup
 
 " Enable backup files
 set backup
 
-" Set backup files directory
-set backupdir=/tmp/.vim/backup//
-
-" Create directory automatically if it does not exist
-if !isdirectory(expand(&backupdir))
-	call mkdir(expand(&backupdir), 'p')
-endif
-
-" ## Swap
-
 " Enable swap files
 set swapfile
-
-" Set swap files directory
-set directory=/tmp/.vim/swap//
-
-" Create directory automatically if it does not exist
-if !isdirectory(expand(&directory))
-	call mkdir(expand(&directory), 'p')
-endif
 
 " # Auto Commands and Groups
 
