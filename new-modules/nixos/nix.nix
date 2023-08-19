@@ -14,11 +14,9 @@
     nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
-      # Enable experimental features:
-      #   flakes
-      #   new 'nix' commands
-      #   content-addressed nix
+      # Enable experimental features (flakes, new `nix` commands, and content-addressed nix)
       experimental-features = "nix-command flakes ca-derivations";
+
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
     };

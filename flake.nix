@@ -2,21 +2,29 @@
   description = "My personal dotfiles";
 
   inputs = {
-    # Nixpkgs
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-pipewire.url = "github:NixOS/nixpkgs/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1";
-    # nixpkgs.url = "github:NixOS/nixpkgs/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1";
-    # nixpkgs.url = "github:NixOS/nixpkgs/638ad26bf6c7e1163eecc988ad32e7f0e407aca7";
+    # [[ fg001 ]]
 
-    # Home manager
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    # Nixpkgs
+    fg001-nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    fg001-nixpkgs-pipewire.url = "github:NixOS/nixpkgs/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1";
+
+    # Home Manager
+    fg001-home-manager.url = "github:nix-community/home-manager";
+    fg001-home-manager.inputs.nixpkgs.follows = "fg001-nixpkgs";
 
     # Nix Base-16 Theming
     nix-colors.url = "github:misterio77/nix-colors";
 
     # VSCode Extensions
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+
+    # [[ fg002 ]]
+
+    fg002-nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
+    # Home Manager
+    fg002-home-manager.url = "github:nix-community/home-manager";
+    fg002-home-manager.inputs.nixpkgs.follows = "fg002-nixpkgs";
   };
 
   outputs = {
@@ -69,6 +77,13 @@
         modules = [
           # Our main nixos configuration file
           ./nixos/specific/fg001
+        ];
+      };
+      fg002 = inputs.nixpkgs-fg002.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/specific/fg002
         ];
       };
     };
