@@ -11,12 +11,15 @@
     # Nix-Colors HM Module
     inputs.nix-colors.homeManagerModules.default
 
+    ./home-modules/git.nix
     ./home-modules/nvim.nix
     ./home-modules/rar.nix
     ./home-modules/shell.nix
     ./home-modules/vim.nix
     ./home-modules/xdg.nix
   ];
+
+  programs.home-manager.enable = true;
 
   home = {
     inherit (params) username;
@@ -26,7 +29,6 @@
   home.sessionVariables = {
     # TERMINAL = "kitty";
     FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
-    HISTFILE = "${config.xdg.stateHome}/bash/history";
   };
 
   colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
@@ -76,20 +78,6 @@
 
   #   eva # Calculator
   # ];
-
-  # Enable home-manager and git
-  programs.home-manager.enable = true;
-  programs.git.userName = params.name;
-  programs.git.userEmail = params.email;
-
-  programs.git = {
-    enable = true;
-    extraConfig = {
-      init = {
-        defaultBranch = "master";
-      };
-    };
-  };
 
   # Use Bluetooth headset buttons to control media player
   # services.mpris-proxy.enable = true;

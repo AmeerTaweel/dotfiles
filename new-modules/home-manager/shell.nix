@@ -1,4 +1,4 @@
-{pkgs, ...}: let
+{config, pkgs, ...}: let
   shellAliases = {
     # Enable `grep` colors when the output is a terminal
     grep = "grep --color=auto";
@@ -25,6 +25,10 @@ in {
     ./rar.nix
     ./top.nix
   ];
+
+  home.sessionVariables = {
+    HISTFILE = "${config.xdg.stateHome}/bash/history";
+  };
 
   programs.bash = {
     enable = true;
