@@ -9,11 +9,12 @@
   imports = [
     ./hardware.nix
 
-    ./nixos-modules/nix.nix
     ./nixos-modules/bluetooth.nix
     ./nixos-modules/networking.nix
-    ./nixos-modules/pipewire.nix
+    ./nixos-modules/nix.nix
+    ./nixos-modules/nix-index.nix
     ./nixos-modules/physlock.nix
+    ./nixos-modules/pipewire.nix
   ];
 
   # Bootloader.
@@ -89,15 +90,6 @@
 
   # TODO: Clean
   programs.sway.enable = true;
-
-  programs.command-not-found.enable = false;
-  programs.nix-index = {
-    enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = true;
-    enableZshIntegration = true;
-  };
-
 
   # This value determines the NixOS release from which the default settings for stateful data, like file locations and database versions on your system were
   # taken. It‘s perfectly fine and recommended to leave this value at the release version of the first install of this system. Before changing this value read the
