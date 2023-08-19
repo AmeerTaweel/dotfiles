@@ -13,7 +13,6 @@
 
     ./home-modules/rar.nix
     ./home-modules/shell.nix
-    ./home-modules/shell-utils.nix
     ./home-modules/xdg.nix
   ];
 
@@ -24,9 +23,6 @@
 
   home.sessionVariables = {
     # TERMINAL = "kitty";
-    # EDITOR = "${pkgs.vim}/bin/vim";
-    # MANPAGER = "vim -M +MANPAGER -";
-    # OR neovim
     # EDITOR = "${pkgs.neovim}/bin/nvim";
     # MANPAGER = "nvim +Man!";
     FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
@@ -34,8 +30,6 @@
   };
 
   # colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
-
-  # home.keyboard.layout = "us,ar,tr";
 
   programs.fish.shellAbbrs = let
     flake-dir = config.home.sessionVariables.FLAKEDIR;
@@ -51,9 +45,6 @@
   };
 
   # TODO: START FIX
-
-  # Enable PlayerCTL
-  # services.playerctld.enable = true;
 
   # xdg.mime.enable = true;
   # xdg.mimeApps.enable = true;
@@ -71,58 +62,21 @@
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
   home.packages = with pkgs; [ vim brave ];
-  #   # Communication
-  #   element-desktop
-  #   slack
-  #   zoom-us
-
   #   # Media
   #   yt-dlp
   #   kdenlive
   #   image-roll
 
-  #   # Chess
-  #   stockfish
-  #   gnuchess
-  #   chessx
-
   #   # Other
   #   gimp
-  #   octaveFull # Gnu Octave
-  #   postman
   #   devour
   #   sshfs
-  #   unityhub
-  #   # TODO: Decide on archiver
-  #   xarchiver
-  #   alsa-utils
-
-  #   # TODO: Fix
-  #   # shell-scripts = import ../../../shell-scripts {inherit pkgs;};
-  #   # shell-scripts.power-menu
-
-  #   # hplip-gui
-
-  #   xorg.xmessage
-  #   xkb-switch
-  #   anydesk
-
-  #   sqlite
-  #   emacsPackages.emacsql-sqlite # for org-roam
-  #   gcc
 
   #   pamixer
-
-  #   virt-manager
 
   #   qbittorrent
 
   #   eva # Calculator
-
-  #   katawa-shoujo
-
-  #   # upscayl
-
   # ];
 
   # Enable home-manager and git
@@ -146,30 +100,10 @@
   # Automount removable media
   # services.udiskie.enable = true;
 
-  # xdg.configFile.qtileConfig = {
-  #   source = ../../../config/qtile;
-  #   target = "qtile";
-  #   recursive = true;
-  # };
-
-  # xdg.configFile.awesomewmConfig = {
-  #   source = ../../../config/awesomewm;
-  #   target = "awesome";
-  #   recursive = true;
-  # };
-
-  # xdg.configFile.awesomewmTheme = {
-  #   text = "return require('ui.themes.${user.theme}.theme')";
-  #   target = "awesome/ui/theme.lua";
-  # };
-
   # TODO: Check these options
   # - programs.browserpass.enable
-  # - programs.firefox.enable
-  # - programs.chromium.enable
   # - programs.gpg.enable
   # - programs.borgmatic.enable
-  # - services.emacs.enable
 
   # programs.thefuck.enable = true;
 

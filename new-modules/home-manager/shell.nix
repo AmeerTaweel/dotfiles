@@ -1,4 +1,4 @@
-{...}: let
+{pkgs, ...}: let
   shellAliases = {
     # grep aliases
     grep = "grep --color=auto";
@@ -35,4 +35,33 @@ in {
     enable = true;
     enableAliases = true;
   };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv = {
+      enable = true;
+    };
+  };
+
+  home.packages = with pkgs; [
+    # Help
+    tealdeer # `tldr` command
+    cht-sh
+
+    file
+    tree
+    ripgrep
+    fd
+    curl
+    bat
+    ffmpeg
+
+    zip
+    unzip
+
+    # Run arbitrary commands when files change
+    entr
+    # Execute a command repeatedly, and monitor the output in full-screen mode
+    watch
+  ];
 }
