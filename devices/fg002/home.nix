@@ -29,7 +29,7 @@
     HISTFILE = "${config.xdg.stateHome}/bash/history";
   };
 
-  # colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
+  colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
 
   programs.fish.shellAbbrs = let
     flake-dir = config.home.sessionVariables.FLAKEDIR;

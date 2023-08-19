@@ -1,4 +1,9 @@
 {...}: {
+
+  # TODO: Add to shell aliases
+  # Open `tmux` with UTF-8 support
+  # tmux = "tmux -u";
+
   programs.tmux.enable = true;
 
   home.file.tmuxRC = {

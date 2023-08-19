@@ -1,12 +1,31 @@
 {pkgs, ...}: let
   shellAliases = {
-    # grep aliases
+    # Enable `grep` colors when the output is a terminal
     grep = "grep --color=auto";
+    egrep = "egrep --color=auto";
+    fgrep = "fgrep --color=auto";
 
-    # Open Tmux with UTF8 support
-    tmux = "tmux -u";
+    # Fast `cd` to parent directory
+    ".." = "cd ..";
+    ".1" = "cd ..";
+    ".2" = "cd ../..";
+    ".3" = "cd ../../..";
+    ".4" = "cd ../../../..";
+    ".5" = "cd ../../../../..";
+
+    # Create parent directories on demand
+    mkdir = "mkdir -pv";
+
+    # Tolerate Mistakes
+    sl = "ls";
+    "cd.." = "cd ..";
   };
 in {
+  imports = [
+    ./rar.nix
+    ./top.nix
+  ];
+
   programs.bash = {
     enable = true;
     initExtra = ''
