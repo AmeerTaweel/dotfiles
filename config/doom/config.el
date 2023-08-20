@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Ameer Taweel"
+      user-mail-address "ameertaweel2002@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -40,8 +40,24 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/knowledge-base/")
+(setq org-roam-directory "~/knowledge-base/")
+(setq org-roam-dailies-directory "daily")
 
+(defun kyouma/search-roam ()
+ "Run consult-ripgrep on the org roam directory"
+ (interactive)
+ (consult-ripgrep org-roam-directory nil))
+
+(map! :leader "n r S" 'kyouma/search-roam)
+
+(use-package! org-habit
+  :after org
+  :config
+  (add-to-list 'org-modules 'org-habit))
+
+(after! org
+  (setq org-log-into-drawer "LOGBOOK"))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
