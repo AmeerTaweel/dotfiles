@@ -2,8 +2,8 @@
   vimConfigurationPath = ./config/vim;
 in {
   home.sessionVariables = lib.mkIf (params.editor == "vim") {
-    EDITOR = "${pkgs.vim}/bin/vim";
-    MANPAGER = "${pkgs.vim}/bin/vim -M +MANPAGER -";
+    EDITOR = "vim";
+    MANPAGER = "vim -M +MANPAGER -";
   };
 
   programs.vim = {

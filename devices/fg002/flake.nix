@@ -15,6 +15,10 @@
 
     # Nix Base-16 Theming
     nix-colors.url = "github:misterio77/nix-colors";
+
+    # Configure Neovim with Nix
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -50,7 +54,10 @@
     homeConfigurations."${params.username}@${params.hostname}" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${params.system}; # home-manager requires a `pkgs` instance
       extraSpecialArgs = {inherit inputs outputs params;};
-      modules = [./home.nix];
+      modules = [
+        inputs.nixvim.homeManagerModules.nixvim
+        ./home.nix
+      ];
     };
   };
 }

@@ -60,8 +60,14 @@
   #   "application/pdf" = "zathura.desktop";
   # };
 
+  fonts.fontconfig.enable = true;
   # Add stuff for your user as you see fit:
-  home.packages = with pkgs; [ brave ];
+  home.packages = with pkgs; [
+    brave
+    (nerdfonts.override {
+      fonts = [ "FiraCode" ];
+    })
+  ];
   #   # Media
   #   yt-dlp
   #   kdenlive
