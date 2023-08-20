@@ -1,8 +1,14 @@
 {pkgs, ...}: let
   # emacsConfigurationPath = ../../../emacs;
 in {
-  programs.emacs = {
+  # programs.emacs = {
+  #   enable = true;
+  # };
+
+  programs.doom-emacs = {
     enable = true;
+    doomPrivateDir = ./config/doom; # Directory containing your config.el, init.el
+                                # and packages.el files
   };
 
   # programs.emacs = {
