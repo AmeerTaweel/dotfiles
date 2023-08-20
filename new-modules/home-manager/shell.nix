@@ -67,10 +67,7 @@ in {
   };
 
   home.packages = with pkgs; [
-    # Help
-    tealdeer # `tldr` command
     cht-sh
-
     file
     tree
     ripgrep
@@ -87,4 +84,10 @@ in {
     # Execute a command repeatedly, and monitor the output in full-screen mode
     watch
   ];
+
+  # `tldr` comand
+  programs.tealdeer = {
+    enable = true;
+    settings.updates.auto_update = true;
+  };
 }
