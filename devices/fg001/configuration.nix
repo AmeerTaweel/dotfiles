@@ -11,6 +11,7 @@
 
       ./nixos-modules/nix.nix
       ./nixos-modules/nix-index.nix
+      ./nixos-modules/virtual-box.nix
     ];
 
   # Bootloader.
@@ -129,5 +130,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = params.state-version; # Did you read the comment?
-
 }
