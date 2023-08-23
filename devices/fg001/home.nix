@@ -11,11 +11,13 @@
     # Nix-Colors HM Module
     inputs.nix-colors.homeManagerModules.default
 
+    ./home-modules/anydesk.nix
     ./home-modules/emacs.nix
     ./home-modules/git.nix
     ./home-modules/nvim.nix
     ./home-modules/rar.nix
     ./home-modules/shell.nix
+    ./home-modules/slack.nix
     ./home-modules/vim.nix
     ./home-modules/xdg.nix
   ];
@@ -69,8 +71,6 @@
     (nerdfonts.override {
       fonts = ["FiraCode"];
     })
-    anydesk # unfree
-    slack # unfree
   ];
   #   # Media
   #   yt-dlp
