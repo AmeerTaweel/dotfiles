@@ -8,7 +8,7 @@ in {
   programs.doom-emacs = {
     enable = true;
     doomPrivateDir = ./config/doom; # Directory containing your config.el, init.el
-                                # and packages.el files
+    # and packages.el files
   };
 
   # programs.emacs = {

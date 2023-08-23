@@ -1,18 +1,20 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, params, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware.nix
+  config,
+  pkgs,
+  params,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware.nix
 
-      ./nixos-modules/nix.nix
-      ./nixos-modules/nix-index.nix
-      ./nixos-modules/virtual-box.nix
-    ];
+    ./nixos-modules/nix.nix
+    ./nixos-modules/nix-index.nix
+    ./nixos-modules/virtual-box.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -86,8 +88,8 @@
   users.users.${params.username} = {
     isNormalUser = true;
     description = params.name;
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [];
     # TODO: Make shell part of params
     shell = pkgs.fish;
   };
@@ -100,8 +102,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

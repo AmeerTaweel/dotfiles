@@ -2,53 +2,16 @@
   description = "My personal dotfiles";
 
   inputs = {
-    # [[ fg001 ]]
-
-    # Nixpkgs
-    fg001-nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    fg001-nixpkgs-pipewire.url = "github:NixOS/nixpkgs/6f95dd4fd050daf017cae2dfeb1cea1ec0e4c1a1";
-
-    # Home Manager
-    fg001-home-manager.url = "github:nix-community/home-manager";
-    fg001-home-manager.inputs.nixpkgs.follows = "fg001-nixpkgs";
-
-    # Nix Base-16 Theming
-    nix-colors.url = "github:misterio77/nix-colors";
-
-    # VSCode Extensions
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-
-    # [[ fg002 ]]
-
-    fg002-nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-
-    # Home Manager
-    fg002-home-manager.url = "github:nix-community/home-manager";
-    fg002-home-manager.inputs.nixpkgs.follows = "fg002-nixpkgs";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     ...
   } @ inputs: let
-    inherit (self) outputs;
-    forAllSystems = nixpkgs.lib.genAttrs [
-      "aarch64-linux"
-      "aarch64-darwin"
-      "x86_64-darwin"
-      "x86_64-linux"
-    ];
+    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux"];
   in {
-    # Custom packages
-    # Acessible through `nix build`, `nix shell`, etc...
-    packages = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-        import ./pkgs {inherit pkgs;}
-    );
     # Devshell for bootstrapping
     # Acessible through `nix develop` or `nix-shell` (legacy)
     devShells = forAllSystems (
@@ -58,51 +21,8 @@
         import ./shell.nix {inherit pkgs;}
     );
 
-    # Custom packages and modifications, exported as overlays
-    overlays = import ./overlays;
-    # Reusable nixos modules you might want to export
-    # These are usually stuff you would upstream into nixpkgs
-    nixosModules = import ./modules/nixos;
-    # Reusable home-manager modules you might want to export
-    # These are usually stuff you would upstream into home-manager
-    homeManagerModules = import ./modules/home-manager;
-
-    # NixOS configuration entrypoint
-    # Available through `nixos-rebuild --flake .#your-hostname`
-    nixosConfigurations = {
-      # NOTE: fg001 is the hostname
-      fg001 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # Our main nixos configuration file
-          ./nixos/specific/fg001
-        ];
-      };
-      fg002 = inputs.nixpkgs-fg002.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          ./nixos/specific/fg002
-        ];
-      };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through `home-manager --flake .#your-username@your-hostname`
-    homeConfigurations = {
-      "labmem001@fg001" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires `pkgs` instance
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [
-          # Our main home-manager configuration file
-          ./home-manager/specific/labmem001
-        ];
-      };
-    };
-
     # Formatter (alejandra, nixfmt or nixpkgs-fmt)
-    # Available through `nix fmt`
+    # Run with `nix fmt`
     formatter = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};

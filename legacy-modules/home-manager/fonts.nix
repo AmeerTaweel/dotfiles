@@ -29,5 +29,7 @@
     font-noto-sans-arabic
     font-dubai
     font-cairo
+    # corefonts
+    # vistafonts
   ];
 }

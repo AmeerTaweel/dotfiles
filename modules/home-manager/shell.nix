@@ -1,4 +1,8 @@
-{config, pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   shellAliases = {
     # Enable `grep` colors when the output is a terminal
     grep = "grep --color=auto";

@@ -67,8 +67,10 @@
   home.packages = with pkgs; [
     brave
     (nerdfonts.override {
-      fonts = [ "FiraCode" ];
+      fonts = ["FiraCode"];
     })
+    anydesk # unfree
+    slack # unfree
   ];
   #   # Media
   #   yt-dlp

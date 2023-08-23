@@ -1,4 +1,9 @@
-{lib, params, pkgs, ...}: let
+{
+  lib,
+  params,
+  pkgs,
+  ...
+}: let
   vimConfigurationPath = ./config/vim;
 in {
   home.sessionVariables = lib.mkIf (params.editor == "vim") {

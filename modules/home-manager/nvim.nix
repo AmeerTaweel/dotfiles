@@ -6,7 +6,7 @@
   ...
 }: let
   nvimConfigurationPath = ./config/nvim;
-  
+
   nvimTheme = {
     ayu-dark = {
       name = "ayu";
@@ -67,7 +67,7 @@ in {
       shiftwidth = 4; # Set tab width
       tabstop = 4;
       softtabstop = 0; # Use hard tabs always
-      
+
       # Temporary Files
       undofile = true; # Enable persistent undo
       backup = true; # Enable backup files
@@ -108,7 +108,7 @@ in {
         space = ".";
         tab = "-->";
       };
-      viewoptions = [ "folds" "cursor" ];
+      viewoptions = ["folds" "cursor"];
     };
     extraConfigLua = ''
       -- Don't clutter working directory with backup files
@@ -135,43 +135,50 @@ in {
       DISABLE_NETRW_LIST.clear = true;
       DISABLE_AUTO_FOLD.clear = true;
     };
-    autoCmd = [{
-      # Automatically re-balance windows on resize
-      group = "AUTO_REBALANCE";
-      event = [ "VimResized" ];
-      pattern = [ "*" ];
-	  command = "wincmd =";
-    } {
-      # Disable auto-commenting
-      group =  "DISABLE_AUTO_COMMENT";
-      event = [ "FileType" ];
-      pattern = "*";
-      command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o";
-    } {
-      # Make line numbers absolute when in insert mode and on buffer leaving
-      group = "SMART_LINE_NUMBERS";
-      event = [ "BufLeave" "FocusLost" "InsertEnter" ];
-      pattern = "*";
-      command = "setlocal norelativenumber";
-    } {
-      # Restore relative line numbers when leaving insert move or entering buffer
-      group = "SMART_LINE_NUMBERS";
-      event = [ "BufEnter" "FocusGained" "InsertLeave" ];
-      pattern = "*";
-      command = "setlocal relativenumber";
-    } {
-      # Disable annoying folds when opening a file
-      group =  "DISABLE_AUTO_FOLD";
-      event = [ "BufWinEnter" ];
-      pattern = "*";
-      command = "normal zR";
-    } {
-      # Disable whitespace character hints in netrw
-      group =  "DISABLE_NETRW_LIST";
-      event = [ "FileType" ];
-      pattern = "netrw";
-      command = "setlocal nolist";
-    }];
+    autoCmd = [
+      {
+        # Automatically re-balance windows on resize
+        group = "AUTO_REBALANCE";
+        event = ["VimResized"];
+        pattern = ["*"];
+        command = "wincmd =";
+      }
+      {
+        # Disable auto-commenting
+        group = "DISABLE_AUTO_COMMENT";
+        event = ["FileType"];
+        pattern = "*";
+        command = "setlocal formatoptions-=c formatoptions-=r formatoptions-=o";
+      }
+      {
+        # Make line numbers absolute when in insert mode and on buffer leaving
+        group = "SMART_LINE_NUMBERS";
+        event = ["BufLeave" "FocusLost" "InsertEnter"];
+        pattern = "*";
+        command = "setlocal norelativenumber";
+      }
+      {
+        # Restore relative line numbers when leaving insert move or entering buffer
+        group = "SMART_LINE_NUMBERS";
+        event = ["BufEnter" "FocusGained" "InsertLeave"];
+        pattern = "*";
+        command = "setlocal relativenumber";
+      }
+      {
+        # Disable annoying folds when opening a file
+        group = "DISABLE_AUTO_FOLD";
+        event = ["BufWinEnter"];
+        pattern = "*";
+        command = "normal zR";
+      }
+      {
+        # Disable whitespace character hints in netrw
+        group = "DISABLE_NETRW_LIST";
+        event = ["FileType"];
+        pattern = "netrw";
+        command = "setlocal nolist";
+      }
+    ];
     colorschemes.${nvimTheme.${config.colorScheme.slug}.name}.enable = true;
     plugins = {
       lsp = {
@@ -261,31 +268,31 @@ in {
     #   vimtex
     # ];
     extraPackages = with pkgs; [
-    #   # Clipboard Support
-    #   xclip
+      #   # Clipboard Support
+      #   xclip
 
-    #   # Telescope
-    #   ripgrep
-    #   fd
+      #   # Telescope
+      #   ripgrep
+      #   fd
 
-    #   # Language Servers
-    #   rnix-lsp
-    #   pyright
-    #   yaml-language-server
-    #   ccls
-    #   rust-analyzer
-    #   nodePackages.bash-language-server
-    #   nodePackages.vim-language-server
-    #   nodePackages.vscode-langservers-extracted
-    #   nodePackages.typescript-language-server
-    #   nodePackages.diagnostic-languageserver
-    #   lua-language-server
-    #   texlab
+      #   # Language Servers
+      #   rnix-lsp
+      #   pyright
+      #   yaml-language-server
+      #   ccls
+      #   rust-analyzer
+      #   nodePackages.bash-language-server
+      #   nodePackages.vim-language-server
+      #   nodePackages.vscode-langservers-extracted
+      #   nodePackages.typescript-language-server
+      #   nodePackages.diagnostic-languageserver
+      #   lua-language-server
+      #   texlab
 
-    #   # Linters
-    #   shellcheck
-    #   vim-vint
-    #   nodePackages.markdownlint-cli2
+      #   # Linters
+      #   shellcheck
+      #   vim-vint
+      #   nodePackages.markdownlint-cli2
     ];
     # extraConfig = ''
     #   luafile ~/.config/nvim/lua/settings.lua
