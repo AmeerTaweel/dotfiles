@@ -1,4 +1,8 @@
-{...}: {
+{inputs, ...}: {
+  imports = [
+    inputs.nix-index-database.nixosModules.nix-index
+  ];
+
   # Enable `nix-index` and its shell integrations
   programs.nix-index = {
     enable = true;

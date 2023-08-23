@@ -1,14 +1,11 @@
-# This is your home-manager configuration file
-# Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   config,
   inputs,
-  pkgs,
   params,
+  pkgs,
   ...
 }: {
   imports = [
-    # Nix-Colors HM Module
     inputs.nix-colors.homeManagerModules.default
 
     ./home-modules/anydesk.nix

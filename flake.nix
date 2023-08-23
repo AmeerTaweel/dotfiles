@@ -1,5 +1,5 @@
 {
-  description = "My personal dotfiles";
+  description = "My Personal Dotfiles";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

@@ -76,6 +76,7 @@ fusermount -u MOUNT_DIRECTORY
 ## Useful Resources
 
 + [NixOS Manual](https://nixos.org/manual/nixos/stable/).
+  Can be replaced with: `nixos-help`.
 + [NixOS Package Search](https://search.nixos.org/packages).
 + [NixOS Option Search](https://search.nixos.org/options).
 + [NixOS Manual - Options Appendix](https://nixos.org/manual/nixos/stable/options.html).\

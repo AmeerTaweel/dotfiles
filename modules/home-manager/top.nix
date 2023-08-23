@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   pkgs,
   ...
 }: let
@@ -9,6 +10,10 @@
     ayu-light = "ayu";
   };
 in {
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+  ];
+
   # HTOP
   programs.htop = {
     enable = true;

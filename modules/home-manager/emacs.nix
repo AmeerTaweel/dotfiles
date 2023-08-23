@@ -1,6 +1,10 @@
-{pkgs, ...}: let
+{inputs, pkgs, ...}: let
   # emacsConfigurationPath = ../../../emacs;
 in {
+  imports = [
+    inputs.nix-doom-emacs.hmModule
+  ];
+
   # programs.emacs = {
   #   enable = true;
   # };

@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   params,
   pkgs,
@@ -41,6 +42,11 @@
     };
   };
 in {
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+    inputs.nixvim.homeManagerModules.nixvim
+  ];
+
   home.sessionVariables = lib.mkIf (builtins.elem params.editor ["nvim" "neovim"]) {
     EDITOR = "nvim";
     MANPAGER = "nvim +Man!";

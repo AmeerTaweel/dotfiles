@@ -43,10 +43,7 @@
     nixosConfigurations.${params.hostname} = inputs.nixpkgs.lib.nixosSystem {
       inherit (params) system;
       specialArgs = {inherit inputs outputs params;};
-      modules = [
-        inputs.nix-index-database.nixosModules.nix-index
-        ./configuration.nix
-      ];
+      modules = [ ./configuration.nix ];
     };
 
     # Standalone home-manager configuration entrypoint
@@ -54,10 +51,7 @@
     homeConfigurations."${params.username}@${params.hostname}" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${params.system}; # home-manager requires a `pkgs` instance
       extraSpecialArgs = {inherit inputs outputs params;};
-      modules = [
-        inputs.nixvim.homeManagerModules.nixvim
-        ./home.nix
-      ];
+      modules = [ ./home.nix ];
     };
   };
 }
