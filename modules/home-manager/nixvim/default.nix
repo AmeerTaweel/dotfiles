@@ -48,6 +48,7 @@ in {
 
     ./settings.nix
     ./autocmd.nix
+    ./filetype.nix
   ];
 
   home.sessionVariables = lib.mkIf (builtins.elem params.editor ["nvim" "neovim"]) {
@@ -64,16 +65,8 @@ in {
 
       ${nvimTheme.${config.colorScheme.slug}.config}
     '';
-    extraConfigLuaPre = ''
-      vim.g.mapleader = ","
-    '';
     globals = {
-      netrw_banner = 0; # Remove the Netrw banner
-    };
-    filetype = {
-      extension = {
-        tmux = "tmux";
-      };
+      mapleader = ",";
     };
     colorschemes.${nvimTheme.${config.colorScheme.slug}.name}.enable = true;
     maps = {

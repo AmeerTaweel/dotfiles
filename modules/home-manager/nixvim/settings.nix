@@ -70,5 +70,8 @@
       -- Don't pass messages to |insertion-completion-menu|
       vim.opt.shortmess:append "c"
     '';
+    globals = {
+      netrw_banner = 0; # Remove the Netrw banner
+    };
   };
 }
