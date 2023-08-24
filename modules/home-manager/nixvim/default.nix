@@ -50,6 +50,7 @@ in {
     ./autocmd.nix
     ./filetype.nix
 
+    ./plugins/misc.nix
     ./plugins/taboo.nix
   ];
 
@@ -80,20 +81,6 @@ in {
       };
     };
     plugins = {
-      lualine = {
-        enable = true;
-        globalstatus = true;
-        iconsEnabled = true;
-      };
-      comment-nvim.enable = true;
-      gitsigns = {
-        enable = true;
-        currentLineBlame = true;
-      };
-      todo-comments = {
-        enable = true;
-        signs = false;
-      };
       nvim-cmp = {
         enable = true;
         completion = {
@@ -112,10 +99,6 @@ in {
           "<c-n>" = "cmp.mapping.select_next_item()";
           "<c-p>" = "cmp.mapping.select_prev_item()";
         };
-      };
-      vim-matchup = {
-        enable = true;
-        enableSurround = true;
       };
 
       telescope = {
@@ -136,8 +119,6 @@ in {
           fzf-native.enable = true;
         };
       };
-
-      which-key.enable = true;
 
       # -- Asynctasks
       # -- Quickfix list height
@@ -182,20 +163,11 @@ in {
       };
       ts-autotag.enable = true;
     };
-    extraPlugins = with pkgs.vimPlugins; [
-      # Navigation
-      vim-kitty-navigator
-
-      # Others
-      vim-sleuth
-    ];
   };
 
   programs.neovim = {
     enable = false;
     # plugins = with pkgs.vimPlugins; [
-    #   plenary-nvim # Required by many packages
-
     #   # Version Control
     #   neogit
 
@@ -210,9 +182,6 @@ in {
     #   cmp-nvim-ultisnips
 
     #   # Other
-    #   vim-eunuch
-    #   vim-surround
-    #   vim-repeat
     #   vim-highlightedyank
     #   which-key-nvim
     #   nvim-web-devicons
@@ -222,9 +191,6 @@ in {
     #   winshift-nvim
     #   asyncrun-vim
     #   asynctasks-vim
-    #   # NOTE: Cheatsheet for targets-vim in the link below
-    #   # https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
-    #   targets-vim
     #   vimtex
     # ];
     extraPackages = with pkgs; [
