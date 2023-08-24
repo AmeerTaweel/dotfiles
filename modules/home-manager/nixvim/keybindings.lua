@@ -33,13 +33,6 @@ which_key.register({
 	t = {
 		c = { "<cmd>tabclose<cr>", "close tab" },
 		n = { "<cmd>tabnew<cr>", "new tab" },
-		r = {
-			function ()
-				local new_name = fn.input("Rename Tab To: ")
-				exec.command("TabooRename " .. new_name)
-			end,
-			"rename tab"
-		}
 	}
 }, { prefix = "<leader>" })
 

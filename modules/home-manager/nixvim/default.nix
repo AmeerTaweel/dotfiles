@@ -49,6 +49,8 @@ in {
     ./settings.nix
     ./autocmd.nix
     ./filetype.nix
+
+    ./plugins/taboo.nix
   ];
 
   home.sessionVariables = lib.mkIf (builtins.elem params.editor ["nvim" "neovim"]) {
@@ -59,10 +61,6 @@ in {
   programs.nixvim = {
     enable = true;
     extraConfigLua = ''
-      -- taboo.vim config
-      vim.g.taboo_tab_format = " [%N] %f%m "
-      vim.g.taboo_renamed_tab_format = " [%N] %l%m "
-
       ${nvimTheme.${config.colorScheme.slug}.config}
     '';
     globals = {
@@ -190,9 +188,6 @@ in {
 
       # Others
       vim-sleuth
-
-      # Better tab names
-      taboo-vim
     ];
   };
 
