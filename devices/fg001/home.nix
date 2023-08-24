@@ -9,6 +9,7 @@
     inputs.nix-colors.homeManagerModules.default
 
     ./home-modules/anydesk.nix
+    ./home-modules/custom-pkgs-overlay.nix
     ./home-modules/emacs.nix
     ./home-modules/git.nix
     ./home-modules/nvim.nix
@@ -38,12 +39,16 @@
     flake-dir = config.home.sessionVariables.FLAKEDIR;
     nixos-flake = "${flake-dir}#${params.hostname}";
     home-flake = "${flake-dir}#${params.username}@${params.hostname}";
+    nix-summary = "${pkgs.nixos-change-summary}/bin/nixos-change-summary";
+    hm-summary = "${pkgs.home-manager-change-summary}/bin/home-manager-change-summary";
   in {
-    nx-boot = "sudo nixos-rebuild boot --flake ${nixos-flake}";
+    nx-boot = "sudo nixos-rebuild boot --flake ${nixos-flake} && ${nix-summary}";
     nx-build = "nixos-rebuild build --flake ${nixos-flake}";
-    nx-switch = "sudo nixos-rebuild switch --flake ${nixos-flake}";
+    nx-switch = "sudo nixos-rebuild switch --flake ${nixos-flake} && ${nix-summary}";
+    nx-summary = nix-summary;
     hm-build = "home-manager build --flake ${home-flake}";
-    hm-switch = "home-manager switch --flake ${home-flake}";
+    hm-switch = "home-manager switch --flake ${home-flake} && ${hm-summary}";
+    hm-summary = hm-summary;
     # ts = "sudo systemctl restart systemd-timesyncd.service";
   };
 
@@ -68,6 +73,8 @@
     (nerdfonts.override {
       fonts = ["FiraCode"];
     })
+    nixos-change-summary
+    home-manager-change-summary
   ];
   #   # Media
   #   yt-dlp
