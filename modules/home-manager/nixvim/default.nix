@@ -124,7 +124,14 @@ in {
       -- Don't pass messages to |insertion-completion-menu|
       vim.opt.shortmess:append "c"
 
+      -- taboo.vim config
+      vim.g.taboo_tab_format = " [%N] %f%m "
+      vim.g.taboo_renamed_tab_format = " [%N] %l%m "
+
       ${nvimTheme.${config.colorScheme.slug}.config}
+    '';
+    extraConfigLuaPre = ''
+      vim.g.mapleader = ","
     '';
     globals = {
       netrw_banner = 0; # Remove the Netrw banner
@@ -186,30 +193,120 @@ in {
       }
     ];
     colorschemes.${nvimTheme.${config.colorScheme.slug}.name}.enable = true;
-    plugins = {
-      lsp = {
-        enable = true;
-        servers = {
-          lua-ls = {
-            enable = true;
-          };
-          pyright = {
-            enable = true;
-          };
+    maps = {
+      normal = {
+        "<leader>-" = {
+          action = "<cmd>split<cr>";
+          desc = "split window horizontally";
+        };
+        "<leader>/" = {
+          action = "<cmd>vsplit<cr>";
+          desc = "split window vertically";
         };
       };
-      comment-nvim.enable = true;
+    };
+    plugins = {
       lualine = {
         enable = true;
         globalstatus = true;
         iconsEnabled = true;
       };
+      comment-nvim.enable = true;
+      gitsigns = {
+        enable = true;
+        currentLineBlame = true;
+      };
+      todo-comments = {
+        enable = true;
+        signs = false;
+      };
+      nvim-cmp = {
+        enable = true;
+        completion = {
+          autocomplete = [ "TextChanged" ];
+          keywordLength = 1;
+        };
+        sources = [
+          { name = "nvim_lsp"; }
+          { name = "nvim_lua"; }
+          { name = "path"; }
+          { name = "buffer"; }
+        ];
+        mapping = {
+          "<tab>" = "cmp.mapping.select_next_item()";
+          "<s-tab>" = "cmp.mapping.select_prev_item()";
+          "<c-n>" = "cmp.mapping.select_next_item()";
+          "<c-p>" = "cmp.mapping.select_prev_item()";
+        };
+      };
+      vim-matchup = {
+        enable = true;
+        enableSurround = true;
+      };
+
+      telescope = {
+        enable = true;
+        extraOptions = {
+          defaults = {
+            sorting_strategy = "ascending";
+            layout_config.prompt_position = "top";
+            # Insert mode mappings (within the prompt)
+            mappings.i = {
+              "<esc>" = "close";
+              "<tab>" = "move_selection_next";
+              "<s-tab>" = "move_selection_previous";
+            };
+          };
+        };
+        extensions = {
+          fzf-native.enable = true;
+        };
+      };
+
+      which-key.enable = true;
+
+      # -- Asynctasks
+      # -- Quickfix list height
+      # variables.global.asyncrun_open = 8
+      #
+      # -- Lightspeed
+      # vim.cmd "map <space> <plug>Lightspeed_,_ft"
+
+      lsp = {
+        enable = true;
+        servers = {
+          lua-ls.enable = true;
+          pyright.enable = true;
+          nil_ls.enable = true;
+          html.enable = true;
+          cssls.enable = true;
+          jsonls.enable = true;
+          yamlls.enable = true;
+          ccls.enable = true;
+        };
+      };
+
       treesitter = {
         enable = true;
         folding = true;
         indent = true;
       };
       treesitter-rainbow.enable = true;
+      ts-context-commentstring.enable = true;
+      indent-blankline = {
+        enable = true;
+        buftypeExclude = ["terminal" "nofile" "quickfix" "prompt" "help"];
+        useTreesitter = true;
+        useTreesitterScope = false;
+        showCurrentContext = true;
+      };
+      nvim-autopairs = {
+        enable = true;
+        checkTs = true;
+        disableInMacro = true;
+        disableInVisualblock = true;
+      };
+      ts-autotag.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       # Navigation
@@ -217,6 +314,9 @@ in {
 
       # Others
       vim-sleuth
+
+      # Better tab names
+      taboo-vim
     ];
   };
 
@@ -227,13 +327,6 @@ in {
 
     #   # Version Control
     #   neogit
-    #   gitsigns-nvim
-
-    #   # TreeSitter
-    #   nvim-ts-context-commentstring
-    #   nvim-ts-autotag
-    #   nvim-autopairs
-    #   indent-blankline-nvim
 
     #   # LSP
     #   nvim-lspconfig
@@ -244,13 +337,6 @@ in {
     #   cmp-buffer
     #   cmp-nvim-lua
     #   cmp-nvim-ultisnips
-    #   fidget-nvim
-
-    #   # Telescope
-    #   telescope-nvim
-    #   telescope-fzf-native-nvim
-    #   telescope-ultisnips-nvim
-    #   telescope-asynctasks-nvim
 
     #   # Other
     #   vim-eunuch
@@ -258,7 +344,6 @@ in {
     #   vim-repeat
     #   vim-highlightedyank
     #   which-key-nvim
-    #   vim-matchup
     #   nvim-web-devicons
     #   tabular
     #   ultisnips
@@ -266,8 +351,6 @@ in {
     #   winshift-nvim
     #   asyncrun-vim
     #   asynctasks-vim
-    #   todo-nvim
-    #   taboo-vim
     #   # NOTE: Cheatsheet for targets-vim in the link below
     #   # https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
     #   targets-vim
@@ -280,65 +363,11 @@ in {
       #   # Telescope
       #   ripgrep
       #   fd
-
-      #   # Language Servers
-      #   rnix-lsp
-      #   pyright
-      #   yaml-language-server
-      #   ccls
-      #   rust-analyzer
-      #   nodePackages.bash-language-server
-      #   nodePackages.vim-language-server
-      #   nodePackages.vscode-langservers-extracted
-      #   nodePackages.typescript-language-server
-      #   nodePackages.diagnostic-languageserver
-      #   lua-language-server
-      #   texlab
-
-      #   # Linters
-      #   shellcheck
-      #   vim-vint
-      #   nodePackages.markdownlint-cli2
     ];
-    # extraConfig = ''
-    #   luafile ~/.config/nvim/lua/settings.lua
-    #   luafile ~/.config/nvim/lua/plugins/init.lua
-    #   luafile ~/.config/nvim/lua/keybindings.lua
-    #   luafile ~/.config/nvim/lua/theme.lua
-    #   luafile ~/.config/nvim/lua/autocmd.lua
-
-    #   if exists("g:neovide")
-    #   	luafile ~/.config/nvim/lua/neovide.lua
-    #   endif
-    # '';
   };
 
   # home.packages = with pkgs; [
-  #   # Neovim GUI
-  #   neovide
   #   # Tool for controlling Neovim processes from a terminal
   #   neovim-remote
   # ];
-
-  # xdg.configFile.nvimConfiguration = {
-  #   source = "${nvimConfigurationPath}/lua";
-  #   target = "nvim/lua";
-  #   recursive = true;
-  # };
-
-  # xdg.configFile.nvimTheme = {
-  #   text = nvimThemeConfiguration.${config.colorScheme.slug};
-  #   target = "nvim/lua/theme.lua";
-  # };
-
-  # xdg.configFile.nvimUltiSnips = {
-  #   source = "${nvimConfigurationPath}/ulti-snips";
-  #   target = "nvim/UltiSnips";
-  #   recursive = true;
-  # };
-
-  # xdg.configFile.nvimAsyncTasks = {
-  #   source = "${nvimConfigurationPath}/tasks.ini";
-  #   target = "nvim/tasks.ini";
-  # };
 }

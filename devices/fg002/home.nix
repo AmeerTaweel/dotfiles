@@ -10,7 +10,7 @@
 
     ./home-modules/custom-pkgs-overlay.nix
     ./home-modules/git.nix
-    ./home-modules/nvim.nix
+    ./home-modules/nixvim
     ./home-modules/rar.nix
     ./home-modules/shell.nix
     ./home-modules/vim.nix

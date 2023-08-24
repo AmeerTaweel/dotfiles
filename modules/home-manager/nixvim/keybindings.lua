@@ -1,13 +1,3 @@
-require "globals"
-
-local which_key = require "which-key"
-local lsp_utils = require "utils.lsp"
-local telescope = require "telescope"
-telescope.builtin = require "telescope.builtin"
-
--- Leader Key
-variables.global.mapleader = ","
-
 -- { System Clipboard }
 
 local clipboard_mappings = {
@@ -26,13 +16,6 @@ local clipboard_mappings = {
 which_key.register(clipboard_mappings.normal_only,   { prefix = "<leader>", mode = "n" })
 which_key.register(clipboard_mappings.normal_visual, { prefix = "<leader>", mode = "n" })
 which_key.register(clipboard_mappings.normal_visual, { prefix = "<leader>", mode = "x" })
-
--- { Split Windows }
-
-which_key.register({
-	["-"] = { "<cmd>split<cr>", "split window horizontally" },
-	["/"] = { "<cmd>vsplit<cr>", "split window vertically" },
-}, { prefix = "<leader>" })
 
 -- { WinShift }
 
