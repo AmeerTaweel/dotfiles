@@ -1,5 +1,5 @@
 {...}: {
-	nixpkgs.overlays = [
-		(final: prev: import ../../pkgs {pkgs = final;})
-  	];
+  nixpkgs.overlays = [
+    (final: prev: import ../../pkgs {pkgs = final;})
+  ];
 }

@@ -84,14 +84,14 @@ in {
       nvim-cmp = {
         enable = true;
         completion = {
-          autocomplete = [ "TextChanged" ];
+          autocomplete = ["TextChanged"];
           keywordLength = 1;
         };
         sources = [
-          { name = "nvim_lsp"; }
-          { name = "nvim_lua"; }
-          { name = "path"; }
-          { name = "buffer"; }
+          {name = "nvim_lsp";}
+          {name = "nvim_lua";}
+          {name = "path";}
+          {name = "buffer";}
         ];
         mapping = {
           "<tab>" = "cmp.mapping.select_next_item()";

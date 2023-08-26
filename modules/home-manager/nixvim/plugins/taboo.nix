@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   # Taboo.vim - Better tab names
   programs.nixvim = {
-    extraPlugins = [ pkgs.vimPlugins.taboo-vim ];
+    extraPlugins = [pkgs.vimPlugins.taboo-vim];
     extraConfigLua = ''
       vim.g.taboo_tab_format = " [%N] %f%m "
       vim.g.taboo_renamed_tab_format = " [%N] %l%m "

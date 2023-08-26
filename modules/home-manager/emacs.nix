@@ -1,4 +1,8 @@
-{inputs, pkgs, ...}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   # emacsConfigurationPath = ../../../emacs;
 in {
   imports = [

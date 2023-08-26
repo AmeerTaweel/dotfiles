@@ -1,4 +1,4 @@
-{... }: {
+{...}: {
   programs.nixvim = {
     filetype = {
       extension = {

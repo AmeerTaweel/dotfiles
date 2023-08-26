@@ -24,22 +24,22 @@
       which-key.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
-        # Navigation
-        vim-kitty-navigator
+      # Navigation
+      vim-kitty-navigator
 
-        # Dynamically set buffer indentation
-        vim-sleuth
+      # Dynamically set buffer indentation
+      vim-sleuth
 
-        # Provide additional text objects
-        # Cheatsheet for targets-vim in the link below:
-        # https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
-        targets-vim
+      # Provide additional text objects
+      # Cheatsheet for targets-vim in the link below:
+      # https://github.com/wellle/targets.vim/blob/master/cheatsheet.md
+      targets-vim
 
-        # Helpers for UNIX
-        vim-eunuch
+      # Helpers for UNIX
+      vim-eunuch
 
-        # Enable repeating supported plugin maps with "."
-        vim-repeat
+      # Enable repeating supported plugin maps with "."
+      vim-repeat
     ];
   };
 }
