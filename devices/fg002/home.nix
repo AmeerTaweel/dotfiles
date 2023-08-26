@@ -8,11 +8,12 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
 
-    ./home-modules/custom-pkgs-overlay.nix
+    ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
     ./home-modules/git.nix
     ./home-modules/nixvim
     ./home-modules/rar.nix
     ./home-modules/shell.nix
+    ./home-modules/thefuck.nix
     ./home-modules/vim.nix
     ./home-modules/xdg.nix
   ];

@@ -9,7 +9,7 @@
     inputs.nix-colors.homeManagerModules.default
 
     ./home-modules/anydesk.nix
-    ./home-modules/custom-pkgs-overlay.nix
+    ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
     ./home-modules/emacs.nix
     ./home-modules/git.nix
     ./home-modules/nixvim
