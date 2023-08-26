@@ -4,5 +4,5 @@
     ./ideavim
   ];
 
-  home.packages = [ pkgs.jetbrains.rider ];
+  home.packages = [pkgs.jetbrains.rider];
 }

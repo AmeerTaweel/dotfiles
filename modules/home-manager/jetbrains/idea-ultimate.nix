@@ -4,5 +4,5 @@
     ./ideavim
   ];
 
-  home.packages = [ pkgs.jetbrains.idea-ultimate ];
+  home.packages = [pkgs.jetbrains.idea-ultimate];
 }

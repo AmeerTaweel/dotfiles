@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   # `slack` is unfreee
-  imports = [
-    ./nixpkgs-unfree.nix
-  ];
+  imports = [./nixpkgs-unfree.nix];
 
-  home.packages = with pkgs; [slack];
+  home.packages = [pkgs.slack];
 }

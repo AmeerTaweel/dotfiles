@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   # `anydesk` is unfreee
-  imports = [
-    ./nixpkgs-unfree.nix
-  ];
+  imports = [./nixpkgs-unfree.nix];
 
-  home.packages = with pkgs; [anydesk];
+  home.packages = [pkgs.anydesk];
 }

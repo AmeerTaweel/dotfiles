@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  imports = [ ./ideavim ];
+  imports = [./ideavim];
 
-  home.packages = [ pkgs.jetbrains.idea-community ];
+  home.packages = [pkgs.jetbrains.idea-community];
 }

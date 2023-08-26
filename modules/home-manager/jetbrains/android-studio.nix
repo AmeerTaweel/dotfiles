@@ -4,5 +4,5 @@
     ./ideavim
   ];
 
-  home.packages = [ pkgs.android-studio ];
+  home.packages = [pkgs.android-studio];
 }

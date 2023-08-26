@@ -5,9 +5,7 @@
 }: let
   # emacsConfigurationPath = ../../../emacs;
 in {
-  imports = [
-    inputs.nix-doom-emacs.hmModule
-  ];
+  imports = [inputs.nix-doom-emacs.hmModule];
 
   # programs.emacs = {
   #   enable = true;

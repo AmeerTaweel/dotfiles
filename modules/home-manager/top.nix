@@ -10,9 +10,7 @@
     ayu-light = "ayu";
   };
 in {
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-  ];
+  imports = [inputs.nix-colors.homeManagerModules.default];
 
   # HTOP
   programs.htop = {
