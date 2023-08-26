@@ -9,6 +9,7 @@
     inputs.nix-colors.homeManagerModules.default
 
     ./home-modules/anydesk.nix
+    ./home-modules/browsers/brave.nix
     ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
     ./home-modules/emacs.nix
     ./home-modules/git.nix
@@ -70,7 +71,6 @@
   fonts.fontconfig.enable = true;
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    brave
     (nerdfonts.override {
       fonts = ["FiraCode"];
     })

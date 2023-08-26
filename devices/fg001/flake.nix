@@ -40,6 +40,7 @@
       system = "x86_64-linux";
       state-version = "23.05";
       editor = "nvim";
+      browser = "brave";
     };
   in {
     # NixOS configuration entrypoint

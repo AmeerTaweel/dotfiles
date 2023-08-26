@@ -8,6 +8,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
 
+    ./home-modules/browsers/brave.nix
     ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
     ./home-modules/git.nix
     ./home-modules/nixvim
@@ -66,7 +67,6 @@
   fonts.fontconfig.enable = true;
   # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    brave
     (nerdfonts.override {
       fonts = ["FiraCode"];
     })
