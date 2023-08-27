@@ -71,22 +71,25 @@ in {
   };
 
   home.packages = with pkgs; [
-    cht-sh
-    file
-    tree
-    ripgrep
-    fd
-    curl
-    bat
-    ffmpeg
+    cht-sh # Access cheatsheets from terminal
 
-    zip
-    unzip
+    file # Determina file type
+    tree # List directory contents in a tree-like format
+    curl # Transfer URLs
 
-    # Run arbitrary commands when files change
-    entr
-    # Execute a command repeatedly, and monitor the output in full-screen mode
-    watch
+    ffmpeg # Video Converter
+
+    ripgrep # `grep` clone
+    fd # `find` clone
+    bat # `cat` clone with syntax highlighting and `git` integration
+
+    zip # Zip Compression
+    unzip # Zip Decompression
+
+    entr # Run arbitrary commands when files change
+    watch # Execute a command repeatedly, and monitor the output in full-screen mode
+
+    clipboard-jh # Terminal clipboard
   ];
 
   # `tldr` comand
