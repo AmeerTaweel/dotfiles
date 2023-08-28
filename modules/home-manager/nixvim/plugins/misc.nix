@@ -40,6 +40,9 @@
 
       # Enable repeating supported plugin maps with "."
       vim-repeat
+
+      # Make the yanked region apparent
+      vim-highlightedyank
     ];
   };
 }

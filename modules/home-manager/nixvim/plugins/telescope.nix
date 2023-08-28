@@ -27,24 +27,44 @@
       };
       "<leader>fc" = {
         action = "<cmd>Telescope command_history<cr>";
-        desc = "find command from history";
+        desc = "search command history";
+      };
+      "<leader>ff" = {
+        action = "<cmd>Telescope find_files<cr>";
+        desc = "find file";
+      };
+      "<leader>fh" = {
+        action = "<cmd>Telescope help_tags<cr>";
+        desc = "find help";
+      };
+      "<leader>fm" = {
+        action = "<cmd>Telescope marks<cr>";
+        desc = "find mark";
+      };
+      "<leader>fr" = {
+        action = "<cmd>Telescope registers<cr>";
+        desc = "find register";
+      };
+      "<leader>fs" = {
+        action = "<cmd>Telescope search_history<cr>";
+        desc = "search search history";
+      };
+      "<leader>ft" = {
+        action = "<cmd>TodoTelescope<cr>";
+        desc = "find todo";
+      };
+      "<leader>flb" = {
+        action = "<cmd>Telescope current_buffer_fuzzy_find<cr>";
+        desc = "find line in buffer";
+      };
+      "<leader>fld" = {
+        action = "<cmd>Telescope live_grep<cr>";
+        desc = "find line in cwd";
+      };
+      "<leader>fg" = {
+        action = "<cmd>Telescope git_files<cr>";
+        desc = "find git file";
       };
     };
   };
 }
-/*
-		c = { telescope.builtin.command_history, "find command" },
-		f = { telescope.builtin.find_files, "find file" },
-		h = { telescope.builtin.help_tags, "find help" },
-		j = { telescope.extensions.asynctasks.all, "find job" },
-		l = {
-			name = "find line",
-			b = { telescope.builtin.current_buffer_fuzzy_find, "find line in buffer" },
-			d = { telescope.builtin.live_grep, "find line in cwd" }
-		},
-		m = { telescope.builtin.marks, "find mark" },
-		r = { telescope.builtin.registers, "find register" },
-		s = { telescope.builtin.search_history, "find search" },
-		t = { "<cmd>TODOTelescope<cr>", "find todo" },
-		u = { telescope.extensions.ultisnips.ultisnips, "find ultisnippet" }
-*/
