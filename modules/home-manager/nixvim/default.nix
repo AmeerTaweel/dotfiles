@@ -14,6 +14,7 @@
     ./settings.nix
     ./theme.nix
 
+    ./plugins/completion.nix
     ./plugins/lsp.nix
     ./plugins/misc.nix
     ./plugins/taboo.nix
