@@ -18,7 +18,7 @@
     ./home-modules/shell.nix
     ./home-modules/slack.nix
     ./home-modules/thefuck.nix
-    ./home-modules/vim.nix
+    ./home-modules/vim
     ./home-modules/xdg.nix
   ];
 
