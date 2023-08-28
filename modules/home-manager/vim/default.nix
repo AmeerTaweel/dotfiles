@@ -3,9 +3,7 @@
   params,
   pkgs,
   ...
-}: let
-  vimConfigurationPath = ./config/vim;
-in {
+}: {
   home.sessionVariables = lib.mkIf (params.editor == "vim") {
     EDITOR = "vim";
     MANPAGER = "vim -M +MANPAGER -";
@@ -13,7 +11,18 @@ in {
 
   programs.vim = {
     enable = true;
-    extraConfig = builtins.readFile "${vimConfigurationPath}/vimrc";
+    extraConfig = ''
+      " Use Vim settings rather than Vi settings
+      set nocompatible
+
+      source ${./xdg_cache.vim}
+      source ${./settings.vim}
+      source ${./keybindings.vim}
+
+      " Plugins
+      source ${./plugins/lightline.vim} " Statusbar
+      source ${./plugins/window-swap.vim} " Swap split windows with ease
+    '';
     plugins = with pkgs.vimPlugins; [
       # Statusbar
       lightline-vim
@@ -48,11 +57,5 @@ in {
       # Enable repeating supported plugin maps with the "." operator
       vim-repeat
     ];
-  };
-
-  xdg.configFile.vimConfig = {
-    source = vimConfigurationPath;
-    target = "vim";
-    recursive = true;
   };
 }
