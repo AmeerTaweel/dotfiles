@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware.nix
+    ./nvidia.nix
 
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
