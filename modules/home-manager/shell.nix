@@ -58,7 +58,7 @@ in {
   # Easy directory jumping in all shells
   programs.autojump.enable = true;
 
-  programs.exa = {
+  programs.eza = {
     enable = true;
     enableAliases = true;
   };

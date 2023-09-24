@@ -5,7 +5,7 @@
       folding = true;
       indent = true;
     };
-    treesitter-rainbow.enable = true;
+    rainbow-delimiters.enable = true;
     ts-context-commentstring.enable = true;
     indent-blankline = {
       enable = true;
