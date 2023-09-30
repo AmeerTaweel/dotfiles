@@ -8,6 +8,7 @@
   imports = [
     ./hardware.nix
 
+    ./nixos-modules/auto-time-zone.nix
     ./nixos-modules/bluetooth.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix

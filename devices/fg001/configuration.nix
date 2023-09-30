@@ -1,5 +1,4 @@
 {
-  config,
   params,
   pkgs,
   ...
@@ -7,7 +6,9 @@
   imports = [
     ./hardware.nix
     ./nvidia.nix
+    ./vtol.nix
 
+    ./nixos-modules/auto-time-zone.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
     ./nixos-modules/nix-index.nix
