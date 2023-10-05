@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = [ pkgs.vlc ];
+  home.packages = [pkgs.vlc];
 }
