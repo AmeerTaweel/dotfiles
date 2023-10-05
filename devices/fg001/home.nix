@@ -17,6 +17,10 @@
     ./home-modules/rar.nix
     ./home-modules/shell.nix
     ./home-modules/slack.nix
+    ./home-modules/social/discord.nix
+    ./home-modules/social/signal.nix
+    ./home-modules/social/telegram.nix
+    ./home-modules/social/whatsapp.nix
     ./home-modules/thefuck.nix
     ./home-modules/video-players/mpv.nix
     ./home-modules/vim

@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  # `discord` is unfree
+  imports = [
+    ../nixpkgs-unfree.nix
+    ../autostart.nix
+  ];
+
   # Install
   home.packages = [pkgs.discord];
 
