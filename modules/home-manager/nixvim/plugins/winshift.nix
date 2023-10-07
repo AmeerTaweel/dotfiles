@@ -1,15 +1,18 @@
 {pkgs, ...}: {
   programs.nixvim = {
     extraPlugins = [pkgs.vimPlugins.winshift-nvim];
-    maps.normal = {
-      "<leader>wm" = {
+    keymaps = [
+      {
+        key = "<leader>wm";
+        mode = "n";
         action = "<cmd>WinShift<cr>";
-        desc = "window move";
-      };
-      "<leader>ws" = {
+        options.desc = "window move";
+      } {
+        key = "<leader>ws";
+        mode = "n";
         action = "<cmd>WinShift swap<cr>";
-        desc = "window swap";
-      };
-    };
+        options.desc = "window swap";
+      }
+    ];
   };
 }

@@ -6,15 +6,18 @@
       vim.g.taboo_tab_format = " [%N] %f%m "
       vim.g.taboo_renamed_tab_format = " [%N] %l%m "
     '';
-    maps.normal = {
-      "<leader>ts" = {
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>ts";
         action = ":exec ':TabooRename '.input('Rename Tab: ')<cr>";
-        desc = "set tab name";
-      };
-      "<leader>tr" = {
+        options.desc = "set tab name";
+      } {
+        mode = "n";
+        key = "<leader>tr";
         action = "<cmd>TabooReset<cr>";
-        desc = "reset tab name";
-      };
-    };
+        options.desc = "reset tab name";
+      }
+    ];
   };
 }

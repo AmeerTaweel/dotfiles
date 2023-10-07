@@ -20,51 +20,52 @@
         };
       };
     };
-    maps.normal = {
-      "<leader>fb" = {
+    keymaps = [
+      {
+        key = "<leader>fb";
         action = "<cmd>Telescope buffers<cr>";
-        desc = "find buffer";
-      };
-      "<leader>fc" = {
+        options.desc = "find buffer";
+      } {
+        key = "<leader>fc";
         action = "<cmd>Telescope command_history<cr>";
-        desc = "search command history";
-      };
-      "<leader>ff" = {
+        options.desc = "search command history";
+      } {
+        key = "<leader>ff";
         action = "<cmd>Telescope find_files<cr>";
-        desc = "find file";
-      };
-      "<leader>fh" = {
+        options.desc = "find file";
+      } {
+        key = "<leader>fh";
         action = "<cmd>Telescope help_tags<cr>";
-        desc = "find help";
-      };
-      "<leader>fm" = {
+        options.desc = "find help";
+      } {
+        key = "<leader>fm";
         action = "<cmd>Telescope marks<cr>";
-        desc = "find mark";
-      };
-      "<leader>fr" = {
+        options.desc = "find mark";
+      } {
+        key = "<leader>fr";
         action = "<cmd>Telescope registers<cr>";
-        desc = "find register";
-      };
-      "<leader>fs" = {
+        options.desc = "find register";
+      } {
+        key = "<leader>fs";
         action = "<cmd>Telescope search_history<cr>";
-        desc = "search search history";
-      };
-      "<leader>ft" = {
+        options.desc = "search search history";
+      } {
+        key = "<leader>ft";
         action = "<cmd>TodoTelescope<cr>";
-        desc = "find todo";
-      };
-      "<leader>flb" = {
+        options.desc = "find todo";
+      } {
+        key = "<leader>flb";
         action = "<cmd>Telescope current_buffer_fuzzy_find<cr>";
-        desc = "find line in buffer";
-      };
-      "<leader>fld" = {
+        options.desc = "find line in buffer";
+      } {
+        key = "<leader>fld";
         action = "<cmd>Telescope live_grep<cr>";
-        desc = "find line in cwd";
-      };
-      "<leader>fg" = {
+        options.desc = "find line in cwd";
+      } {
+        key = "<leader>fg";
         action = "<cmd>Telescope git_files<cr>";
-        desc = "find git file";
-      };
-    };
+        options.desc = "find git file";
+      }
+    ];
   };
 }
