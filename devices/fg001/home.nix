@@ -11,6 +11,7 @@
     ./home-modules/anydesk.nix
     ./home-modules/browsers/brave.nix
     ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
+    ./home-modules/documents/zathura.nix
     ./home-modules/emacs.nix
     ./home-modules/git.nix
     ./home-modules/nixvim
