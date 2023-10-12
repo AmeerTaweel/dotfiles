@@ -23,7 +23,6 @@
     ./home-modules/social/signal.nix
     ./home-modules/social/telegram.nix
     ./home-modules/social/whatsapp.nix
-    ./home-modules/thefuck.nix
     ./home-modules/video-players/mpv.nix
     ./home-modules/vim
     ./home-modules/xdg.nix
@@ -112,8 +111,6 @@
   # - programs.browserpass.enable
   # - programs.gpg.enable
   # - programs.borgmatic.enable
-
-  # programs.thefuck.enable = true;
 
   # TODO: END FIX
 

@@ -89,7 +89,7 @@ in {
     entr # Run arbitrary commands when files change
     watch # Execute a command repeatedly, and monitor the output in full-screen mode
 
-    clipboard-jh # Terminal clipboard
+    # clipboard-jh # Terminal clipboard
   ];
 
   # `tldr` comand

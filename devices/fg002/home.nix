@@ -14,7 +14,6 @@
     ./home-modules/nixvim
     ./home-modules/rar.nix
     ./home-modules/shell.nix
-    ./home-modules/thefuck.nix
     ./home-modules/vim
     ./home-modules/xdg.nix
   ];
@@ -101,8 +100,6 @@
   # - programs.browserpass.enable
   # - programs.gpg.enable
   # - programs.borgmatic.enable
-
-  # programs.thefuck.enable = true;
 
   # TODO: END FIX
 
