@@ -14,6 +14,7 @@
     ./home-modules/documents/zathura.nix
     ./home-modules/emacs.nix
     ./home-modules/git.nix
+    ./home-modules/kitty.nix
     ./home-modules/nixvim
     ./home-modules/rar.nix
     ./home-modules/shell.nix
