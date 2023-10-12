@@ -8,7 +8,6 @@
   imports = [
     ./hardware.nix
 
-    ./nixos-modules/auto-time-zone.nix
     ./nixos-modules/bluetooth.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
@@ -38,8 +37,7 @@
   networking.hostName = params.hostname;
   # networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
-  # Set your time zone.
-  time.timeZone = "Asia/Jerusalem";
+  time.timeZone = params.timezone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

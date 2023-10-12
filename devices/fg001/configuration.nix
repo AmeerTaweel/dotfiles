@@ -8,7 +8,6 @@
     ./nvidia.nix
     ./vtol.nix
 
-    ./nixos-modules/auto-time-zone.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
     ./nixos-modules/nix-index.nix
@@ -22,8 +21,7 @@
 
   networking.hostName = params.hostname;
 
-  # Set your time zone.
-  time.timeZone = "Asia/Jerusalem";
+  time.timeZone = params.timezone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

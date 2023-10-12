@@ -37,6 +37,8 @@
       state-version = "23.05";
       editor = "nvim";
       browser = "brave";
+      # timezone = "Asia/Jerusalem";
+      timezone = "Asia/Istanbul";
     };
   in {
     # NixOS configuration entrypoint
