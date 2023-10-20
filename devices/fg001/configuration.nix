@@ -8,11 +8,14 @@
     ./nvidia.nix
     ./vtol.nix
 
+    ./nixos-modules/bluetooth.nix
+    ./nixos-modules/mdns.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
     ./nixos-modules/nix-index.nix
     ./nixos-modules/pipewire.nix
-    ./nixos-modules/virtual-box.nix
+    ./nixos-modules/physlock.nix
+    # ./nixos-modules/virtualization/virtual-box.nix
   ];
 
   # Bootloader.
@@ -39,7 +42,7 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver.enable = false;
 
   programs.steam = {
     enable = true;
@@ -48,8 +51,14 @@
   };
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = false;
+  services.xserver.desktopManager.gnome.enable = false;
+
+  services.xserver.windowManager.qtile = {
+    enable = true;
+    backend = "wayland";
+    configFile = ../../config/qtile;
+  };
 
   # Configure keymap in X11
   services.xserver = {

@@ -37,7 +37,6 @@
   };
 
   home.sessionVariables = {
-    # TERMINAL = "kitty";
     FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
     GNUPGHOME = "${config.xdg.dataHome}/gnupg";
   };
@@ -106,7 +105,13 @@
   # services.blueman-applet.enable = true;
   # services.network-manager-applet.enable = true;
   # Automount removable media
+
   # services.udiskie.enable = true;
+  xdg.configFile.qtileConfig = {
+    source = ../../config/qtile;
+    target = "qtile";
+    recursive = true;
+  };
 
   # TODO: Check these options
   # - programs.browserpass.enable

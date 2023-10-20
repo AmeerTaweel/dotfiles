@@ -26,7 +26,6 @@
   };
 
   home.sessionVariables = {
-    # TERMINAL = "kitty";
     FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
   };
 

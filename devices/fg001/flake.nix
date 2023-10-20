@@ -43,6 +43,7 @@
       browser = "brave";
       # timezone = "Asia/Jerusalem";
       timezone = "Asia/Istanbul";
+      terminal = "kitty";
     };
   in {
     # NixOS configuration entrypoint

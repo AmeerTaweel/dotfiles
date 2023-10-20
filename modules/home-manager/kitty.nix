@@ -1,6 +1,8 @@
 {
   config,
   inputs,
+  lib,
+  params,
   pkgs,
   ...
 }: let
@@ -11,6 +13,10 @@
   };
 in {
   imports = [inputs.nix-colors.homeManagerModules.default];
+
+  home.sessionVariables = lib.mkIf (params.terminal == "kitty") {
+    TERMINAL = "kitty";
+  };
 
   programs.kitty = {
     enable = true;
