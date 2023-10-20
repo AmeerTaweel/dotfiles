@@ -1,18 +1,17 @@
 {
   config,
-  inputs,
   params,
   pkgs,
   ...
 }: {
   imports = [
-    inputs.nix-colors.homeManagerModules.default
-
     ./home-modules/anydesk.nix
     ./home-modules/browsers/brave.nix
+    ./home-modules/core.nix
     ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
     ./home-modules/documents/zathura.nix
     ./home-modules/emacs.nix
+    ./home-modules/fonts.nix
     ./home-modules/git.nix
     ./home-modules/kitty.nix
     ./home-modules/nixvim
@@ -27,21 +26,10 @@
     ./home-modules/video-players/mpv.nix
     ./home-modules/vim
     ./home-modules/xdg.nix
+
   ];
 
-  programs.home-manager.enable = true;
-
-  home = {
-    inherit (params) username;
-    homeDirectory = "/home/${params.username}";
-  };
-
-  home.sessionVariables = {
-    FLAKEDIR = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
-    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
-  };
-
-  colorScheme = inputs.nix-colors.colorSchemes.ayu-dark;
+  home.keyboard.layout = "us,ar,tr";
 
   programs.fish.shellAbbrs = let
     flake-dir = config.home.sessionVariables.FLAKEDIR;
@@ -60,29 +48,7 @@
     # ts = "sudo systemctl restart systemd-timesyncd.service";
   };
 
-  # TODO: START FIX
-
-  # xdg.mime.enable = true;
-  # xdg.mimeApps.enable = true;
-  # xdg.mimeApps.defaultApplications = {
-  #   "text/html" = "google-chrome.desktop";
-  #   "x-scheme-handler/http" = "google-chrome.desktop";
-  #   "x-scheme-handler/https" = "google-chrome.desktop";
-  #   "x-scheme-handler/about" = "google-chrome.desktop";
-  #   "x-scheme-handler/unknown" = "google-chrome.desktop";
-  #   "video/mp4" = "mpv.desktop";
-  #   "application/pdf" = "zathura.desktop";
-  # };
-
-  fonts.fontconfig.enable = true;
-  # Add stuff for your user as you see fit:
   home.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = ["FiraCode"];
-    })
-    nixos-change-summary
-    home-manager-change-summary
-  ];
   #   # Media
   #   yt-dlp
   #   kdenlive
@@ -98,7 +64,7 @@
   #   qbittorrent
 
   #   eva # Calculator
-  # ];
+  ];
 
   # Use Bluetooth headset buttons to control media player
   # services.mpris-proxy.enable = true;
@@ -117,12 +83,4 @@
   # - programs.browserpass.enable
   # - programs.gpg.enable
   # - programs.borgmatic.enable
-
-  # TODO: END FIX
-
-  # Nicely reload system units when changing configs
-  systemd.user.startServices = "sd-switch";
-
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  home.stateVersion = params.state-version;
 }

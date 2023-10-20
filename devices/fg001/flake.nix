@@ -45,6 +45,8 @@
       timezone = "Asia/Istanbul";
       shell = "fish";
       terminal = "kitty";
+      theme = "ayu-dark";
+      pdf-reader = "zathura";
     };
   in {
     # NixOS configuration entrypoint

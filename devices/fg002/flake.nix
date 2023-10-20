@@ -39,7 +39,10 @@
       browser = "brave";
       # timezone = "Asia/Jerusalem";
       timezone = "Asia/Istanbul";
+      shell = "fish";
       terminal = "foot";
+      theme = "ayu-dark";
+      pdf-reader = "zathura";
     };
   in {
     # NixOS configuration entrypoint
