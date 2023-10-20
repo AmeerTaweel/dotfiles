@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = [ pkgs.koreader ];
+  home.packages = [pkgs.koreader];
 }

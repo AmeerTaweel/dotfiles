@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = [ pkgs.okular ];
+  home.packages = [pkgs.okular];
 }
