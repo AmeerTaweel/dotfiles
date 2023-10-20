@@ -6,10 +6,9 @@
   imports = [
     ./hardware.nix
     ./nvidia.nix
-    ./vtol.nix
 
     ./nixos-modules/bluetooth.nix
-    ./nixos-modules/mdns.nix
+    ./nixos-modules/kumech.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
     ./nixos-modules/nix-index.nix

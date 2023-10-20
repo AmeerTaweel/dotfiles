@@ -9,6 +9,7 @@
     ./hardware.nix
 
     ./nixos-modules/bluetooth.nix
+    ./nixos-modules/kumech.nix
     ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
     ./nixos-modules/nix-index.nix
