@@ -12,7 +12,8 @@
         key = "<leader>ts";
         action = ":exec ':TabooRename '.input('Rename Tab: ')<cr>";
         options.desc = "set tab name";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>tr";
         action = "<cmd>TabooReset<cr>";

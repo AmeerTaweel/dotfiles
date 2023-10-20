@@ -7,7 +7,8 @@
         key = "<leader>-";
         action = "<cmd>split<cr>";
         options.desc = "split window horizontally";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>/";
         action = "<cmd>vsplit<cr>";
@@ -20,7 +21,8 @@
         key = "<leader>tc";
         action = "<cmd>tabclose<cr>";
         options.desc = "close tab";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>tn";
         action = "<cmd>tabnew<cr>";
@@ -33,7 +35,8 @@
         key = "<cr>";
         action = "o<esc>";
         options.desc = "insert new line";
-      } {
+      }
+      {
         mode = "n";
         key = "<space>";
         action = ",";
@@ -52,27 +55,32 @@
         key = "<leader>d";
         action = "\"+d";
         options.desc = "delete to clipboard";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>D";
         action = "\"+d$";
         options.desc = "delete (untill line end) to clipboard";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>p";
         action = "\"+p";
         options.desc = "paste from clipboard";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>P";
         action = "\"+P";
         options.desc = "paste from clipboard";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>y";
         action = "\"+y";
         options.desc = "yank to clipboard";
-      } {
+      }
+      {
         mode = "n";
         key = "<leader>Y";
         action = "\"+y$";
@@ -85,17 +93,20 @@
         key = "<c-d>";
         action = "<c-d>zz";
         options.desc = "half-page jump down";
-      } {
+      }
+      {
         mode = "n";
         key = "<c-u>";
         action = "<c-u>zz";
         options.desc = "half-page jump up";
-      } {
+      }
+      {
         mode = "n";
         key = "n";
         action = "nzzzv";
         options.desc = "next search result";
-      } {
+      }
+      {
         mode = "n";
         key = "N";
         action = "Nzzzv";
@@ -108,7 +119,8 @@
         key = "J";
         action = ":m '>+1<cr>gv=gv";
         options.desc = "move selection down";
-      } {
+      }
+      {
         mode = "v";
         key = "K";
         action = ":m '<-2<CR>gv=gv";
@@ -121,17 +133,20 @@
         key = "<leader>d";
         action = "\"+d";
         options.desc = "delete to clipboard";
-      } {
+      }
+      {
         mode = "v";
-        key ="<leader>p";
+        key = "<leader>p";
         action = "\"+p";
         options.desc = "paste from clipboard";
-      } {
+      }
+      {
         mode = "v";
         key = "<leader>P";
         action = "\"+P";
         options.desc = "paste from clipboard";
-      } {
+      }
+      {
         mode = "v";
         key = "<leader>y";
         action = "\"+y";

@@ -7,7 +7,8 @@
         mode = "n";
         action = "<cmd>WinShift<cr>";
         options.desc = "window move";
-      } {
+      }
+      {
         key = "<leader>ws";
         mode = "n";
         action = "<cmd>WinShift swap<cr>";
