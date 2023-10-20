@@ -43,6 +43,7 @@
       browser = "brave";
       # timezone = "Asia/Jerusalem";
       timezone = "Asia/Istanbul";
+      shell = "fish";
       terminal = "kitty";
     };
   in {
