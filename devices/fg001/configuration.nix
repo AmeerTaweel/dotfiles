@@ -4,7 +4,6 @@
   ...
 }: {
   imports = [
-    ./gnome.nix
     ./hardware.nix
     ./nvidia.nix
 
