@@ -1,18 +1,8 @@
 {pkgs, ...}: {
   # `discord` is unfree
-  imports = [
-    ../nixpkgs-unfree.nix
-    ../autostart.nix
-  ];
+  imports = [ ../nixpkgs-unfree.nix ];
 
-  # Install
   home.packages = [pkgs.discord];
-
-  # AutoStart
-  autostart.discord = {
-    description = "Autostart Discord desktop client";
-    exec = "${pkgs.discord}/bin/discord";
-  };
 
   # Configure
   # Prevent Discord from trying to update itself.

@@ -17,6 +17,6 @@ in {
   xdg.mime.enable = ifDefault true;
   xdg.mimeApps.enable = ifDefault true;
   xdg.mimeApps.defaultApplications = ifDefault {
-    "application/pdf" = "zathura.desktop";
+    "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
   };
 }

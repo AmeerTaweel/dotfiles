@@ -28,14 +28,6 @@
     ./home-modules/xdg.nix
   ];
 
-  home.keyboard.layout = "us,ar,tr";
-  # Enable X session
-  xsession.enable = true;
-  # Remap caps lock to control
-  home.keyboard.options = ["ctrl:nocaps"];
-  # Enable num lock on boot
-  xsession.numlock.enable = true;
-
   programs.fish.shellAbbrs = let
     flake-dir = config.home.sessionVariables.FLAKEDIR;
     nixos-flake = "${flake-dir}#${params.hostname}";
@@ -50,7 +42,6 @@
     hm-build = "home-manager build --flake ${home-flake}";
     hm-switch = "home-manager switch --flake ${home-flake} && ${hm-summary}";
     hm-summary = hm-summary;
-    # ts = "sudo systemctl restart systemd-timesyncd.service";
   };
 
   home.packages = with pkgs; [
@@ -69,6 +60,9 @@
   #   qbittorrent
 
   #   eva # Calculator
+
+  # katawa-shoujo
+  # upscayl
   ];
 
   # TODO: Check these options

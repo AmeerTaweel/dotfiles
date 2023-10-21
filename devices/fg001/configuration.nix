@@ -1,17 +1,13 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hardware.nix
     ./nvidia.nix
     ./steam.nix
 
-    ./nixos-modules/bluetooth.nix
     ./nixos-modules/core.nix
     ./nixos-modules/kumech.nix
-    ./nixos-modules/networking.nix
     ./nixos-modules/nix.nix
     ./nixos-modules/nix-index.nix
-    ./nixos-modules/pipewire.nix
-    ./nixos-modules/physlock.nix
   ];
 
   # Bootloader
@@ -23,6 +19,10 @@
   # Enable the GNOME Desktop Environment
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  # Install the systray Gnome shell extension
+  environment.systemPackages = [ pkgs.gnomeExtensions.appindicator ];
+  # Ensure gnome-settings-daemon udev rules are enabled
+  services.udev.packages = [ pkgs.gnome.gnome-settings-daemon ];
 
   # System-wide packages
   # environment.systemPackages = [ ];
