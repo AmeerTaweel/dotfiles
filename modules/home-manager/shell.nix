@@ -92,6 +92,10 @@ in {
     watch # Execute a command repeatedly, and monitor the output in full-screen mode
 
     # clipboard-jh # Terminal clipboard
+
+    eva # Calculator
+
+    sshfs
   ];
 
   # `tldr` comand

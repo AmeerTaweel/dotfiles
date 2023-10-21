@@ -10,6 +10,7 @@
     ./home-modules/git.nix
     ./home-modules/kitty.nix
     ./home-modules/nixvim
+    ./home-modules/nnn.nix
     ./home-modules/rar.nix
     ./home-modules/shell.nix
     ./home-modules/slack.nix
@@ -25,8 +26,6 @@
 
   home.packages = with pkgs; [
     gimp
-    sshfs
     qbittorrent
-    eva # Calculator
   ];
 }

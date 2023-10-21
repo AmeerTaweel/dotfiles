@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ./home-modules/browsers/brave.nix
     ./home-modules/core.nix
@@ -7,14 +7,10 @@
     ./home-modules/fonts.nix
     ./home-modules/git.nix
     ./home-modules/nixvim
+    ./home-modules/nnn.nix
     ./home-modules/rar.nix
     ./home-modules/shell.nix
     ./home-modules/vim
     ./home-modules/xdg.nix
-  ];
-
-  home.packages = with pkgs; [
-    sshfs
-    eva # Calculator
   ];
 }
