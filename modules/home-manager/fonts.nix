@@ -5,20 +5,7 @@
     (nerdfonts.override {
       fonts = [
         "FiraCode"
-        "FiraMono"
         "Hack"
-        "Gohu"
-        "Noto"
-        "ProFont"
-        "ProggyClean"
-        "Overpass"
-        "RobotoMono"
-        "SourceCodePro"
-        "SpaceMono"
-        "Tinos"
-        "Ubuntu"
-        "UbuntuMono"
-        "VictorMono"
       ];
     })
     xkcd-font

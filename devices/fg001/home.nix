@@ -26,10 +26,15 @@
     ./home-modules/video-players/mpv.nix
     ./home-modules/vim
     ./home-modules/xdg.nix
-
   ];
 
   home.keyboard.layout = "us,ar,tr";
+  # Enable X session
+  xsession.enable = true;
+  # Remap caps lock to control
+  home.keyboard.options = ["ctrl:nocaps"];
+  # Enable num lock on boot
+  xsession.numlock.enable = true;
 
   programs.fish.shellAbbrs = let
     flake-dir = config.home.sessionVariables.FLAKEDIR;
@@ -65,19 +70,6 @@
 
   #   eva # Calculator
   ];
-
-  # Use Bluetooth headset buttons to control media player
-  # services.mpris-proxy.enable = true;
-  # services.blueman-applet.enable = true;
-  # services.network-manager-applet.enable = true;
-  # Automount removable media
-
-  # services.udiskie.enable = true;
-  xdg.configFile.qtileConfig = {
-    source = ../../config/qtile;
-    target = "qtile";
-    recursive = true;
-  };
 
   # TODO: Check these options
   # - programs.browserpass.enable

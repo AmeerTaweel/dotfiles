@@ -30,7 +30,7 @@
   users.users.${params.username} = {
     isNormalUser = true;
     description = params.name;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "video"];
     shell = pkgs.${params.shell};
   };
 
