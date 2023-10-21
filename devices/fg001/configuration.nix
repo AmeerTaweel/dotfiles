@@ -20,7 +20,10 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   # Install the systray Gnome shell extension
-  environment.systemPackages = [pkgs.gnomeExtensions.appindicator];
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    appindicator # System Tray
+    pano # Clipboard Manager
+  ];
   # Ensure gnome-settings-daemon udev rules are enabled
   services.udev.packages = [pkgs.gnome.gnome-settings-daemon];
 
