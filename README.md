@@ -12,15 +12,15 @@ This is my personal dotfiles configuration for NixOS using flakes.
 
 ## Useful Resources
 
-+ [NixOS Manual](https://nixos.org/manual/nixos/stable/).
-  Can be replaced with: `nixos-help`.
-+ [NixOS Package Search](https://search.nixos.org/packages).
-+ [NixOS Option Search](https://search.nixos.org/options).
-+ [NixOS Manual - Options Appendix](https://nixos.org/manual/nixos/stable/options.html).\
-  Can be replaced with: `man configuration.nix`.
-+ [HomeManager Manual - Options Appendix](https://nix-community.github.io/home-manager/options.html).\
-  Can be replaced with: `man home-configuration.nix`.
-+ [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html).
++ [NixOS Manual](https://nixos.org/manual/nixos/stable/)
+  Can be replaced with: `nixos-help`
++ [NixOS Package Search](https://search.nixos.org/packages)
++ [NixOS Option Search](https://search.nixos.org/options)
++ [NixOS Manual - Options Appendix](https://nixos.org/manual/nixos/stable/options.html)\
+  Can be replaced with: `man configuration.nix`
++ [HomeManager Manual - Options Appendix](https://nix-community.github.io/home-manager/options.html)\
+  Can be replaced with: `man home-configuration.nix`
++ [Nixpkgs Pull Request Tracker](https://nixpk.gs/pr-tracker.html)
 
 ## Long Term TODOs
 
