@@ -1,4 +1,8 @@
-{ lib, params, ...}: let
+{
+  lib,
+  params,
+  ...
+}: let
   ifDefault = lib.mkIf (builtins.elem params.pdf-reader ["zathura"]);
 in {
   # Zathura
