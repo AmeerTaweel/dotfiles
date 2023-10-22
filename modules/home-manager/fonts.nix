@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  imports = [../custom-pkgs-overlay.nix];
+
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     # Nerd Fonts

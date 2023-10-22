@@ -1,17 +1,16 @@
 {...}: {
   imports = [
-    ./home-modules/browsers/brave.nix
-    ./home-modules/core.nix
-    ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
-    ./home-modules/documents/zathura.nix
-    ./home-modules/fonts.nix
-    ./home-modules/git.nix
-    ./home-modules/nixvim
-    ./home-modules/nnn.nix
-    ./home-modules/rar.nix
-    ./home-modules/shell.nix
-    ./home-modules/tmux
-    ./home-modules/vim
-    ./home-modules/xdg.nix
+    ./modules/home-manager/browsers/brave.nix
+    ./modules/home-manager/core.nix
+    ./modules/home-manager/documents/zathura.nix
+    ./modules/home-manager/fonts.nix
+    ./modules/home-manager/git.nix
+    ./modules/home-manager/nixvim
+    ./modules/home-manager/nnn.nix
+    ./modules/home-manager/rar.nix
+    ./modules/home-manager/shell.nix
+    ./modules/home-manager/tmux
+    ./modules/home-manager/vim
+    ./modules/home-manager/xdg.nix
   ];
 }

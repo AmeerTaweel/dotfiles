@@ -1,28 +1,27 @@
 {pkgs, ...}: {
   imports = [
-    ./home-modules/anydesk.nix
-    ./home-modules/browsers/brave.nix
-    ./home-modules/core.nix
-    ./home-modules/custom-pkgs-overlay.nix # TODO: Move to separate module
-    ./home-modules/documents/zathura.nix
-    ./home-modules/emacs.nix
-    ./home-modules/fonts.nix
-    ./home-modules/git.nix
-    ./home-modules/kitty.nix
-    ./home-modules/nixvim
-    ./home-modules/nnn.nix
-    ./home-modules/rar.nix
-    ./home-modules/shell.nix
-    ./home-modules/slack.nix
-    ./home-modules/social/discord.nix
-    ./home-modules/social/facebook-messenger.nix
-    ./home-modules/social/signal.nix
-    ./home-modules/social/telegram.nix
-    ./home-modules/social/whatsapp.nix
-    ./home-modules/tmux
-    ./home-modules/video-players/mpv.nix
-    ./home-modules/vim
-    ./home-modules/xdg.nix
+    ./modules/home-manager/anydesk.nix
+    ./modules/home-manager/browsers/brave.nix
+    ./modules/home-manager/core.nix
+    ./modules/home-manager/documents/zathura.nix
+    ./modules/home-manager/emacs
+    ./modules/home-manager/fonts.nix
+    ./modules/home-manager/git.nix
+    ./modules/home-manager/kitty.nix
+    ./modules/home-manager/nixvim
+    ./modules/home-manager/nnn.nix
+    ./modules/home-manager/rar.nix
+    ./modules/home-manager/shell.nix
+    ./modules/home-manager/slack.nix
+    ./modules/home-manager/social/discord.nix
+    ./modules/home-manager/social/facebook-messenger.nix
+    ./modules/home-manager/social/signal.nix
+    ./modules/home-manager/social/telegram.nix
+    ./modules/home-manager/social/whatsapp.nix
+    ./modules/home-manager/tmux
+    ./modules/home-manager/video-players/mpv.nix
+    ./modules/home-manager/vim
+    ./modules/home-manager/xdg.nix
   ];
 
   home.packages = with pkgs; [

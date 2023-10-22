@@ -2,14 +2,14 @@
   imports = [
     ./hardware.nix
 
-    ./nixos-modules/bluetooth.nix
-    ./nixos-modules/core.nix
-    ./nixos-modules/kumech.nix
-    ./nixos-modules/networking.nix
-    ./nixos-modules/nix.nix
-    ./nixos-modules/nix-index.nix
-    ./nixos-modules/physlock.nix
-    ./nixos-modules/pipewire.nix
+    ./modules/nixos/bluetooth.nix
+    ./modules/nixos/core.nix
+    ./modules/nixos/kumech.nix
+    ./modules/nixos/networking.nix
+    ./modules/nixos/nix.nix
+    ./modules/nixos/nix-index.nix
+    ./modules/nixos/physlock.nix
+    ./modules/nixos/pipewire.nix
   ];
 
   # Bootloader.

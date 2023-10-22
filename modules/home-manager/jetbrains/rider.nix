@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../nixpkgs-unfree.nix # `rider` is unfree
+    ../../nixpkgs-unfree.nix # `rider` is unfree
     ./ideavim
   ];
 

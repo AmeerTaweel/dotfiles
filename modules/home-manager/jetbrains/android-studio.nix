@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ../nixpkgs-unfree.nix # `android-studio` is unfree
+    ../../nixpkgs-unfree.nix # `android-studio` is unfree
     ./ideavim
   ];
 

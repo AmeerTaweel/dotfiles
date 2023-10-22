@@ -7,7 +7,7 @@
   ifDefault = lib.mkIf (params.browser == "opera");
 in {
   # `opera` is unfree
-  imports = [../nixpkgs-unfree.nix];
+  imports = [../../nixpkgs-unfree.nix];
 
   home.packages = [pkgs.opera];
 

@@ -5,7 +5,10 @@
   pkgs,
   ...
 }: {
-  imports = [inputs.nix-colors.homeManagerModules.default];
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+    ../custom-pkgs-overlay.nix
+  ];
 
   # Enable home-manager
   programs.home-manager.enable = true;

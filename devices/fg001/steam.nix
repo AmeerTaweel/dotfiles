@@ -1,6 +1,6 @@
 {...}: {
   # `steam` is unfree
-  imports = [./nixos-modules/nixpkgs-unfree.nix];
+  imports = [./modules/nixpkgs-unfree.nix];
 
   programs.steam = {
     enable = true;

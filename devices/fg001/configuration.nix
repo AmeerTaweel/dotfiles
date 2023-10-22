@@ -4,10 +4,10 @@
     ./nvidia.nix
     ./steam.nix
 
-    ./nixos-modules/core.nix
-    ./nixos-modules/kumech.nix
-    ./nixos-modules/nix.nix
-    ./nixos-modules/nix-index.nix
+    ./modules/nixos/core.nix
+    ./modules/nixos/kumech.nix
+    ./modules/nixos/nix.nix
+    ./modules/nixos/nix-index.nix
   ];
 
   # Bootloader

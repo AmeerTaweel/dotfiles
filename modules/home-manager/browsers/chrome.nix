@@ -7,7 +7,7 @@
   ifDefault = lib.mkIf (builtins.elem params.browser ["chrome" "google-chrome"]);
 in {
   # `google-chrome` is unfree
-  imports = [../nixpkgs-unfree.nix];
+  imports = [../../nixpkgs-unfree.nix];
 
   home.packages = [pkgs.google-chrome];
 

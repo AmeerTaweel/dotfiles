@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # `discord` is unfree
-  imports = [../nixpkgs-unfree.nix];
+  imports = [../../nixpkgs-unfree.nix];
 
   home.packages = [pkgs.discord];
 
