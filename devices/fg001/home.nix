@@ -19,6 +19,7 @@
     ./home-modules/social/signal.nix
     ./home-modules/social/telegram.nix
     ./home-modules/social/whatsapp.nix
+    ./home-modules/tmux
     ./home-modules/video-players/mpv.nix
     ./home-modules/vim
     ./home-modules/xdg.nix

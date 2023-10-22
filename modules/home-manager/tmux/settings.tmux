@@ -67,7 +67,7 @@ set -g window-status-format "$WINDOW_STATUS_FORMAT #I #W "
 # [[ Right Status Bar ]]
 
 # Show hint on prefix key press
-set -g status-right "#{?client_prefix,$PREFIX_HIGHLIGHT_FORMAT ^A ,\
+set -g status-right "#{?client_prefix,$PREFIX_HIGHLIGHT_FORMAT ^B ,\
     }#[default]"
 
 # Separator

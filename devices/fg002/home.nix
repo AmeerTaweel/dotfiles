@@ -10,6 +10,7 @@
     ./home-modules/nnn.nix
     ./home-modules/rar.nix
     ./home-modules/shell.nix
+    ./home-modules/tmux
     ./home-modules/vim
     ./home-modules/xdg.nix
   ];

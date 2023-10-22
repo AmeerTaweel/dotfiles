@@ -6,17 +6,6 @@ bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 # Hitting the key after the prefix will restore the old function
 bind C-l send-keys C-l
 
-# [ Prefix ]
-
-# Setting the prefix from CTRL-b to CTRL-a
-set -g prefix C-a
-
-# Ensure that we can send CTRL-a to other apps by double CTRL-a
-bind C-a send-prefix
-
-# Free the original CTRL-b keybinding
-unbind C-b
-
 # [ Splitting ]
 
 # Unbind original screen splitting bindings
