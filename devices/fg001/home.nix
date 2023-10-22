@@ -13,11 +13,6 @@
     ./modules/home-manager/rar.nix
     ./modules/home-manager/shell.nix
     ./modules/home-manager/slack.nix
-    ./modules/home-manager/social/discord.nix
-    ./modules/home-manager/social/facebook-messenger.nix
-    ./modules/home-manager/social/signal.nix
-    ./modules/home-manager/social/telegram.nix
-    ./modules/home-manager/social/whatsapp.nix
     ./modules/home-manager/tmux
     ./modules/home-manager/video-players/mpv.nix
     ./modules/home-manager/vim
