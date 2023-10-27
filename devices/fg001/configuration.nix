@@ -20,6 +20,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.gnome.excludePackages = (with pkgs; [
+    gnome-console
     gnome-photos
     gnome-tour
   ]) ++ (with pkgs.gnome; [
@@ -43,6 +44,7 @@
     gnomeExtensions.hibernate-status-button # Hibernate in Power Options
     gnomeExtensions.appindicator # System Tray
     gnomeExtensions.pano # Clipboard Manager
+    gnomeExtensions.just-perfection
   ];
   # Ensure gnome-settings-daemon udev rules are enabled
   services.udev.packages = [pkgs.gnome.gnome-settings-daemon];
