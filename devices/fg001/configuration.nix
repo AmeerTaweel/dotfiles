@@ -2,6 +2,7 @@
   imports = [
     ./gnome.nix
     ./hardware.nix
+    ./headless.nix
     ./nvidia.nix
     ./steam.nix
 
