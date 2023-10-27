@@ -22,6 +22,7 @@
   environment.systemPackages = with pkgs; [
     gnome.gnome-tweaks
 
+    gnomeExtensions.hibernate-status-button # Hibernate in Power Options
     gnomeExtensions.appindicator # System Tray
     gnomeExtensions.pano # Clipboard Manager
   ];
