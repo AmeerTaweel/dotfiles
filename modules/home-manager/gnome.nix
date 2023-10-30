@@ -87,11 +87,19 @@
     "org/gnome/shell" = {
       disable-user-extensions = false;
       enabled-extensions = [
-        "appindicatorsupport@rgcjonas/gmail/com"
-        "drive-menu@gnome-shell-extensions/gcampax/github/com"
-        "pano@elhan/io"
+        "appindicatorsupport@rgcjonas.gmail.com"
+        "drive-menu@gnome-shell-extensions.gcampax.github.com"
+        "pano@elhan.io"
         "hibernate-status@dromi"
         "just-perfection-desktop@just-perfection"
+      ];
+      disabled-extensions = [
+        "places-menu@gnome-shell-extensions.gcampax.github.com"
+        "window-list@gnome-shell-extensions.gcampax.github.com"
+        "windowsNavigator@gnome-shell-extensions.gcampax.github.com"
+        "workspace-indicator@gnome-shell-extensions.gcampax.github.com"
+        "apps-menu@gnome-shell-extensions.gcampax.github.com"
+        "native-window-placement@gnome-shell-extensions.gcampax.github.com"
       ];
     };
 
