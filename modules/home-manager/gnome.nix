@@ -1,4 +1,6 @@
-{ ... }: {
+{ lib, ... }: let
+  uint32 = lib.hm.gvariant.mkUint32;
+in {
   # Set GNOME GSettings
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -50,19 +52,19 @@
       remove-old-temp-files = true;
       remove-old-trash-files = true;
       # Auto delete after 30 days
-      old-files-age = "uint32 30";
+      old-files-age = uint32 30;
     };
 
     "org/gnome/desktop/screensaver" = {
       # Auto lock immediately
-      lock-delay = "uint32 0";
+      lock-delay = uint32 0;
       # Auto screen lock
       lock-enabled = true;
     };
 
     "org/gnome/desktop/session" = {
       # Disable blank screen on inactivity
-      idle-delay = "uint32 0";
+      idle-delay = uint32 0;
     };
 
     "org/gnome/desktop/sound" = {
