@@ -3,7 +3,6 @@
   lib,
   modulesPath,
   params,
-  pkgs,
   ...
 }: {
   imports = [
