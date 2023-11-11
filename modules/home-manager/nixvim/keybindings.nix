@@ -157,6 +157,12 @@
       {
         mode = "v";
         key = "<leader><leader>p";
+        action = "\"_dp";
+        options.desc = "paste and keep content";
+      }
+      {
+        mode = "v";
+        key = "<leader><leader>P";
         action = "\"_dP";
         options.desc = "paste and keep content";
       }
