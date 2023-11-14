@@ -1,4 +1,4 @@
-{ lib, ... }: let
+{lib, ...}: let
   uint32 = lib.hm.gvariant.mkUint32;
 in {
   # Set GNOME GSettings

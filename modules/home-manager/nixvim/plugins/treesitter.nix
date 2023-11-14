@@ -9,10 +9,8 @@
     ts-context-commentstring.enable = true;
     indent-blankline = {
       enable = true;
-      buftypeExclude = ["terminal" "nofile" "quickfix" "prompt" "help"];
-      useTreesitter = true;
-      useTreesitterScope = false;
-      showCurrentContext = true;
+      scope.enabled = true;
+      exclude.buftypes = ["terminal" "nofile" "quickfix" "prompt" "help"];
     };
     nvim-autopairs = {
       enable = true;
