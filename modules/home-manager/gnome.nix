@@ -22,6 +22,15 @@ in {
       center-new-windows = true;
     };
 
+    # Keybindings
+    "org/gnome/desktop/wm/keybindings" = {
+      # Don't group windows of the same application type
+      switch-applications = [];
+      switch-applications-backward = [];
+      switch-windows = [ "<Super>Tab" ];
+      switch-windows-backward = [ "<Shift><Super>Tab" ];
+    };
+
     "org/gnome/desktop/notifications" = {
       # Disable lock screen notifications
       show-in-lock-screen = false;
