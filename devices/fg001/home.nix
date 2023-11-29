@@ -13,7 +13,6 @@
     ./modules/home-manager/nnn.nix
     ./modules/home-manager/rar.nix
     ./modules/home-manager/shell.nix
-    ./modules/home-manager/telegram.nix
     ./modules/home-manager/tmux
     ./modules/home-manager/video-players/mpv.nix
     ./modules/home-manager/vim
@@ -23,5 +22,7 @@
   home.packages = with pkgs; [
     gimp
     qbittorrent
+    tdesktop
+    element-desktop
   ];
 }
