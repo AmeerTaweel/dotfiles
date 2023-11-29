@@ -27,8 +27,8 @@ in {
       # Don't group windows of the same application type
       switch-applications = [];
       switch-applications-backward = [];
-      switch-windows = [ "<Super>Tab" ];
-      switch-windows-backward = [ "<Shift><Super>Tab" ];
+      switch-windows = ["<Super>Tab"];
+      switch-windows-backward = ["<Shift><Super>Tab"];
     };
 
     "org/gnome/desktop/notifications" = {
