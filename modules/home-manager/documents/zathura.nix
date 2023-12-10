@@ -15,6 +15,8 @@ in {
       recolor = true;
       # Ability to paste selection
       selection-clipboard = "clipboard";
+      # Ability to follow hyperlinks
+      sandbox = "none";
     };
   };
 
