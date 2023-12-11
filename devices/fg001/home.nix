@@ -21,6 +21,7 @@
 
   home.packages = with pkgs; [
     gimp
+    libreoffice
     qbittorrent
     tdesktop
     element-desktop
