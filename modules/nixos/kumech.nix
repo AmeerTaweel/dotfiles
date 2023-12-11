@@ -26,5 +26,8 @@
     services.resolved.enable = true;
     networking.networkmanager.connectionConfig."connection.mdns" = 2;
     services.avahi.enable = true;
+
+    # Enable Tailscale VPN Network
+    services.tailscale.enable = true;
   };
 }
