@@ -23,6 +23,11 @@
     # Doom-Emacs Packaged For Nix
     nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     nix-doom-emacs.inputs.nixpkgs.follows = "nixpkgs";
+    nix-doom-emacs.inputs.nix-straight.follows = "nix-straight";
+    nix-straight = {
+      url = "github:codingkoi/nix-straight.el?ref=codingkoi/apply-librephoenixs-fix";
+      flake = false;
+    };
   };
 
   outputs = {

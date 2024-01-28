@@ -12,12 +12,12 @@
       gnome-console
       gnome-photos
       gnome-tour
+      gedit # text editor
     ])
     ++ (with pkgs.gnome; [
       epiphany # web browser
       evince # document viewer
       geary # email reader
-      gedit # text editor
       gnome-calendar
       gnome-characters
       gnome-contacts
