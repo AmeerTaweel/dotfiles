@@ -53,10 +53,10 @@ in {
       # Windows
 
       # Window navigation
-      "ctrl+j" = "kitten pass_keys.py neighboring_window bottom ctrl+j";
-      "ctrl+k" = "kitten pass_keys.py neighboring_window top ctrl+k";
-      "ctrl+h" = "kitten pass_keys.py neighboring_window left ctrl+h";
-      "ctrl+l" = "kitten pass_keys.py neighboring_window right ctrl+l";
+      "ctrl+j" = "kitten pass_keys.py bottom ctrl+j";
+      "ctrl+k" = "kitten pass_keys.py top    ctrl+k";
+      "ctrl+h" = "kitten pass_keys.py left   ctrl+h";
+      "ctrl+l" = "kitten pass_keys.py right  ctrl+l";
 
       # Close the current active window
       "${mod}>x" = "close_window";
@@ -117,7 +117,7 @@ in {
   };
 
   xdg.configFile.vimKittyNavigatorFile2 = {
-    source = "${pkgs.vimPlugins.vim-kitty-navigator}/neighboring_window.py";
-    target = "kitty/neighboring_window.py";
+    source = "${pkgs.vimPlugins.vim-kitty-navigator}/get_layout.py";
+    target = "kitty/get_layout.py";
   };
 }
