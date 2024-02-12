@@ -54,6 +54,9 @@ in {
       # Turn off the greeting message
       set fish_greeting
     '';
+    interactiveShellInit = ''
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+    '';
     inherit shellAliases;
   };
 
