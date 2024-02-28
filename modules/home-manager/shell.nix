@@ -23,6 +23,9 @@
     # Tolerate Mistakes
     sl = "ls";
     "cd.." = "cd ..";
+
+    # Alias `wget` to use a custom hsts cache file location:
+    wget = "wget --hsts-file='${config.xdg.dataHome}/wget-hsts'";
   };
 in {
   imports = [
