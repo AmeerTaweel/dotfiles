@@ -43,6 +43,9 @@
 
       # Make the yanked region apparent
       vim-highlightedyank
+
+      # Syntax-Highlighting for Justfiles
+      vim-just
     ];
   };
 }
