@@ -5,6 +5,7 @@
     ./nvidia.nix
     ./steam.nix
 
+    ./modules/nixos/adb.nix
     ./modules/nixos/core.nix
     ./modules/nixos/gnome.nix
     ./modules/nixos/kumech.nix
