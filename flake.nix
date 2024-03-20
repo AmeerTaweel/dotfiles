@@ -5,11 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
+  outputs = {nixpkgs, ...}: let
     forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux"];
   in {
     # Devshell for bootstrapping
