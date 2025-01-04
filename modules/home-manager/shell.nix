@@ -66,10 +66,7 @@ in {
   # Easy directory jumping in all shells
   programs.autojump.enable = true;
 
-  programs.eza = {
-    enable = true;
-    enableAliases = true;
-  };
+  programs.eza.enable = true;
 
   programs.direnv = {
     enable = true;
