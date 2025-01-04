@@ -7,9 +7,9 @@
   ...
 }: let
   kittyThemes = {
-    ayu-dark = "Ayu";
-    ayu-mirage = "Ayu Mirage";
-    ayu-light = "Ayu Light";
+    ayu-dark = "ayu";
+    ayu-mirage = "ayu_mirage";
+    ayu-light = "ayu_light";
   };
 in {
   imports = [inputs.nix-colors.homeManagerModules.default];
@@ -36,6 +36,7 @@ in {
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
       tab_title_template = "{index}: {title}";
+      hide_window_decorations = "yes";
     };
     keybindings = let
       # Mod Key: ctrl+a
@@ -108,7 +109,7 @@ in {
       "${mod}>9" = "goto_tab 9";
       "${mod}>0" = "goto_tab 0";
     };
-    theme = kittyThemes.${config.colorScheme.slug};
+    themeFile = kittyThemes.${config.colorScheme.slug};
   };
 
   xdg.configFile.vimKittyNavigatorFile1 = {
