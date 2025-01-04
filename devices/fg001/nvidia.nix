@@ -11,6 +11,7 @@ in {
     services.xserver.videoDrivers = ["nvidia"];
 
     hardware.nvidia = {
+      open = false;
       prime = {
         offload = {
           enable = true;
