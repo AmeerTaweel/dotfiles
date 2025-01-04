@@ -1,5 +1,12 @@
-{lib, ...}: let
+# Convert dconf files (e.g. GNOME Shell) to Nix, as expected by Home Manager
+# https://github.com/nix-community/dconf2nix
+{
+  lib,
+  params,
+  ...
+}: let
   uint32 = lib.hm.gvariant.mkUint32;
+  tuple = lib.hm.gvariant.mkTuple;
 in {
   # Set GNOME GSettings
   dconf.settings = {
@@ -20,6 +27,10 @@ in {
       edge-tiling = true;
       dynamic-workspaces = true;
       center-new-windows = true;
+    };
+
+    "org/gnome/desktop/input-sources" = {
+      sources = map (lang: (tuple ["xkb" lang])) params.langs;
     };
 
     # Keybindings
@@ -100,7 +111,7 @@ in {
       enabled-extensions = [
         "appindicatorsupport@rgcjonas.gmail.com"
         "drive-menu@gnome-shell-extensions.gcampax.github.com"
-        "pano@elhan.io"
+        "clipboard-history@alexsaveau.dev"
         "hibernate-status@dromi"
         "just-perfection-desktop@just-perfection"
       ];
@@ -125,12 +136,14 @@ in {
       world-clock = false;
     };
 
-    # Pano Clipboard Manager
-    "org/gnome/shell/extensions/pano" = {
-      history-length = 500;
-      keep-search-entry = false;
-      play-audio-on-copy = false;
-      send-notification-on-copy = false;
+    # Clipboard Manager
+    "org/gnome/shell/extensions/clipboard-history" = {
+      clear-history = [];
+      ignore-password-mimes = false;
+      next-entry = [];
+      paste-on-selection = false;
+      prev-entry = [];
+      private-mode = false;
     };
   };
 }
