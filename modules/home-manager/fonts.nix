@@ -4,12 +4,8 @@
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
     # Nerd Fonts
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-        "Hack"
-      ];
-    })
+    nerd-fonts.fira-code
+    nerd-fonts.hack
     xkcd-font
     kawkab-mono-font
     amiri
