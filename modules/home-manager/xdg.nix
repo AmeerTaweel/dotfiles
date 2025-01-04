@@ -10,7 +10,7 @@ in {
       documents = null;
       download = "${homeDir}/downloads";
       music = null;
-      pictures = null;
+      pictures = "${homeDir}/pictures";
       publicShare = null;
       templates = null;
       videos = null;
