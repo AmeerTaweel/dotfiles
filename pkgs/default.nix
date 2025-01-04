@@ -7,6 +7,5 @@
   font-noto-sans-arabic = pkgs.callPackage ./fonts/noto-sans-arabic {};
 
   # Scripts
-  nixos-change-summary = pkgs.callPackage ./scripts/nixos-change-summary {};
-  home-manager-change-summary = pkgs.callPackage ./scripts/home-manager-change-summary {};
+  nixos-rebuild-summary = pkgs.callPackage ./scripts/nixos-rebuild-summary {};
 }

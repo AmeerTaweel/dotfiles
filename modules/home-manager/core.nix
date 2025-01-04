@@ -25,20 +25,14 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.${params.theme};
 
-  programs.fish.shellAbbrs = let
+  programs.fish.shellAliases = let
     flake-dir = config.home.sessionVariables.FLAKEDIR;
     nixos-flake = "${flake-dir}#${params.hostname}";
-    home-flake = "${flake-dir}#${params.username}@${params.hostname}";
-    nix-summary = "${pkgs.nixos-change-summary}/bin/nixos-change-summary";
-    hm-summary = "${pkgs.home-manager-change-summary}/bin/home-manager-change-summary";
+    nix-summary = "${pkgs.nixos-rebuild-summary}/bin/nixos-rebuild-summary";
   in {
     nx-boot = "sudo nixos-rebuild boot --flake ${nixos-flake} && ${nix-summary}";
     nx-build = "nixos-rebuild build --flake ${nixos-flake}";
     nx-switch = "sudo nixos-rebuild switch --flake ${nixos-flake} && ${nix-summary}";
-    nx-summary = nix-summary;
-    hm-build = "home-manager build --flake ${home-flake}";
-    hm-switch = "home-manager switch --flake ${home-flake} && ${hm-summary}";
-    hm-summary = hm-summary;
   };
 
   # Nicely reload system units when changing configs
