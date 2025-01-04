@@ -4,5 +4,6 @@
     ./ideavim
   ];
 
+  # `pkgs.jetbrains.plugins.addPlugins` doesn't work with Android Studio
   home.packages = [pkgs.android-studio];
 }
