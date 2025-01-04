@@ -3,7 +3,6 @@
     ./hardware.nix
     ./headless.nix
     ./nvidia.nix
-    ./steam.nix
 
     ./modules/nixos/adb.nix
     ./modules/nixos/core.nix
