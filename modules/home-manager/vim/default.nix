@@ -56,6 +56,9 @@
 
       # Enable repeating supported plugin maps with the "." operator
       vim-repeat
+
+      # Heuristically set buffer options
+      vim-sleuth
     ];
   };
 }
