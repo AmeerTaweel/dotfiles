@@ -1,5 +1,5 @@
 {params, ...}: {
-  imports = [../nixpkgs-unfree.nix];
+  imports = [../../nixpkgs-unfree.nix];
 
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
