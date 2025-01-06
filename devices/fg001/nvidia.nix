@@ -6,7 +6,7 @@ in {
     system.nixos.tags = ["nvidia-enabled"];
 
     # Nvidia drivers are unfree
-    imports = [./modules/nixpkgs-unfree.nix];
+    imports = [../../modules/nixpkgs-unfree.nix];
 
     services.xserver.videoDrivers = ["nvidia"];
 
