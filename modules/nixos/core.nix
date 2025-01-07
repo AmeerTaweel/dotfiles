@@ -25,6 +25,8 @@
     };
   };
 
+  users.mutableUsers = false;
+
   # Define user account
   # Set a password with `passwd`
   users.users.${params.username} = {
