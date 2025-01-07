@@ -26,6 +26,8 @@
       "/run/secrets"
       # Tailscale State
       "/var/lib/tailscale"
+      # Docker State
+      "/var/lib/docker"
     ];
     files = [
       "/etc/machine-id"
