@@ -46,7 +46,6 @@
           mode = "0700";
         }
         ".local/share/direnv"
-        ".config/VirtualBox"
         ".config/borg"
         ".cache/borg"
         "workspace"

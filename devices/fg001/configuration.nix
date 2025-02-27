@@ -7,7 +7,6 @@
 
     ../../modules/nixos/core.nix
     ../../modules/nixos/virtualization/virt-manager.nix
-    ../../modules/nixos/virtualization/virtual-box.nix
     ../../modules/nixos/virtualization/docker.nix
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/nix.nix
