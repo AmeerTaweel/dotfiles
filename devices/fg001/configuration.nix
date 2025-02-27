@@ -11,7 +11,6 @@
     ../../modules/nixos/gnome.nix
     ../../modules/nixos/nix.nix
     ../../modules/nixos/nix-index.nix
-    ../../modules/nixos/teamviewer.nix
     ../../modules/nixos/adb.nix
   ];
 
