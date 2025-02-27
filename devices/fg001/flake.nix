@@ -53,7 +53,7 @@
       state-version = "24.05";
       editor = "nvim";
       browser = "brave";
-      langs = ["us" "ara" "tr"];
+      langs = ["us" "ara" "tr" "il"];
       timezone = "Asia/Jerusalem";
       # timezone = "Asia/Istanbul";
       shell = "fish";
