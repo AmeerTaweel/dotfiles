@@ -10,6 +10,8 @@
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/kitty.nix
+    ../../modules/home-manager/wezterm
+    ../../modules/home-manager/neovim
     # ../../modules/home-manager/nixvim
     ../../modules/home-manager/nnn.nix
     ../../modules/home-manager/rar.nix

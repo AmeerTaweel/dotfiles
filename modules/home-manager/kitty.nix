@@ -54,21 +54,19 @@ in {
       # Windows
 
       # Window navigation
-      "ctrl+j" = "kitten pass_keys.py bottom ctrl+j";
-      "ctrl+k" = "kitten pass_keys.py top    ctrl+k";
-      "ctrl+h" = "kitten pass_keys.py left   ctrl+h";
-      "ctrl+l" = "kitten pass_keys.py right  ctrl+l";
+      "${mod}>j" = "neighboring_window bottom";
+      "${mod}>k" = "neighboring_window top";
+      "${mod}>h" = "neighboring_window left";
+      "${mod}>l" = "neighboring_window right";
 
       # Close the current active window
       "${mod}>x" = "close_window";
       # Zoom window
       "${mod}>z" = "toggle_layout stack";
-      # Got to window
+      # Go to window
       "${mod}>g" = "focus_visible_window";
       # Swap window
       "${mod}>s" = "swap_with_window";
-      # Clear window
-      "${mod}>ctrl+l" = "clear_terminal scroll active";
 
       # Split screen with the current path
       "${mod}>-" = "launch --location=hsplit --cwd=current";
@@ -110,15 +108,5 @@ in {
       "${mod}>0" = "goto_tab 0";
     };
     themeFile = kittyThemes.${config.colorScheme.slug};
-  };
-
-  xdg.configFile.vimKittyNavigatorFile1 = {
-    source = "${pkgs.vimPlugins.vim-kitty-navigator}/pass_keys.py";
-    target = "kitty/pass_keys.py";
-  };
-
-  xdg.configFile.vimKittyNavigatorFile2 = {
-    source = "${pkgs.vimPlugins.vim-kitty-navigator}/get_layout.py";
-    target = "kitty/get_layout.py";
   };
 }

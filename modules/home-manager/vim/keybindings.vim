@@ -6,6 +6,13 @@ let mapleader = ','
 nnoremap <leader>- :split<cr>
 nnoremap <leader>/ :vsplit<cr>
 
+" # Window Movement
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " # System Clipboard
 
 " NOTE: Vim needs to be compiled with the +clipboard flag for this to work.

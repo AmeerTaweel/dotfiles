@@ -1,11 +1,6 @@
 # Reload .tmux.conf
 bind r source-file ~/.tmux.conf \; display-message "~/.tmux.conf Reloaded."
 
-# Restoring Clear Screen
-# CTRL-l is now used for navigation
-# Hitting the key after the prefix will restore the old function
-bind C-l send-keys C-l
-
 # [ Splitting ]
 
 # Unbind original screen splitting bindings
@@ -29,6 +24,12 @@ bind c new-window -c "#{pane_current_path}"
 bind C new-window
 
 # [ Panes ]
+
+# Pane navigation
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
 
 # Break a pane out to a new window
 bind b break-pane -d

@@ -49,7 +49,7 @@ in {
 
     "org/gnome/desktop/input-sources" = {
       # Use capslock as ctrl
-      xkb-options = ["caps:ctrl_modifier"];
+      xkb-options = ["ctrl:nocaps"];
     };
 
     "org/gnome/desktop/peripherals/keyboard" = {

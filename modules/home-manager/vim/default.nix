@@ -27,10 +27,6 @@
       # Statusbar
       lightline-vim
 
-      # Better Vim and Kitty navigation
-      # NOTE: Should also be installed for Kitty
-      vim-kitty-navigator
-
       # Swap split windows with ease
       vim-windowswap
 
