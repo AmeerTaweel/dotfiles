@@ -23,10 +23,6 @@
     # Nix Base-16 Theming
     nix-colors.url = "github:misterio77/nix-colors";
 
-    # Configure Neovim with Nix
-    # nixvim.url = "github:nix-community/nixvim";
-    # nixvim.inputs.nixpkgs.follows = "nixpkgs";
-
     # Doom-Emacs Packaged For Nix
     # nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
     # nix-doom-emacs.inputs.nixpkgs.follows = "nixpkgs";

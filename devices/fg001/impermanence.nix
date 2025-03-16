@@ -40,7 +40,6 @@
         ".doom.d"
         "knowledge-base"
         ".config/BraveSoftware/Brave-Browser"
-        ".config/nvim"
         {
           directory = ".ssh";
           mode = "0700";
