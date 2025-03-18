@@ -5,6 +5,24 @@ require('telescope').setup {
       sorting_strategy = 'ascending',
       layout_config = {
          prompt_position = 'top',
+         preview_cutoff = 1,
+      },
+      preview = {
+         filesize_limit = 1, -- MB
+         timeout = 200, -- ms
+         -- treesitter = false,
+         -- Don't Show Preview For Large Files
+         filetype_hook = function(filepath, buf, opts)
+            local size = vim.fn.getfsize(filepath)
+            if size < 0 then
+               return false
+            end
+            local lines = require('utils').get_line_count(filepath)
+            if require('utils').is_large_file(size, lines) then
+               return false
+            end
+            return true
+         end,
       },
    },
    extensions = {

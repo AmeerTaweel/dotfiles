@@ -72,6 +72,15 @@ require('blink.cmp').setup {
       default = { 'lsp', 'path', 'buffer' },
    },
 
+   cmdline = {
+      enabled = true,
+      completion = {
+         menu = {
+            auto_show = true,
+         },
+      },
+   },
+
    fuzzy = {
       prebuilt_binaries = {
          download = false,
