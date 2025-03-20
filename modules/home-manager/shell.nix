@@ -51,7 +51,7 @@ in {
     enable = true;
     interactiveShellInit = ''
       ${builtins.readFile ./fish_config.fish}
-      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+      ${pkgs.nix-your-shell}/bin/nix-your-shell fish | source
     '';
     inherit shellAliases;
   };
