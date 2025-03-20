@@ -49,15 +49,8 @@ in {
 
   programs.fish = {
     enable = true;
-    shellInit = ''
-      # Enable Vi bindings
-      fish_vi_key_bindings
-      # Use block cursor even in insert mode
-      set -U fish_cursor_insert block
-      # Turn off the greeting message
-      set fish_greeting
-    '';
     interactiveShellInit = ''
+      ${builtins.readFile ./fish_config.fish}
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
     inherit shellAliases;

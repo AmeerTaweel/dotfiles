@@ -55,6 +55,7 @@ config.font_size = 12
 -- +--------------+
 
 config.disable_default_key_bindings = true
+config.enable_kitty_keyboard = true
 
 local leader = { key = 'a', mods = 'CTRL' }
 
