@@ -86,6 +86,7 @@ in {
     ripgrep # `grep` clone
     fd # `find` clone
     bat # `cat` clone with syntax highlighting and `git` integration
+    sd # `sed` replacement
 
     zip # Zip Compression
     unzip # Zip Decompression
@@ -98,6 +99,8 @@ in {
     eva # Calculator
 
     sshfs
+
+    mosh
   ];
 
   # `tldr` comand
