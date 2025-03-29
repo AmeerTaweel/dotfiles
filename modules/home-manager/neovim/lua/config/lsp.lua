@@ -23,10 +23,6 @@ require('lazydev').setup {
    },
 }
 
--- Configure Custom LSP Handlers
-
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
-
 -- Configure LSP Attach Behavior
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -51,6 +47,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
          { '<leader>lr', vim.lsp.buf.rename,      desc = 'lsp rename',             buffer = buf },
          { '<leader>ld', diagnostic_open_float,   desc = 'lsp expand diagnostics', buffer = buf },
          { '<leader>lf', vim.lsp.buf.format,      desc = 'lsp format',             buffer = buf },
+      })
+      wk.add({
+         'K',
+         function () vim.lsp.buf.hover({ border = 'rounded' }) end,
+         desc = 'lsp hover',
+         buffer = buf,
+         mode    = 'n',
+         noremap = true,
       })
    end,
 })
