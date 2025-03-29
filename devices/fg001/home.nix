@@ -28,4 +28,6 @@
     tdesktop
     element-desktop
   ];
+
+  programs.emacs.enable = true;
 }
