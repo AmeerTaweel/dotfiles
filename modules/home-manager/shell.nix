@@ -57,7 +57,13 @@ in {
   };
 
   # Easy directory jumping in all shells
-  programs.autojump.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableNushellIntegration = true;
+    enableZshIntegration = true;
+  };
 
   programs.eza.enable = true;
 
