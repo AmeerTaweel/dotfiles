@@ -83,7 +83,7 @@ in {
             }
           ];
           extraConfig = {
-            remote_path = "borg1";
+            remote_path = "borg14";
             source_directories_must_exist = true;
           };
         };
@@ -132,7 +132,7 @@ in {
             }
           ];
           extraConfig = {
-            remote_path = "borg1";
+            remote_path = "borg14";
             source_directories_must_exist = true;
           };
         };
