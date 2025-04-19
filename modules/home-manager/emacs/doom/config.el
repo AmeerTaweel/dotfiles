@@ -38,6 +38,7 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
+(setq display-line-numbers-width-start t)
 
 (use-package! org
   ; Code that runs before the package is loaded
