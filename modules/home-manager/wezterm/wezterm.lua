@@ -193,6 +193,11 @@ config.keys = {
     mods = 'CTRL|SHIFT',
     action = wezterm.action.IncreaseFontSize,
   },
+  {
+    key = 'F11',
+    mods = '',
+    action = wezterm.action.ToggleFullScreen,
+  },
 }
 
 local function kb_activate_tab(key, tab)
