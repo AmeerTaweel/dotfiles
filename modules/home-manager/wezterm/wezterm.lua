@@ -198,6 +198,12 @@ config.keys = {
     mods = '',
     action = wezterm.action.ToggleFullScreen,
   },
+  -- Clear the scrollback and viewport leaving the prompt line the new first line
+  {
+    key = 'l',
+    mods = 'LEADER|CTRL',
+    action = wezterm.action.ClearScrollback 'ScrollbackAndViewport',
+  },
 }
 
 local function kb_activate_tab(key, tab)
