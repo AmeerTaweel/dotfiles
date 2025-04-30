@@ -47,6 +47,8 @@ in {
     inherit shellAliases;
   };
 
+  programs.nushell.enable = true;
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''

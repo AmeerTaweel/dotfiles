@@ -52,7 +52,7 @@
       langs = ["us" "ara" "tr" "il"];
       timezone = "Asia/Jerusalem";
       # timezone = "Asia/Istanbul";
-      shell = "fish";
+      shell = "nushell";
       terminal = "kitty";
       theme = "ayu-dark";
       pdf-reader = "zathura";
