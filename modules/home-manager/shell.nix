@@ -47,7 +47,23 @@ in {
     inherit shellAliases;
   };
 
-  programs.nushell.enable = true;
+  programs.nushell = {
+    enable = true;
+    extraConfig = ''
+      $env.config.show_banner = false
+      $env.PROMPT_COMMAND = { ||
+        let path = (pwd | str replace -r $"^($env.HOME)" "~")
+        let shell_depth = $env.SHLVL
+        let last_exit = $env.LAST_EXIT_CODE
+        let last_time = $env.CMD_DURATION_MS | into int | into duration --unit ms
+        $"($path) [DPTH ($shell_depth)] [TIME ($last_time)] [EXIT ($last_exit)]"
+      }
+      $env.PROMPT_INDICATOR_VI_NORMAL = " [N]\n> "
+      $env.PROMPT_INDICATOR_VI_INSERT = " [I]\n> "
+      $env.PROMPT_COMMAND_RIGHT = ""
+      $env.config.edit_mode = "vi"
+    '';
+  };
 
   programs.fish = {
     enable = true;
