@@ -51,12 +51,56 @@ in {
     enable = true;
     extraConfig = ''
       $env.config.show_banner = false
-      $env.PROMPT_COMMAND = { ||
+      
+      def prompt_path_gadget [] {
         let path = (pwd | str replace -r $"^($env.HOME)" "~")
-        let shell_depth = $env.SHLVL
-        let last_exit = $env.LAST_EXIT_CODE
+        return $path
+      }
+      
+      def prompt_level_gadget [] {
+        let shell_level = $env.SHLVL
+        if $shell_level > 1 {
+          return $"(ansi blue)[shlvl: ($shell_level)](ansi reset)"
+        } else {
+          return ""
+        }
+      }
+      
+      def prompt_time_gadget [] {
         let last_time = $env.CMD_DURATION_MS | into int | into duration --unit ms
-        $"($path) [DPTH ($shell_depth)] [TIME ($last_time)] [EXIT ($last_exit)]"
+        return $"(ansi blue)[ ($last_time)](ansi reset)"
+      }
+      
+      def prompt_exit_gadget [] {
+        let last_exit = $env.LAST_EXIT_CODE
+        if $last_exit != 0 {
+          return $"(ansi red)[exit: ($last_exit)](ansi reset)"
+        } else {
+          return ""
+        }
+      }
+      
+      def prompt_git_branch_gadget [] {
+        use std
+        try {
+          let branch = (git branch --show-current e> (std null-device))
+          return $"(ansi yellow)[󰘬 ($branch)](ansi reset)"
+        } catch {
+          return ""
+        }
+      }
+      
+      $env.PROMPT_COMMAND = { ||
+      
+        let gadgets = [
+          (prompt_path_gadget)
+      	(prompt_level_gadget)
+      	(prompt_time_gadget)
+      	(prompt_git_branch_gadget)
+      	(prompt_exit_gadget)
+        ]
+      
+        $gadgets | where $it != "" | str join " "
       }
       $env.PROMPT_INDICATOR_VI_NORMAL = " [N]\n> "
       $env.PROMPT_INDICATOR_VI_INSERT = " [I]\n> "
