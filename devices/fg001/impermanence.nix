@@ -47,6 +47,7 @@
         ".local/share/direnv"
         ".config/borg"
         ".cache/borg"
+        ".cache/tealdeer"
         "workspace"
         ".local/share/zoxide"
         ".local/share/fish"
