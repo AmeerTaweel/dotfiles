@@ -1,14 +1,14 @@
 {
   config,
+  params,
   pkgs,
   ...
-}: let
-  shellAliases = {
-    # Enable `grep` colors when the output is a terminal
-    grep = "grep --color=auto";
-    egrep = "egrep --color=auto";
-    fgrep = "fgrep --color=auto";
+}: let 
+  flake-dir = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
+  nixos-flake = "${flake-dir}#${params.hostname}";
+  nix-summary = "${pkgs.nixos-rebuild-summary}/bin/nixos-rebuild-summary";
 
+  shellAliases = {
     # Fast `cd` to parent directory
     ".." = "cd ..";
     ".1" = "cd ..";
@@ -20,12 +20,10 @@
     # Create parent directories on demand
     mkdir = "mkdir -pv";
 
-    # Tolerate Mistakes
-    sl = "ls";
-    "cd.." = "cd ..";
-
-    # Alias `wget` to use a custom hsts cache file location:
-    wget = "wget --hsts-file='${config.xdg.dataHome}/wget-hsts'";
+    # Most common `nixos-rebuild` operations
+    nx-boot = "sudo nixos-rebuild boot --flake ${nixos-flake} && ${nix-summary}";
+    nx-build = "nixos-rebuild build --flake ${nixos-flake}";
+    nx-switch = "sudo nixos-rebuild switch --flake ${nixos-flake} && ${nix-summary}";
   };
 in {
   imports = [
@@ -34,7 +32,21 @@ in {
   ];
 
   home.sessionVariables = {
-    HISTFILE = "${config.xdg.stateHome}/bash/history";
+    GNUPGHOME = "${config.xdg.dataHome}/gnupg";
+  };
+
+  home.shellAliases = {
+    # Enable `grep` colors when the output is a terminal
+    grep = "grep --color=auto";
+    egrep = "egrep --color=auto";
+    fgrep = "fgrep --color=auto";
+
+    # Tolerate Mistakes
+    sl = "ls";
+    "cd.." = "cd ..";
+
+    # Alias `wget` to use a custom hsts cache file location:
+    wget = "wget --hsts-file='${config.xdg.dataHome}/wget-hsts'";
   };
 
   programs.bash = {
@@ -43,6 +55,7 @@ in {
       # Enable Vi bindings
       set -o vi
     '';
+    historyFile = "${config.xdg.stateHome}/bash/history";
     historyIgnore = ["ls" "cd" "exit"];
     inherit shellAliases;
   };
@@ -106,7 +119,20 @@ in {
       $env.PROMPT_INDICATOR_VI_INSERT = " [I]\n> "
       $env.PROMPT_COMMAND_RIGHT = ""
       $env.config.edit_mode = "vi"
+
+      def nx-boot [] {
+        sudo nixos-rebuild boot --flake ${nixos-flake}
+        ${nix-summary}
+      }
+      def nx-build [] {
+        nixos-rebuild build --flake ${nixos-flake}
+      }
+      def nx-switch [] {
+        sudo nixos-rebuild switch --flake ${nixos-flake}
+        ${nix-summary}
+      }
     '';
+    environmentVariables = config.home.sessionVariables;
   };
 
   programs.fish = {
