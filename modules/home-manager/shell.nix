@@ -64,13 +64,41 @@ in {
     enable = true;
     extraConfig = ''
       $env.config.show_banner = false
+
+      $env.CARAPACE_MATCH = 1
+      let carapace_completer = {|spans: list<string>|
+        carapace $spans.0 nushell ...$spans
+        | from json
+        | if ($in | default [] | where value =~ '^-.*ERR$' | is-empty) { $in } else { null }
+      }
+
+      let external_completer = {|spans|
+        let expanded_alias = scope aliases
+        | where name == $spans.0
+        | get -i 0.expansion
+
+        let spans = if $expanded_alias != null {
+            $spans
+            | skip 1
+            | prepend ($expanded_alias | split row ' ' | take 1)
+        } else {
+            $spans
+        }
+
+        do $carapace_completer $spans
+      }
+
+      $env.config.completions.external = {
+        enable: true
+        completer: $external_completer
+      }
       
-      def prompt_path_gadget [] {
+      let prompt_path_gadget = {||
         let path = (pwd | str replace -r $"^($env.HOME)" "~")
         return $path
       }
       
-      def prompt_level_gadget [] {
+      let prompt_level_gadget = {||
         let shell_level = $env.SHLVL
         if $shell_level > 1 {
           return $"(ansi blue)[shlvl: ($shell_level)](ansi reset)"
@@ -79,12 +107,12 @@ in {
         }
       }
       
-      def prompt_time_gadget [] {
+      let prompt_time_gadget = {||
         let last_time = $env.CMD_DURATION_MS | into int | into duration --unit ms
         return $"(ansi blue)[ ($last_time)](ansi reset)"
       }
       
-      def prompt_exit_gadget [] {
+      let prompt_exit_gadget = {||
         let last_exit = $env.LAST_EXIT_CODE
         if $last_exit != 0 {
           return $"(ansi red)[exit: ($last_exit)](ansi reset)"
@@ -93,7 +121,7 @@ in {
         }
       }
       
-      def prompt_git_branch_gadget [] {
+      let prompt_git_branch_gadget = {||
         use std
         try {
           let branch = (git branch --show-current e> (std null-device))
@@ -104,13 +132,12 @@ in {
       }
       
       $env.PROMPT_COMMAND = { ||
-      
         let gadgets = [
-          (prompt_path_gadget)
-      	(prompt_level_gadget)
-      	(prompt_time_gadget)
-      	(prompt_git_branch_gadget)
-      	(prompt_exit_gadget)
+          (do $prompt_path_gadget)
+          (do $prompt_level_gadget)
+          (do $prompt_time_gadget)
+          (do $prompt_git_branch_gadget)
+          (do $prompt_exit_gadget)
         ]
       
         $gadgets | where $it != "" | str join " "
@@ -230,6 +257,8 @@ in {
     sshfs
 
     mosh
+
+    carapace
   ];
 
   # `tldr` comand
