@@ -6,7 +6,7 @@
 }: let
   ifDefault = lib.mkIf (params.browser == "tor");
 in {
-  home.packages = [pkgs.tor-browser-bundle-bin];
+  home.packages = [pkgs.tor-browser];
 
   xdg.mime.enable = ifDefault true;
   xdg.mimeApps.enable = ifDefault true;
