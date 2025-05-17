@@ -67,6 +67,24 @@
   services.openssh.enable = true;
   services.openssh.openFirewall = true;
 
+  # Configure Filesystem Permissions
+  systemd.tmpfiles.settings = {
+    "secrets" = {
+      "/run/secrets" = {
+        Z = {
+          group = "root";
+          mode = "0751";
+          user = "root";
+        };
+      };
+      "/run/secrets/*" = {
+        h = {
+          argument = "+i";
+        };
+      };
+    };
+  };
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
