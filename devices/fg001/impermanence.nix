@@ -52,7 +52,9 @@
         ".local/share/zoxide"
         ".local/share/fish"
       ];
-      files = [];
+      files = [
+        ".config/nushell/history.sqlite3"
+      ];
     };
   };
 
