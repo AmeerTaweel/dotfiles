@@ -3,7 +3,7 @@
   params,
   pkgs,
   ...
-}: let 
+}: let
   flake-dir = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
   nixos-flake = "${flake-dir}#${params.hostname}";
   nix-summary = "${pkgs.nixos-rebuild-summary}/bin/nixos-rebuild-summary";
@@ -95,12 +95,12 @@ in {
         enable: true
         completer: $external_completer
       }
-      
+
       let prompt_path_gadget = {||
         let path = (pwd | str replace -r $"^($env.HOME)" "~")
         return $path
       }
-      
+
       let prompt_level_gadget = {||
         let shell_level = $env.SHLVL
         if $shell_level > 1 {
@@ -109,12 +109,12 @@ in {
           return ""
         }
       }
-      
+
       let prompt_time_gadget = {||
         let last_time = $env.CMD_DURATION_MS | into int | into duration --unit ms
         return $"(ansi blue)[ ($last_time)](ansi reset)"
       }
-      
+
       let prompt_exit_gadget = {||
         let last_exit = $env.LAST_EXIT_CODE
         if $last_exit != 0 {
@@ -123,7 +123,7 @@ in {
           return ""
         }
       }
-      
+
       let prompt_git_branch_gadget = {||
         use std
         try {
@@ -133,7 +133,7 @@ in {
           return ""
         }
       }
-      
+
       $env.PROMPT_COMMAND = { ||
         let gadgets = [
           (do $prompt_path_gadget)
@@ -142,7 +142,7 @@ in {
           (do $prompt_git_branch_gadget)
           (do $prompt_exit_gadget)
         ]
-      
+
         $gadgets | where $it != "" | str join " "
       }
       $env.PROMPT_INDICATOR_VI_NORMAL = " [N]\n> "
