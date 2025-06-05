@@ -6,7 +6,7 @@
   };
 
   outputs = {nixpkgs, ...}: let
-    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux"];
+    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
   in {
     # Devshell for bootstrapping
     # Acessible through `nix develop` or `nix-shell` (legacy)
