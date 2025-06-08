@@ -1,13 +1,8 @@
 {
   config,
-  params,
   pkgs,
   ...
 }: let
-  flake-dir = "${config.home.homeDirectory}/dotfiles/devices/${params.hostname}";
-  nixos-flake = "${flake-dir}#${params.hostname}";
-  nix-summary = "${pkgs.nixos-rebuild-summary}/bin/nixos-rebuild-summary";
-
   shellAliases = {
     # Fast `cd` to parent directory
     ".." = "cd ..";
@@ -19,11 +14,6 @@
 
     # Create parent directories on demand
     mkdir = "mkdir -pv";
-
-    # Most common `nixos-rebuild` operations
-    nx-boot = "sudo nixos-rebuild boot --flake ${nixos-flake} && ${nix-summary}";
-    nx-build = "nixos-rebuild build --flake ${nixos-flake}";
-    nx-switch = "sudo nixos-rebuild switch --flake ${nixos-flake} && ${nix-summary}";
   };
 in {
   imports = [
@@ -149,18 +139,6 @@ in {
       $env.PROMPT_INDICATOR_VI_INSERT = " [I]\n> "
       $env.PROMPT_COMMAND_RIGHT = ""
       $env.config.edit_mode = "vi"
-
-      def nx-boot [] {
-        sudo nixos-rebuild boot --flake ${nixos-flake}
-        ${nix-summary}
-      }
-      def nx-build [] {
-        nixos-rebuild build --flake ${nixos-flake}
-      }
-      def nx-switch [] {
-        sudo nixos-rebuild switch --flake ${nixos-flake}
-        ${nix-summary}
-      }
 
       $env.config.hooks.command_not_found = { |cmd_name|
         let install = { |pkgs|
