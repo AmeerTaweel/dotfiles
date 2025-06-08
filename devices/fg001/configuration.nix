@@ -1,9 +1,10 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ./hardware.nix
     ./impermanence.nix
     ./headless.nix
     ./nvidia.nix
+    ./printing.nix
 
     ../../modules/nixos/core.nix
     ../../modules/nixos/virtualization/virt-manager.nix
@@ -58,6 +59,8 @@
           argument = "+i";
         };
       };
+    };
+    "secrets" = {
       "/run/secrets" = {
         Z = {
           group = "root";
@@ -72,4 +75,7 @@
       };
     };
   };
+
+  # Use ‘nixos-rebuild-ng’ in place of ‘nixos-rebuild’
+  system.rebuild.enableNg = true;
 }
