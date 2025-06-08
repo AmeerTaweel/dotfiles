@@ -4,6 +4,7 @@
 
     ../../modules/home-manager/anydesk.nix
     ../../modules/home-manager/browsers/brave.nix
+    ../../modules/home-manager/browsers/qutebrowser.nix
     ../../modules/home-manager/browsers/tor.nix
     ../../modules/home-manager/core.nix
     ../../modules/home-manager/documents/zathura.nix
