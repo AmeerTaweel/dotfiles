@@ -1,6 +1,6 @@
 # Shell for bootstrapping flake-enabled nix and home-manager
-# You can enter it through `nix develop` or (legacy) `nix-shell`
-{pkgs ? (import ./nixpkgs.nix) {}}: {
+# You can enter it through `nix develop`
+{pkgs}: {
   default = pkgs.mkShell {
     nativeBuildInputs = with pkgs; [
       just
