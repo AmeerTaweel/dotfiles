@@ -2,8 +2,21 @@
 # You can enter it through `nix develop` or (legacy) `nix-shell`
 {pkgs ? (import ./nixpkgs.nix) {}}: {
   default = pkgs.mkShell {
+    nativeBuildInputs = with pkgs; [
+      just
+      nixos-rebuild-summary
+    ];
+  };
+  full = pkgs.mkShell {
     # Enable experimental features without having to specify the argument
     NIX_CONFIG = "experimental-features = nix-command flakes";
-    nativeBuildInputs = with pkgs; [nix home-manager git vim];
+    nativeBuildInputs = with pkgs; [
+      nix
+      home-manager
+      git
+      vim
+      just
+      nixos-rebuild-summary
+    ];
   };
 }

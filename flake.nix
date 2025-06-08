@@ -5,23 +5,47 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
 
-  outputs = {nixpkgs, ...}: let
-    forAllSystems = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
+  outputs = {
+    self,
+    nixpkgs,
+  }: let
+    inherit (self) outputs;
+    forAllSystems = nixpkgs.lib.genAttrs [
+      "aarch64-linux"
+      "x86_64-linux"
+    ];
+    mkPkgs = system:
+      import nixpkgs {
+        inherit system;
+        # config.allowUnfree = true;
+        overlays = [
+          # Add overlays our own flake exports (from overlays and pkgs dir):
+          outputs.overlays.modifications
+          outputs.overlays.additions
+        ];
+      };
   in {
-    # Devshell for bootstrapping
-    # Acessible through `nix develop` or `nix-shell` (legacy)
-    devShells = forAllSystems (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-        import ./shell.nix {inherit pkgs;}
-    );
+    # Custom packages
+    # Acessible through `nix build` and `nix shell`
+    packages = forAllSystems (system:
+      import ./pkgs {
+        pkgs = mkPkgs system;
+      });
+    # Development environment
+    # Acessible through `nix develop`
+    devShells = forAllSystems (system:
+      import ./shell.nix {
+        pkgs = mkPkgs system;
+      });
 
-    # Formatter (alejandra, nixfmt or nixpkgs-fmt)
+    # Custom packages and modifications, exported as overlays
+    overlays = import ./overlays;
+
+    # Nix files formatter (alejandra, nixfmt or nixpkgs-fmt)
     # Run with `nix fmt`
     formatter = forAllSystems (
       system: let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = mkPkgs system;
       in
         pkgs.alejandra
     );
