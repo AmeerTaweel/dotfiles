@@ -5,7 +5,7 @@
 }: {
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ../custom-pkgs-overlay.nix
+    ../import-overlays.nix
   ];
 
   # Enable home-manager

@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  imports = [../custom-pkgs-overlay.nix];
+  imports = [../import-overlays.nix];
 
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
