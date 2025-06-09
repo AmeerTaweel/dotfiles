@@ -15,6 +15,8 @@
     pkgs,
     ...
   }: {
+    nix.enable = false;
+
     services.scrutiny = {
       enable = true;
       collector.enable = false;

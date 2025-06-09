@@ -15,6 +15,8 @@
     pkgs,
     ...
   }: {
+    nix.enable = false;
+
     services.stirling-pdf = {
       enable = true;
       environment = {
