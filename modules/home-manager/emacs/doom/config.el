@@ -39,6 +39,7 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 (setq display-line-numbers-width-start t)
+(setq display-line-numbers-grow-only t)
 
 (use-package! org
   ; Code that runs before the package is loaded
@@ -68,6 +69,11 @@
 
 (setq org-capture-templates
       '(("w" "Weight" table-line (file+headline "20241023085029-weight_control.org" "Tracking") "| %u | %? |")))
+
+(use-package! beancount
+  ; Code that runs before the package is loaded
+  :init
+  (setq beancount-number-alignment-column 60))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
